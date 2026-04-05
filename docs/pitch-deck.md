@@ -286,7 +286,99 @@ hide:
 
 ---
 
-## Nhịp 13 — Bức tranh tổng thể
+## Nhịp 13 — Cross-agent analytics
+
+**Nói:** "Thứ sáu: analytics so sánh giữa các agent. Không chỉ biết chi phí — còn biết agent nào đang cho ra chất lượng tốt hơn, ai đang cải thiện, ai đang tụt."
+
+**Vẽ:** *(thêm bảng so sánh bên cạnh Dandori box)*
+
+```
+  ┌──────────────────────────────────────────────┐
+  │  Cross-agent analytics                       │
+  │                                              │
+  │  Agent       Score   Trend   Cost/run        │
+  │  ─────────   ─────   ─────   ────────        │
+  │  Alice        87     ↑ +5    $0.42           │
+  │  Bob          72     → =0    $0.38           │
+  │  Charlie      61     ↓ -8    $0.71  ← check  │
+  └──────────────────────────────────────────────┘
+```
+
+**Nói:** "CTO nhìn vào bảng này một lần mỗi tuần. Charlie đang đắt hơn 70% và chất lượng đang tụt — điều tra ngay. Không cần hỏi từng team."
+
+---
+
+## Nhịp 14 — Task dependencies & phase workflow
+
+**Nói:** "Thứ bảy: task dependency. Agent không chỉ chạy độc lập — chúng chạy theo thứ tự. Task con chỉ bắt đầu khi task cha xong."
+
+**Vẽ:** *(vẽ một DAG đơn giản)*
+
+```
+  [Research] ──▶ [Design] ──▶ [Implement] ──▶ [Test]
+                                   │
+                              (agent chạy)
+                              (quality gate)
+                              (approval nếu cần)
+                                   │
+                                   ▼
+                              [Deploy]
+```
+
+**Nói:** "Và mỗi task có phase tag: Research → Concept → Design → Implement → Test → Deploy. Bộ lọc theo phase để nhìn toàn bộ portfolio theo giai đoạn."
+
+---
+
+## Nhịp 15 — Immutable audit log
+
+**Nói:** "Thứ tám: audit log. Mỗi lần agent chạy tạo ra một bản ghi đầy đủ, không sửa được."
+
+**Vẽ:** *(vẽ một cuốn sổ log bên cạnh)*
+
+```
+  Run #4821
+  ├── agent:    Alice
+  ├── task:     migrate-payments-schema
+  ├── project:  payments
+  ├── prompt:   [full 5-layer prompt]
+  ├── context:  company-v12, project-v3, team-v7
+  ├── tokens:   4.821 in / 1.203 out
+  ├── cost:     $0.42
+  ├── score:    84/100
+  ├── approved: bob @ 14:22
+  └── output:   [full text]
+```
+
+**Nói:** "Sáu tháng sau có sự cố, câu hỏi là: lúc đó agent thấy gì, ai đã approve, phiên bản context nào đang active? Tất cả đều có. Một lần export cho đội compliance là xong."
+
+---
+
+## Nhịp 16 — Integration surface
+
+**Nói:** "Thứ chín: Dandori không đứng một mình. Nó có 4 mặt tiếp xúc với phần còn lại của hệ thống."
+
+**Vẽ:** *(thêm 4 mũi tên ra từ box Dandori)*
+
+```
+              [Web UI]   [REST API]
+                  │          │
+                  └────┬─────┘
+                       │
+              ┌────────────────┐
+              │    DANDORI     │
+              └────────────────┘
+                       │
+                  ┌────┴─────┐
+                  │          │
+               [CLI]      [MCP]
+                            └── Claude Code, Cursor
+```
+
+**Nói:** "Web UI cho kỹ sư và manager dùng hằng ngày. REST API cho CI/CD tích hợp. CLI cho automation. MCP server cho chính Claude Code và Cursor — agent có thể tự tạo task trong Dandori."
+
+---
+
+## Nhịp 17 — Bức tranh tổng thể
 
 **Nói:** "Đây là bảng lúc kết thúc. Đây là những gì Dandori mang lại."
 
@@ -326,7 +418,7 @@ hide:
 
 ---
 
-## Nhịp 14 — Kết
+## Nhịp 18 — Kết
 
 **Nói:** "Mọi tổ chức có hơn 100 kỹ sư sẽ cần cái này trước cuối 2026. Cùng pattern như DevOps tools những năm 2010, observability 2015, feature flags 2020. Đến lượt AI agent. Dandori là layer hợp nhất đó."
 
@@ -357,7 +449,7 @@ hide:
 - **Tổng thời gian:** 20–30 phút có cả Q&A
 - **Nhịp 1–6:** ~5 phút — vấn đề. Để nó thấm. Đừng vội đến giải pháp.
 - **Nhịp 7:** dừng sau khi vẽ xong thanh Dandori. Để audience nhìn bảng vài giây.
-- **Nhịp 8–12:** ~10 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.
-- **Nhịp 13:** ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.
-- **Nhịp 14:** ~2 phút — kết + CTA.
+- **Nhịp 8–16:** ~12 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.
+- **Nhịp 17:** ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.
+- **Nhịp 18:** ~2 phút — kết + CTA.
 - **Q&A:** vẽ lên bảng khi trả lời. Sơ đồ là công cụ của bạn.
