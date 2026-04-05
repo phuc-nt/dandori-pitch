@@ -13,8 +13,6 @@
         <link rel="canonical" href="https://phuc-nt.github.io/dandori-pitch/pitch-deck/">
       
       
-        <link rel="prev" href="../enterprise/">
-      
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Presentation Guide - Dandori</title>
+        <title>Script thuyết trình - Dandori</title>
       
     
     
@@ -60,8 +58,8 @@
   
   
   <script>
-    window.PAGE_MARKDOWN = "# Presentation Guide\n\n*Whiteboard script \u2014 each section is one drawing beat. Start with a blank board. Add only what the script says, nothing else.*\n\n---\n\n## Beat 1 \u2014 The engineers\n\n**Say:** \"Let\u0027s start with your engineers. Today, 2026. A 10,000-person engineering org.\"\n\n**Draw:**\n\n```\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n\n              ... \u00d7 10,000\n```\n\n---\n\n## Beat 2 \u2014 Each engineer has an agent\n\n**Say:** \"Each of them has an AI coding agent. Claude Code, Cursor, Codex \u2014 pick your flavor. The agents write real code. They ship to production.\"\n\n**Draw:** (add arrows from each engineer down to an agent bubble)\n\n```\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u25bc      \u25bc      \u25bc      \u25bc      \u25bc\n  (agent)(agent)(agent)(agent)(agent)\n\n              ... \u00d7 10,000\n```\n\n---\n\n## Beat 3 \u2014 The agents talk to AI providers\n\n**Say:** \"Every agent call hits an AI provider \u2014 Anthropic, OpenAI, whoever. Tokens burn. Money flows out.\"\n\n**Draw:** (add a cloud at the bottom, all agents point to it)\n\n```\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n  (agent)(agent)(agent)(agent)(agent)\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n                  \u25bc\n          \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n          \u2502  AI Providers \u2502\n          \u2502  $$$  / month \u2502\n          \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---\n\n## Beat 4 \u2014 The bill arrives\n\n**Say:** \"End of month. A bill arrives. $240,000. That\u0027s it. One number. No breakdown.\"\n\n**Draw:** (add a box on the side, disconnected from everything)\n\n```\n  [Eng]  [Eng]  [Eng]  ...\n    \u2502      \u2502      \u2502\n  (agent)(agent)(agent) ...\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n           \u2502\n           \u25bc\n   \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n   \u2502  AI Providers \u2502         \u2502  BILL        \u2502\n   \u2502               \u2502         \u2502  $240,000    \u2502\n   \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518         \u2502              \u2502\n                             \u2502  ???         \u2502\n                             \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Which team? Which feature? Which prompt is burning the most? You can\u0027t answer any of it.\"\n\n---\n\n## Beat 5 \u2014 The context problem\n\n**Say:** \"Worse: what does the agent actually know? Each engineer pastes whatever they remember into the prompt. Today.\"\n\n**Draw:** (add messy sticky notes floating above agents)\n\n```\n [copy-paste] [forgot policy] [stale docs] [personal notes]\n      \u2502              \u2502               \u2502              \u2502\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n  (agent)(agent)(agent)(agent)(agent)\n```\n\n**Say:** \"Company policy updated last week? Three engineers know. Seven don\u0027t. The agent doesn\u0027t.\"\n\n---\n\n## Beat 6 \u2014 The governance gap\n\n**Say:** \"And when something goes wrong \u2014 migration breaks prod, agent writes insecure code \u2014 you ask: who approved this?\"\n\n**Draw:** (add a question mark cloud between engineers and agents)\n\n```\n  [Eng]  [Eng]  [Eng]\n    \u2502      \u2502      \u2502\n    ?      ?      ?      \u2190 who approved? when? why?\n    \u2502      \u2502      \u2502\n  (agent)(agent)(agent)\n           \u2502\n           \u25bc\n      \ud83d\udca5 prod incident\n```\n\n**Say:** \"The answer is a Slack thread. Maybe. If it exists.\"\n\n---\n\n## Beat 7 \u2014 Dandori goes in the middle\n\n**Say:** \"This is the gap Dandori fills. One layer. Between your engineers and their agents.\"\n\n**Draw:** (draw a horizontal bar between engineers and agents \u2014 this is the key moment)\n\n```\n  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502    DANDORI     \u2502\n         \u2502  (mgmt layer)  \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    \u25bc             \u25bc             \u25bc\n (Claude)      (Codex)      (custom)\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n                  \u25bc\n          \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n          \u2502  AI Providers \u2502\n          \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Dandori does not replace the agents. It manages them.\"\n\n---\n\n## Beat 8 \u2014 Cost attribution\n\n**Say:** \"First thing Dandori gives you: cost attribution. Every token logged \u2014 which agent, which task, which project, which team.\"\n\n**Draw:** (expand the Dandori box, add a cost module inside it)\n\n```\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502            DANDORI           \u2502\n         \u2502                              \u2502\n         \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u2502\n         \u2502  \u2502  Cost attribution    \u2502    \u2502\n         \u2502  \u2502  per agent / team /  \u2502    \u2502\n         \u2502  \u2502  project / feature   \u2502    \u2502\n         \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"That $240K bill? Now it reads: payments team $52K, auth $38K, data pipeline $29K. Drill down to individual prompts.\"\n\n---\n\n## Beat 9 \u2014 Context hierarchy\n\n**Say:** \"Second: context. Instead of copy-paste, a five-layer hierarchy. Every agent inherits it automatically.\"\n\n**Draw:** (add a stack on the left of the Dandori box)\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 1. Company  \u2502     \u2502            DANDORI           \u2502\n  \u2502 2. Project  \u2502\u2500\u2500\u2500\u2500\u25b6\u2502                              \u2502\n  \u2502 3. Team     \u2502     \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510            \u2502\n  \u2502 4. Agent    \u2502     \u2502  \u2502 Cost         \u2502            \u2502\n  \u2502 5. Task     \u2502     \u2502  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  \u2502 Context hub  \u2502            \u2502\n                      \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Update the company security policy once. Every agent sees it on the next run. Versioned. Rollback-able. Audited.\"\n\n---\n\n## Beat 10 \u2014 Approval gates\n\n**Say:** \"Third: approval gates. High-risk tasks \u2014 database migrations, infra changes \u2014 stop here until a human approves.\"\n\n**Draw:** (add approval module inside Dandori, add a gate symbol on the flow)\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Context     \u2502     \u2502            DANDORI           \u2502\n  \u2502 layers      \u2502\u2500\u2500\u2500\u2500\u25b6\u2502                              \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510            \u2502\n                      \u2502  \u2502 Cost         \u2502            \u2502\n  [Eng] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n  reviews \u0026 approves  \u2502  \u2502 Context hub  \u2502            \u2502\n         \u25b2            \u2502  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n         \u2502            \u2502  \u2502 \u26d4 Approval  \u2502            \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2502  \u2502   gate       \u2502            \u2502\n                      \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Every approval logged: who, when, what they saw. One export for your compliance team.\"\n\n---\n\n## Beat 11 \u2014 Quality gates\n\n**Say:** \"Fourth: quality gates. Before any output is accepted, automated scanners run.\"\n\n**Draw:** (add quality gate as a pipeline below Dandori before agents)\n\n```\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502            DANDORI           \u2502\n         \u2502  Cost \u2502 Context \u2502 Approval   \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                          \u2502\n               \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n               \u2502   Quality gates     \u2502\n               \u2502  TypeCheck \u2192 Lint   \u2502\n               \u2502  \u2192 Tests \u2192 Score    \u2502\n               \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                          \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u25bc           \u25bc           \u25bc\n           (Claude)    (Codex)    (custom)\n```\n\n**Say:** \"Every run gets a quality score 0\u2013100. You can see which agents improve over time, which degrade.\"\n\n---\n\n## Beat 12 \u2014 Skill library\n\n**Say:** \"Fifth: skills. Your best prompts, centralized. New engineer joins \u2014 they inherit the team\u0027s proven prompts on day one.\"\n\n**Draw:** (add a skills box feeding into the context stack)\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Skill lib   \u2502\n  \u2502 api-security\u2502\n  \u2502 code-review \u2502\n  \u2502 test-gen    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n         \u2502 auto-attach\n         \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Context     \u2502     \u2502            DANDORI           \u2502\n  \u2502 layers      \u2502\u2500\u2500\u2500\u2500\u25b6\u2502  Cost \u2502 Context \u2502 Approval   \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  Quality gates \u2502 Skills      \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Engineer leaves. Their prompts stay. Knowledge doesn\u0027t walk out the door anymore.\"\n\n---\n\n## Beat 13 \u2014 The complete picture\n\n**Say:** \"Here\u0027s what the board looks like at the end. This is what Dandori gives you.\"\n\n**Draw:** (full picture \u2014 everything connected)\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502                   ENGINEERING ORG                      \u2502\n  \u2502  [CTO]  [Security]  [Compliance]  [Platform]           \u2502\n  \u2502     \u2502        \u2502           \u2502             \u2502               \u2502\n  \u2502     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518               \u2502\n  \u2502                          \u2502  set policy / review        \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502                        DANDORI                        \u2502\n  \u2502                                                       \u2502\n  \u2502   Cost attribution   \u2502   5-layer context             \u2502\n  \u2502   Approval gates     \u2502   Quality gates               \u2502\n  \u2502   Skill library      \u2502   Audit log                   \u2502\n  \u2502   Task DAGs          \u2502   Cross-agent analytics       \u2502\n  \u2502                                                       \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u25bc              \u25bc              \u25bc\n           (Claude)       (Codex)       (custom)\n              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u2502         AI Providers        \u2502\n              \u2502   Anthropic \u00b7 OpenAI \u00b7 ...  \u2502\n              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Say:** \"Your engineers still use Claude Code, Cursor, Codex \u2014 whatever they love. Dandori is the management layer on top. That\u0027s the missing piece.\"\n\n---\n\n## Beat 14 \u2014 The close\n\n**Say:** \"Every org with 100+ engineers will need this by end of 2026. Same pattern as DevOps tools in the 2010s, observability in 2015, feature flags in 2020. Dandori is the consolidation layer for AI agents.\"\n\n**Leave on board:**\n\n```\n  BEFORE DANDORI          WITH DANDORI\n\n  $240K \u2192 ???             $240K \u2192 payments $52K\n                                \u2192 auth     $38K\n                                \u2192 data     $29K\n\n  copy-paste prompts      5-layer context, versioned\n\n  \"who approved?\" \u2192       logged: alice, 14:22,\n  Slack thread maybe      rationale attached\n\n  engineer leaves \u2192       skills stay in org\n  knowledge gone          new hire inherits day 1\n```\n\n**Say:** \"We\u0027re onboarding design-partner organizations running 1,000+ engineers. If this is your problem \u2014 let\u0027s talk.\"\n\n---\n\n## Speaker notes\n\n- **Total time:** 20\u201330 min with questions\n- **Beats 1\u20136:** 5 min \u2014 the problem. Let it land. Don\u0027t rush to the solution.\n- **Beat 7:** pause after drawing the Dandori bar. Let the audience sit with it.\n- **Beats 8\u201312:** 10 min \u2014 each capability is one drawing stroke. Keep the diagram clean.\n- **Beat 13:** 3 min \u2014 step back from the board, let them look at the full picture.\n- **Beat 14:** 2 min \u2014 close + CTA.\n- **Questions:** Draw on the board as you answer. The diagram is your tool.\n\n---\n\n*Reference pages: [Why Dandori](why-dandori.md) \u00b7 [Core Features](core-features.md) \u00b7 [Use Cases](use-cases.md) \u00b7 [Architecture](architecture.md) \u00b7 [Enterprise](enterprise.md)*\n";
-    window.PAGE_TITLE = "Presentation Guide";
+    window.PAGE_MARKDOWN = "# Script thuy\u1ebft tr\u00ecnh\n\n*M\u1ed7i ph\u1ea7n l\u00e0 m\u1ed9t nh\u1ecbp v\u1ebd. B\u1eaft \u0111\u1ea7u v\u1edbi b\u1ea3ng tr\u1eafng. V\u1ebd th\u00eam t\u1eebng th\u1ee9 \u0111\u00fang l\u00fac script n\u00f3i \u2014 kh\u00f4ng v\u1ebd tr\u01b0\u1edbc.*\n\n---\n\n## Nh\u1ecbp 1 \u2014 Nh\u1eefng k\u1ef9 s\u01b0\n\n**N\u00f3i:** \"B\u1eaft \u0111\u1ea7u t\u1eeb \u0111i\u1ec1u \u0111\u01a1n gi\u1ea3n nh\u1ea5t. M\u1ed9t t\u1ed5 ch\u1ee9c 10.000 k\u1ef9 s\u01b0. N\u0103m 2026.\"\n\n**V\u1ebd:**\n\n```\n  [KS]  [KS]  [KS]  [KS]  [KS]\n\n  [KS]  [KS]  [KS]  [KS]  [KS]\n\n  [KS]  [KS]  [KS]  [KS]  [KS]\n\n              ... \u00d7 10.000\n```\n\n---\n\n## Nh\u1ecbp 2 \u2014 M\u1ed7i k\u1ef9 s\u01b0 c\u00f3 m\u1ed9t agent\n\n**N\u00f3i:** \"M\u1ed7i ng\u01b0\u1eddi trong s\u1ed1 h\u1ecd \u0111ang d\u00f9ng m\u1ed9t AI coding agent. Claude Code, Cursor, Codex \u2014 t\u00f9y h\u1ecd ch\u1ecdn. Agent vi\u1ebft code th\u1eadt. Code \u0111\u00f3 l\u00ean production.\"\n\n**V\u1ebd:** *(th\u00eam m\u0169i t\u00ean t\u1eeb m\u1ed7i k\u1ef9 s\u01b0 xu\u1ed1ng m\u1ed9t bong b\u00f3ng agent)*\n\n```\n  [KS]  [KS]  [KS]  [KS]  [KS]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u25bc      \u25bc      \u25bc      \u25bc      \u25bc\n  (agent)(agent)(agent)(agent)(agent)\n\n              ... \u00d7 10.000\n```\n\n---\n\n## Nh\u1ecbp 3 \u2014 Agent g\u1ecdi AI provider\n\n**N\u00f3i:** \"M\u1ed7i l\u1ea7n agent ch\u1ea1y l\u00e0 m\u1ed9t l\u1ea7n g\u1ecdi \u0111\u1ebfn AI provider \u2014 Anthropic, OpenAI. Token burn. Ti\u1ec1n ch\u1ea1y ra.\"\n\n**V\u1ebd:** *(th\u00eam m\u1ed9t \u0111\u00e1m m\u00e2y \u1edf d\u01b0\u1edbi, t\u1ea5t c\u1ea3 agent tr\u1ecf v\u00e0o)*\n\n```\n  [KS]  [KS]  [KS]  [KS]  [KS]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n  (agent)(agent)(agent)(agent)(agent)\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n                  \u25bc\n          \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n          \u2502  AI Providers \u2502\n          \u2502  $$$  / th\u00e1ng \u2502\n          \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---\n\n## Nh\u1ecbp 4 \u2014 Ho\u00e1 \u0111\u01a1n t\u1edbi\n\n**N\u00f3i:** \"Cu\u1ed1i th\u00e1ng. Ho\u00e1 \u0111\u01a1n v\u1ec1. 240.000 \u0111\u00f4. V\u1eady th\u00f4i. M\u1ed9t con s\u1ed1.\"\n\n**V\u1ebd:** *(th\u00eam m\u1ed9t \u00f4 ri\u00eang bi\u1ec7t, kh\u00f4ng k\u1ebft n\u1ed1i v\u1edbi g\u00ec)*\n\n```\n  [KS]  [KS]  ...\n    \u2502      \u2502\n  (agent)(agent) ...\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n        \u2502\n        \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AI Providers \u2502         \u2502  HO\u00c1 \u0110\u01a0N     \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518         \u2502  $240.000    \u2502\n                           \u2502              \u2502\n                           \u2502  ???         \u2502\n                           \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"Team n\u00e0o? Feature n\u00e0o? Prompt n\u00e0o \u0111ang \u0111\u1ed1t nhi\u1ec1u nh\u1ea5t? Kh\u00f4ng ai tr\u1ea3 l\u1eddi \u0111\u01b0\u1ee3c.\"\n\n---\n\n## Nh\u1ecbp 5 \u2014 V\u1ea5n \u0111\u1ec1 context\n\n**N\u00f3i:** \"T\u1ec7 h\u01a1n: agent bi\u1ebft g\u00ec? M\u1ed7i k\u1ef9 s\u01b0 t\u1ef1 paste nh\u1eefng g\u00ec h\u1ecd nh\u1edb v\u00e0o prompt. H\u00f4m nay.\"\n\n**V\u1ebd:** *(th\u00eam c\u00e1c t\u1edd gi\u1ea5y nh\u1edb l\u1ed9n x\u1ed9n ph\u00eda tr\u00ean agent)*\n\n```\n [copy-paste] [qu\u00ean policy] [doc c\u0169] [ghi ch\u00fa c\u00e1 nh\u00e2n]\n      \u2502              \u2502            \u2502              \u2502\n  [KS]  [KS]  [KS]  [KS]  [KS]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n  (agent)(agent)(agent)(agent)(agent)\n```\n\n**N\u00f3i:** \"Policy b\u1ea3o m\u1eadt c\u1eadp nh\u1eadt tu\u1ea7n tr\u01b0\u1edbc? Ba ng\u01b0\u1eddi bi\u1ebft. B\u1ea3y ng\u01b0\u1eddi kh\u00f4ng. Agent th\u00ec ch\u1eafc ch\u1eafn kh\u00f4ng.\"\n\n---\n\n## Nh\u1ecbp 6 \u2014 Kh\u00f4ng c\u00f3 ai ki\u1ec3m so\u00e1t\n\n**N\u00f3i:** \"V\u00e0 khi c\u00f3 s\u1ef1 c\u1ed1 \u2014 migration l\u00e0m s\u1eadp prod, agent vi\u1ebft code vi ph\u1ea1m policy b\u1ea3o m\u1eadt \u2014 c\u00e2u h\u1ecfi \u0111\u1ea7u ti\u00ean l\u00e0: ai \u0111\u00e3 approve c\u00e1i n\u00e0y?\"\n\n**V\u1ebd:** *(th\u00eam d\u1ea5u h\u1ecfi gi\u1eefa k\u1ef9 s\u01b0 v\u00e0 agent)*\n\n```\n  [KS]  [KS]  [KS]\n    \u2502      \u2502      \u2502\n    ?      ?      ?      \u2190 ai approve? khi n\u00e0o? t\u1ea1i sao?\n    \u2502      \u2502      \u2502\n  (agent)(agent)(agent)\n           \u2502\n           \u25bc\n      \ud83d\udca5 s\u1ef1 c\u1ed1 production\n```\n\n**N\u00f3i:** \"C\u00e2u tr\u1ea3 l\u1eddi th\u01b0\u1eddng l\u00e0 m\u1ed9t c\u00e1i Slack thread. N\u1ebfu may m\u1eafn.\"\n\n---\n\n## Nh\u1ecbp 7 \u2014 Dandori v\u00e0o gi\u1eefa\n\n**N\u00f3i:** \"\u0110\u00e2y l\u00e0 kho\u1ea3ng tr\u1ed1ng m\u00e0 Dandori l\u1ea5p \u0111\u1ea7y. M\u1ed9t layer. N\u1eb1m gi\u1eefa k\u1ef9 s\u01b0 v\u00e0 agent c\u1ee7a h\u1ecd.\"\n\n**V\u1ebd:** *(v\u1ebd m\u1ed9t thanh ngang gi\u1eefa k\u1ef9 s\u01b0 v\u00e0 agent \u2014 \u0111\u00e2y l\u00e0 kho\u1ea3nh kh\u1eafc ch\u00ednh, d\u1eebng l\u1ea1i sau khi v\u1ebd xong)*\n\n```\n  [KS]  [KS]  [KS]  [KS]  [KS]\n    \u2502      \u2502      \u2502      \u2502      \u2502\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502    DANDORI     \u2502\n         \u2502  (mgmt layer)  \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n    \u25bc             \u25bc             \u25bc\n (Claude)      (Codex)      (custom)\n    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                  \u2502\n                  \u25bc\n          \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n          \u2502  AI Providers \u2502\n          \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"Dandori kh\u00f4ng thay th\u1ebf agent. Dandori qu\u1ea3n l\u00fd ch\u00fang.\"\n\n*(d\u1eebng. \u0111\u1ec3 audience nh\u00ecn b\u1ea3ng.)*\n\n---\n\n## Nh\u1ecbp 8 \u2014 Cost attribution\n\n**N\u00f3i:** \"Th\u1ee9 \u0111\u1ea7u ti\u00ean Dandori l\u00e0m \u0111\u01b0\u1ee3c: ph\u00e2n b\u1ed5 chi ph\u00ed. M\u1ed7i token \u0111\u1ec1u \u0111\u01b0\u1ee3c log \u2014 agent n\u00e0o, task n\u00e0o, project n\u00e0o, team n\u00e0o.\"\n\n**V\u1ebd:** *(m\u1edf r\u1ed9ng box Dandori, th\u00eam module cost b\u00ean trong)*\n\n```\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502            DANDORI           \u2502\n         \u2502                              \u2502\n         \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u2502\n         \u2502  \u2502  Cost attribution    \u2502    \u2502\n         \u2502  \u2502  theo agent / team / \u2502    \u2502\n         \u2502  \u2502  project / feature   \u2502    \u2502\n         \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"Ho\u00e1 \u0111\u01a1n $240K gi\u1edd \u0111\u1ecdc \u0111\u01b0\u1ee3c: team payments $52K, auth $38K, data pipeline $29K. Drill down \u0111\u1ebfn t\u1eebng prompt.\"\n\n---\n\n## Nh\u1ecbp 9 \u2014 Context hierarchy\n\n**N\u00f3i:** \"Th\u1ee9 hai: context. Thay v\u00ec copy-paste, m\u1ed9t c\u1ea5u tr\u00fac 5 t\u1ea7ng. M\u1ed7i agent t\u1ef1 k\u1ebf th\u1eeba \u2014 kh\u00f4ng c\u1ea7n ai nh\u1edb paste.\"\n\n**V\u1ebd:** *(th\u00eam stack b\u00ean tr\u00e1i box Dandori)*\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 1. C\u00f4ng ty  \u2502     \u2502            DANDORI           \u2502\n  \u2502 2. D\u1ef1 \u00e1n    \u2502\u2500\u2500\u2500\u2500\u25b6\u2502                              \u2502\n  \u2502 3. Team     \u2502     \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510            \u2502\n  \u2502 4. Agent    \u2502     \u2502  \u2502 Cost         \u2502            \u2502\n  \u2502 5. Task     \u2502     \u2502  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  \u2502 Context hub  \u2502            \u2502\n                      \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"C\u1eadp nh\u1eadt policy b\u1ea3o m\u1eadt m\u1ed9t l\u1ea7n \u1edf t\u1ea7ng C\u00f4ng ty. L\u1ea7n ch\u1ea1y ti\u1ebfp theo, t\u1ea5t c\u1ea3 agent \u0111\u1ec1u th\u1ea5y. C\u00f3 version control, c\u00f3 rollback, c\u00f3 audit log.\"\n\n---\n\n## Nh\u1ecbp 10 \u2014 Approval gates\n\n**N\u00f3i:** \"Th\u1ee9 ba: approval gate. Task r\u1ee7i ro cao \u2014 migration database, thay \u0111\u1ed5i infra \u2014 d\u1eebng l\u1ea1i \u0111\u00e2y cho \u0111\u1ebfn khi con ng\u01b0\u1eddi approve.\"\n\n**V\u1ebd:** *(th\u00eam module approval, th\u00eam k\u00fd hi\u1ec7u c\u1ed5ng tr\u00ean lu\u1ed3ng)*\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Context     \u2502     \u2502            DANDORI           \u2502\n  \u2502 t\u1ea7ng        \u2502\u2500\u2500\u2500\u2500\u25b6\u2502                              \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510            \u2502\n                      \u2502  \u2502 Cost         \u2502            \u2502\n  [KS] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n  review \u0026 approve    \u2502  \u2502 Context hub  \u2502            \u2502\n         \u25b2            \u2502  \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524            \u2502\n         \u2502            \u2502  \u2502 \u26d4 Approval  \u2502            \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2502  \u2502   gate       \u2502            \u2502\n                      \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"M\u1ed7i l\u1ea7n approve \u0111\u01b0\u1ee3c log: ai, l\u00fac m\u1ea5y gi\u1edd, h\u1ecd \u0111\u00e3 xem g\u00ec. M\u1ed9t l\u1ea7n export l\u00e0 c\u00f3 \u0111\u1ee7 evidence cho \u0111\u1ed9i compliance.\"\n\n---\n\n## Nh\u1ecbp 11 \u2014 Quality gates\n\n**N\u00f3i:** \"Th\u1ee9 t\u01b0: quality gates. Tr\u01b0\u1edbc khi output n\u00e0o \u0111\u01b0\u1ee3c ch\u1ea5p nh\u1eadn, scanner t\u1ef1 \u0111\u1ed9ng ch\u1ea1y.\"\n\n**V\u1ebd:** *(th\u00eam pipeline quality gate b\u00ean d\u01b0\u1edbi Dandori, tr\u01b0\u1edbc agent)*\n\n```\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u2502            DANDORI           \u2502\n         \u2502  Cost \u2502 Context \u2502 Approval   \u2502\n         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                          \u2502\n               \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n               \u2502   Quality gates     \u2502\n               \u2502  TypeCheck \u2192 Lint   \u2502\n               \u2502  \u2192 Tests \u2192 Score    \u2502\n               \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                          \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u25bc           \u25bc           \u25bc\n           (Claude)    (Codex)    (custom)\n```\n\n**N\u00f3i:** \"M\u1ed7i l\u1ea7n ch\u1ea1y c\u00f3 \u0111i\u1ec3m ch\u1ea5t l\u01b0\u1ee3ng 0\u2013100. Theo d\u00f5i theo th\u1eddi gian \u2014 agent n\u00e0o \u0111ang t\u1ed1t h\u01a1n, agent n\u00e0o \u0111ang t\u1ec7 \u0111i.\"\n\n---\n\n## Nh\u1ecbp 12 \u2014 Skill library\n\n**N\u00f3i:** \"Th\u1ee9 n\u0103m: skill library. Nh\u1eefng prompt t\u1ed1t nh\u1ea5t c\u1ee7a t\u1ed5 ch\u1ee9c, l\u01b0u t\u1eadp trung. K\u1ef9 s\u01b0 m\u1edbi v\u00e0o \u2014 k\u1ebf th\u1eeba ngay h\u00f4m \u0111\u1ea7u ti\u00ean.\"\n\n**V\u1ebd:** *(th\u00eam skill box feed v\u00e0o context stack)*\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Skill lib   \u2502\n  \u2502 api-security\u2502\n  \u2502 code-review \u2502\n  \u2502 test-gen    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n         \u2502 t\u1ef1 g\u1eafn v\u00e0o\n         \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Context     \u2502     \u2502            DANDORI           \u2502\n  \u2502 t\u1ea7ng        \u2502\u2500\u2500\u2500\u2500\u25b6\u2502  Cost \u2502 Context \u2502 Approval   \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  Quality gates \u2502 Skills      \u2502\n                      \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"K\u1ef9 s\u01b0 ngh\u1ec9 vi\u1ec7c. Prompt c\u1ee7a h\u1ecd v\u1eabn \u1edf l\u1ea1i. Ki\u1ebfn th\u1ee9c kh\u00f4ng \u0111i theo ng\u01b0\u1eddi n\u1eefa.\"\n\n---\n\n## Nh\u1ecbp 13 \u2014 B\u1ee9c tranh t\u1ed5ng th\u1ec3\n\n**N\u00f3i:** \"\u0110\u00e2y l\u00e0 b\u1ea3ng l\u00fac k\u1ebft th\u00fac. \u0110\u00e2y l\u00e0 nh\u1eefng g\u00ec Dandori mang l\u1ea1i.\"\n\n**V\u1ebd:** *(b\u1ee9c tranh \u0111\u1ea7y \u0111\u1ee7 \u2014 t\u1ea5t c\u1ea3 k\u1ebft n\u1ed1i)*\n\n```\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502                   T\u1ed4 CH\u1ee8C K\u1ef8 THU\u1eacT                    \u2502\n  \u2502  [CTO]  [Security]  [Compliance]  [Platform]           \u2502\n  \u2502     \u2502        \u2502           \u2502             \u2502               \u2502\n  \u2502     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518               \u2502\n  \u2502                          \u2502  \u0111\u1eb7t policy / review        \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502                        DANDORI                        \u2502\n  \u2502                                                       \u2502\n  \u2502   Cost attribution   \u2502   Context 5 t\u1ea7ng              \u2502\n  \u2502   Approval gates     \u2502   Quality gates               \u2502\n  \u2502   Skill library      \u2502   Audit log                   \u2502\n  \u2502   Task dependencies  \u2502   Cross-agent analytics       \u2502\n  \u2502                                                       \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u25bc              \u25bc              \u25bc\n           (Claude)       (Codex)       (custom)\n              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25bc\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u2502         AI Providers        \u2502\n              \u2502   Anthropic \u00b7 OpenAI \u00b7 ...  \u2502\n              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**N\u00f3i:** \"K\u1ef9 s\u01b0 v\u1eabn d\u00f9ng Claude Code, Cursor, Codex \u2014 nh\u1eefng g\u00ec h\u1ecd quen. Dandori l\u00e0 layer qu\u1ea3n l\u00fd ph\u00eda tr\u00ean. \u0110\u00f3 l\u00e0 m\u1ea3nh c\u00f2n thi\u1ebfu.\"\n\n---\n\n## Nh\u1ecbp 14 \u2014 K\u1ebft\n\n**N\u00f3i:** \"M\u1ecdi t\u1ed5 ch\u1ee9c c\u00f3 h\u01a1n 100 k\u1ef9 s\u01b0 s\u1ebd c\u1ea7n c\u00e1i n\u00e0y tr\u01b0\u1edbc cu\u1ed1i 2026. C\u00f9ng pattern nh\u01b0 DevOps tools nh\u1eefng n\u0103m 2010, observability 2015, feature flags 2020. \u0110\u1ebfn l\u01b0\u1ee3t AI agent. Dandori l\u00e0 layer h\u1ee3p nh\u1ea5t \u0111\u00f3.\"\n\n**\u0110\u1ec3 l\u1ea1i tr\u00ean b\u1ea3ng:**\n\n```\n  TR\u01af\u1edaC DANDORI               V\u1edaI DANDORI\n\n  $240K \u2192 ???                 $240K \u2192 payments  $52K\n                                    \u2192 auth      $38K\n                                    \u2192 data      $29K\n\n  copy-paste prompt           Context 5 t\u1ea7ng, version control\n\n  \"ai approve?\" \u2192             log: alice, 14:22,\n  Slack thread, c\u00f3 khi kh\u00f4ng  l\u00fd do \u0111\u00ednh k\u00e8m\n\n  k\u1ef9 s\u01b0 ngh\u1ec9 \u2192                skill \u1edf l\u1ea1i trong t\u1ed5 ch\u1ee9c\n  ki\u1ebfn th\u1ee9c m\u1ea5t               ng\u01b0\u1eddi m\u1edbi k\u1ebf th\u1eeba ngay\n```\n\n**N\u00f3i:** \"Ch\u00fang t\u00f4i \u0111ang l\u00e0m vi\u1ec7c v\u1edbi c\u00e1c t\u1ed5 ch\u1ee9c design partner c\u00f3 t\u1eeb 1.000 k\u1ef9 s\u01b0 tr\u1edf l\u00ean. N\u1ebfu \u0111\u00e2y l\u00e0 b\u00e0i to\u00e1n c\u1ee7a b\u1ea1n \u2014 h\u00e3y n\u00f3i chuy\u1ec7n v\u1edbi ch\u00fang t\u00f4i.\"\n\n---\n\n## Ghi ch\u00fa speaker\n\n- **T\u1ed5ng th\u1eddi gian:** 20\u201330 ph\u00fat c\u00f3 c\u1ea3 Q\u0026A\n- **Nh\u1ecbp 1\u20136:** ~5 ph\u00fat \u2014 v\u1ea5n \u0111\u1ec1. \u0110\u1ec3 n\u00f3 th\u1ea5m. \u0110\u1eebng v\u1ed9i \u0111\u1ebfn gi\u1ea3i ph\u00e1p.\n- **Nh\u1ecbp 7:** d\u1eebng sau khi v\u1ebd xong thanh Dandori. \u0110\u1ec3 audience nh\u00ecn b\u1ea3ng v\u00e0i gi\u00e2y.\n- **Nh\u1ecbp 8\u201312:** ~10 ph\u00fat \u2014 m\u1ed7i capability l\u00e0 m\u1ed9t n\u00e9t v\u1ebd th\u00eam. Gi\u1eef s\u01a1 \u0111\u1ed3 g\u1ecdn.\n- **Nh\u1ecbp 13:** ~3 ph\u00fat \u2014 l\u00f9i l\u1ea1i kh\u1ecfi b\u1ea3ng, \u0111\u1ec3 h\u1ecd nh\u00ecn t\u1ed5ng th\u1ec3.\n- **Nh\u1ecbp 14:** ~2 ph\u00fat \u2014 k\u1ebft + CTA.\n- **Q\u0026A:** v\u1ebd l\u00ean b\u1ea3ng khi tr\u1ea3 l\u1eddi. S\u01a1 \u0111\u1ed3 l\u00e0 c\u00f4ng c\u1ee5 c\u1ee7a b\u1ea1n.\n";
+    window.PAGE_TITLE = "Script thuy\u1ebft tr\u00ecnh";
     window.PAGE_FILENAME = "pitch-deck.md";
   </script>
   
@@ -85,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#presentation-guide" class="md-skip">
+        <a href="#script-thuyet-trinh" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Presentation Guide
+              Script thuyết trình
             
           </span>
         </div>
@@ -328,27 +326,6 @@
   
 
       
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Presentation Guide
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -360,7 +337,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -544,245 +523,6 @@
   
 
     
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Presentation Guide
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Presentation Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#beat-1-the-engineers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 1 — The engineers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-2-each-engineer-has-an-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 2 — Each engineer has an agent
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-3-the-agents-talk-to-ai-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 3 — The agents talk to AI providers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-4-the-bill-arrives" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 4 — The bill arrives
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-5-the-context-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 5 — The context problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-6-the-governance-gap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 6 — The governance gap
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-7-dandori-goes-in-the-middle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 7 — Dandori goes in the middle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-8-cost-attribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 8 — Cost attribution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-9-context-hierarchy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 9 — Context hierarchy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-10-approval-gates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 10 — Approval gates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-11-quality-gates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 11 — Quality gates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-12-skill-library" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 12 — Skill library
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-13-the-complete-picture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 13 — The complete picture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beat-14-the-close" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Beat 14 — The close
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speaker-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speaker notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -791,7 +531,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -810,10 +552,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#beat-1-the-engineers" class="md-nav__link">
+  <a href="#nhip-1-nhung-ky-su" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 1 — The engineers
+        Nhịp 1 — Những kỹ sư
       
     </span>
   </a>
@@ -821,10 +563,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-2-each-engineer-has-an-agent" class="md-nav__link">
+  <a href="#nhip-2-moi-ky-su-co-mot-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 2 — Each engineer has an agent
+        Nhịp 2 — Mỗi kỹ sư có một agent
       
     </span>
   </a>
@@ -832,10 +574,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-3-the-agents-talk-to-ai-providers" class="md-nav__link">
+  <a href="#nhip-3-agent-goi-ai-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 3 — The agents talk to AI providers
+        Nhịp 3 — Agent gọi AI provider
       
     </span>
   </a>
@@ -843,10 +585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-4-the-bill-arrives" class="md-nav__link">
+  <a href="#nhip-4-hoa-on-toi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 4 — The bill arrives
+        Nhịp 4 — Hoá đơn tới
       
     </span>
   </a>
@@ -854,10 +596,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-5-the-context-problem" class="md-nav__link">
+  <a href="#nhip-5-van-e-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 5 — The context problem
+        Nhịp 5 — Vấn đề context
       
     </span>
   </a>
@@ -865,10 +607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-6-the-governance-gap" class="md-nav__link">
+  <a href="#nhip-6-khong-co-ai-kiem-soat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 6 — The governance gap
+        Nhịp 6 — Không có ai kiểm soát
       
     </span>
   </a>
@@ -876,10 +618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-7-dandori-goes-in-the-middle" class="md-nav__link">
+  <a href="#nhip-7-dandori-vao-giua" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 7 — Dandori goes in the middle
+        Nhịp 7 — Dandori vào giữa
       
     </span>
   </a>
@@ -887,10 +629,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-8-cost-attribution" class="md-nav__link">
+  <a href="#nhip-8-cost-attribution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 8 — Cost attribution
+        Nhịp 8 — Cost attribution
       
     </span>
   </a>
@@ -898,10 +640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-9-context-hierarchy" class="md-nav__link">
+  <a href="#nhip-9-context-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 9 — Context hierarchy
+        Nhịp 9 — Context hierarchy
       
     </span>
   </a>
@@ -909,10 +651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-10-approval-gates" class="md-nav__link">
+  <a href="#nhip-10-approval-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 10 — Approval gates
+        Nhịp 10 — Approval gates
       
     </span>
   </a>
@@ -920,10 +662,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-11-quality-gates" class="md-nav__link">
+  <a href="#nhip-11-quality-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 11 — Quality gates
+        Nhịp 11 — Quality gates
       
     </span>
   </a>
@@ -931,10 +673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-12-skill-library" class="md-nav__link">
+  <a href="#nhip-12-skill-library" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 12 — Skill library
+        Nhịp 12 — Skill library
       
     </span>
   </a>
@@ -942,10 +684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-13-the-complete-picture" class="md-nav__link">
+  <a href="#nhip-13-buc-tranh-tong-the" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 13 — The complete picture
+        Nhịp 13 — Bức tranh tổng thể
       
     </span>
   </a>
@@ -953,10 +695,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beat-14-the-close" class="md-nav__link">
+  <a href="#nhip-14-ket" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beat 14 — The close
+        Nhịp 14 — Kết
       
     </span>
   </a>
@@ -964,10 +706,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speaker-notes" class="md-nav__link">
+  <a href="#ghi-chu-speaker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speaker notes
+        Ghi chú speaker
       
     </span>
   </a>
@@ -988,39 +730,41 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="presentation-guide">Presentation Guide<a class="headerlink" href="#presentation-guide" title="Permanent link">&para;</a></h1>
-<p><em>Whiteboard script — each section is one drawing beat. Start with a blank board. Add only what the script says, nothing else.</em></p>
+
+<h1 id="script-thuyet-trinh">Script thuyết trình<a class="headerlink" href="#script-thuyet-trinh" title="Permanent link">&para;</a></h1>
+<p><em>Mỗi phần là một nhịp vẽ. Bắt đầu với bảng trắng. Vẽ thêm từng thứ đúng lúc script nói — không vẽ trước.</em></p>
 <hr />
-<h2 id="beat-1-the-engineers">Beat 1 — The engineers<a class="headerlink" href="#beat-1-the-engineers" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Let's start with your engineers. Today, 2026. A 10,000-person engineering org."</p>
-<p><strong>Draw:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-1-nhung-ky-su">Nhịp 1 — Những kỹ sư<a class="headerlink" href="#nhip-1-nhung-ky-su" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Bắt đầu từ điều đơn giản nhất. Một tổ chức 10.000 kỹ sư. Năm 2026."</p>
+<p><strong>Vẽ:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              ... × 10,000
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              ... × 10.000
 </code></pre></div>
 <hr />
-<h2 id="beat-2-each-engineer-has-an-agent">Beat 2 — Each engineer has an agent<a class="headerlink" href="#beat-2-each-engineer-has-an-agent" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Each of them has an AI coding agent. Claude Code, Cursor, Codex — pick your flavor. The agents write real code. They ship to production."</p>
-<p><strong>Draw:</strong> (add arrows from each engineer down to an agent bubble)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-2-moi-ky-su-co-mot-agent">Nhịp 2 — Mỗi kỹ sư có một agent<a class="headerlink" href="#nhip-2-moi-ky-su-co-mot-agent" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Mỗi người trong số họ đang dùng một AI coding agent. Claude Code, Cursor, Codex — tùy họ chọn. Agent viết code thật. Code đó lên production."</p>
+<p><strong>Vẽ:</strong> <em>(thêm mũi tên từ mỗi kỹ sư xuống một bong bóng agent)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    │      │      │      │      │
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    ▼      ▼      ▼      ▼      ▼
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  (agent)(agent)(agent)(agent)(agent)
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>              ... × 10,000
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>              ... × 10.000
 </code></pre></div>
 <hr />
-<h2 id="beat-3-the-agents-talk-to-ai-providers">Beat 3 — The agents talk to AI providers<a class="headerlink" href="#beat-3-the-agents-talk-to-ai-providers" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Every agent call hits an AI provider — Anthropic, OpenAI, whoever. Tokens burn. Money flows out."</p>
-<p><strong>Draw:</strong> (add a cloud at the bottom, all agents point to it)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-3-agent-goi-ai-provider">Nhịp 3 — Agent gọi AI provider<a class="headerlink" href="#nhip-3-agent-goi-ai-provider" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Mỗi lần agent chạy là một lần gọi đến AI provider — Anthropic, OpenAI. Token burn. Tiền chạy ra."</p>
+<p><strong>Vẽ:</strong> <em>(thêm một đám mây ở dưới, tất cả agent trỏ vào)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    │      │      │      │      │
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  (agent)(agent)(agent)(agent)(agent)
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    │      │      │      │      │
@@ -1029,57 +773,57 @@
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                  ▼
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>          ┌───────────────┐
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>          │  AI Providers │
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>          │  $$$  / month │
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>          │  $$$  / tháng │
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>          └───────────────┘
 </code></pre></div>
 <hr />
-<h2 id="beat-4-the-bill-arrives">Beat 4 — The bill arrives<a class="headerlink" href="#beat-4-the-bill-arrives" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "End of month. A bill arrives. $240,000. That's it. One number. No breakdown."</p>
-<p><strong>Draw:</strong> (add a box on the side, disconnected from everything)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  [Eng]  [Eng]  [Eng]  ...
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    │      │      │
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  (agent)(agent)(agent) ...
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    └──────┴──────┘
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>           │
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>           ▼
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>   ┌───────────────┐         ┌──────────────┐
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>   │  AI Providers │         │  BILL        │
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   │               │         │  $240,000    │
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>   └───────────────┘         │              │
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                             │  ???         │
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                             └──────────────┘
+<h2 id="nhip-4-hoa-on-toi">Nhịp 4 — Hoá đơn tới<a class="headerlink" href="#nhip-4-hoa-on-toi" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Cuối tháng. Hoá đơn về. 240.000 đô. Vậy thôi. Một con số."</p>
+<p><strong>Vẽ:</strong> <em>(thêm một ô riêng biệt, không kết nối với gì)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  [KS]  [KS]  ...
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    │      │
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  (agent)(agent) ...
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    └──────┘
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        │
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        ▼
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  ┌──────────────┐         ┌──────────────┐
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  │ AI Providers │         │  HOÁ ĐƠN     │
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  └──────────────┘         │  $240.000    │
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                           │              │
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                           │  ???         │
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                           └──────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Which team? Which feature? Which prompt is burning the most? You can't answer any of it."</p>
+<p><strong>Nói:</strong> "Team nào? Feature nào? Prompt nào đang đốt nhiều nhất? Không ai trả lời được."</p>
 <hr />
-<h2 id="beat-5-the-context-problem">Beat 5 — The context problem<a class="headerlink" href="#beat-5-the-context-problem" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Worse: what does the agent actually know? Each engineer pastes whatever they remember into the prompt. Today."</p>
-<p><strong>Draw:</strong> (add messy sticky notes floating above agents)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> [copy-paste] [forgot policy] [stale docs] [personal notes]
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      │              │               │              │
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-5-van-e-context">Nhịp 5 — Vấn đề context<a class="headerlink" href="#nhip-5-van-e-context" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Tệ hơn: agent biết gì? Mỗi kỹ sư tự paste những gì họ nhớ vào prompt. Hôm nay."</p>
+<p><strong>Vẽ:</strong> <em>(thêm các tờ giấy nhớ lộn xộn phía trên agent)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> [copy-paste] [quên policy] [doc cũ] [ghi chú cá nhân]
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      │              │            │              │
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    │      │      │      │      │
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  (agent)(agent)(agent)(agent)(agent)
 </code></pre></div>
-<p><strong>Say:</strong> "Company policy updated last week? Three engineers know. Seven don't. The agent doesn't."</p>
+<p><strong>Nói:</strong> "Policy bảo mật cập nhật tuần trước? Ba người biết. Bảy người không. Agent thì chắc chắn không."</p>
 <hr />
-<h2 id="beat-6-the-governance-gap">Beat 6 — The governance gap<a class="headerlink" href="#beat-6-the-governance-gap" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "And when something goes wrong — migration breaks prod, agent writes insecure code — you ask: who approved this?"</p>
-<p><strong>Draw:</strong> (add a question mark cloud between engineers and agents)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-6-khong-co-ai-kiem-soat">Nhịp 6 — Không có ai kiểm soát<a class="headerlink" href="#nhip-6-khong-co-ai-kiem-soat" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Và khi có sự cố — migration làm sập prod, agent viết code vi phạm policy bảo mật — câu hỏi đầu tiên là: ai đã approve cái này?"</p>
+<p><strong>Vẽ:</strong> <em>(thêm dấu hỏi giữa kỹ sư và agent)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  [KS]  [KS]  [KS]
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    │      │      │
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    ?      ?      ?      ← who approved? when? why?
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    ?      ?      ?      ← ai approve? khi nào? tại sao?
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    │      │      │
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  (agent)(agent)(agent)
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>           │
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>           ▼
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      💥 prod incident
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      💥 sự cố production
 </code></pre></div>
-<p><strong>Say:</strong> "The answer is a Slack thread. Maybe. If it exists."</p>
+<p><strong>Nói:</strong> "Câu trả lời thường là một cái Slack thread. Nếu may mắn."</p>
 <hr />
-<h2 id="beat-7-dandori-goes-in-the-middle">Beat 7 — Dandori goes in the middle<a class="headerlink" href="#beat-7-dandori-goes-in-the-middle" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "This is the gap Dandori fills. One layer. Between your engineers and their agents."</p>
-<p><strong>Draw:</strong> (draw a horizontal bar between engineers and agents — this is the key moment)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+<h2 id="nhip-7-dandori-vao-giua">Nhịp 7 — Dandori vào giữa<a class="headerlink" href="#nhip-7-dandori-vao-giua" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Đây là khoảng trống mà Dandori lấp đầy. Một layer. Nằm giữa kỹ sư và agent của họ."</p>
+<p><strong>Vẽ:</strong> <em>(vẽ một thanh ngang giữa kỹ sư và agent — đây là khoảnh khắc chính, dừng lại sau khi vẽ xong)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  [KS]  [KS]  [KS]  [KS]  [KS]
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    │      │      │      │      │
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    └──────┴──────┼──────┴──────┘
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                  │
@@ -1098,29 +842,30 @@
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>          │  AI Providers │
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>          └───────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Dandori does not replace the agents. It manages them."</p>
+<p><strong>Nói:</strong> "Dandori không thay thế agent. Dandori quản lý chúng."</p>
+<p><em>(dừng. để audience nhìn bảng.)</em></p>
 <hr />
-<h2 id="beat-8-cost-attribution">Beat 8 — Cost attribution<a class="headerlink" href="#beat-8-cost-attribution" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "First thing Dandori gives you: cost attribution. Every token logged — which agent, which task, which project, which team."</p>
-<p><strong>Draw:</strong> (expand the Dandori box, add a cost module inside it)</p>
+<h2 id="nhip-8-cost-attribution">Nhịp 8 — Cost attribution<a class="headerlink" href="#nhip-8-cost-attribution" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Thứ đầu tiên Dandori làm được: phân bổ chi phí. Mỗi token đều được log — agent nào, task nào, project nào, team nào."</p>
+<p><strong>Vẽ:</strong> <em>(mở rộng box Dandori, thêm module cost bên trong)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>         ┌──────────────────────────────┐
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>         │            DANDORI           │
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>         │                              │
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>         │  ┌──────────────────────┐    │
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>         │  │  Cost attribution    │    │
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>         │  │  per agent / team /  │    │
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>         │  │  theo agent / team / │    │
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>         │  │  project / feature   │    │
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>         │  └──────────────────────┘    │
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>         └──────────────────────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "That $240K bill? Now it reads: payments team $52K, auth $38K, data pipeline $29K. Drill down to individual prompts."</p>
+<p><strong>Nói:</strong> "Hoá đơn $240K giờ đọc được: team payments $52K, auth $38K, data pipeline $29K. Drill down đến từng prompt."</p>
 <hr />
-<h2 id="beat-9-context-hierarchy">Beat 9 — Context hierarchy<a class="headerlink" href="#beat-9-context-hierarchy" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Second: context. Instead of copy-paste, a five-layer hierarchy. Every agent inherits it automatically."</p>
-<p><strong>Draw:</strong> (add a stack on the left of the Dandori box)</p>
+<h2 id="nhip-9-context-hierarchy">Nhịp 9 — Context hierarchy<a class="headerlink" href="#nhip-9-context-hierarchy" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Thứ hai: context. Thay vì copy-paste, một cấu trúc 5 tầng. Mỗi agent tự kế thừa — không cần ai nhớ paste."</p>
+<p><strong>Vẽ:</strong> <em>(thêm stack bên trái box Dandori)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>  ┌─────────────┐     ┌──────────────────────────────┐
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  │ 1. Company  │     │            DANDORI           │
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  │ 2. Project  │────▶│                              │
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  │ 1. Công ty  │     │            DANDORI           │
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  │ 2. Dự án    │────▶│                              │
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  │ 3. Team     │     │  ┌──────────────┐            │
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  │ 4. Agent    │     │  │ Cost         │            │
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  │ 5. Task     │     │  ├──────────────┤            │
@@ -1128,29 +873,29 @@
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>                      │  └──────────────┘            │
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>                      └──────────────────────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Update the company security policy once. Every agent sees it on the next run. Versioned. Rollback-able. Audited."</p>
+<p><strong>Nói:</strong> "Cập nhật policy bảo mật một lần ở tầng Công ty. Lần chạy tiếp theo, tất cả agent đều thấy. Có version control, có rollback, có audit log."</p>
 <hr />
-<h2 id="beat-10-approval-gates">Beat 10 — Approval gates<a class="headerlink" href="#beat-10-approval-gates" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Third: approval gates. High-risk tasks — database migrations, infra changes — stop here until a human approves."</p>
-<p><strong>Draw:</strong> (add approval module inside Dandori, add a gate symbol on the flow)</p>
+<h2 id="nhip-10-approval-gates">Nhịp 10 — Approval gates<a class="headerlink" href="#nhip-10-approval-gates" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Thứ ba: approval gate. Task rủi ro cao — migration database, thay đổi infra — dừng lại đây cho đến khi con người approve."</p>
+<p><strong>Vẽ:</strong> <em>(thêm module approval, thêm ký hiệu cổng trên luồng)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>  ┌─────────────┐     ┌──────────────────────────────┐
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  │ Context     │     │            DANDORI           │
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  │ layers      │────▶│                              │
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  │ tầng        │────▶│                              │
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  └─────────────┘     │  ┌──────────────┐            │
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>                      │  │ Cost         │            │
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  [Eng] ──────────────┤  ├──────────────┤            │
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  reviews &amp; approves  │  │ Context hub  │            │
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  [KS] ───────────────┤  ├──────────────┤            │
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  review &amp; approve    │  │ Context hub  │            │
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>         ▲            │  ├──────────────┤            │
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>         │            │  │ ⛔ Approval  │            │
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>         └────────────│  │   gate       │            │
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>                      │  └──────────────┘            │
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>                      └──────────────────────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Every approval logged: who, when, what they saw. One export for your compliance team."</p>
+<p><strong>Nói:</strong> "Mỗi lần approve được log: ai, lúc mấy giờ, họ đã xem gì. Một lần export là có đủ evidence cho đội compliance."</p>
 <hr />
-<h2 id="beat-11-quality-gates">Beat 11 — Quality gates<a class="headerlink" href="#beat-11-quality-gates" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Fourth: quality gates. Before any output is accepted, automated scanners run."</p>
-<p><strong>Draw:</strong> (add quality gate as a pipeline below Dandori before agents)</p>
+<h2 id="nhip-11-quality-gates">Nhịp 11 — Quality gates<a class="headerlink" href="#nhip-11-quality-gates" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Thứ tư: quality gates. Trước khi output nào được chấp nhận, scanner tự động chạy."</p>
+<p><strong>Vẽ:</strong> <em>(thêm pipeline quality gate bên dưới Dandori, trước agent)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>         ┌──────────────────────────────┐
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>         │            DANDORI           │
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>         │  Cost │ Context │ Approval   │
@@ -1166,45 +911,45 @@
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>              ▼           ▼           ▼
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>           (Claude)    (Codex)    (custom)
 </code></pre></div>
-<p><strong>Say:</strong> "Every run gets a quality score 0–100. You can see which agents improve over time, which degrade."</p>
+<p><strong>Nói:</strong> "Mỗi lần chạy có điểm chất lượng 0–100. Theo dõi theo thời gian — agent nào đang tốt hơn, agent nào đang tệ đi."</p>
 <hr />
-<h2 id="beat-12-skill-library">Beat 12 — Skill library<a class="headerlink" href="#beat-12-skill-library" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Fifth: skills. Your best prompts, centralized. New engineer joins — they inherit the team's proven prompts on day one."</p>
-<p><strong>Draw:</strong> (add a skills box feeding into the context stack)</p>
+<h2 id="nhip-12-skill-library">Nhịp 12 — Skill library<a class="headerlink" href="#nhip-12-skill-library" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Thứ năm: skill library. Những prompt tốt nhất của tổ chức, lưu tập trung. Kỹ sư mới vào — kế thừa ngay hôm đầu tiên."</p>
+<p><strong>Vẽ:</strong> <em>(thêm skill box feed vào context stack)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>  ┌─────────────┐
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  │ Skill lib   │
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  │ api-security│
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  │ code-review │
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  │ test-gen    │
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  └──────┬──────┘
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>         │ auto-attach
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>         │ tự gắn vào
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>         ▼
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  ┌─────────────┐     ┌──────────────────────────────┐
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  │ Context     │     │            DANDORI           │
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  │ layers      │────▶│  Cost │ Context │ Approval   │
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  │ tầng        │────▶│  Cost │ Context │ Approval   │
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  └─────────────┘     │  Quality gates │ Skills      │
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>                      └──────────────────────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Engineer leaves. Their prompts stay. Knowledge doesn't walk out the door anymore."</p>
+<p><strong>Nói:</strong> "Kỹ sư nghỉ việc. Prompt của họ vẫn ở lại. Kiến thức không đi theo người nữa."</p>
 <hr />
-<h2 id="beat-13-the-complete-picture">Beat 13 — The complete picture<a class="headerlink" href="#beat-13-the-complete-picture" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Here's what the board looks like at the end. This is what Dandori gives you."</p>
-<p><strong>Draw:</strong> (full picture — everything connected)</p>
+<h2 id="nhip-13-buc-tranh-tong-the">Nhịp 13 — Bức tranh tổng thể<a class="headerlink" href="#nhip-13-buc-tranh-tong-the" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Đây là bảng lúc kết thúc. Đây là những gì Dandori mang lại."</p>
+<p><strong>Vẽ:</strong> <em>(bức tranh đầy đủ — tất cả kết nối)</em></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>  ┌────────────────────────────────────────────────────────┐
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  │                   ENGINEERING ORG                      │
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  │                   TỔ CHỨC KỸ THUẬT                    │
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  │  [CTO]  [Security]  [Compliance]  [Platform]           │
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  │     │        │           │             │               │
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  │     └────────┴───────────┴─────────────┘               │
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  │                          │  set policy / review        │
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  │                          │  đặt policy / review        │
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>  └──────────────────────────┼────────────────────────────┘
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>                             │
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>  ┌──────────────────────────▼────────────────────────────┐
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>  │                        DANDORI                        │
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  │                                                       │
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  │   Cost attribution   │   5-layer context             │
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  │   Cost attribution   │   Context 5 tầng              │
 <a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>  │   Approval gates     │   Quality gates               │
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>  │   Skill library      │   Audit log                   │
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>  │   Task DAGs          │   Cross-agent analytics       │
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>  │   Task dependencies  │   Cross-agent analytics       │
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>  │                                                       │
 <a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>  └──────────────────────────┬────────────────────────────┘
 <a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>                             │
@@ -1218,39 +963,37 @@
 <a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>              │   Anthropic · OpenAI · ...  │
 <a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>              └─────────────────────────────┘
 </code></pre></div>
-<p><strong>Say:</strong> "Your engineers still use Claude Code, Cursor, Codex — whatever they love. Dandori is the management layer on top. That's the missing piece."</p>
+<p><strong>Nói:</strong> "Kỹ sư vẫn dùng Claude Code, Cursor, Codex — những gì họ quen. Dandori là layer quản lý phía trên. Đó là mảnh còn thiếu."</p>
 <hr />
-<h2 id="beat-14-the-close">Beat 14 — The close<a class="headerlink" href="#beat-14-the-close" title="Permanent link">&para;</a></h2>
-<p><strong>Say:</strong> "Every org with 100+ engineers will need this by end of 2026. Same pattern as DevOps tools in the 2010s, observability in 2015, feature flags in 2020. Dandori is the consolidation layer for AI agents."</p>
-<p><strong>Leave on board:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  BEFORE DANDORI          WITH DANDORI
+<h2 id="nhip-14-ket">Nhịp 14 — Kết<a class="headerlink" href="#nhip-14-ket" title="Permanent link">&para;</a></h2>
+<p><strong>Nói:</strong> "Mọi tổ chức có hơn 100 kỹ sư sẽ cần cái này trước cuối 2026. Cùng pattern như DevOps tools những năm 2010, observability 2015, feature flags 2020. Đến lượt AI agent. Dandori là layer hợp nhất đó."</p>
+<p><strong>Để lại trên bảng:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  TRƯỚC DANDORI               VỚI DANDORI
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  $240K → ???             $240K → payments $52K
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>                                → auth     $38K
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>                                → data     $29K
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  $240K → ???                 $240K → payments  $52K
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>                                    → auth      $38K
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>                                    → data      $29K
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  copy-paste prompts      5-layer context, versioned
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  copy-paste prompt           Context 5 tầng, version control
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  &quot;who approved?&quot; →       logged: alice, 14:22,
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  Slack thread maybe      rationale attached
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  &quot;ai approve?&quot; →             log: alice, 14:22,
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  Slack thread, có khi không  lý do đính kèm
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  engineer leaves →       skills stay in org
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>  knowledge gone          new hire inherits day 1
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  kỹ sư nghỉ →                skill ở lại trong tổ chức
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>  kiến thức mất               người mới kế thừa ngay
 </code></pre></div>
-<p><strong>Say:</strong> "We're onboarding design-partner organizations running 1,000+ engineers. If this is your problem — let's talk."</p>
+<p><strong>Nói:</strong> "Chúng tôi đang làm việc với các tổ chức design partner có từ 1.000 kỹ sư trở lên. Nếu đây là bài toán của bạn — hãy nói chuyện với chúng tôi."</p>
 <hr />
-<h2 id="speaker-notes">Speaker notes<a class="headerlink" href="#speaker-notes" title="Permanent link">&para;</a></h2>
+<h2 id="ghi-chu-speaker">Ghi chú speaker<a class="headerlink" href="#ghi-chu-speaker" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Total time:</strong> 20–30 min with questions</li>
-<li><strong>Beats 1–6:</strong> 5 min — the problem. Let it land. Don't rush to the solution.</li>
-<li><strong>Beat 7:</strong> pause after drawing the Dandori bar. Let the audience sit with it.</li>
-<li><strong>Beats 8–12:</strong> 10 min — each capability is one drawing stroke. Keep the diagram clean.</li>
-<li><strong>Beat 13:</strong> 3 min — step back from the board, let them look at the full picture.</li>
-<li><strong>Beat 14:</strong> 2 min — close + CTA.</li>
-<li><strong>Questions:</strong> Draw on the board as you answer. The diagram is your tool.</li>
+<li><strong>Tổng thời gian:</strong> 20–30 phút có cả Q&amp;A</li>
+<li><strong>Nhịp 1–6:</strong> ~5 phút — vấn đề. Để nó thấm. Đừng vội đến giải pháp.</li>
+<li><strong>Nhịp 7:</strong> dừng sau khi vẽ xong thanh Dandori. Để audience nhìn bảng vài giây.</li>
+<li><strong>Nhịp 8–12:</strong> ~10 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.</li>
+<li><strong>Nhịp 13:</strong> ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.</li>
+<li><strong>Nhịp 14:</strong> ~2 phút — kết + CTA.</li>
+<li><strong>Q&amp;A:</strong> vẽ lên bảng khi trả lời. Sơ đồ là công cụ của bạn.</li>
 </ul>
-<hr />
-<p><em>Reference pages: <a href="../why-dandori/">Why Dandori</a> · <a href="../core-features/">Core Features</a> · <a href="../use-cases/">Use Cases</a> · <a href="../architecture/">Architecture</a> · <a href="../enterprise/">Enterprise</a></em></p>
 
 
 
@@ -1258,8 +1001,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -1281,28 +1029,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../enterprise/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enterprise">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Enterprise
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
