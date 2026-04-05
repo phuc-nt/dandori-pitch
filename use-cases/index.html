@@ -1,0 +1,1241 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The unified control plane for AI coding agents in the enterprise.">
+      
+      
+      
+        <link rel="canonical" href="https://phuc-nt.github.io/dandori-pitch/use-cases/">
+      
+      
+        <link rel="prev" href="../why-dandori/">
+      
+      
+        <link rel="next" href="../architecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Use Cases - Dandori</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#use-cases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dandori" class="md-header__button md-logo" aria-label="Dandori" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dandori
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Use Cases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../why-dandori/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Why Dandori
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Use Cases
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../enterprise/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Enterprise
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dandori" class="md-nav__button md-logo" aria-label="Dandori" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dandori
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-dandori/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Dandori
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-automated-code-review-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Automated code review team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-documentation-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Documentation bot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test generation pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-research-agent-for-technical-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Research agent for technical decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-incident-response-co-pilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Incident response co-pilot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-compliance-documentation-for-soc2-iso27001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Compliance documentation for SOC2 / ISO27001
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-agent-feature-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Multi-agent feature implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-skill-library-as-company-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Skill library as company IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-across-all-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common patterns across all use cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common patterns across all use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-your-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started with your use case
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-automated-code-review-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Automated code review team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-documentation-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Documentation bot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test generation pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-research-agent-for-technical-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Research agent for technical decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-incident-response-co-pilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Incident response co-pilot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-compliance-documentation-for-soc2-iso27001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Compliance documentation for SOC2 / ISO27001
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-agent-feature-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Multi-agent feature implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-skill-library-as-company-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Skill library as company IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns-across-all-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common patterns across all use cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common patterns across all use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-your-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started with your use case
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h1>
+<p>Real workflows you can deploy today. Each pattern uses Dandori's primitives (projects, agents, tasks, context, approvals) to solve a concrete problem.</p>
+<hr />
+<h2 id="1-automated-code-review-team">1. Automated code review team<a class="headerlink" href="#1-automated-code-review-team" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> PR review queue is a bottleneck. Senior engineers spend 30% of their week on mechanical review (style, security, test coverage).</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Project: &quot;Code Review&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Agent: &quot;Reviewer-Security&quot;  (skills: owasp, secret-scanning, auth)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Agent: &quot;Reviewer-Style&quot;     (skills: eslint, naming, structure)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Agent: &quot;Reviewer-Tests&quot;     (skills: coverage, edge-cases, mocking)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── Agent: &quot;Reviewer-Docs&quot;      (skills: api-docs, changelog)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>CI webhook triggers Dandori task on PR open: <code>POST /api/tasks</code></li>
+<li>Task assigned to <code>Reviewer-Security</code> first (skill match)</li>
+<li>Agent reviews diff, writes findings to task comments</li>
+<li>Task marked <code>in_review</code> with <code>needs_approval=true</code></li>
+<li>Senior engineer approves/rejects based on agent findings</li>
+<li>Findings posted back to GitHub PR</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Security policies, compliance requirements
+- <strong>Project:</strong> Service-specific threat model
+- <strong>Agent:</strong> Role-specific checklist (OWASP top 10)
+- <strong>Task:</strong> The PR diff + linked tickets</p>
+<p><strong>Value:</strong> Senior engineers review 3× faster. Mechanical issues caught before human eyes. Audit log shows what was checked + approved.</p>
+<hr />
+<h2 id="2-documentation-bot">2. Documentation bot<a class="headerlink" href="#2-documentation-bot" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Docs drift. Nobody updates <code>README.md</code> when APIs change. New hires can't onboard.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Project: &quot;Docs Automation&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>└── Agent: &quot;DocsBot&quot;  (skills: api-docs, markdown, mermaid)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Nightly cron: <code>dandori tasks create --title "Sync docs for service X"</code></li>
+<li>Task context includes: OpenAPI spec path, existing docs path, recent commits</li>
+<li>Agent compares API surface → existing docs, writes updates</li>
+<li>Task marked <code>in_review</code> → tech writer approves</li>
+<li>Approved docs committed via CI</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Documentation standards (tone, structure)
+- <strong>Project:</strong> Service's public API contract
+- <strong>Agent:</strong> Template for API endpoint docs
+- <strong>Task:</strong> Specific service + diff since last sync</p>
+<p><strong>Value:</strong> Docs stay within 24 hours of code. No more "docs say X but code does Y" bugs.</p>
+<hr />
+<h2 id="3-test-generation-pipeline">3. Test generation pipeline<a class="headerlink" href="#3-test-generation-pipeline" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Test coverage plateaus at 40%. Engineers skip writing tests under deadline pressure.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Project: &quot;Test Coverage&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── Agent: &quot;UnitTestGen&quot;         (skills: jest, vitest, mocking)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── Agent: &quot;IntegrationTestGen&quot;  (skills: supertest, fixtures, db)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>└── Agent: &quot;EdgeCaseFinder&quot;      (skills: property-testing, fuzzing)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Coverage report identifies files with &lt;50% coverage</li>
+<li>Dandori creates tasks: one per low-coverage file, assigned to matching agent</li>
+<li>Agent writes tests, runs them, iterates until passing</li>
+<li>Quality gate: must not decrease existing coverage</li>
+<li>Task marked <code>in_review</code> → engineer reviews test quality</li>
+<li>Approved tests merged</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Testing conventions, what NOT to test
+- <strong>Project:</strong> Framework setup, fixture patterns
+- <strong>Agent:</strong> Test style examples
+- <strong>Task:</strong> Target file + existing tests + coverage gaps</p>
+<p><strong>Value:</strong> Coverage climbs 40% → 70%+ in one quarter. Engineers focus on complex scenarios, agents handle coverage grinding.</p>
+<hr />
+<h2 id="4-research-agent-for-technical-decisions">4. Research agent for technical decisions<a class="headerlink" href="#4-research-agent-for-technical-decisions" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Engineers spend days researching "should we use X or Y?" in Slack threads that die inconclusively.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Project: &quot;Tech Decisions&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└── Agent: &quot;Researcher&quot;  (skills: comparison-matrix, benchmarks, pros-cons)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Engineer creates task: "Evaluate Drizzle vs Prisma for new service"</li>
+<li>Task context: performance requirements, team skills, existing stack</li>
+<li>Researcher agent pulls docs, benchmarks, GitHub issues, community discussions</li>
+<li>Writes structured comparison: criteria table, migration effort, risk assessment</li>
+<li>Output attached to task for architecture review meeting</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Approved vendors, licensing rules
+- <strong>Project:</strong> Non-functional requirements
+- <strong>Agent:</strong> Comparison matrix template
+- <strong>Task:</strong> Specific decision + constraints</p>
+<p><strong>Value:</strong> Architecture decisions made in hours, not weeks. Consistent evaluation criteria. Decisions documented as side effect.</p>
+<hr />
+<h2 id="5-incident-response-co-pilot">5. Incident response co-pilot<a class="headerlink" href="#5-incident-response-co-pilot" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> On-call engineer is paged at 3 AM. Needs to correlate logs, deploys, config changes fast.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Project: &quot;Incident Response&quot;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>└── Agent: &quot;IncidentBot&quot;  (skills: log-analysis, root-cause, runbooks)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>PagerDuty webhook → Dandori task with alert details</li>
+<li>Task marked <code>high</code> priority, <code>needs_approval</code> off (speed &gt; approval)</li>
+<li>Agent pulls: recent deploys, config changes, related alerts, runbook matches</li>
+<li>Agent writes incident summary: likely cause, first mitigation step, escalation contact</li>
+<li>Output posted to incident Slack channel within 60 seconds</li>
+<li>Human confirms or redirects</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Incident severity matrix, escalation policy
+- <strong>Project:</strong> Service architecture, dependencies
+- <strong>Agent:</strong> Runbook library
+- <strong>Task:</strong> Alert payload + correlated data</p>
+<p><strong>Value:</strong> On-call engineers get 60-second summary instead of 15-minute context rebuild. MTTR drops significantly.</p>
+<hr />
+<h2 id="6-compliance-documentation-for-soc2-iso27001">6. Compliance documentation for SOC2 / ISO27001<a class="headerlink" href="#6-compliance-documentation-for-soc2-iso27001" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Auditors ask "show me your AI usage controls". You have 50 engineers using Claude, no central log.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Project: &quot;Compliance&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>└── All agents funnel through Dandori
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Org policy: "no direct Claude CLI usage, go through Dandori"</li>
+<li>API keys gate all agent access (per-engineer, revocable)</li>
+<li>Every run logged: who, what prompt, what context, what output</li>
+<li>Approval gates enforced on production-impacting tasks</li>
+<li>Quarterly: export audit log via API, hand to auditor</li>
+</ol>
+<p><strong>Context injection:</strong>
+- <strong>Company:</strong> Data classification policies, PII handling rules
+- <strong>Project:</strong> Data flow for each service
+- <strong>Agent:</strong> What the agent is/isn't allowed to process
+- <strong>Task:</strong> Specific data scope</p>
+<p><strong>Value:</strong> Compliance checkbox passes without custom tooling. Single source of truth for AI activity.</p>
+<hr />
+<h2 id="7-multi-agent-feature-implementation">7. Multi-agent feature implementation<a class="headerlink" href="#7-multi-agent-feature-implementation" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Feature spans frontend, backend, tests, docs. One engineer juggles context across 4 agents.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Project: &quot;Feature X&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── Agent: &quot;Backend-Alice&quot;    (skills: node, express, postgres)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── Agent: &quot;Frontend-Bob&quot;     (skills: react, typescript, mui)
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>├── Agent: &quot;Tester-Carol&quot;     (skills: jest, playwright)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>└── Agent: &quot;DocsWriter-Dave&quot;  (skills: api-docs, user-guide)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Feature spec broken into tasks with dependencies:</li>
+<li><code>implement-api</code> (Alice, phase: implement)</li>
+<li><code>implement-ui</code> (Bob, phase: implement, depends on: implement-api)</li>
+<li><code>write-tests</code> (Carol, phase: test, depends on: implement-api, implement-ui)</li>
+<li><code>update-docs</code> (Dave, phase: maintain, depends on: write-tests)</li>
+<li>Alice wakes up → builds API → task done</li>
+<li>Auto-start triggers: Bob wakes up → builds UI</li>
+<li>When both done → Carol wakes up → writes tests</li>
+<li>Final step: Dave updates docs</li>
+<li>Engineer reviews each step via approval gates</li>
+</ol>
+<p><strong>Context injection:</strong>
+- Shared project context keeps all agents aligned
+- Each agent gets task-specific spec + predecessor outputs
+- Skills route the right agent to the right work</p>
+<p><strong>Value:</strong> Feature implementation parallelized safely. Engineer orchestrates, doesn't context-switch. Quality gates between phases catch mistakes early.</p>
+<hr />
+<h2 id="8-skill-library-as-company-ip">8. Skill library as company IP<a class="headerlink" href="#8-skill-library-as-company-ip" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> Senior engineer's prompts are 10× better than junior's. That IP is locked in one person's text file.</p>
+<p><strong>Pattern:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Company-wide Skill Library:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── &quot;security-review&quot;       (maintained by security team)
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── &quot;performance-analysis&quot;  (maintained by platform team)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── &quot;api-design&quot;            (maintained by staff engineers)
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>└── &quot;onboarding-checker&quot;    (maintained by HR engineering)
+</code></pre></div>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Skills are markdown files with frontmatter + reusable instructions</li>
+<li>Attach skills to any agent: <code>POST /api/agents/:id/skills</code></li>
+<li>New agent inherits company expertise immediately</li>
+<li>Skill updates propagate to all agents using it</li>
+<li>Skill version history tracks evolution</li>
+</ol>
+<p><strong>Value:</strong> Tribal knowledge becomes organizational IP. Onboarding time cut. Consistency across teams.</p>
+<hr />
+<h2 id="common-patterns-across-all-use-cases">Common patterns across all use cases<a class="headerlink" href="#common-patterns-across-all-use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="context-discipline">Context discipline<a class="headerlink" href="#context-discipline" title="Permanent link">&para;</a></h3>
+<p>Every use case relies on the 5-layer context hierarchy. <strong>Don't copy-paste context into prompts — define it once at the right layer.</strong></p>
+<h3 id="approval-gates">Approval gates<a class="headerlink" href="#approval-gates" title="Permanent link">&para;</a></h3>
+<p>Use them for production-impacting work (deploys, migrations, customer-facing changes). Skip them for low-risk or high-velocity work (incident response, test generation).</p>
+<h3 id="skill-tags">Skill tags<a class="headerlink" href="#skill-tags" title="Permanent link">&para;</a></h3>
+<p>Tag tasks with required skills. Dandori auto-suggests the best-matching agent. Build your skill library incrementally.</p>
+<h3 id="quality-gates">Quality gates<a class="headerlink" href="#quality-gates" title="Permanent link">&para;</a></h3>
+<p>Run scanners on every implementation task. Track quality score per agent over time. Fire agents whose quality trends downward.</p>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<p>Model workflows as DAGs of tasks. Let Dandori auto-start dependent tasks. Don't hand-schedule agent wakeups.</p>
+<hr />
+<h2 id="getting-started-with-your-use-case">Getting started with your use case<a class="headerlink" href="#getting-started-with-your-use-case" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Define the project scope and success metric</li>
+<li>Identify which agents (skills + roles) you need</li>
+<li>Define context at the appropriate layer (Company / Project / Team)</li>
+<li>Pilot with one manual task</li>
+<li>Once the pattern works, automate end-to-end</li>
+</ol>
+<p><strong>Start small. Iterate. Expand.</strong></p>
+<hr />
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../architecture/">Architecture →</a></strong> How Dandori enables these patterns</li>
+<li><strong><a href="../enterprise/">Enterprise →</a></strong> Security, scaling, and deployment</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../why-dandori/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Why Dandori">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Why Dandori
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Architecture
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dandori
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

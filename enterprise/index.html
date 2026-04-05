@@ -1,0 +1,1498 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The unified control plane for AI coding agents in the enterprise.">
+      
+      
+      
+        <link rel="canonical" href="https://phuc-nt.github.io/dandori-pitch/enterprise/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Enterprise - Dandori</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enterprise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dandori" class="md-header__button md-logo" aria-label="Dandori" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dandori
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enterprise
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../why-dandori/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Why Dandori
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../use-cases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Use Cases
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Enterprise
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dandori" class="md-nav__button md-logo" aria-label="Dandori" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dandori
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-dandori/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Dandori
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-engineer-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By engineer count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-agent-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By agent throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-your-pm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your PM stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your identity provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizational-adoption-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizational adoption path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizational adoption path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-pilot-1-team-4-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Pilot (1 team, 4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-expansion-5-teams-8-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Expansion (5 teams, 8 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-standard-all-engineering-3-6-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — Standard (all engineering, 3-6 months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-integrated-ongoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 — Integrated (ongoing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#total-cost-of-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total cost of ownership
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Total cost of ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-spend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you spend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-save-conservative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you save (conservative)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-get-day-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you get, day one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-on-the-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's on the roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps-for-enterprise-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps for enterprise evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-engineer-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By engineer count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-agent-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By agent throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-your-pm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your PM stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-your-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With your identity provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizational-adoption-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizational adoption path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizational adoption path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-pilot-1-team-4-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Pilot (1 team, 4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-expansion-5-teams-8-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Expansion (5 teams, 8 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-standard-all-engineering-3-6-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — Standard (all engineering, 3-6 months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-integrated-ongoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 — Integrated (ongoing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#total-cost-of-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total cost of ownership
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Total cost of ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-spend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you spend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-save-conservative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you save (conservative)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-get-day-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you get, day one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-on-the-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's on the roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps-for-enterprise-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps for enterprise evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="enterprise">Enterprise<a class="headerlink" href="#enterprise" title="Permanent link">&para;</a></h1>
+<p>How Dandori fits into a 1,000 – 50,000-engineer organization. This page answers the questions your security, compliance, and platform teams will ask.</p>
+<hr />
+<h2 id="deployment-model">Deployment model<a class="headerlink" href="#deployment-model" title="Permanent link">&para;</a></h2>
+<p>Dandori is <strong>self-hosted by default</strong>. You control the data, the uptime, and the network boundary.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Where does data live?</strong></td>
+<td>Your infrastructure. Your database. Your logs.</td>
+</tr>
+<tr>
+<td><strong>Internet access required?</strong></td>
+<td>Only for the AI provider calls (which already need it).</td>
+</tr>
+<tr>
+<td><strong>Air-gapped deployments?</strong></td>
+<td>Yes, with self-hosted or local AI models.</td>
+</tr>
+<tr>
+<td><strong>Multi-region?</strong></td>
+<td>Yes, stateless servers with replicated database.</td>
+</tr>
+<tr>
+<td><strong>HA?</strong></td>
+<td>Horizontal scaling supported; database is the only stateful component.</td>
+</tr>
+</tbody>
+</table>
+<p>Dandori is designed to run inside your existing Kubernetes cluster, VM fleet, or single-node deployment.</p>
+<hr />
+<h2 id="security-controls">Security controls<a class="headerlink" href="#security-controls" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-authorization">Authentication &amp; authorization<a class="headerlink" href="#authentication-authorization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>API keys with scoped access (per-user, per-project)</li>
+<li>SSO via OIDC/SAML <em>(roadmap)</em></li>
+<li>Role-based access control: Admin, Lead, Engineer, Viewer <em>(roadmap)</em></li>
+<li>Per-project access boundaries enforced at every query</li>
+</ul>
+<h3 id="data-handling">Data handling<a class="headerlink" href="#data-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All mutations logged to immutable audit trail</li>
+<li>Context layers support PII classification tags</li>
+<li>Secrets never stored in prompts or context (host-level env vars only)</li>
+<li>Configurable data retention policies per project</li>
+</ul>
+<h3 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTTPS/TLS enforced</li>
+<li>Rate limiting per API key (configurable)</li>
+<li>Outbound AI provider calls can be proxied through your egress gateway</li>
+<li>No phone-home telemetry</li>
+</ul>
+<hr />
+<h2 id="compliance">Compliance<a class="headerlink" href="#compliance" title="Permanent link">&para;</a></h2>
+<p>Dandori provides the primitives for:</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>What Dandori contributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SOC 2</strong></td>
+<td>Audit log, access controls, change management</td>
+</tr>
+<tr>
+<td><strong>ISO 27001</strong></td>
+<td>Asset inventory (agents, prompts, skills), access logs</td>
+</tr>
+<tr>
+<td><strong>HIPAA</strong> (if applicable)</td>
+<td>Per-project PII classification, no PII in prompts policy</td>
+</tr>
+<tr>
+<td><strong>GDPR</strong></td>
+<td>Data residency control, export, deletion workflows</td>
+</tr>
+<tr>
+<td><strong>AI governance policies</strong> (NIST AI RMF, EU AI Act)</td>
+<td>Traceability of every agent decision</td>
+</tr>
+</tbody>
+</table>
+<p>Your compliance team gets a single export: <em>"show me every agent-generated change in Q3, who reviewed it, and what context it saw."</em></p>
+<hr />
+<h2 id="scaling-patterns">Scaling patterns<a class="headerlink" href="#scaling-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="by-engineer-count">By engineer count<a class="headerlink" href="#by-engineer-count" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Org size</th>
+<th>Deployment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&lt; 100 engineers</strong></td>
+<td>Single instance, SQLite, one server</td>
+</tr>
+<tr>
+<td><strong>100 – 1,000</strong></td>
+<td>Single instance, Postgres, dedicated DB</td>
+</tr>
+<tr>
+<td><strong>1,000 – 10,000</strong></td>
+<td>Horizontal scale, 2-3 regions, read replicas</td>
+</tr>
+<tr>
+<td><strong>10,000+</strong></td>
+<td>Multi-tenant federation (one instance per business unit), shared skill library</td>
+</tr>
+</tbody>
+</table>
+<h3 id="by-agent-throughput">By agent throughput<a class="headerlink" href="#by-agent-throughput" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>&lt; 1,000 runs/day:</strong> Default configuration</li>
+<li><strong>1,000 – 10,000 runs/day:</strong> Add worker queue for async agent execution</li>
+<li><strong>10,000+ runs/day:</strong> Partition by project, dedicated adapter pools</li>
+</ul>
+<hr />
+<h2 id="integration-patterns">Integration patterns<a class="headerlink" href="#integration-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="with-your-pm-stack">With your PM stack<a class="headerlink" href="#with-your-pm-stack" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Jira / Linear:</strong> Two-way sync of tasks (roadmap)</li>
+<li><strong>GitHub / GitLab:</strong> PR webhook → create review task; task status → PR checks</li>
+<li><strong>Slack / Teams:</strong> Notifications for approvals, failures, cost alerts</li>
+</ul>
+<h3 id="with-your-cicd">With your CI/CD<a class="headerlink" href="#with-your-cicd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trigger agent runs from pipeline steps (REST API)</li>
+<li>Gate merges on Dandori quality score</li>
+<li>Post agent findings as PR comments</li>
+</ul>
+<h3 id="with-your-observability">With your observability<a class="headerlink" href="#with-your-observability" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Metrics exported in Prometheus format (roadmap)</li>
+<li>Logs in structured JSON, pluggable to your log aggregator</li>
+<li>Trace correlation via OpenTelemetry (roadmap)</li>
+</ul>
+<h3 id="with-your-identity-provider">With your identity provider<a class="headerlink" href="#with-your-identity-provider" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SSO via OIDC (Okta, Auth0, Azure AD) — roadmap</li>
+<li>SCIM user provisioning — roadmap</li>
+</ul>
+<hr />
+<h2 id="organizational-adoption-path">Organizational adoption path<a class="headerlink" href="#organizational-adoption-path" title="Permanent link">&para;</a></h2>
+<p>Most orgs follow this rollout:</p>
+<h3 id="phase-1-pilot-1-team-4-weeks">Phase 1 — Pilot (1 team, 4 weeks)<a class="headerlink" href="#phase-1-pilot-1-team-4-weeks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>One team installs Dandori</li>
+<li>Migrate their existing agent prompts into shared skills</li>
+<li>Set up quality gates + approval flow</li>
+<li>Measure cost attribution + incident reduction</li>
+</ul>
+<h3 id="phase-2-expansion-5-teams-8-weeks">Phase 2 — Expansion (5 teams, 8 weeks)<a class="headerlink" href="#phase-2-expansion-5-teams-8-weeks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Build company-wide context layer (standards, compliance)</li>
+<li>Share skill library across teams</li>
+<li>Introduce cross-team analytics</li>
+</ul>
+<h3 id="phase-3-standard-all-engineering-3-6-months">Phase 3 — Standard (all engineering, 3-6 months)<a class="headerlink" href="#phase-3-standard-all-engineering-3-6-months" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enforce Dandori as the gateway for all agent usage</li>
+<li>CTO-level cost dashboards</li>
+<li>Security team owns company context</li>
+<li>Compliance team uses audit export for quarterly reviews</li>
+</ul>
+<h3 id="phase-4-integrated-ongoing">Phase 4 — Integrated (ongoing)<a class="headerlink" href="#phase-4-integrated-ongoing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dandori hooks into hiring onboarding (new engineers inherit team skills day 1)</li>
+<li>Agents routed by skill across organizational boundaries</li>
+<li>Prompt IP treated as first-class company asset</li>
+</ul>
+<hr />
+<h2 id="total-cost-of-ownership">Total cost of ownership<a class="headerlink" href="#total-cost-of-ownership" title="Permanent link">&para;</a></h2>
+<h3 id="what-you-spend">What you spend<a class="headerlink" href="#what-you-spend" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Infrastructure:</strong> 1-2 small VMs + Postgres (trivial compared to AI spend)</li>
+<li><strong>Operations:</strong> ~0.25 FTE to maintain after setup</li>
+<li><strong>AI provider costs:</strong> Unchanged (you'd pay them anyway)</li>
+</ul>
+<h3 id="what-you-save-conservative">What you save (conservative)<a class="headerlink" href="#what-you-save-conservative" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>10-20% reduction in wasted tokens</strong> via identifying bad prompts</li>
+<li><strong>30 min/engineer/week</strong> saved on prompt management</li>
+<li><strong>2 hours per new engineer</strong> on onboarding (skills inherited automatically)</li>
+<li><strong>Incident cost avoidance</strong> from quality gates (quantify from your incident data)</li>
+</ul>
+<p><strong>Typical payback period:</strong> 2-3 months at 500+ engineers.</p>
+<hr />
+<h2 id="what-you-get-day-one">What you get, day one<a class="headerlink" href="#what-you-get-day-one" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Central cost dashboard (per-agent, per-project, per-team)</li>
+<li>5-layer context hierarchy with version control</li>
+<li>Built-in approval workflow</li>
+<li>Automated quality gates (TypeScript, ESLint, test scanners)</li>
+<li>Cross-agent comparison table</li>
+<li>Skill library shareable across teams</li>
+<li>Full audit log of every action</li>
+<li>REST API + CLI + MCP server for automation</li>
+<li>Self-hosted, no vendor lock-in</li>
+</ul>
+<hr />
+<h2 id="whats-on-the-roadmap">What's on the roadmap<a class="headerlink" href="#whats-on-the-roadmap" title="Permanent link">&para;</a></h2>
+<p>Near-term:</p>
+<ul>
+<li><strong>Multi-user + SSO</strong> (OIDC, SAML, SCIM)</li>
+<li><strong>Role-based access control</strong> (Admin, Lead, Engineer, Viewer)</li>
+<li><strong>Jira integration</strong> (two-way sync)</li>
+<li><strong>Production hardening</strong> (Docker images, structured logging, metrics)</li>
+</ul>
+<p>Medium-term:</p>
+<ul>
+<li><strong>Google Workspace write</strong> (agents write docs, calendar, email)</li>
+<li><strong>Webhook system</strong> (react to events)</li>
+<li><strong>Advanced analytics</strong> (trend detection, anomaly alerts)</li>
+<li><strong>Prompt A/B testing</strong> (compare skill versions at scale)</li>
+</ul>
+<hr />
+<h2 id="next-steps-for-enterprise-evaluation">Next steps for enterprise evaluation<a class="headerlink" href="#next-steps-for-enterprise-evaluation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Read the <a href="../architecture/">architecture</a></strong> — understand the integration surface</li>
+<li><strong>Review <a href="../use-cases/">use cases</a></strong> — identify your highest-ROI workflow</li>
+<li><strong>Contact us</strong> — we're onboarding design partner organizations</li>
+</ol>
+<div style="text-align: center; padding: 2rem 0; margin-top: 2rem; border-top: 1px solid #e0e0e0;">
+<h3>Let's talk</h3>
+<p>Interested in piloting Dandori at your organization?</p>
+<p>We're working with design partners running <strong>1,000+ engineers</strong>.</p>
+<p><a href="mailto:hello@dandori.io"><strong>hello@dandori.io</strong></a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dandori
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
