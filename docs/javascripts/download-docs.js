@@ -25,15 +25,25 @@
     });
   }
 
+  function getBundleUrl() {
+    // Derive absolute URL from this script's own src — guaranteed correct on any subpath
+    var scripts = document.querySelectorAll("script[src]");
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src.indexOf("download-docs") !== -1) {
+        return scripts[i].src.replace("download-docs.js", "docs-bundle.js");
+      }
+    }
+    // Fallback: relative to current page (works for flat sites)
+    return "javascripts/docs-bundle.js";
+  }
+
   function loadDocsBundle() {
     return new Promise(function (resolve, reject) {
       if (window.DANDORI_DOCS) {
         resolve(window.DANDORI_DOCS);
         return;
       }
-      var base = document.querySelector('meta[name="base_url"]');
-      var baseUrl = base ? base.getAttribute("content").replace(/\/$/, "") : "";
-      var bundleUrl = baseUrl + "/javascripts/docs-bundle.js";
+      var bundleUrl = getBundleUrl();
       loadScript(bundleUrl)
         .then(function () {
           if (window.DANDORI_DOCS) {
