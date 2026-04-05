@@ -16,7 +16,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../use-cases/">
+        <link rel="next" href="../core-features/">
       
       
         
@@ -241,6 +241,25 @@
     
   
   Why Dandori
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../core-features/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core Features
 
       </a>
     </li>
@@ -633,6 +652,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../core-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../use-cases/" class="md-nav__link">
         
   
@@ -972,34 +1018,35 @@ In 2025, every engineer got an <em>autonomous agent</em> — Claude Code, Cursor
 <p>Dandori stores agent instructions, skills, and templates centrally. New engineers inherit the team's proven prompts instantly. Skills are shareable across projects.</p>
 <hr />
 <h2 id="what-dandori-is">What Dandori is<a class="headerlink" href="#what-dandori-is" title="Permanent link">&para;</a></h2>
-<p><strong>Dandori is the control plane that lives between your developers and their AI agents.</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  Engineer                      Dandori                     AI Provider
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     │                             │                             │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     │ Create task ────────────────▶                             │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     │                             │                             │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     │                             │─── Build 5-layer prompt ───▶│
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     │                             │                             │
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     │                             │◀────── Stream response ─────│
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     │                             │                             │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     │                             │─── Log tokens, cost, quality│
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>     │                             │                             │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     │                             │─── Run quality gates        │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>     │                             │                             │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>     │ Review + approve ◀──────────│                             │
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>     │                             │                             │
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>     │                             │─── Audit trail, analytics   │
+<p><strong>Dandori is the management layer between engineering leadership and the AI agents your teams already use.</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>   LEADERSHIP                    DANDORI                       AGENTS
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   (governs)                  (manages)                     (execute)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   CTO ─────────┐                                            ┌──── Claude Code
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                ├──▶  set policy  ──▶  inject context  ──▶  ─┤
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   Security ────┤     approve      ◀── quality gates    ◀── ─├──── Codex
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                │     audit        ◀── cost logs        ◀── │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   Compliance ──┤                                            ├──── Cursor
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                │                                            │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>   Platform ────┘                                            └──── custom
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                                      │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                                      ▼
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                                 AI Providers
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                          (Anthropic, OpenAI, local)
 </code></pre></div>
+<p><strong>The model:</strong> Leadership sets policy through Dandori. Dandori enforces it on every agent run. Agents execute. Dandori records. Leadership learns from data and adjusts policy. Loop.</p>
 <p><strong>Dandori is NOT:</strong></p>
 <ul>
-<li>❌ A coding agent (it orchestrates Claude, Codex, etc. — doesn't replace them)</li>
+<li>❌ A coding agent (it manages Claude/Codex/Cursor — doesn't replace them)</li>
 <li>❌ A CI/CD replacement (it integrates with yours)</li>
-<li>❌ A vendor lock-in (standard APIs, export anytime)</li>
+<li>❌ Observability-only (it's task + policy + approval + analytics)</li>
+<li>❌ A vendor lock-in (standard APIs, self-hosted, export anytime)</li>
 </ul>
 <p><strong>Dandori IS:</strong></p>
 <ul>
-<li>✅ The missing layer between human governance and agent execution</li>
+<li>✅ The missing management layer between leadership and agent execution</li>
 <li>✅ Vendor-agnostic (any agent: Claude, Codex, local models, custom)</li>
-<li>✅ Designed for orgs that need audit, cost control, and quality gates</li>
+<li>✅ Designed for orgs that need cost control, audit, and governance at scale</li>
 </ul>
 <hr />
 <h2 id="differentiators">Differentiators<a class="headerlink" href="#differentiators" title="Permanent link">&para;</a></h2>
@@ -1076,9 +1123,10 @@ In 2025, every engineer got an <em>autonomous agent</em> — Claude Code, Cursor
 <hr />
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../use-cases/">Use Cases →</a></strong> Concrete workflows you can deploy</li>
-<li><strong><a href="../architecture/">Architecture →</a></strong> How the platform works</li>
-<li><strong><a href="../enterprise/">Enterprise →</a></strong> Security, scaling, integration patterns</li>
+<li><strong><a href="../core-features/">Core Features →</a></strong> The 9 management capabilities, with diagrams</li>
+<li><strong><a href="../use-cases/">Use Cases →</a></strong> Management scenarios for CTO, CISO, Platform, Compliance</li>
+<li><strong><a href="../architecture/">Architecture →</a></strong> Technical integration surface</li>
+<li><strong><a href="../enterprise/">Enterprise →</a></strong> Security, scaling, rollout path</li>
 </ul>
 
 
@@ -1132,13 +1180,13 @@ In 2025, every engineer got an <em>autonomous agent</em> — Claude Code, Cursor
         
         
           
-          <a href="../use-cases/" class="md-footer__link md-footer__link--next" aria-label="Next: Use Cases">
+          <a href="../core-features/" class="md-footer__link md-footer__link--next" aria-label="Next: Core Features">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Use Cases
+                Core Features
               </div>
             </div>
             <div class="md-footer__button md-icon">
