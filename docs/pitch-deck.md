@@ -269,28 +269,32 @@ hide:
 
 ## Nhịp 12 — Quality gates
 
-**Nói:** "Thứ tư: quality gates. Trước khi output nào được chấp nhận, scanner tự động chạy."
+**Nói:** "Thứ năm: quality gates. Dandori không tự kiểm tra code — nó kết nối với CI/CD và các tool bảo mật mà tổ chức đã có."
 
-**Vẽ:** *(thêm pipeline quality gate bên dưới Dandori, trước agent)*
+**Vẽ:** *(vẽ pipeline kết nối với các tool bên ngoài)*
 
 ```
-         ┌──────────────────────────────┐
-         │            DANDORI           │
-         │  Cost │ Context │ Approval   │
-         └──────────────────────────────┘
-                          │
-               ┌──────────▼──────────┐
-               │   Quality gates     │
-               │  TypeCheck → Lint   │
-               │  → Tests → Score    │
-               └──────────┬──────────┘
-                          │
-              ┌───────────┼───────────┐
-              ▼           ▼           ▼
-           (Claude)    (Codex)    (custom)
+  agent output
+       │
+       ▼
+  ┌────────────────────────────────────────┐
+  │           Quality gate pipeline        │
+  │                                        │
+  │  TypeScript / ESLint  → type & style   │
+  │  SonarQube            → code quality,  │
+  │                          coverage, bugs│
+  │  Snyk                 → CVE, dep vuln, │
+  │                          secrets scan  │
+  │  Test runner          → unit / integ   │
+  │                                        │
+  │  Score: 0–100  (tổng hợp từ tất cả)   │
+  └────────────────────────────────────────┘
+       │
+       ▼
+  IN REVIEW / DONE
 ```
 
-**Nói:** "Mỗi lần chạy có điểm chất lượng 0–100. Theo dõi theo thời gian — agent nào đang tốt hơn, agent nào đang tệ đi."
+**Nói:** "SonarQube quét code quality và coverage. Snyk quét CVE trong dependencies và secrets bị lọt vào code. Tất cả tổng hợp thành một điểm 0–100 cho mỗi lần agent chạy. Theo dõi trend theo thời gian — agent nào đang cải thiện, agent nào đang tụt."
 
 ---
 
