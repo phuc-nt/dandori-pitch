@@ -40,6 +40,7 @@ nav:
   - Use Cases: use-cases.md
   - Architecture: architecture.md
   - Enterprise: enterprise.md
+  - Presentation Guide: pitch-deck.md
 
 markdown_extensions:
   - admonition
