@@ -179,8 +179,9 @@ Medium-term:
 
 ## Next steps for enterprise evaluation
 
-1. **Read the [architecture](architecture.md)** — understand the integration surface
-2. **Review [use cases](use-cases.md)** — identify your highest-ROI workflow
+1. **Review [core features](core-features.md)** — see the management capabilities
+2. **Read [use cases](use-cases.md)** — identify your highest-ROI scenario
+3. **Study the [architecture](architecture.md)** — confirm fit with your stack
 3. **Contact us** — we're onboarding design partner organizations
 
 <div style="text-align: center; padding: 2rem 0; margin-top: 2rem; border-top: 1px solid #e0e0e0;">

@@ -57,37 +57,39 @@ Dandori stores agent instructions, skills, and templates centrally. New engineer
 
 ## What Dandori is
 
-**Dandori is the control plane that lives between your developers and their AI agents.**
+**Dandori is the management layer between engineering leadership and the AI agents your teams already use.**
 
 ```
-  Engineer                      Dandori                     AI Provider
-     │                             │                             │
-     │ Create task ────────────────▶                             │
-     │                             │                             │
-     │                             │─── Build 5-layer prompt ───▶│
-     │                             │                             │
-     │                             │◀────── Stream response ─────│
-     │                             │                             │
-     │                             │─── Log tokens, cost, quality│
-     │                             │                             │
-     │                             │─── Run quality gates        │
-     │                             │                             │
-     │ Review + approve ◀──────────│                             │
-     │                             │                             │
-     │                             │─── Audit trail, analytics   │
+   LEADERSHIP                    DANDORI                       AGENTS
+   (governs)                  (manages)                     (execute)
+
+   CTO ─────────┐                                            ┌──── Claude Code
+                ├──▶  set policy  ──▶  inject context  ──▶  ─┤
+   Security ────┤     approve      ◀── quality gates    ◀── ─├──── Codex
+                │     audit        ◀── cost logs        ◀── │
+   Compliance ──┤                                            ├──── Cursor
+                │                                            │
+   Platform ────┘                                            └──── custom
+                                      │
+                                      ▼
+                                 AI Providers
+                          (Anthropic, OpenAI, local)
 ```
+
+**The model:** Leadership sets policy through Dandori. Dandori enforces it on every agent run. Agents execute. Dandori records. Leadership learns from data and adjusts policy. Loop.
 
 **Dandori is NOT:**
 
-- ❌ A coding agent (it orchestrates Claude, Codex, etc. — doesn't replace them)
+- ❌ A coding agent (it manages Claude/Codex/Cursor — doesn't replace them)
 - ❌ A CI/CD replacement (it integrates with yours)
-- ❌ A vendor lock-in (standard APIs, export anytime)
+- ❌ Observability-only (it's task + policy + approval + analytics)
+- ❌ A vendor lock-in (standard APIs, self-hosted, export anytime)
 
 **Dandori IS:**
 
-- ✅ The missing layer between human governance and agent execution
+- ✅ The missing management layer between leadership and agent execution
 - ✅ Vendor-agnostic (any agent: Claude, Codex, local models, custom)
-- ✅ Designed for orgs that need audit, cost control, and quality gates
+- ✅ Designed for orgs that need cost control, audit, and governance at scale
 
 ---
 
@@ -143,6 +145,7 @@ The patterns we saw with:
 
 ## Next steps
 
-- **[Use Cases →](use-cases.md)** Concrete workflows you can deploy
-- **[Architecture →](architecture.md)** How the platform works
-- **[Enterprise →](enterprise.md)** Security, scaling, integration patterns
+- **[Core Features →](core-features.md)** The 9 management capabilities, with diagrams
+- **[Use Cases →](use-cases.md)** Management scenarios for CTO, CISO, Platform, Compliance
+- **[Architecture →](architecture.md)** Technical integration surface
+- **[Enterprise →](enterprise.md)** Security, scaling, rollout path

@@ -35,6 +35,7 @@ theme:
 nav:
   - Home: index.md
   - Why Dandori: why-dandori.md
+  - Core Features: core-features.md
   - Use Cases: use-cases.md
   - Architecture: architecture.md
   - Enterprise: enterprise.md

@@ -6,49 +6,108 @@ hide:
 
 # Dandori
 
-## The unified control plane for AI coding agents in the enterprise.
+## The management layer for AI coding agents in the enterprise.
 
 ---
 
-### The AI agent sprawl problem
+**Your engineers already have great agents.** Claude Code, Codex, Cursor, Cline — they write code just fine.
 
-Your engineering org has thousands of developers. They are using Cursor, Claude Code, Copilot, Codex, Cline, Windsurf — every day, every commit.
+**What's missing** is the layer above them: the one that lets your org **govern, measure, and scale** agent usage across thousands of engineers.
 
-Ask your CTO right now:
-
-- Which teams are spending the most on AI tokens this month?
-- Who approved the deployment that the agent wrote last night?
-- Which prompts are actually working vs. burning cost?
-- Which agent instructions reference the outdated compliance doc from Q3?
-- Can you audit what the agent changed, and why, two sprints ago?
-
-If the answer is *"we'd have to ask around"*, you have an **AI agent sprawl problem**.
-
-Dandori fixes it.
+That's Dandori.
 
 ---
 
-### What Dandori delivers
+### Where Dandori sits
 
-| | Before Dandori | With Dandori |
+```
+┌──────────────────────────────────────────────────────────┐
+│                   ENGINEERING LEADERSHIP                 │
+│          CTO · Platform · Security · Compliance          │
+│   (needs: visibility · control · audit · attribution)    │
+└───────────────────────────┬──────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│                        DANDORI                           │
+│             ═════ management layer ═════                 │
+│                                                          │
+│   Cost       Context      Approval     Quality           │
+│   tracking   governance   workflows    gates             │
+│                                                          │
+│   Audit      Skill        Task         Cross-agent       │
+│   log        library      DAGs         analytics         │
+└───────────────────────────┬──────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│                      AI AGENTS                           │
+│        Claude Code · Codex · Cursor · custom             │
+│          (your engineers' existing tools)                │
+└──────────────────────────────────────────────────────────┘
+```
+
+**Dandori does not write code.** It orchestrates, measures, and governs the agents that do.
+
+---
+
+### The five questions Dandori answers
+
+Ask any CTO today — the answers are *"we'd have to ask around."*
+
+| # | Question | Dandori's answer |
 |---|---|---|
-| **Cost visibility** | Monthly vendor bill | Per-agent, per-task, per-project token + cost tracking |
-| **Context discipline** | Copy-paste prompts | 5-layer hierarchy, versioned, auditable |
-| **Quality assurance** | Caught in human review | Automated gates (lint/test/type) per run |
-| **Approval workflow** | Ad-hoc Slack pings | Built-in gates, logged audit trail |
-| **Knowledge reuse** | Locked in individuals | Shared templates + skill library |
-| **Analytics** | Vendor dashboards only | Cross-agent comparison, trend analysis |
+| 1 | Where is the AI spend going? | Per-agent, per-team, per-project breakdown in real time |
+| 2 | What context did the agent see? | 5-layer hierarchy, versioned, logged per run |
+| 3 | Who approved this change? | Built-in approval workflow with audit trail |
+| 4 | How good is the output? | Automated quality gates + per-agent trend lines |
+| 5 | What if the engineer leaves? | Skills stay in org library, not individual laptops |
 
 ---
 
-### Who it's for
+### Before vs. with Dandori
 
-- **Platform teams** standardizing AI agent usage across the org
-- **Engineering leaders** who need cost + quality visibility
-- **Compliance officers** requiring audit trails for AI-generated code
-- **CTOs** who want governance without slowing engineering velocity
+```
+  BEFORE:                              WITH DANDORI:
+                                       
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ $240K bill  │                      │ $240K bill           │
+  │     │       │                      │  ├ payments   $52K   │
+  │     ▼       │                      │  ├ auth       $38K   │
+  │    ???      │                      │  ├ data       $29K   │
+  │             │                      │  └ ... (drill down)  │
+  └─────────────┘                      └──────────────────────┘
+                                       
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ Copy-paste  │                      │ Company context → v12│
+  │ prompts in  │                      │ Project context → v3 │
+  │ 100 places  │                      │ Team context    → v7 │
+  └─────────────┘                      │ (auto-inherited)     │
+                                       └──────────────────────┘
+                                       
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ "Slack said │                      │ Approval logged:     │
+  │  approve"   │                      │ user=alice at 14:22  │
+  │             │                      │ rationale="reviewed  │
+  └─────────────┘                      │ diff, tests pass"    │
+                                       └──────────────────────┘
+```
 
 ---
+
+### Who uses Dandori
+
+| Role | What they govern |
+|---|---|
+| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions |
+| **Platform team** | Standards across teams, shared skill library |
+| **CISO** | PII handling, audit exports, incident replay |
+| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies |
+| **Engineering managers** | Team throughput, fair attribution, bottlenecks |
+
+---
+
+### Explore
 
 <div class="grid cards" markdown>
 
@@ -56,15 +115,23 @@ Dandori fixes it.
 
     ---
 
-    The full case: problem, solution, ROI, differentiators.
+    The full case: problem, ROI, differentiators.
 
     [:octicons-arrow-right-24: Why Dandori](why-dandori.md)
+
+-   :material-toolbox:{ .lg .middle } **Core Features**
+
+    ---
+
+    9 management capabilities with ASCII walkthroughs.
+
+    [:octicons-arrow-right-24: Core Features](core-features.md)
 
 -   :material-lightbulb-on:{ .lg .middle } **Use Cases**
 
     ---
 
-    Concrete workflows: code review, test generation, incident response, compliance.
+    9 management scenarios for CTO, CISO, Platform, Compliance.
 
     [:octicons-arrow-right-24: Use Cases](use-cases.md)
 
@@ -72,7 +139,7 @@ Dandori fixes it.
 
     ---
 
-    How the platform works: context layers, quality gates, audit pipeline.
+    Technical integration surface for your stack.
 
     [:octicons-arrow-right-24: Architecture](architecture.md)
 
@@ -80,7 +147,7 @@ Dandori fixes it.
 
     ---
 
-    Security, scaling, compliance, integration patterns for large orgs.
+    Self-hosting, security, compliance, rollout path.
 
     [:octicons-arrow-right-24: Enterprise](enterprise.md)
 
@@ -88,8 +155,8 @@ Dandori fixes it.
 
 ---
 
-<div style="text-align: center; padding: 2rem 0;">
-<h3>Interested in bringing Dandori to your organization?</h3>
-<p>We're working with design partner organizations running <strong>1,000+ engineers</strong>.</p>
-<p><a href="mailto:hello@dandori.io">hello@dandori.io</a></p>
+<div style="text-align: center; padding: 2rem 0; margin-top: 2rem;">
+<h3>Bring governance to your agents.</h3>
+<p>We're onboarding design-partner organizations running <strong>1,000+ engineers</strong>.</p>
+<p><a href="mailto:hello@dandori.io"><strong>hello@dandori.io</strong></a></p>
 </div>

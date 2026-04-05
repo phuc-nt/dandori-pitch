@@ -1,285 +1,417 @@
 # Use Cases
 
-Real workflows you can deploy today. Each pattern uses Dandori's primitives (projects, agents, tasks, context, approvals) to solve a concrete problem.
+**For leaders, not engineers.** These are scenarios that *management* runs — leveraging the capabilities from [Core Features](core-features.md) — not scenarios that agents execute.
+
+The agents execute code. **Dandori lets leadership govern, measure, and scale the agents.**
 
 ---
 
-## 1. Automated code review team
+## 1. CFO: Monthly AI cost review
 
-**Problem:** PR review queue is a bottleneck. Senior engineers spend 30% of their week on mechanical review (style, security, test coverage).
+**Role:** CFO, VP Engineering
+**Question:** "Where did our $240K AI bill go this month, and is it trending safely?"
 
-**Pattern:**
-
+**Before Dandori:**
 ```
-Project: "Code Review"
-├── Agent: "Reviewer-Security"  (skills: owasp, secret-scanning, auth)
-├── Agent: "Reviewer-Style"     (skills: eslint, naming, structure)
-├── Agent: "Reviewer-Tests"     (skills: coverage, edge-cases, mocking)
-└── Agent: "Reviewer-Docs"      (skills: api-docs, changelog)
+Anthropic invoice:  $180,000
+OpenAI invoice:      $60,000
+────────────────────────────
+Total:              $240,000
+
+Breakdown?  "We'll ask the teams."
+Trend?      "Spreadsheet next week."
+Waste?      "No way to tell."
 ```
 
-**Flow:**
+**With Dandori:**
+```
+┌──────────────────────────────────────────────────────┐
+│  MONTHLY COST REVIEW — DANDORI DASHBOARD             │
+│                                                      │
+│  Total:                           $240,130           │
+│  vs. previous month:              +18%     ⚠         │
+│                                                      │
+│  Top projects (by spend):                            │
+│    1. payments-service      $52,100     ↑ 42%  ⚠⚠    │
+│    2. auth-platform         $38,240     ↓  3%        │
+│    3. data-pipeline         $29,880     →  0%        │
+│                                                      │
+│  Top agents (by cost/quality ratio):                 │
+│    • RefactorBot      $8,420   quality 64   ⚠        │
+│    • DocsSynthesizer  $3,110   quality 89   ✓        │
+│                                                      │
+│  Actions:                                            │
+│    1. Investigate payments-service 42% jump          │
+│    2. Review RefactorBot (low quality/high cost)     │
+│    3. Shift low-complexity tasks to cheaper model    │
+└──────────────────────────────────────────────────────┘
+```
 
-1. CI webhook triggers Dandori task on PR open: `POST /api/tasks`
-2. Task assigned to `Reviewer-Security` first (skill match)
-3. Agent reviews diff, writes findings to task comments
-4. Task marked `in_review` with `needs_approval=true`
-5. Senior engineer approves/rejects based on agent findings
-6. Findings posted back to GitHub PR
-
-**Context injection:**
-- **Company:** Security policies, compliance requirements
-- **Project:** Service-specific threat model
-- **Agent:** Role-specific checklist (OWASP top 10)
-- **Task:** The PR diff + linked tickets
-
-**Value:** Senior engineers review 3× faster. Mechanical issues caught before human eyes. Audit log shows what was checked + approved.
+**Dandori capability used:** Cost attribution, cross-agent analytics, trend detection.
 
 ---
 
-## 2. Documentation bot
+## 2. Platform team: Standardizing agent usage across 8 product teams
 
-**Problem:** Docs drift. Nobody updates `README.md` when APIs change. New hires can't onboard.
+**Role:** Head of Developer Platform
+**Question:** "How do I roll out AI agents consistently without 8 different stacks?"
 
-**Pattern:**
+**The management problem:**
 
 ```
-Project: "Docs Automation"
-└── Agent: "DocsBot"  (skills: api-docs, markdown, mermaid)
+Without Dandori:
+  Team A → uses Claude Code + hand-written prompts in repo
+  Team B → uses Cursor + prompts in Notion
+  Team C → uses custom Python wrapper + prompts in .env
+  Team D → uses Codex via CLI alias
+  ...
+  Result: no shared standards, no central cost view,
+          no learning from one team to another
 ```
 
-**Flow:**
+**With Dandori:**
 
-1. Nightly cron: `dandori tasks create --title "Sync docs for service X"`
-2. Task context includes: OpenAPI spec path, existing docs path, recent commits
-3. Agent compares API surface → existing docs, writes updates
-4. Task marked `in_review` → tech writer approves
-5. Approved docs committed via CI
+```
+       ┌─────────────────────────────────────────┐
+       │     COMPANY CONTEXT (set by Platform)   │
+       │  Security rules · Approved libs · Style │
+       └─────────────────────────────────────────┘
+                          │
+        ┌─────────┬───────┴───────┬─────────────┐
+        ▼         ▼               ▼             ▼
+     Team A    Team B          Team C        Team D
+   (inherits) (inherits)     (inherits)    (inherits)
 
-**Context injection:**
-- **Company:** Documentation standards (tone, structure)
-- **Project:** Service's public API contract
-- **Agent:** Template for API endpoint docs
-- **Task:** Specific service + diff since last sync
+        + shared skill library: security-review,
+          perf-analysis, api-design, test-patterns
+```
 
-**Value:** Docs stay within 24 hours of code. No more "docs say X but code does Y" bugs.
+**What Platform team manages centrally:**
+- Company-level context (security, compliance, approved deps)
+- Skill library (all teams reuse same proven prompts)
+- Analytics across all teams (spot best practices, flag outliers)
+- Rate limits per team (prevent runaway cost from one team)
+
+**What product teams own:**
+- Their project + team context
+- Their specific agents
+- Their own tasks
+
+**Dandori capability used:** 5-layer context, skill library, per-project scoping, cross-team analytics.
 
 ---
 
-## 3. Test generation pipeline
+## 3. CISO: AI security posture review
 
-**Problem:** Test coverage plateaus at 40%. Engineers skip writing tests under deadline pressure.
+**Role:** CISO, Security Architect
+**Question:** "Show me every prompt that touched our PII-tagged data last quarter."
 
-**Pattern:**
+**Without Dandori:** Impossible. No single source of logs.
+
+**With Dandori:**
 
 ```
-Project: "Test Coverage"
-├── Agent: "UnitTestGen"         (skills: jest, vitest, mocking)
-├── Agent: "IntegrationTestGen"  (skills: supertest, fixtures, db)
-└── Agent: "EdgeCaseFinder"      (skills: property-testing, fuzzing)
+Query: SELECT runs WHERE context_contains PII_CLASSIFIED
+       AND date BETWEEN 2026-01-01 AND 2026-03-31
+
+┌─────────────────────────────────────────────────────┐
+│  PII-TOUCHING RUNS — Q1 2026                        │
+│                                                     │
+│  Total runs:          8,421                         │
+│  Flagged for review:     12                         │
+│  Violations detected:     0                         │
+│                                                     │
+│  Projects involved:                                 │
+│    ├─ user-data-service     (6,120 runs)            │
+│    ├─ billing-platform      (1,983 runs)            │
+│    └─ internal-analytics      (318 runs)            │
+│                                                     │
+│  Context versions at time of run: all logged        │
+│  Output retention: 90 days                          │
+│  Exportable: JSON / CSV / SOC2 audit format         │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Flow:**
+**What CISO governs:**
+- PII classification at context layer
+- Policy: "no PII in agent prompts" enforced by context system
+- Audit exports for auditors
+- Incident investigation: who did what, when, with which policy version
 
-1. Coverage report identifies files with <50% coverage
-2. Dandori creates tasks: one per low-coverage file, assigned to matching agent
-3. Agent writes tests, runs them, iterates until passing
-4. Quality gate: must not decrease existing coverage
-5. Task marked `in_review` → engineer reviews test quality
-6. Approved tests merged
-
-**Context injection:**
-- **Company:** Testing conventions, what NOT to test
-- **Project:** Framework setup, fixture patterns
-- **Agent:** Test style examples
-- **Task:** Target file + existing tests + coverage gaps
-
-**Value:** Coverage climbs 40% → 70%+ in one quarter. Engineers focus on complex scenarios, agents handle coverage grinding.
+**Dandori capability used:** Audit log, context versioning, PII tagging, compliance export.
 
 ---
 
-## 4. Research agent for technical decisions
+## 4. Engineering Director: Quality trend across teams
 
-**Problem:** Engineers spend days researching "should we use X or Y?" in Slack threads that die inconclusively.
+**Role:** VP Engineering, Director
+**Question:** "Are our AI-generated outputs getting better or worse? Is any team drifting?"
 
-**Pattern:**
+**The management problem:** Engineers say "our agents are great." How do you know?
+
+**With Dandori:**
 
 ```
-Project: "Tech Decisions"
-└── Agent: "Researcher"  (skills: comparison-matrix, benchmarks, pros-cons)
+┌─────────────────────────────────────────────────────┐
+│  AGENT QUALITY TREND — 6 months                     │
+│                                                     │
+│  Company avg: 82 ────► 87    ↑ +5   (good)          │
+│                                                     │
+│  By team:                                           │
+│    Payments    78 ─▶ 91   ↑ +13   (excellent)       │
+│    Auth        85 ─▶ 88   ↑  +3                     │
+│    Data        81 ─▶ 76   ↓  -5   ⚠  investigate    │
+│    Internal    83 ─▶ 84   →  +1                     │
+│                                                     │
+│  Drill-down: Data team quality drop                 │
+│    Agent "Refactorer" dropped 64 → 48               │
+│    Root cause: outdated skill version               │
+│    Action: Platform to update skill                 │
+└─────────────────────────────────────────────────────┘
 ```
 
-**Flow:**
+**What Director governs:**
+- Quality score SLOs per team
+- Investigations when trends decline
+- Share winning practices across teams
+- Data-driven performance reviews
 
-1. Engineer creates task: "Evaluate Drizzle vs Prisma for new service"
-2. Task context: performance requirements, team skills, existing stack
-3. Researcher agent pulls docs, benchmarks, GitHub issues, community discussions
-4. Writes structured comparison: criteria table, migration effort, risk assessment
-5. Output attached to task for architecture review meeting
-
-**Context injection:**
-- **Company:** Approved vendors, licensing rules
-- **Project:** Non-functional requirements
-- **Agent:** Comparison matrix template
-- **Task:** Specific decision + constraints
-
-**Value:** Architecture decisions made in hours, not weeks. Consistent evaluation criteria. Decisions documented as side effect.
+**Dandori capability used:** Quality gates, cross-agent analytics, trend detection.
 
 ---
 
-## 5. Incident response co-pilot
+## 5. Compliance officer: SOC 2 AI controls audit
 
-**Problem:** On-call engineer is paged at 3 AM. Needs to correlate logs, deploys, config changes fast.
+**Role:** Compliance Officer, GRC
+**Question:** "Our auditor requires evidence of AI governance. What do we show them?"
 
-**Pattern:**
+**Before Dandori:** Custom tooling project, 3 months, one-off export scripts.
+
+**With Dandori:**
 
 ```
-Project: "Incident Response"
-└── Agent: "IncidentBot"  (skills: log-analysis, root-cause, runbooks)
+┌──────────────────────────────────────────────────────────┐
+│  SOC 2 AI CONTROLS EVIDENCE PACK                         │
+│                                                          │
+│  ✓ Access control         → API keys per user, revocable │
+│  ✓ Change management      → Approval gates, logged       │
+│  ✓ Audit trail            → Immutable log, 365 days      │
+│  ✓ Data classification    → Context PII tags             │
+│  ✓ Policy enforcement     → Company context versioned    │
+│  ✓ Incident traceability  → Run-level prompt replay      │
+│                                                          │
+│  One-click export: JSON · CSV · PDF                      │
+│  Retention: 365 days configurable                        │
+└──────────────────────────────────────────────────────────┘
 ```
 
-**Flow:**
+**What compliance governs:**
+- Access control per project
+- Policy versions (when changed, who, why)
+- Audit exports on cadence
+- Evidence for external auditors
 
-1. PagerDuty webhook → Dandori task with alert details
-2. Task marked `high` priority, `needs_approval` off (speed > approval)
-3. Agent pulls: recent deploys, config changes, related alerts, runbook matches
-4. Agent writes incident summary: likely cause, first mitigation step, escalation contact
-5. Output posted to incident Slack channel within 60 seconds
-6. Human confirms or redirects
-
-**Context injection:**
-- **Company:** Incident severity matrix, escalation policy
-- **Project:** Service architecture, dependencies
-- **Agent:** Runbook library
-- **Task:** Alert payload + correlated data
-
-**Value:** On-call engineers get 60-second summary instead of 15-minute context rebuild. MTTR drops significantly.
+**Dandori capability used:** Audit log, access control, context versioning, export.
 
 ---
 
-## 6. Compliance documentation for SOC2 / ISO27001
+## 6. Org-wide knowledge transfer on hiring/attrition
 
-**Problem:** Auditors ask "show me your AI usage controls". You have 50 engineers using Claude, no central log.
+**Role:** Head of Engineering
+**Question:** "Our best prompt-engineer just quit. What did they leave behind?"
 
-**Pattern:**
+**Without Dandori:** Text files in their home dir. Gone.
+
+**With Dandori:**
 
 ```
-Project: "Compliance"
-└── All agents funnel through Dandori
+      BEFORE (knowledge walks out the door)
+      ────────────────────────────────────
+      Alice's magic prompts live in:
+        ~/scripts/prompts.txt         (laptop, deleted)
+        .cursorrules (one of her branches, forgotten)
+        Confluence "DRAFT - Alice's tips"
+        Slack DMs
+      Result: 6 months to rebuild, tribal knowledge
+
+
+      AFTER (knowledge stays with the org)
+      ────────────────────────────────────
+      Alice's skills live in Dandori:
+        skill: "code-review-patterns"   (version 12)
+        skill: "refactor-checklist"     (version 8)
+        skill: "perf-investigation"     (version 5)
+
+      Attached to: 14 agents across 4 teams.
+      New engineer day 1: inherits proven prompts automatically.
+      Result: zero knowledge loss.
 ```
 
-**Flow:**
+**What leadership governs:**
+- Skills are org assets, not individual assets
+- Ownership transitions when people leave
+- Onboarding uses same skills everyone else uses
+- Promotions reward people who contribute to skill library
 
-1. Org policy: "no direct Claude CLI usage, go through Dandori"
-2. API keys gate all agent access (per-engineer, revocable)
-3. Every run logged: who, what prompt, what context, what output
-4. Approval gates enforced on production-impacting tasks
-5. Quarterly: export audit log via API, hand to auditor
-
-**Context injection:**
-- **Company:** Data classification policies, PII handling rules
-- **Project:** Data flow for each service
-- **Agent:** What the agent is/isn't allowed to process
-- **Task:** Specific data scope
-
-**Value:** Compliance checkbox passes without custom tooling. Single source of truth for AI activity.
+**Dandori capability used:** Skill library, version control, team ownership.
 
 ---
 
-## 7. Multi-agent feature implementation
+## 7. Evaluating a new AI model/provider
 
-**Problem:** Feature spans frontend, backend, tests, docs. One engineer juggles context across 4 agents.
+**Role:** VP Engineering, Platform Architect
+**Question:** "Should we switch from Claude to Gemini? Where's the data?"
 
-**Pattern:**
+**Without Dandori:** Engineer tries it on their tasks, forms opinion, writes memo.
+
+**With Dandori:**
 
 ```
-Project: "Feature X"
-├── Agent: "Backend-Alice"    (skills: node, express, postgres)
-├── Agent: "Frontend-Bob"     (skills: react, typescript, mui)
-├── Agent: "Tester-Carol"     (skills: jest, playwright)
-└── Agent: "DocsWriter-Dave"  (skills: api-docs, user-guide)
+  Evaluation plan: run 50 real tasks through both models
+  ──────────────────────────────────────────────────────
+
+  Week 1: Create agent "Reviewer-Claude" (existing)
+          Create agent "Reviewer-Gemini" (new model)
+          Both inherit: same context, same skills, same tasks
+
+  Week 2-3: Route same task set to both
+            Dandori logs: quality, cost, duration, output length
+
+  Week 4: Review comparison table
+
+┌────────────────────────────────────────────────────────┐
+│  MODEL EVAL — 50 matched tasks                         │
+│                                                        │
+│  Metric            Claude    Gemini    Winner          │
+│  ─────────────────────────────────────────────────     │
+│  Avg quality         87        82      Claude          │
+│  Cost/run         $0.42     $0.18      Gemini (-57%)   │
+│  Duration          12.3s     8.1s      Gemini          │
+│  Pass quality gates  94%       79%     Claude          │
+│                                                        │
+│  Decision: Keep Claude for high-stakes tasks,          │
+│            route low-complexity work to Gemini         │
+│  Projected savings: $14K/month                         │
+└────────────────────────────────────────────────────────┘
 ```
 
-**Flow:**
+**What leadership governs:**
+- Rigorous A/B evaluation with same inputs
+- Data-driven vendor decisions
+- Mixed-model strategies to optimize cost/quality
 
-1. Feature spec broken into tasks with dependencies:
-   - `implement-api` (Alice, phase: implement)
-   - `implement-ui` (Bob, phase: implement, depends on: implement-api)
-   - `write-tests` (Carol, phase: test, depends on: implement-api, implement-ui)
-   - `update-docs` (Dave, phase: maintain, depends on: write-tests)
-2. Alice wakes up → builds API → task done
-3. Auto-start triggers: Bob wakes up → builds UI
-4. When both done → Carol wakes up → writes tests
-5. Final step: Dave updates docs
-6. Engineer reviews each step via approval gates
-
-**Context injection:**
-- Shared project context keeps all agents aligned
-- Each agent gets task-specific spec + predecessor outputs
-- Skills route the right agent to the right work
-
-**Value:** Feature implementation parallelized safely. Engineer orchestrates, doesn't context-switch. Quality gates between phases catch mistakes early.
+**Dandori capability used:** Multiple adapters, per-agent analytics, controlled experiments.
 
 ---
 
-## 8. Skill library as company IP
+## 8. Incident postmortem: Agent-caused outage
 
-**Problem:** Senior engineer's prompts are 10× better than junior's. That IP is locked in one person's text file.
+**Role:** Engineering Manager, SRE Lead
+**Question:** "The agent shipped a broken migration. How did we get here?"
 
-**Pattern:**
+**Without Dandori:** Git blame → engineer → "the agent said it was fine."
+
+**With Dandori:**
 
 ```
-Company-wide Skill Library:
-├── "security-review"       (maintained by security team)
-├── "performance-analysis"  (maintained by platform team)
-├── "api-design"            (maintained by staff engineers)
-└── "onboarding-checker"    (maintained by HR engineering)
+  Incident #INC-4812 postmortem
+  ────────────────────────────────────────
+
+  Run ID: R-48291
+  Agent: SchemaMigrator
+  Executed: 2026-04-04 02:14 UTC
+  Task: #T-9102 (auto-generated schema migration)
+
+  Prompt context (as sent to AI):
+    Company context v12 — 2026-03-01
+    Project context (data-pipeline) v3 — 2026-02-15   ⚠
+    Team context v7 — 2026-04-01
+    Agent instruction v4 — 2026-03-20
+    Task spec — 2026-04-03
+
+  ⚠ Root cause: project context v3 from Feb still listed
+    old column names removed in Feb 20 refactor.
+    Migration agent used stale info.
+
+  Remediation:
+    1. Update project context to v4
+    2. Add quality gate: "verify schema matches live DB"
+    3. Require approval for all migrations
 ```
 
-**Flow:**
+**What management governs:**
+- Full prompt replay for incident investigation
+- Context version at time-of-incident
+- Policy changes post-incident (add gates, approvals)
 
-1. Skills are markdown files with frontmatter + reusable instructions
-2. Attach skills to any agent: `POST /api/agents/:id/skills`
-3. New agent inherits company expertise immediately
-4. Skill updates propagate to all agents using it
-5. Skill version history tracks evolution
-
-**Value:** Tribal knowledge becomes organizational IP. Onboarding time cut. Consistency across teams.
+**Dandori capability used:** Audit log, context versioning, prompt replay, approval workflow.
 
 ---
 
-## Common patterns across all use cases
+## 9. Fair work attribution + team KPIs
 
-### Context discipline
-Every use case relies on the 5-layer context hierarchy. **Don't copy-paste context into prompts — define it once at the right layer.**
+**Role:** Engineering Manager
+**Question:** "Which engineers drove the most agent-assisted value this quarter?"
 
-### Approval gates
-Use them for production-impacting work (deploys, migrations, customer-facing changes). Skip them for low-risk or high-velocity work (incident response, test generation).
+**Before Dandori:** Gut feel. Politically fraught.
 
-### Skill tags
-Tag tasks with required skills. Dandori auto-suggests the best-matching agent. Build your skill library incrementally.
+**With Dandori:**
 
-### Quality gates
-Run scanners on every implementation task. Track quality score per agent over time. Fire agents whose quality trends downward.
+```
+┌──────────────────────────────────────────────────────┐
+│  Q1 AGENT USAGE BY ENGINEER                          │
+│                                                      │
+│  Engineer    Tasks   Approvals   Skills   Cost-adj   │
+│                      given       contrib. quality    │
+│  ─────────────────────────────────────────────       │
+│  Alice         42       28          3        91      │
+│  Bob           38       12          0        84      │
+│  Carol         31       55*         1        87      │
+│                                                      │
+│  * Carol did majority of approvals → bottleneck?     │
+│    Or: Carol has context others lack → celebrate     │
+└──────────────────────────────────────────────────────┘
+```
 
-### Dependencies
-Model workflows as DAGs of tasks. Let Dandori auto-start dependent tasks. Don't hand-schedule agent wakeups.
+**What management governs:**
+- Fair attribution of agent-assisted output
+- Identify reviewer bottlenecks
+- Reward skill-library contributors
+- Detect over-reliance on one engineer
+
+**Dandori capability used:** Approval tracking, skill ownership, per-user analytics.
 
 ---
 
-## Getting started with your use case
+## Pattern: Management runs the org, agents run the tasks
 
-1. Define the project scope and success metric
-2. Identify which agents (skills + roles) you need
-3. Define context at the appropriate layer (Company / Project / Team)
-4. Pilot with one manual task
-5. Once the pattern works, automate end-to-end
+```
+           │                                          │
+  LEADERS  │  ◀── Dandori dashboards ──               │  AGENTS
+  (govern) │       · cost attribution                 │  (execute)
+           │       · quality trends                   │
+           │       · compliance reports               │    │
+           │                                          │    │
+           ├─ set policies ─ set contexts ─ approve ──┤    │
+           │                                          │    │
+           │  ─── Dandori orchestrates ──▶            │    ▼
+           │                                          │  writes
+           │                                          │  code,
+           │                                          │  tests,
+           │                                          │  docs
+```
 
-**Start small. Iterate. Expand.**
+**The pattern across all 9 use cases:**
+
+1. Leaders see *through* Dandori, not around it.
+2. Policies live at the right layer and propagate automatically.
+3. Every decision is backed by data, not gut feel.
+4. Incidents become learnings, not finger-pointing.
 
 ---
 
-## Next steps
+## See it in context
 
-- **[Architecture →](architecture.md)** How Dandori enables these patterns
-- **[Enterprise →](enterprise.md)** Security, scaling, and deployment
+- **[Core Features →](core-features.md)** The capabilities behind these scenarios
+- **[Architecture →](architecture.md)** How Dandori delivers them technically
+- **[Enterprise →](enterprise.md)** Rolling this out at 1,000+ engineers

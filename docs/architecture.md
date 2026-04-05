@@ -212,5 +212,6 @@ Dandori exposes five integration surfaces:
 
 ## Next steps
 
-- **[Enterprise →](enterprise.md)** Scaling, compliance, integration with your stack
-- **[Use Cases →](use-cases.md)** Concrete patterns built on this architecture
+- **[Core Features →](core-features.md)** Management capabilities with ASCII walkthroughs
+- **[Use Cases →](use-cases.md)** Management scenarios built on this architecture
+- **[Enterprise →](enterprise.md)** Scaling, compliance, rollout path
