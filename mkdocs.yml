@@ -4,6 +4,7 @@ site_url: https://phuc-nt.github.io/dandori-pitch/
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -61,6 +62,13 @@ markdown_extensions:
 
 plugins:
   - search
+
+hooks:
+  - hooks/docs_bundle.py
+
+extra_javascript:
+  - javascripts/download-docs.js
+  - javascripts/copy-page-markdown.js
 
 extra:
   generator: false

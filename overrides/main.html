@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page and page.markdown is defined %}
+  <script>
+    window.PAGE_MARKDOWN = {{ page.markdown | tojson }};
+    window.PAGE_TITLE = {{ (page.title or page.file.src_path) | tojson }};
+    window.PAGE_FILENAME = {{ page.file.src_path | tojson }};
+  </script>
+  {% endif %}
+{% endblock %}
