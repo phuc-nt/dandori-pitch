@@ -164,9 +164,40 @@ hide:
 
 ---
 
-## Nhịp 8 — Cost attribution
+## Nhịp 8 — Project & Task management
 
-**Nói:** "Thứ đầu tiên Dandori làm được: phân bổ chi phí. Mỗi token đều được log — agent nào, task nào, project nào, team nào."
+**Nói:** "Dandori bắt đầu từ một thứ rất quen thuộc: task board. Nhưng đây không phải Jira — đây là task board được thiết kế cho agent."
+
+**Vẽ:** *(vẽ kanban board và task lifecycle)*
+
+```
+  TODO ──────▶ IN PROGRESS ──────▶ IN REVIEW ──────▶ DONE
+                    │                    │
+                    │                    └── human approve/reject
+                    │
+                    └── agent chạy ở đây
+                        (prompt tự động lắp context)
+                        (quality gate tự động chạy)
+```
+
+**Nói:** "Task được tổ chức theo Project. Mỗi task có phase tag: Research → Concept → Design → Implement → Test → Deploy. Task có thể phụ thuộc nhau — con chỉ bắt đầu khi cha xong, Dandori tự động trigger."
+
+**Vẽ thêm:** *(dependency chain)*
+
+```
+  [Research] ──▶ [Design] ──▶ [Implement] ──▶ [Test] ──▶ [Deploy]
+                                   │
+                              agent tự chạy
+                              khi task cha done
+```
+
+**Nói:** "Đây là layer mà kỹ sư và manager dùng hằng ngày. Mọi thứ khác — context, approval, quality — đều gắn vào đây."
+
+---
+
+## Nhịp 9 — Cost attribution
+
+**Nói:** "Thứ đầu tiên về visibility: phân bổ chi phí. Mỗi token đều được log — agent nào, task nào, project nào, team nào."
 
 **Vẽ:** *(mở rộng box Dandori, thêm module cost bên trong)*
 
@@ -186,54 +217,57 @@ hide:
 
 ---
 
-## Nhịp 9 — Context hierarchy
+## Nhịp 10 — Context & Skills — một hệ thống
 
-**Nói:** "Thứ hai: context. Thay vì copy-paste, một cấu trúc 5 tầng. Mỗi agent tự kế thừa — không cần ai nhớ paste."
+**Nói:** "Thứ hai: context và skill. Đây là cùng một hệ thống — cùng cơ chế kế thừa theo tầng, cùng version control."
 
-**Vẽ:** *(thêm stack bên trái box Dandori)*
+**Vẽ:** *(vẽ hierarchy với skill library tích hợp vào)*
 
 ```
-  ┌─────────────┐     ┌──────────────────────────────┐
-  │ 1. Công ty  │     │            DANDORI           │
-  │ 2. Dự án    │────▶│                              │
-  │ 3. Team     │     │  ┌──────────────┐            │
-  │ 4. Agent    │     │  │ Cost         │            │
-  │ 5. Task     │     │  ├──────────────┤            │
-  └─────────────┘     │  │ Context hub  │            │
-                      │  └──────────────┘            │
-                      └──────────────────────────────┘
+  ┌─────────────────────────────────────────┐
+  │         Knowledge hierarchy             │
+  │                                         │
+  │  1. Công ty  ← policy, compliance       │
+  │       │                                 │
+  │  2. Dự án   ← stack, architecture       │
+  │       │                                 │
+  │  3. Team    ← convention, protocol      │
+  │       │                                 │
+  │  4. Agent   ← role, skills attached ◀──┼── Skill lib
+  │       │        api-security             │   code-review
+  │  5. Task    ← work item, deadline       │   test-gen
+  └─────────────────────────────────────────┘
+           │ toàn bộ inject vào prompt
+           ▼
+         agent
 ```
 
-**Nói:** "Cập nhật policy bảo mật một lần ở tầng Công ty. Lần chạy tiếp theo, tất cả agent đều thấy. Có version control, có rollback, có audit log."
+**Nói:** "Cập nhật policy ở tầng Công ty — tất cả agent thấy ngay. Cập nhật skill 'api-security' — tất cả agent đang dùng skill đó đều nhận phiên bản mới ở lần chạy tiếp. Kỹ sư nghỉ việc, skill của họ ở lại. Versioned. Rollback được. Audit được."
 
 ---
 
-## Nhịp 10 — Approval gates
+## Nhịp 11 — Approval gates
 
-**Nói:** "Thứ ba: approval gate. Task rủi ro cao — migration database, thay đổi infra — dừng lại đây cho đến khi con người approve."
+**Nói:** "Thứ tư: approval gate. Task rủi ro cao — migration database, thay đổi infra — dừng lại đây cho đến khi con người approve."
 
-**Vẽ:** *(thêm module approval, thêm ký hiệu cổng trên luồng)*
+**Vẽ:** *(thêm gate vào luồng task lifecycle)*
 
 ```
-  ┌─────────────┐     ┌──────────────────────────────┐
-  │ Context     │     │            DANDORI           │
-  │ tầng        │────▶│                              │
-  └─────────────┘     │  ┌──────────────┐            │
-                      │  │ Cost         │            │
-  [KS] ───────────────┤  ├──────────────┤            │
-  review & approve    │  │ Context hub  │            │
-         ▲            │  ├──────────────┤            │
-         │            │  │ ⛔ Approval  │            │
-         └────────────│  │   gate       │            │
-                      │  └──────────────┘            │
-                      └──────────────────────────────┘
+  IN PROGRESS ──▶ [agent chạy] ──▶ IN REVIEW ──▶ DONE
+                                        │
+                                   [KS] approve
+                                        │
+                                   log: alice
+                                        14:22
+                                        "diff reviewed,
+                                         tests pass"
 ```
 
 **Nói:** "Mỗi lần approve được log: ai, lúc mấy giờ, họ đã xem gì. Một lần export là có đủ evidence cho đội compliance."
 
 ---
 
-## Nhịp 11 — Quality gates
+## Nhịp 12 — Quality gates
 
 **Nói:** "Thứ tư: quality gates. Trước khi output nào được chấp nhận, scanner tự động chạy."
 
@@ -260,32 +294,6 @@ hide:
 
 ---
 
-## Nhịp 12 — Skill library
-
-**Nói:** "Thứ năm: skill library. Những prompt tốt nhất của tổ chức, lưu tập trung. Kỹ sư mới vào — kế thừa ngay hôm đầu tiên."
-
-**Vẽ:** *(thêm skill box feed vào context stack)*
-
-```
-  ┌─────────────┐
-  │ Skill lib   │
-  │ api-security│
-  │ code-review │
-  │ test-gen    │
-  └──────┬──────┘
-         │ tự gắn vào
-         ▼
-  ┌─────────────┐     ┌──────────────────────────────┐
-  │ Context     │     │            DANDORI           │
-  │ tầng        │────▶│  Cost │ Context │ Approval   │
-  └─────────────┘     │  Quality gates │ Skills      │
-                      └──────────────────────────────┘
-```
-
-**Nói:** "Kỹ sư nghỉ việc. Prompt của họ vẫn ở lại. Kiến thức không đi theo người nữa."
-
----
-
 ## Nhịp 13 — Cross-agent analytics
 
 **Nói:** "Thứ sáu: analytics so sánh giữa các agent. Không chỉ biết chi phí — còn biết agent nào đang cho ra chất lượng tốt hơn, ai đang cải thiện, ai đang tụt."
@@ -308,28 +316,7 @@ hide:
 
 ---
 
-## Nhịp 14 — Task dependencies & phase workflow
-
-**Nói:** "Thứ bảy: task dependency. Agent không chỉ chạy độc lập — chúng chạy theo thứ tự. Task con chỉ bắt đầu khi task cha xong."
-
-**Vẽ:** *(vẽ một DAG đơn giản)*
-
-```
-  [Research] ──▶ [Design] ──▶ [Implement] ──▶ [Test]
-                                   │
-                              (agent chạy)
-                              (quality gate)
-                              (approval nếu cần)
-                                   │
-                                   ▼
-                              [Deploy]
-```
-
-**Nói:** "Và mỗi task có phase tag: Research → Concept → Design → Implement → Test → Deploy. Bộ lọc theo phase để nhìn toàn bộ portfolio theo giai đoạn."
-
----
-
-## Nhịp 15 — Immutable audit log
+## Nhịp 14 — Immutable audit log
 
 **Nói:** "Thứ tám: audit log. Mỗi lần agent chạy tạo ra một bản ghi đầy đủ, không sửa được."
 
@@ -353,7 +340,7 @@ hide:
 
 ---
 
-## Nhịp 16 — Integration surface
+## Nhịp 15 — Integration surface
 
 **Nói:** "Thứ chín: Dandori không đứng một mình. Nó có 4 mặt tiếp xúc với phần còn lại của hệ thống."
 
@@ -378,7 +365,7 @@ hide:
 
 ---
 
-## Nhịp 17 — Bức tranh tổng thể
+## Nhịp 16 — Bức tranh tổng thể
 
 **Nói:** "Đây là bảng lúc kết thúc. Đây là những gì Dandori mang lại."
 
@@ -418,7 +405,7 @@ hide:
 
 ---
 
-## Nhịp 18 — Kết
+## Nhịp 17 — Kết
 
 **Nói:** "Mọi tổ chức có hơn 100 kỹ sư sẽ cần cái này trước cuối 2026. Cùng pattern như DevOps tools những năm 2010, observability 2015, feature flags 2020. Đến lượt AI agent. Dandori là layer hợp nhất đó."
 
@@ -449,7 +436,7 @@ hide:
 - **Tổng thời gian:** 20–30 phút có cả Q&A
 - **Nhịp 1–6:** ~5 phút — vấn đề. Để nó thấm. Đừng vội đến giải pháp.
 - **Nhịp 7:** dừng sau khi vẽ xong thanh Dandori. Để audience nhìn bảng vài giây.
-- **Nhịp 8–16:** ~12 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.
-- **Nhịp 17:** ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.
-- **Nhịp 18:** ~2 phút — kết + CTA.
+- **Nhịp 8–15:** ~12 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.
+- **Nhịp 16:** ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.
+- **Nhịp 17:** ~2 phút — kết + CTA.
 - **Q&A:** vẽ lên bảng khi trả lời. Sơ đồ là công cụ của bạn.
