@@ -1,52 +1,58 @@
-# Presentation Guide
+---
+hide:
+  - navigation
+  - toc
+---
 
-*Whiteboard script — each section is one drawing beat. Start with a blank board. Add only what the script says, nothing else.*
+# Script thuyết trình
+
+*Mỗi phần là một nhịp vẽ. Bắt đầu với bảng trắng. Vẽ thêm từng thứ đúng lúc script nói — không vẽ trước.*
 
 ---
 
-## Beat 1 — The engineers
+## Nhịp 1 — Những kỹ sư
 
-**Say:** "Let's start with your engineers. Today, 2026. A 10,000-person engineering org."
+**Nói:** "Bắt đầu từ điều đơn giản nhất. Một tổ chức 10.000 kỹ sư. Năm 2026."
 
-**Draw:**
+**Vẽ:**
 
 ```
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
 
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
 
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
 
-              ... × 10,000
+              ... × 10.000
 ```
 
 ---
 
-## Beat 2 — Each engineer has an agent
+## Nhịp 2 — Mỗi kỹ sư có một agent
 
-**Say:** "Each of them has an AI coding agent. Claude Code, Cursor, Codex — pick your flavor. The agents write real code. They ship to production."
+**Nói:** "Mỗi người trong số họ đang dùng một AI coding agent. Claude Code, Cursor, Codex — tùy họ chọn. Agent viết code thật. Code đó lên production."
 
-**Draw:** (add arrows from each engineer down to an agent bubble)
+**Vẽ:** *(thêm mũi tên từ mỗi kỹ sư xuống một bong bóng agent)*
 
 ```
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
     │      │      │      │      │
     ▼      ▼      ▼      ▼      ▼
   (agent)(agent)(agent)(agent)(agent)
 
-              ... × 10,000
+              ... × 10.000
 ```
 
 ---
 
-## Beat 3 — The agents talk to AI providers
+## Nhịp 3 — Agent gọi AI provider
 
-**Say:** "Every agent call hits an AI provider — Anthropic, OpenAI, whoever. Tokens burn. Money flows out."
+**Nói:** "Mỗi lần agent chạy là một lần gọi đến AI provider — Anthropic, OpenAI. Token burn. Tiền chạy ra."
 
-**Draw:** (add a cloud at the bottom, all agents point to it)
+**Vẽ:** *(thêm một đám mây ở dưới, tất cả agent trỏ vào)*
 
 ```
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
     │      │      │      │      │
   (agent)(agent)(agent)(agent)(agent)
     │      │      │      │      │
@@ -55,84 +61,84 @@
                   ▼
           ┌───────────────┐
           │  AI Providers │
-          │  $$$  / month │
+          │  $$$  / tháng │
           └───────────────┘
 ```
 
 ---
 
-## Beat 4 — The bill arrives
+## Nhịp 4 — Hoá đơn tới
 
-**Say:** "End of month. A bill arrives. $240,000. That's it. One number. No breakdown."
+**Nói:** "Cuối tháng. Hoá đơn về. 240.000 đô. Vậy thôi. Một con số."
 
-**Draw:** (add a box on the side, disconnected from everything)
+**Vẽ:** *(thêm một ô riêng biệt, không kết nối với gì)*
 
 ```
-  [Eng]  [Eng]  [Eng]  ...
-    │      │      │
-  (agent)(agent)(agent) ...
-    └──────┴──────┘
-           │
-           ▼
-   ┌───────────────┐         ┌──────────────┐
-   │  AI Providers │         │  BILL        │
-   │               │         │  $240,000    │
-   └───────────────┘         │              │
-                             │  ???         │
-                             └──────────────┘
+  [KS]  [KS]  ...
+    │      │
+  (agent)(agent) ...
+    └──────┘
+        │
+        ▼
+  ┌──────────────┐         ┌──────────────┐
+  │ AI Providers │         │  HOÁ ĐƠN     │
+  └──────────────┘         │  $240.000    │
+                           │              │
+                           │  ???         │
+                           └──────────────┘
 ```
 
-**Say:** "Which team? Which feature? Which prompt is burning the most? You can't answer any of it."
+**Nói:** "Team nào? Feature nào? Prompt nào đang đốt nhiều nhất? Không ai trả lời được."
 
 ---
 
-## Beat 5 — The context problem
+## Nhịp 5 — Vấn đề context
 
-**Say:** "Worse: what does the agent actually know? Each engineer pastes whatever they remember into the prompt. Today."
+**Nói:** "Tệ hơn: agent biết gì? Mỗi kỹ sư tự paste những gì họ nhớ vào prompt. Hôm nay."
 
-**Draw:** (add messy sticky notes floating above agents)
+**Vẽ:** *(thêm các tờ giấy nhớ lộn xộn phía trên agent)*
 
 ```
- [copy-paste] [forgot policy] [stale docs] [personal notes]
-      │              │               │              │
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+ [copy-paste] [quên policy] [doc cũ] [ghi chú cá nhân]
+      │              │            │              │
+  [KS]  [KS]  [KS]  [KS]  [KS]
     │      │      │      │      │
   (agent)(agent)(agent)(agent)(agent)
 ```
 
-**Say:** "Company policy updated last week? Three engineers know. Seven don't. The agent doesn't."
+**Nói:** "Policy bảo mật cập nhật tuần trước? Ba người biết. Bảy người không. Agent thì chắc chắn không."
 
 ---
 
-## Beat 6 — The governance gap
+## Nhịp 6 — Không có ai kiểm soát
 
-**Say:** "And when something goes wrong — migration breaks prod, agent writes insecure code — you ask: who approved this?"
+**Nói:** "Và khi có sự cố — migration làm sập prod, agent viết code vi phạm policy bảo mật — câu hỏi đầu tiên là: ai đã approve cái này?"
 
-**Draw:** (add a question mark cloud between engineers and agents)
+**Vẽ:** *(thêm dấu hỏi giữa kỹ sư và agent)*
 
 ```
-  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]
     │      │      │
-    ?      ?      ?      ← who approved? when? why?
+    ?      ?      ?      ← ai approve? khi nào? tại sao?
     │      │      │
   (agent)(agent)(agent)
            │
            ▼
-      💥 prod incident
+      💥 sự cố production
 ```
 
-**Say:** "The answer is a Slack thread. Maybe. If it exists."
+**Nói:** "Câu trả lời thường là một cái Slack thread. Nếu may mắn."
 
 ---
 
-## Beat 7 — Dandori goes in the middle
+## Nhịp 7 — Dandori vào giữa
 
-**Say:** "This is the gap Dandori fills. One layer. Between your engineers and their agents."
+**Nói:** "Đây là khoảng trống mà Dandori lấp đầy. Một layer. Nằm giữa kỹ sư và agent của họ."
 
-**Draw:** (draw a horizontal bar between engineers and agents — this is the key moment)
+**Vẽ:** *(vẽ một thanh ngang giữa kỹ sư và agent — đây là khoảnh khắc chính, dừng lại sau khi vẽ xong)*
 
 ```
-  [Eng]  [Eng]  [Eng]  [Eng]  [Eng]
+  [KS]  [KS]  [KS]  [KS]  [KS]
     │      │      │      │      │
     └──────┴──────┼──────┴──────┘
                   │
@@ -152,15 +158,17 @@
           └───────────────┘
 ```
 
-**Say:** "Dandori does not replace the agents. It manages them."
+**Nói:** "Dandori không thay thế agent. Dandori quản lý chúng."
+
+*(dừng. để audience nhìn bảng.)*
 
 ---
 
-## Beat 8 — Cost attribution
+## Nhịp 8 — Cost attribution
 
-**Say:** "First thing Dandori gives you: cost attribution. Every token logged — which agent, which task, which project, which team."
+**Nói:** "Thứ đầu tiên Dandori làm được: phân bổ chi phí. Mỗi token đều được log — agent nào, task nào, project nào, team nào."
 
-**Draw:** (expand the Dandori box, add a cost module inside it)
+**Vẽ:** *(mở rộng box Dandori, thêm module cost bên trong)*
 
 ```
          ┌──────────────────────────────┐
@@ -168,26 +176,26 @@
          │                              │
          │  ┌──────────────────────┐    │
          │  │  Cost attribution    │    │
-         │  │  per agent / team /  │    │
+         │  │  theo agent / team / │    │
          │  │  project / feature   │    │
          │  └──────────────────────┘    │
          └──────────────────────────────┘
 ```
 
-**Say:** "That $240K bill? Now it reads: payments team $52K, auth $38K, data pipeline $29K. Drill down to individual prompts."
+**Nói:** "Hoá đơn $240K giờ đọc được: team payments $52K, auth $38K, data pipeline $29K. Drill down đến từng prompt."
 
 ---
 
-## Beat 9 — Context hierarchy
+## Nhịp 9 — Context hierarchy
 
-**Say:** "Second: context. Instead of copy-paste, a five-layer hierarchy. Every agent inherits it automatically."
+**Nói:** "Thứ hai: context. Thay vì copy-paste, một cấu trúc 5 tầng. Mỗi agent tự kế thừa — không cần ai nhớ paste."
 
-**Draw:** (add a stack on the left of the Dandori box)
+**Vẽ:** *(thêm stack bên trái box Dandori)*
 
 ```
   ┌─────────────┐     ┌──────────────────────────────┐
-  │ 1. Company  │     │            DANDORI           │
-  │ 2. Project  │────▶│                              │
+  │ 1. Công ty  │     │            DANDORI           │
+  │ 2. Dự án    │────▶│                              │
   │ 3. Team     │     │  ┌──────────────┐            │
   │ 4. Agent    │     │  │ Cost         │            │
   │ 5. Task     │     │  ├──────────────┤            │
@@ -196,24 +204,24 @@
                       └──────────────────────────────┘
 ```
 
-**Say:** "Update the company security policy once. Every agent sees it on the next run. Versioned. Rollback-able. Audited."
+**Nói:** "Cập nhật policy bảo mật một lần ở tầng Công ty. Lần chạy tiếp theo, tất cả agent đều thấy. Có version control, có rollback, có audit log."
 
 ---
 
-## Beat 10 — Approval gates
+## Nhịp 10 — Approval gates
 
-**Say:** "Third: approval gates. High-risk tasks — database migrations, infra changes — stop here until a human approves."
+**Nói:** "Thứ ba: approval gate. Task rủi ro cao — migration database, thay đổi infra — dừng lại đây cho đến khi con người approve."
 
-**Draw:** (add approval module inside Dandori, add a gate symbol on the flow)
+**Vẽ:** *(thêm module approval, thêm ký hiệu cổng trên luồng)*
 
 ```
   ┌─────────────┐     ┌──────────────────────────────┐
   │ Context     │     │            DANDORI           │
-  │ layers      │────▶│                              │
+  │ tầng        │────▶│                              │
   └─────────────┘     │  ┌──────────────┐            │
                       │  │ Cost         │            │
-  [Eng] ──────────────┤  ├──────────────┤            │
-  reviews & approves  │  │ Context hub  │            │
+  [KS] ───────────────┤  ├──────────────┤            │
+  review & approve    │  │ Context hub  │            │
          ▲            │  ├──────────────┤            │
          │            │  │ ⛔ Approval  │            │
          └────────────│  │   gate       │            │
@@ -221,15 +229,15 @@
                       └──────────────────────────────┘
 ```
 
-**Say:** "Every approval logged: who, when, what they saw. One export for your compliance team."
+**Nói:** "Mỗi lần approve được log: ai, lúc mấy giờ, họ đã xem gì. Một lần export là có đủ evidence cho đội compliance."
 
 ---
 
-## Beat 11 — Quality gates
+## Nhịp 11 — Quality gates
 
-**Say:** "Fourth: quality gates. Before any output is accepted, automated scanners run."
+**Nói:** "Thứ tư: quality gates. Trước khi output nào được chấp nhận, scanner tự động chạy."
 
-**Draw:** (add quality gate as a pipeline below Dandori before agents)
+**Vẽ:** *(thêm pipeline quality gate bên dưới Dandori, trước agent)*
 
 ```
          ┌──────────────────────────────┐
@@ -248,15 +256,15 @@
            (Claude)    (Codex)    (custom)
 ```
 
-**Say:** "Every run gets a quality score 0–100. You can see which agents improve over time, which degrade."
+**Nói:** "Mỗi lần chạy có điểm chất lượng 0–100. Theo dõi theo thời gian — agent nào đang tốt hơn, agent nào đang tệ đi."
 
 ---
 
-## Beat 12 — Skill library
+## Nhịp 12 — Skill library
 
-**Say:** "Fifth: skills. Your best prompts, centralized. New engineer joins — they inherit the team's proven prompts on day one."
+**Nói:** "Thứ năm: skill library. Những prompt tốt nhất của tổ chức, lưu tập trung. Kỹ sư mới vào — kế thừa ngay hôm đầu tiên."
 
-**Draw:** (add a skills box feeding into the context stack)
+**Vẽ:** *(thêm skill box feed vào context stack)*
 
 ```
   ┌─────────────┐
@@ -265,41 +273,41 @@
   │ code-review │
   │ test-gen    │
   └──────┬──────┘
-         │ auto-attach
+         │ tự gắn vào
          ▼
   ┌─────────────┐     ┌──────────────────────────────┐
   │ Context     │     │            DANDORI           │
-  │ layers      │────▶│  Cost │ Context │ Approval   │
+  │ tầng        │────▶│  Cost │ Context │ Approval   │
   └─────────────┘     │  Quality gates │ Skills      │
                       └──────────────────────────────┘
 ```
 
-**Say:** "Engineer leaves. Their prompts stay. Knowledge doesn't walk out the door anymore."
+**Nói:** "Kỹ sư nghỉ việc. Prompt của họ vẫn ở lại. Kiến thức không đi theo người nữa."
 
 ---
 
-## Beat 13 — The complete picture
+## Nhịp 13 — Bức tranh tổng thể
 
-**Say:** "Here's what the board looks like at the end. This is what Dandori gives you."
+**Nói:** "Đây là bảng lúc kết thúc. Đây là những gì Dandori mang lại."
 
-**Draw:** (full picture — everything connected)
+**Vẽ:** *(bức tranh đầy đủ — tất cả kết nối)*
 
 ```
   ┌────────────────────────────────────────────────────────┐
-  │                   ENGINEERING ORG                      │
+  │                   TỔ CHỨC KỸ THUẬT                    │
   │  [CTO]  [Security]  [Compliance]  [Platform]           │
   │     │        │           │             │               │
   │     └────────┴───────────┴─────────────┘               │
-  │                          │  set policy / review        │
+  │                          │  đặt policy / review        │
   └──────────────────────────┼────────────────────────────┘
                              │
   ┌──────────────────────────▼────────────────────────────┐
   │                        DANDORI                        │
   │                                                       │
-  │   Cost attribution   │   5-layer context             │
+  │   Cost attribution   │   Context 5 tầng              │
   │   Approval gates     │   Quality gates               │
   │   Skill library      │   Audit log                   │
-  │   Task DAGs          │   Cross-agent analytics       │
+  │   Task dependencies  │   Cross-agent analytics       │
   │                                                       │
   └──────────────────────────┬────────────────────────────┘
                              │
@@ -314,46 +322,42 @@
               └─────────────────────────────┘
 ```
 
-**Say:** "Your engineers still use Claude Code, Cursor, Codex — whatever they love. Dandori is the management layer on top. That's the missing piece."
+**Nói:** "Kỹ sư vẫn dùng Claude Code, Cursor, Codex — những gì họ quen. Dandori là layer quản lý phía trên. Đó là mảnh còn thiếu."
 
 ---
 
-## Beat 14 — The close
+## Nhịp 14 — Kết
 
-**Say:** "Every org with 100+ engineers will need this by end of 2026. Same pattern as DevOps tools in the 2010s, observability in 2015, feature flags in 2020. Dandori is the consolidation layer for AI agents."
+**Nói:** "Mọi tổ chức có hơn 100 kỹ sư sẽ cần cái này trước cuối 2026. Cùng pattern như DevOps tools những năm 2010, observability 2015, feature flags 2020. Đến lượt AI agent. Dandori là layer hợp nhất đó."
 
-**Leave on board:**
+**Để lại trên bảng:**
 
 ```
-  BEFORE DANDORI          WITH DANDORI
+  TRƯỚC DANDORI               VỚI DANDORI
 
-  $240K → ???             $240K → payments $52K
-                                → auth     $38K
-                                → data     $29K
+  $240K → ???                 $240K → payments  $52K
+                                    → auth      $38K
+                                    → data      $29K
 
-  copy-paste prompts      5-layer context, versioned
+  copy-paste prompt           Context 5 tầng, version control
 
-  "who approved?" →       logged: alice, 14:22,
-  Slack thread maybe      rationale attached
+  "ai approve?" →             log: alice, 14:22,
+  Slack thread, có khi không  lý do đính kèm
 
-  engineer leaves →       skills stay in org
-  knowledge gone          new hire inherits day 1
+  kỹ sư nghỉ →                skill ở lại trong tổ chức
+  kiến thức mất               người mới kế thừa ngay
 ```
 
-**Say:** "We're onboarding design-partner organizations running 1,000+ engineers. If this is your problem — let's talk."
+**Nói:** "Chúng tôi đang làm việc với các tổ chức design partner có từ 1.000 kỹ sư trở lên. Nếu đây là bài toán của bạn — hãy nói chuyện với chúng tôi."
 
 ---
 
-## Speaker notes
+## Ghi chú speaker
 
-- **Total time:** 20–30 min with questions
-- **Beats 1–6:** 5 min — the problem. Let it land. Don't rush to the solution.
-- **Beat 7:** pause after drawing the Dandori bar. Let the audience sit with it.
-- **Beats 8–12:** 10 min — each capability is one drawing stroke. Keep the diagram clean.
-- **Beat 13:** 3 min — step back from the board, let them look at the full picture.
-- **Beat 14:** 2 min — close + CTA.
-- **Questions:** Draw on the board as you answer. The diagram is your tool.
-
----
-
-*Reference pages: [Why Dandori](why-dandori.md) · [Core Features](core-features.md) · [Use Cases](use-cases.md) · [Architecture](architecture.md) · [Enterprise](enterprise.md)*
+- **Tổng thời gian:** 20–30 phút có cả Q&A
+- **Nhịp 1–6:** ~5 phút — vấn đề. Để nó thấm. Đừng vội đến giải pháp.
+- **Nhịp 7:** dừng sau khi vẽ xong thanh Dandori. Để audience nhìn bảng vài giây.
+- **Nhịp 8–12:** ~10 phút — mỗi capability là một nét vẽ thêm. Giữ sơ đồ gọn.
+- **Nhịp 13:** ~3 phút — lùi lại khỏi bảng, để họ nhìn tổng thể.
+- **Nhịp 14:** ~2 phút — kết + CTA.
+- **Q&A:** vẽ lên bảng khi trả lời. Sơ đồ là công cụ của bạn.
