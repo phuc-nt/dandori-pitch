@@ -1,29 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" role="img" aria-label="Dandori logo">
   <title>Dandori</title>
 
-  <!-- Faceted triangle logo — matching dandori-pitch PNG -->
+  <!-- Faceted triangle: 3-row subdivision, 9 facets -->
+  <!-- Matches dandori-pitch PNG: gray peak, red band, dark base -->
 
-  <!-- Row 0: top peak (light gray) -->
-  <polygon points="200,15 155,95 245,95" fill="#c4c4c4"/>
+  <!-- Row 0: top peak -->
+  <polygon points="200,20 145,127 255,127" fill="#c0c0c0"/>
 
-  <!-- Row 1: red accent band + side facets -->
-  <polygon points="155,95 110,175 200,175" fill="#bebebe"/>
-  <polygon points="155,95 245,95 200,175" fill="#cc3333"/>
-  <polygon points="245,95 200,175 290,175" fill="#c8c8c8"/>
+  <!-- Row 1: red accent band -->
+  <polygon points="145,127 90,233 200,233" fill="#b0b0b0"/>
+  <polygon points="145,127 255,127 200,233" fill="#cc3333"/>
+  <polygon points="255,127 200,233 310,233" fill="#c5c5c5"/>
 
-  <!-- Row 2: mid section (darker center) -->
-  <polygon points="110,175 67,255 157,255" fill="#b8b8b8"/>
-  <polygon points="110,175 200,175 157,255" fill="#999999"/>
-  <polygon points="200,175 157,255 243,255" fill="#555555"/>
-  <polygon points="200,175 290,175 243,255" fill="#888888"/>
-  <polygon points="290,175 243,255 333,255" fill="#b0b0b0"/>
-
-  <!-- Row 3: base (dark center, lighter edges) -->
-  <polygon points="67,255 25,340 115,340" fill="#c0c0c0"/>
-  <polygon points="67,255 157,255 115,340" fill="#aaaaaa"/>
-  <polygon points="157,255 115,340 200,340" fill="#707070"/>
-  <polygon points="157,255 243,255 200,340" fill="#444444"/>
-  <polygon points="243,255 200,340 285,340" fill="#666666"/>
-  <polygon points="243,255 333,255 285,340" fill="#999999"/>
-  <polygon points="333,255 285,340 375,340" fill="#b8b8b8"/>
+  <!-- Row 2: dark center, light edges -->
+  <polygon points="90,233 35,340 145,340" fill="#c0c0c0"/>
+  <polygon points="90,233 200,233 145,340" fill="#807070"/>
+  <polygon points="200,233 145,340 255,340" fill="#4d4d4d"/>
+  <polygon points="200,233 310,233 255,340" fill="#909090"/>
+  <polygon points="310,233 255,340 365,340" fill="#b8b8b8"/>
 </svg>
