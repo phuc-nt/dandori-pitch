@@ -31,6 +31,11 @@ back_to_top: true
 back_to_top_text: "Back to top"
 heading_anchors: true
 
+# Table of contents (right sidebar)
+toc:
+  heading_level: 2
+  toc_level: 2
+
 exclude:
   - docs/
   - overrides/
