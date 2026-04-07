@@ -1,27 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="Dandori logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" role="img" aria-label="Dandori logo">
   <title>Dandori</title>
 
-  <!-- 3 isometric blocks stacked — representing the management layers -->
-  <!-- Colors: indigo palette matching MkDocs Material theme -->
+  <!-- Faceted triangle logo — matching dandori-pitch PNG -->
 
-  <!-- Bottom block (Company/Project layer) -->
-  <g transform="translate(0, 90)">
-    <polygon points="100,20 180,60 100,100 20,60" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="20,60 100,100 100,145 20,105" fill="#9fa8da" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="180,60 100,100 100,145 180,105" fill="#c5cae9" stroke="#3949ab" stroke-width="2"/>
-  </g>
+  <!-- Row 0: top peak (light gray) -->
+  <polygon points="200,15 155,95 245,95" fill="#c4c4c4"/>
 
-  <!-- Middle block (Team/Agent layer) -->
-  <g transform="translate(0, 45)">
-    <polygon points="100,20 180,60 100,100 20,60" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="20,60 100,100 100,145 20,105" fill="#7986cb" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="180,60 100,100 100,145 180,105" fill="#9fa8da" stroke="#3949ab" stroke-width="2"/>
-  </g>
+  <!-- Row 1: red accent band + side facets -->
+  <polygon points="155,95 110,175 200,175" fill="#bebebe"/>
+  <polygon points="155,95 245,95 200,175" fill="#cc3333"/>
+  <polygon points="245,95 200,175 290,175" fill="#c8c8c8"/>
 
-  <!-- Top block (Task/Execution layer) -->
-  <g transform="translate(0, 0)">
-    <polygon points="100,20 180,60 100,100 20,60" fill="#c5cae9" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="20,60 100,100 100,145 20,105" fill="#5c6bc0" stroke="#3949ab" stroke-width="2"/>
-    <polygon points="180,60 100,100 100,145 180,105" fill="#7986cb" stroke="#3949ab" stroke-width="2"/>
-  </g>
+  <!-- Row 2: mid section (darker center) -->
+  <polygon points="110,175 67,255 157,255" fill="#b8b8b8"/>
+  <polygon points="110,175 200,175 157,255" fill="#999999"/>
+  <polygon points="200,175 157,255 243,255" fill="#555555"/>
+  <polygon points="200,175 290,175 243,255" fill="#888888"/>
+  <polygon points="290,175 243,255 333,255" fill="#b0b0b0"/>
+
+  <!-- Row 3: base (dark center, lighter edges) -->
+  <polygon points="67,255 25,340 115,340" fill="#c0c0c0"/>
+  <polygon points="67,255 157,255 115,340" fill="#aaaaaa"/>
+  <polygon points="157,255 115,340 200,340" fill="#707070"/>
+  <polygon points="157,255 243,255 200,340" fill="#444444"/>
+  <polygon points="243,255 200,340 285,340" fill="#666666"/>
+  <polygon points="243,255 333,255 285,340" fill="#999999"/>
+  <polygon points="333,255 285,340 375,340" fill="#b8b8b8"/>
 </svg>
