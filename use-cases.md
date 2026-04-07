@@ -1,6 +1,13 @@
+---
+layout: default
+title: Use Cases
+nav_order: 4
+description: "9 management scenarios for CTO, CISO, Platform, and Compliance teams."
+---
+
 # Use Cases
 
-**For leaders, not engineers.** These are scenarios that *management* runs — leveraging the capabilities from [Core Features](core-features.md) — not scenarios that agents execute.
+**For leaders, not engineers.** These are scenarios that *management* runs — leveraging the capabilities from [Core Features]({% link core-features.md %}) — not scenarios that agents execute.
 
 The agents execute code. **Dandori lets leadership govern, measure, and scale the agents.**
 
@@ -132,12 +139,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 └─────────────────────────────────────────────────────┘
 ```
 
-**What CISO governs:**
-- PII classification at context layer
-- Policy: "no PII in agent prompts" enforced by context system
-- Audit exports for auditors
-- Incident investigation: who did what, when, with which policy version
-
 **Dandori capability used:** Audit log, context versioning, PII tagging, compliance export.
 
 ---
@@ -146,8 +147,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 **Role:** VP Engineering, Director
 **Question:** "Are our AI-generated outputs getting better or worse? Is any team drifting?"
-
-**The management problem:** Engineers say "our agents are great." How do you know?
 
 **With Dandori:**
 
@@ -169,12 +168,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 │    Action: Platform to update skill                 │
 └─────────────────────────────────────────────────────┘
 ```
-
-**What Director governs:**
-- Quality score SLOs per team
-- Investigations when trends decline
-- Share winning practices across teams
-- Data-driven performance reviews
 
 **Dandori capability used:** Quality gates, cross-agent analytics, trend detection.
 
@@ -204,12 +197,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 │  Retention: 365 days configurable                        │
 └──────────────────────────────────────────────────────────┘
 ```
-
-**What compliance governs:**
-- Access control per project
-- Policy versions (when changed, who, why)
-- Audit exports on cadence
-- Evidence for external auditors
 
 **Dandori capability used:** Audit log, access control, context versioning, export.
 
@@ -247,12 +234,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
       Result: zero knowledge loss.
 ```
 
-**What leadership governs:**
-- Skills are org assets, not individual assets
-- Ownership transitions when people leave
-- Onboarding uses same skills everyone else uses
-- Promotions reward people who contribute to skill library
-
 **Dandori capability used:** Skill library, version control, team ownership.
 
 ---
@@ -261,8 +242,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 **Role:** VP Engineering, Platform Architect
 **Question:** "Should we switch from Claude to Gemini? Where's the data?"
-
-**Without Dandori:** Engineer tries it on their tasks, forms opinion, writes memo.
 
 **With Dandori:**
 
@@ -295,11 +274,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 └────────────────────────────────────────────────────────┘
 ```
 
-**What leadership governs:**
-- Rigorous A/B evaluation with same inputs
-- Data-driven vendor decisions
-- Mixed-model strategies to optimize cost/quality
-
 **Dandori capability used:** Multiple adapters, per-agent analytics, controlled experiments.
 
 ---
@@ -308,8 +282,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 **Role:** Engineering Manager, SRE Lead
 **Question:** "The agent shipped a broken migration. How did we get here?"
-
-**Without Dandori:** Git blame → engineer → "the agent said it was fine."
 
 **With Dandori:**
 
@@ -339,11 +311,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
     3. Require approval for all migrations
 ```
 
-**What management governs:**
-- Full prompt replay for incident investigation
-- Context version at time-of-incident
-- Policy changes post-incident (add gates, approvals)
-
 **Dandori capability used:** Audit log, context versioning, prompt replay, approval workflow.
 
 ---
@@ -352,8 +319,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 **Role:** Engineering Manager
 **Question:** "Which engineers drove the most agent-assisted value this quarter?"
-
-**Before Dandori:** Gut feel. Politically fraught.
 
 **With Dandori:**
 
@@ -372,12 +337,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 │    Or: Carol has context others lack → celebrate     │
 └──────────────────────────────────────────────────────┘
 ```
-
-**What management governs:**
-- Fair attribution of agent-assisted output
-- Identify reviewer bottlenecks
-- Reward skill-library contributors
-- Detect over-reliance on one engineer
 
 **Dandori capability used:** Approval tracking, skill ownership, per-user analytics.
 
@@ -412,6 +371,6 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 ## See it in context
 
-- **[Core Features →](core-features.md)** The capabilities behind these scenarios
-- **[Architecture →](architecture.md)** How Dandori delivers them technically
-- **[Enterprise →](enterprise.md)** Rolling this out at 1,000+ engineers
+- [Core Features →]({% link core-features.md %}) The capabilities behind these scenarios
+- [Architecture →]({% link architecture.md %}) How Dandori delivers them technically
+- [AIPF Integration →]({% link aipf-integration.md %}) Fitting into enterprise AI platforms

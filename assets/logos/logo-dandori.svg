@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="Dandori logo">
+  <title>Dandori</title>
+
+  <!-- 3 isometric blocks stacked — representing the management layers -->
+  <!-- Colors: indigo palette matching MkDocs Material theme -->
+
+  <!-- Bottom block (Company/Project layer) -->
+  <g transform="translate(0, 90)">
+    <polygon points="100,20 180,60 100,100 20,60" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="20,60 100,100 100,145 20,105" fill="#9fa8da" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="180,60 100,100 100,145 180,105" fill="#c5cae9" stroke="#3949ab" stroke-width="2"/>
+  </g>
+
+  <!-- Middle block (Team/Agent layer) -->
+  <g transform="translate(0, 45)">
+    <polygon points="100,20 180,60 100,100 20,60" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="20,60 100,100 100,145 20,105" fill="#7986cb" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="180,60 100,100 100,145 180,105" fill="#9fa8da" stroke="#3949ab" stroke-width="2"/>
+  </g>
+
+  <!-- Top block (Task/Execution layer) -->
+  <g transform="translate(0, 0)">
+    <polygon points="100,20 180,60 100,100 20,60" fill="#c5cae9" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="20,60 100,100 100,145 20,105" fill="#5c6bc0" stroke="#3949ab" stroke-width="2"/>
+    <polygon points="180,60 100,100 100,145 180,105" fill="#7986cb" stroke="#3949ab" stroke-width="2"/>
+  </g>
+</svg>

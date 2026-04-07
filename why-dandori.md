@@ -1,3 +1,10 @@
+---
+layout: default
+title: Why Dandori
+nav_order: 2
+description: "The AI agent sprawl problem and how Dandori solves it."
+---
+
 # Why Dandori
 
 ## The AI agent sprawl problem
@@ -80,16 +87,16 @@ Dandori stores agent instructions, skills, and templates centrally. New engineer
 
 **Dandori is NOT:**
 
-- ❌ A coding agent (it manages Claude/Codex/Cursor — doesn't replace them)
-- ❌ A CI/CD replacement (it integrates with yours)
-- ❌ Observability-only (it's task + policy + approval + analytics)
-- ❌ A vendor lock-in (standard APIs, self-hosted, export anytime)
+- A coding agent (it manages Claude/Codex/Cursor — doesn't replace them)
+- A CI/CD replacement (it integrates with yours)
+- Observability-only (it's task + policy + approval + analytics)
+- A vendor lock-in (standard APIs, self-hosted, export anytime)
 
 **Dandori IS:**
 
-- ✅ The missing management layer between leadership and agent execution
-- ✅ Vendor-agnostic (any agent: Claude, Codex, local models, custom)
-- ✅ Designed for orgs that need cost control, audit, and governance at scale
+- The missing management layer between leadership and agent execution
+- Vendor-agnostic (any agent: Claude, Codex, local models, custom)
+- Designed for orgs that need cost control, audit, and governance at scale
 
 ---
 
@@ -145,7 +152,7 @@ The patterns we saw with:
 
 ## Next steps
 
-- **[Core Features →](core-features.md)** The 9 management capabilities, with diagrams
-- **[Use Cases →](use-cases.md)** Management scenarios for CTO, CISO, Platform, Compliance
-- **[Architecture →](architecture.md)** Technical integration surface
-- **[Enterprise →](enterprise.md)** Security, scaling, rollout path
+- [Core Features →]({% link core-features.md %}) The 9 management capabilities, with diagrams
+- [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
+- [Architecture →]({% link architecture.md %}) Technical integration surface
+- [AIPF Integration →]({% link aipf-integration.md %}) How Dandori fits into enterprise AI platforms

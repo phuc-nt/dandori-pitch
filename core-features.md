@@ -1,3 +1,10 @@
+---
+layout: default
+title: Core Features
+nav_order: 3
+description: "9 management capabilities that Dandori adds on top of your AI agents."
+---
+
 # Core Features
 
 Your engineers already have great agents. **Dandori is the management layer on top.**
@@ -71,7 +78,7 @@ This page catalogs the governance, observability, and knowledge-management capab
 - Per-run token + cost logging (input, output, cache)
 - Breakdown by project, team, agent, model, phase, day
 - Budget ceilings per agent (hard stop when exceeded)
-- Spike detection (alert when agent X burns 3× its average)
+- Spike detection (alert when agent X burns 3x its average)
 
 ---
 
@@ -332,27 +339,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 
 ---
 
-## What Dandori does NOT do
-
-Let's be explicit about the boundaries.
-
-| | Dandori | Your agents (Claude, Codex, etc.) |
-|---|---|---|
-| **Write code** | No | Yes |
-| **Read your codebase** | No | Yes |
-| **Run tests, builds** | No (only scans results) | Yes |
-| **Manage tokens/runs** | Yes | No |
-| **Track costs centrally** | Yes | No |
-| **Enforce org policies** | Yes | No |
-| **Version context** | Yes | No |
-| **Audit agent activity** | Yes | No |
-
-**Dandori is the layer you wish existed but had to build yourself.**
-
----
-
 ## See it in context
 
-- **[Use Cases →](use-cases.md)** Management workflows built on these features
-- **[Architecture →](architecture.md)** How the pieces connect technically
-- **[Enterprise →](enterprise.md)** Deploying across a large organization
+- [Use Cases →]({% link use-cases.md %}) Management workflows built on these features
+- [Architecture →]({% link architecture.md %}) How the pieces connect technically
+- [AIPF Integration →]({% link aipf-integration.md %}) How Dandori fits into enterprise AI platforms

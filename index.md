@@ -1,12 +1,19 @@
 ---
-hide:
-  - navigation
-  - toc
+layout: default
+title: Home
+nav_order: 1
+description: "Dandori — The management layer for AI coding agents in the enterprise."
+permalink: /
 ---
 
 # Dandori
+{: .fs-9 }
 
-## The management layer for AI coding agents in the enterprise.
+The management layer for AI coding agents in the enterprise.
+{: .fs-6 .fw-300 }
+
+[Why Dandori]({% link why-dandori.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Core Features]({% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -69,7 +76,7 @@ Ask any CTO today — the answers are *"we'd have to ask around."*
 
 ```
   BEFORE:                              WITH DANDORI:
-                                       
+
   ┌─────────────┐                      ┌──────────────────────┐
   │ $240K bill  │                      │ $240K bill           │
   │     │       │                      │  ├ payments   $52K   │
@@ -77,14 +84,14 @@ Ask any CTO today — the answers are *"we'd have to ask around."*
   │    ???      │                      │  ├ data       $29K   │
   │             │                      │  └ ... (drill down)  │
   └─────────────┘                      └──────────────────────┘
-                                       
+
   ┌─────────────┐                      ┌──────────────────────┐
   │ Copy-paste  │                      │ Company context → v12│
   │ prompts in  │                      │ Project context → v3 │
   │ 100 places  │                      │ Team context    → v7 │
   └─────────────┘                      │ (auto-inherited)     │
                                        └──────────────────────┘
-                                       
+
   ┌─────────────┐                      ┌──────────────────────┐
   │ "Slack said │                      │ Approval logged:     │
   │  approve"   │                      │ user=alice at 14:22  │
@@ -109,54 +116,19 @@ Ask any CTO today — the answers are *"we'd have to ask around."*
 
 ### Explore
 
-<div class="grid cards" markdown>
-
--   :material-help-circle:{ .lg .middle } **Why Dandori**
-
-    ---
-
-    The full case: problem, ROI, differentiators.
-
-    [:octicons-arrow-right-24: Why Dandori](why-dandori.md)
-
--   :material-toolbox:{ .lg .middle } **Core Features**
-
-    ---
-
-    9 management capabilities with ASCII walkthroughs.
-
-    [:octicons-arrow-right-24: Core Features](core-features.md)
-
--   :material-lightbulb-on:{ .lg .middle } **Use Cases**
-
-    ---
-
-    9 management scenarios for CTO, CISO, Platform, Compliance.
-
-    [:octicons-arrow-right-24: Use Cases](use-cases.md)
-
--   :material-sitemap:{ .lg .middle } **Architecture**
-
-    ---
-
-    Technical integration surface for your stack.
-
-    [:octicons-arrow-right-24: Architecture](architecture.md)
-
--   :material-office-building:{ .lg .middle } **Enterprise**
-
-    ---
-
-    Self-hosting, security, compliance, rollout path.
-
-    [:octicons-arrow-right-24: Enterprise](enterprise.md)
-
-</div>
+- **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, ROI, differentiators
+- **[Core Features]({% link core-features.md %})** — 9 management capabilities with ASCII walkthroughs
+- **[Use Cases]({% link use-cases.md %})** — 9 management scenarios for CTO, CISO, Platform, Compliance
+- **[Architecture]({% link architecture.md %})** — Technical integration surface for your stack
+- **[AIPF Integration]({% link aipf-integration.md %})** — How Dandori fits into enterprise AI platforms
 
 ---
 
-<div style="text-align: center; padding: 2rem 0; margin-top: 2rem;">
-<h3>Bring governance to your agents.</h3>
-<p>We're onboarding design-partner organizations running <strong>1,000+ engineers</strong>.</p>
-<p><a href="mailto:hello@dandori.io"><strong>hello@dandori.io</strong></a></p>
-</div>
+{: .text-center }
+### Bring governance to your agents.
+
+{: .text-center }
+We're onboarding design-partner organizations running **1,000+ engineers**.
+
+{: .text-center }
+[hello@dandori.io](mailto:hello@dandori.io)
