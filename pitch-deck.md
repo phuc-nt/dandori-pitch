@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Pitch Deck
-nav_order: 7
+nav_exclude: true
+search_exclude: true
 description: "Script thuyết trình Dandori (tiếng Việt)."
 ---
 
