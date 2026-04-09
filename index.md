@@ -19,9 +19,9 @@ The management layer for AI coding agents in the enterprise.
 
 **Your engineers already have great agents.** Claude Code, Codex, Cursor, Cline — they write code just fine.
 
-**What's missing** is the layer above them: the one that lets your org **govern, measure, and scale** agent usage across thousands of engineers.
+**What's missing** is the layer around them: the one that lets engineers **share context and coordinate work**, and lets leadership **govern, measure, and scale** agent usage across thousands of engineers.
 
-That's Dandori.
+That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week.
 
 ---
 
@@ -33,19 +33,20 @@ That's Dandori.
 │          CTO · Platform · Security · Compliance          │
 │   (needs: visibility · control · audit · attribution)    │
 └───────────────────────────┬──────────────────────────────┘
-                            │
+                            │  governs via
                             ▼
 ┌──────────────────────────────────────────────────────────┐
 │                        DANDORI                           │
-│             ═════ management layer ═════                 │
 │                                                          │
-│   Cost       Context      Approval     Quality           │
-│   tracking   governance   workflows    gates             │
+│   ─── analytics + control plane (leadership) ───         │
+│   Cost attribution · Cross-agent analytics ·             │
+│   Audit log · Compliance export · Budget ceilings        │
 │                                                          │
-│   Audit      Skill        Task         Cross-agent       │
-│   log        library      DAGs         analytics         │
+│   ─── daily workspace (engineers) ───                    │
+│   Context Hub · Task Board (DAGs, phases) ·              │
+│   Skill Library · Approval review · Quality gates        │
 └───────────────────────────┬──────────────────────────────┘
-                            │
+                            │  drives
                             ▼
 ┌──────────────────────────────────────────────────────────┐
 │                      AI AGENTS                           │
@@ -54,7 +55,7 @@ That's Dandori.
 └──────────────────────────────────────────────────────────┘
 ```
 
-**Dandori does not write code.** It orchestrates, measures, and governs the agents that do.
+**Dandori does not write code.** Engineers use it to coordinate and share context. Leadership uses it to measure, govern, and audit the agents that do the writing.
 
 ---
 
@@ -104,21 +105,33 @@ Ask any CTO today — the answers are *"we'd have to ask around."*
 
 ### Who uses Dandori
 
-| Role | What they govern |
-|---|---|
-| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions |
-| **Platform team** | Standards across teams, shared skill library |
-| **CISO** | PII handling, audit exports, incident replay |
-| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies |
-| **Engineering managers** | Team throughput, fair attribution, bottlenecks |
+Dandori is a **dual-audience platform**. Each module is designed primarily for one group, but both sides see the same truth.
+
+**For engineers — daily workspace**
+
+| Role | What they do in Dandori | Modules they live in |
+|---|---|---|
+| **Senior / staff engineer** | Publish skills, tune context, review outputs | Skill Library, Context Hub, Approval Review |
+| **Team engineer** | Pick up tasks, run agents, track progress | Task Board (DAGs, phases), Context Hub, Quality Gates |
+| **Tech lead** | Break features into task DAGs, assign agents by skill | Task Board, Skill matching, Dependencies |
+
+**For leadership — control plane**
+
+| Role | What they govern | Modules they consume |
+|---|---|---|
+| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions | Cost Attribution, Cross-agent Analytics |
+| **Platform team** | Standards across teams, shared skill library | Company context, Skill Library ownership, Budget ceilings |
+| **CISO** | PII handling, audit exports, incident replay | Audit Log, Context versioning, PII tags |
+| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies | Audit export, Approval records |
+| **Engineering managers** | Team throughput, fair attribution, bottlenecks | Per-team analytics, Approval tracking |
 
 ---
 
 ### Explore
 
-- **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, ROI, differentiators
-- **[Core Features]({% link core-features.md %})** — 9 management capabilities with ASCII walkthroughs
-- **[Use Cases]({% link use-cases.md %})** — 9 management scenarios for CTO, CISO, Platform, Compliance
+- **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, dual-audience value split, ROI, differentiators
+- **[Core Features]({% link core-features.md %})** — 9 capabilities tagged by audience (engineer / leadership / both)
+- **[Use Cases]({% link use-cases.md %})** — 9 leadership scenarios + 3 engineer scenarios
 - **[Architecture]({% link architecture.md %})** — Technical integration surface for your stack
 - **[AIPF Integration]({% link aipf-integration.md %})** — How Dandori fits into enterprise AI platforms
 

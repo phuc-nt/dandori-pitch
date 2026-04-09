@@ -9,6 +9,8 @@ description: "How Dandori fits into an organization already running an AI Platfo
 
 How Dandori fits into an organization that already runs an AI Platform (AIPF). This page addresses the most common question: **"We already have an AI platform — why do we need Dandori?"**
 
+**Short answer:** AIPF handles *execution*. Dandori adds the **two layers AIPF doesn't have**: a daily workspace for engineers (context, tasks, skills) and a control plane for leadership (cost, audit, compliance).
+
 ---
 
 ## The gap in every AI platform
@@ -20,75 +22,99 @@ Your AIPF stack handles the **execution layer** well:
 - Security scanning (Sentinel)
 - Developer tools (AI Developer, MCP Hub)
 
-**What's missing is the management layer above it.**
+**What's missing is the layer around it** — both the engineer-facing workspace *and* the leadership-facing control plane.
 
 ```
-                    ┌─────────────────────────────┐
-                    │   ENGINEERING LEADERSHIP     │
-                    │   CTO · CISO · Platform      │
-                    │                              │
-                    │   "Which agent costs most?"  │
-                    │   "Who approved this?"       │
-                    │   "What context did it see?" │
-                    └──────────────┬───────────────┘
-                                   │
-                         ??? ← no governance layer
-                                   │
-                    ┌──────────────▼───────────────┐
-                    │         AIPF STACK            │
-                    │                               │
-                    │  GenAI Gateway  │  Runtime     │
-                    │  Sentinel       │  MCP Hub     │
-                    │  AI Developer   │  Data Hub    │
-                    └───────────────────────────────┘
+  ┌──────────────────────┐      ┌──────────────────────────┐
+  │     ENGINEERS        │      │  ENGINEERING LEADERSHIP  │
+  │  (staff, tech leads, │      │  CTO · CISO · Platform   │
+  │   team engineers)    │      │                          │
+  │                      │      │  "Which agent costs      │
+  │  "Where do I share   │      │   most?"                 │
+  │   context?"          │      │  "Who approved this?"    │
+  │  "How do I chain     │      │  "What context did it    │
+  │   agents?"           │      │   see?"                  │
+  │  "Where are the      │      │                          │
+  │   team skills?"      │      │                          │
+  └──────────┬───────────┘      └──────────┬───────────────┘
+             │                             │
+       ??? no workspace layer       ??? no governance layer
+             │                             │
+             └──────────────┬──────────────┘
+                            ▼
+                ┌───────────────────────────┐
+                │       AIPF STACK          │
+                │                           │
+                │  GenAI Gateway │ Runtime  │
+                │  Sentinel      │ MCP Hub  │
+                │  AI Developer  │ Data Hub │
+                └───────────────────────────┘
 ```
 
-Dandori fills the `???`.
+Dandori fills **both** `???` layers.
 
 ---
 
-## Dandori = Management Layer
+## Dandori = Workspace + Management Layer
 
-Dandori does not replace any AIPF product. It sits **above** them and adds governance, cost attribution, and human oversight.
+Dandori does not replace any AIPF product. It sits **around** them and adds two missing layers: a daily workspace for engineers, and a control plane for leadership.
 
 ```
-  ┌─────────────────────────────────────────────────┐
-  │            ENGINEERING LEADERSHIP                │
-  │       CTO · Platform · CISO · Eng Lead          │
-  └────────────────────┬────────────────────────────┘
-                       │
-  ┌────────────────────▼────────────────────────────┐
-  │                  DANDORI                         │
-  │          ═══ management layer ═══               │
-  │                                                  │
-  │  Cost Attribution    │  5-Layer Context          │
-  │  Approval Workflow   │  Quality Gates            │
-  │  Skill Library       │  Cross-agent Analytics    │
-  │  Task Board (DAGs)   │  Audit Log                │
-  └────────────────────┬────────────────────────────┘
-                       │
-  ┌────────────────────▼────────────────────────────┐
-  │                AIPF STACK                        │
-  │                                                  │
-  │  GenAI Gateway   │  MultiAgent Runtime           │
-  │  Sentinel        │  MCP Hub                      │
-  │  AI Developer    │  AgentMemory                  │
-  │  Data Hub        │  App Catalog                  │
-  └─────────────────────────────────────────────────┘
+  ┌──────────────────────┐        ┌──────────────────────┐
+  │      ENGINEERS       │        │     LEADERSHIP       │
+  │  (daily workspace)   │        │  (control plane)     │
+  └──────────┬───────────┘        └──────────┬───────────┘
+             │                               │
+             ▼                               ▼
+  ┌─────────────────────────────────────────────────────┐
+  │                      DANDORI                        │
+  │                                                     │
+  │  👷 Engineer workspace                              │
+  │    · Context Hub (5-layer)                          │
+  │    · Task Board (DAGs, phases, dependencies)        │
+  │    · Skill Library                                  │
+  │    · Approval review queue                          │
+  │    · Self-explanation on every run                  │
+  │                                                     │
+  │  🧭 Leadership control plane                        │
+  │    · Cost Attribution (per-agent/task/project)      │
+  │    · Cross-agent Analytics                          │
+  │    · Quality Gates (trend view)                     │
+  │    · Audit Log + Compliance Export                  │
+  │    · Budget ceilings + spike alerts                 │
+  └───────────────────────┬─────────────────────────────┘
+                          │
+  ┌───────────────────────▼─────────────────────────────┐
+  │                  AIPF STACK                          │
+  │                                                      │
+  │  GenAI Gateway    │   MultiAgent Runtime             │
+  │  Sentinel         │   MCP Hub                        │
+  │  AI Developer     │   AgentMemory                    │
+  │  Data Hub         │   App Catalog                    │
+  └──────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 6 gaps Dandori fills
+## Gaps Dandori fills (by audience)
+
+### 👷 Engineer gaps (daily workspace)
+
+| Gap (Engineers ask) | AIPF today | Dandori module |
+|---|---|---|
+| "Where do I share context with my team's agents without copy-pasting docs?" | No org-wide context governance | **5-Layer Context** (Company → Project → Team → Agent → Task) |
+| "How do I chain multi-phase agent work without playing Slack dispatcher?" | Bot runtime — no task visibility | **Task Board** with DAGs, phase tags, dependencies |
+| "Where do I publish a proven prompt pattern so the team actually reuses it?" | App Catalog (partial) | **Skill Library** — org-wide, versioned, shareable |
+| "How do I pick up an in-review task with full context?" | No review queue | **Approval Review** + self-explanation blocks |
+
+### 🧭 Leadership gaps (control plane)
 
 | Gap (Leadership asks) | AIPF today | Dandori module |
 |---|---|---|
-| "What is each agent doing?" | Bot runtime — no task visibility | **Task Board** with DAGs, phase tags, dependencies |
-| "Where is the cost going?" | GenAI Gateway billing — no per-agent/per-task breakdown | **Cost Attribution** with budget ceilings |
-| "What context did the agent see?" | No org-wide context governance | **5-Layer Context** (Company → Project → Team → Agent → Task) |
-| "Who approved this output?" | No approval mechanism | **Approval Workflow** with audit trail |
-| "Is the output any good?" | No quality measurement | **Quality Gates** + per-agent trend analytics |
-| "Where are our best prompts?" | App Catalog (partial) | **Skill Library** — org-wide, versioned, shareable |
+| "Where is the cost going — by team, project, agent?" | GenAI Gateway billing — no per-agent/per-task breakdown | **Cost Attribution** with budget ceilings |
+| "Who approved this output? When? Based on what?" | No approval mechanism | **Approval Workflow** with audit trail |
+| "Is the output any good? Trending up or down per team?" | No quality measurement | **Quality Gates** + per-agent trend analytics |
+| "Show me every AI-generated change in Q3 for the auditor." | Scattered logs | **Audit Log** + Compliance Export |
 
 ---
 

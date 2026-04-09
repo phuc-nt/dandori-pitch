@@ -7,9 +7,13 @@ description: "9 management capabilities that Dandori adds on top of your AI agen
 
 # Core Features
 
-Your engineers already have great agents. **Dandori is the management layer on top.**
+Your engineers already have great agents. **Dandori is the coordination + management layer around them.**
 
-This page catalogs the governance, observability, and knowledge-management capabilities that Dandori adds — capabilities that AI agents themselves do not provide.
+This page catalogs the capabilities Dandori adds — capabilities that AI agents themselves do not provide. Each feature is tagged with its **primary audience**:
+
+- 👷 **Engineers** — modules engineers use daily as a workspace
+- 🧭 **Leadership** — modules leadership consumes for governance and analytics
+- 🤝 **Both** — same module, two lenses (engineers act, leadership audits)
 
 ---
 
@@ -43,11 +47,31 @@ This page catalogs the governance, observability, and knowledge-management capab
          └─────────────────────────────────────────┘
 ```
 
-**Dandori does not write code.** It orchestrates, measures, and governs the agents that do.
+**Dandori does not write code.** Engineers use it to coordinate and share context. Leadership uses it to measure, govern, and audit.
+
+---
+
+## Feature-to-audience map
+
+| # | Feature | Primary audience |
+|---|---|---|
+| 1 | Cost attribution & budget control | 🧭 Leadership |
+| 2 | Five-layer context governance | 🤝 Both |
+| 3 | Approval workflows | 🤝 Both |
+| 4 | Automated quality gates | 🤝 Both |
+| 5 | Cross-agent analytics | 🧭 Leadership |
+| 6 | Shared skill library | 👷 Engineers |
+| 7 | Task dependencies & phase workflow | 👷 Engineers |
+| 8 | Immutable audit log | 🧭 Leadership |
+| 9 | Unified integration surface | 👷 Engineers |
+
+*Scan below for the full walkthrough of each feature with its audience tag.*
 
 ---
 
 ## 1. Cost attribution & budget control
+
+**Audience:** 🧭 Leadership (primary) · CFO, VP Eng, Platform lead
 
 **Problem it solves:** The vendor bill is a black box. You can't break it down.
 
@@ -83,6 +107,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 ---
 
 ## 2. Five-layer context governance
+
+**Audience:** 🤝 Both · engineers *author + consume* daily; leadership *versions + audits*
 
 **Problem it solves:** Engineers copy-paste prompts. Policies live in Confluence that agents never see.
 
@@ -125,9 +151,15 @@ This page catalogs the governance, observability, and knowledge-management capab
 - PII/data classification tags per layer
 - Audit: every run records which context version it used
 
+**Value split:**
+- *Engineers:* stop copy-pasting policies; inherit team + project context automatically on every run.
+- *Leadership:* one place to set org-wide standards that every agent provably sees.
+
 ---
 
 ## 3. Approval workflows
+
+**Audience:** 🤝 Both · engineers *act as reviewers*; leadership *gets the audit trail*
 
 **Problem it solves:** Agent shipped a migration that broke prod. Who approved it? Slack thread died.
 
@@ -156,6 +188,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 ---
 
 ## 4. Automated quality gates
+
+**Audience:** 🤝 Both · engineers *get per-run feedback*; leadership *gets per-team trends*
 
 **Problem it solves:** Agents ship whatever. Humans catch issues in review 2 days later.
 
@@ -192,6 +226,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 
 ## 5. Cross-agent analytics
 
+**Audience:** 🧭 Leadership (primary) · VP Eng, Platform lead, Director
+
 **Problem it solves:** Vendor dashboards show aggregate tokens. You can't ask "which agent is most cost-effective?"
 
 **What Dandori provides:**
@@ -219,6 +255,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 ---
 
 ## 6. Shared skill library
+
+**Audience:** 👷 Engineers (primary) · Staff eng, tech leads — leadership owns as knowledge asset
 
 **Problem it solves:** Senior engineer's best prompts walk out the door when they leave.
 
@@ -251,6 +289,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 ---
 
 ## 7. Task dependencies & phase workflow
+
+**Audience:** 👷 Engineers (primary) · Tech leads, team engineers — daily workspace
 
 **Problem it solves:** Multi-agent features need orchestration. Engineers hand-schedule wakeups in Slack.
 
@@ -285,6 +325,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 
 ## 8. Immutable audit log
 
+**Audience:** 🧭 Leadership (primary) · CISO, Compliance, GRC
+
 **Problem it solves:** Auditor asks "show me every AI-generated change in Q3." Engineers shrug.
 
 **What Dandori provides:**
@@ -313,6 +355,8 @@ This page catalogs the governance, observability, and knowledge-management capab
 ---
 
 ## 9. Unified integration surface
+
+**Audience:** 👷 Engineers (primary) · daily interface choice — leadership benefits from consistency
 
 **Problem it solves:** Every team wires up agents differently. No shared automation primitives.
 

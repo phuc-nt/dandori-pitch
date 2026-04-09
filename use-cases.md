@@ -7,11 +7,16 @@ description: "9 management scenarios for CTO, CISO, Platform, and Compliance tea
 
 # Use Cases
 
-**For leaders, not engineers.** These are scenarios that *management* runs — leveraging the capabilities from [Core Features]({% link core-features.md %}) — not scenarios that agents execute.
+Dandori is a **dual-audience platform**. This page walks through scenarios for both sides:
 
-The agents execute code. **Dandori lets leadership govern, measure, and scale the agents.**
+- **🧭 Leadership scenarios (1–9)** — how CTOs, CISOs, Platform teams, and Compliance use Dandori as a control plane.
+- **👷 Engineer scenarios (10–12)** — how staff engineers and tech leads use Dandori as a daily workspace.
+
+Agents execute code. **Dandori is where engineers coordinate that work and where leadership governs it** — same database, two lenses.
 
 ---
+
+## Leadership scenarios (control plane)
 
 ## 1. CFO: Monthly AI cost review
 
@@ -342,6 +347,139 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
 
 ---
 
+## Engineer scenarios (daily workspace)
+
+## 10. Staff engineer: Shipping a multi-phase feature with a DAG of agents
+
+**Role:** Staff engineer / Tech lead
+**Question:** "I need to ship a new payments webhook: research the spec, design the schema, implement, test, deploy. How do I coordinate 4 agents without playing Slack dispatcher?"
+
+**Without Dandori:**
+```
+9:00  "Hey Claude Code, research the Stripe webhook spec"
+       → agent finishes → lead copies output into Notion
+10:30 "Hey Claude, design the schema using that research"
+       → agent asks "what research?" → lead pastes it in
+...repeat for implement, test, deploy
+```
+
+Every handoff is a manual copy-paste. Context decays at each step.
+
+**With Dandori:**
+
+```
+  Feature: payments-webhook
+  ┌─────────────────────────────────────────────────────┐
+  │  Task DAG (phases enforced)                         │
+  │                                                     │
+  │  T-1 research-stripe-spec          [research]       │
+  │        ▼                                            │
+  │  T-2 design-db-schema              [design]         │
+  │        ▼                                            │
+  │  T-3 implement-handler             [implement]      │
+  │        ▼                                            │
+  │  T-4 write-integration-tests       [test]           │
+  │        ▼                                            │
+  │  T-5 deploy-to-staging             [deploy]         │
+  │                                                     │
+  │  ✓ Each task auto-wakes when parent completes       │
+  │  ✓ Each agent inherits: company + project + team    │
+  │    context + outputs from upstream tasks            │
+  │  ✓ Lead reviews output at each phase boundary       │
+  └─────────────────────────────────────────────────────┘
+```
+
+- Lead builds the DAG once. Auto-orchestration takes over.
+- Each agent sees upstream task outputs as context — no copy-paste handoffs.
+- Phase tags (research → design → implement → test → deploy) give the lead a clean review checkpoint at each step.
+- If T-3 fails quality gates, only T-3 re-runs; T-4/T-5 stay blocked until green.
+
+**Dandori capability used:** Task DAGs, phase workflow, context inheritance, quality gates, auto-wakeup.
+
+---
+
+## 11. Senior engineer: Publishing a team skill
+
+**Role:** Senior / staff engineer
+**Question:** "I've figured out a great pattern for reviewing Go microservices. How do I make it stick across the team — without it getting lost in a Notion doc no one re-reads?"
+
+**Without Dandori:**
+- Write it up in Confluence. Team bookmarks it. Nobody actually pastes it into their Cursor.
+- Six months later: two engineers rediscover the same thing.
+
+**With Dandori:**
+
+```
+  1. Senior engineer creates a skill:
+
+     Skill: go-microservice-review
+     Owner: payments-team
+     Version: v1
+
+     Content:
+       # How we review Go microservices
+       1. Check context cancellation on all I/O
+       2. Verify error wrapping is in place
+       3. Ensure metrics + trace spans exist
+       ...
+
+  2. Attach skill to agents:
+     ✓ ReviewerBot-payments
+     ✓ ReviewerBot-auth
+     ✓ ReviewerBot-data
+
+  3. Every code-review run from those agents now includes
+     this skill automatically.
+
+  4. Skill improves over time — versioned.
+     Every attached agent picks up v2, v3, v4 automatically.
+```
+
+- Knowledge becomes org asset, not personal notes.
+- New teammate's agent inherits the patterns day 1.
+- When the senior engineer leaves, the skill stays.
+
+**Dandori capability used:** Skill library, versioning, many-to-many skill-agent attachment.
+
+---
+
+## 12. Team engineer: Picking up an in-review task
+
+**Role:** Mid-level engineer
+**Question:** "The task board shows a task stuck in 'In Review'. I want to pick it up and move it forward — what do I need?"
+
+**Without Dandori:**
+- Ping the author on Slack. Wait for context.
+- Scroll through comment thread for the original prompt.
+- Guess which version of the docs was current.
+
+**With Dandori:**
+
+```
+  Task: T-4812  (In Review)
+  ┌─────────────────────────────────────────────────────┐
+  │  ▸ Prompt sent to agent (full)                      │
+  │  ▸ Context assembled:                               │
+  │      company v12 · project v3 · team v7             │
+  │      agent v4 · task spec                           │
+  │  ▸ Agent output (diff + self-explanation)           │
+  │     "What I did: ..."                               │
+  │     "Why: ..."                                      │
+  │     "Risks: ..."                                    │
+  │  ▸ Quality gates:                                   │
+  │     typecheck ✓  lint ⚠  tests ✓                    │
+  │  ▸ Approval status: waiting on reviewer             │
+  └─────────────────────────────────────────────────────┘
+```
+
+- Full reproducible state — any engineer can pick up and review without pinging the author.
+- Self-explanation block gives instant "what and why".
+- Context version links make it obvious which docs were live.
+
+**Dandori capability used:** Context versioning, self-explanation, quality gates, approval queue.
+
+---
+
 ## Pattern: Management runs the org, agents run the tasks
 
 ```
@@ -360,12 +498,13 @@ Query: SELECT runs WHERE context_contains PII_CLASSIFIED
            │                                          │  docs
 ```
 
-**The pattern across all 9 use cases:**
+**The pattern across all 12 use cases:**
 
-1. Leaders see *through* Dandori, not around it.
+1. Engineers work *inside* Dandori; leaders see *through* it. Same database, two lenses.
 2. Policies live at the right layer and propagate automatically.
 3. Every decision is backed by data, not gut feel.
 4. Incidents become learnings, not finger-pointing.
+5. Knowledge (skills, context, approval rationale) stays with the org, not the individual.
 
 ---
 

@@ -94,9 +94,47 @@ Dandori stores agent instructions, skills, and templates centrally. New engineer
 
 **Dandori IS:**
 
-- The missing management layer between leadership and agent execution
+- The missing coordination + management layer between engineers, leadership, and agent execution
 - Vendor-agnostic (any agent: Claude, Codex, local models, custom)
 - Designed for orgs that need cost control, audit, and governance at scale
+
+---
+
+## Who gets what value
+
+Dandori is not a leadership-only dashboard. **It's a daily workspace for engineers *and* a control plane for leadership.** The same database powers both — so engineers coordinate in the tool that management measures through.
+
+### For engineers (they use it every day)
+
+| Module | Engineer value |
+|---|---|
+| **Context Hub** (5-layer) | Stop copy-pasting policies into prompts. Inherit company + project + team + agent context automatically. Update once, every teammate's agent sees it next run. |
+| **Task Board** (DAGs, phases) | Break a feature into phased tasks (research → design → implement → test), chain dependencies, auto-wake the next agent when the previous finishes. |
+| **Skill Library** | Reuse proven prompts from staff engineers. No more rebuilding "how we do code review" in every repo. Attach any skill to any agent. |
+| **Quality Gates** | Get TypeScript / lint / test feedback on agent output *before* it hits human review. Fast loop, fewer "wait, this doesn't compile" moments. |
+| **Approval Review** | Clear "In Review" queue with diff, prompt, context version. Review with full context instead of Slack screenshots. |
+| **Self-explanation** | Every agent run ends with "What I did / Why / Risks". Easier handoff between engineers, easier review. |
+
+### For leadership (they see through it every week)
+
+| Module | Leadership value |
+|---|---|
+| **Cost Attribution** | Break the vendor bill down by project, team, agent, model, phase. Spot runaway prompts before they're on the invoice. |
+| **Cross-agent Analytics** | Compare agents on cost, quality, success rate. See which ones improve, which degrade. |
+| **Quality Gates (trend view)** | Track quality score per team over time. Catch drift before it ships. |
+| **Audit Log** | Every mutation + every context version + every approval recorded. SOC 2 / ISO 27001 evidence on demand. |
+| **Approval Workflow** | Who approved what, when, with what rationale. No more "Slack said approve." |
+| **Compliance Export** | One-click JSON / CSV / PDF pack for auditors. Retention policies per project. |
+| **Budget Ceilings** | Hard stops per agent / team. Spike alerts when something burns 3× its average. |
+
+### Shared modules (both audiences, different lens)
+
+- **Context Hub** — engineers *author and consume*, leadership *versions and audits*.
+- **Skill Library** — engineers *write and reuse*, leadership *owns org knowledge asset*.
+- **Approval Workflow** — engineers *act as reviewers*, leadership *gets the audit trail*.
+- **Quality Gates** — engineers *get per-run feedback*, leadership *gets per-team trends*.
+
+**The principle:** engineers get productivity from the same data that gives leadership governance. No two tools, no reconciliation, no shadow spreadsheets.
 
 ---
 
