@@ -11,6 +11,8 @@ How Dandori fits into an organization that already runs an AI Platform (AIPF). T
 
 **Short answer:** AIPF handles *execution*. Dandori adds the **two layers AIPF doesn't have**: a daily workspace for engineers (context, tasks, skills) and a control plane for leadership (cost, audit, compliance).
 
+**In harness engineering terms:** AIPF's MultiAgent Runtime is an *inner harness* (it runs agents). **Dandori is the *outer harness at organizational scale*** — context, skills, sensors, approval, orchestration — which AIPF does not ship. Dandori does not replace the runtime; it wraps it with the organizational layer it's missing. See [Harness Engineering]({% link harness-engineering.md %}) for the full framing.
+
 ---
 
 ## The gap in every AI platform

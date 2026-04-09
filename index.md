@@ -23,8 +23,8 @@ The management layer for AI coding agents in the enterprise.
 
 That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week.
 
-> In industry vocabulary, Dandori is an **organizational harness engineering platform**.
-> `Agent = Model + Harness`. Dandori is the harness — lifted out of individual laptops and made into a shared, versioned, auditable organizational asset.
+> In industry vocabulary, Dandori is an **organizational outer harness**.
+> `Agent = Model + Harness`. The harness has two tiers — inner (runtime sub-agents, sandbox, context compaction) and outer (context, skills, sensors, approval, orchestration). **Dandori is the outer harness at organizational scale. It does not replace the inner harness** — Claude Code, Codex, and Cursor still do what they do best.
 > See **[Harness Engineering]({% link harness-engineering.md %})** for the full framing.
 
 ---

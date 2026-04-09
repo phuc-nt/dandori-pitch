@@ -129,9 +129,49 @@ The unanswered questions:
 
 ---
 
-## Dandori = Organizational harness engineering
+## Outer harness vs inner harness
 
-**Dandori takes harness engineering from a solo discipline and makes it a team sport.**
+Before explaining where Dandori sits, one distinction matters. A full harness actually has two tiers:
+
+```
+  ┌─────────────────────────────────────────────┐
+  │  OUTER HARNESS — what users configure       │
+  │  (teams, engineers, organizations)          │
+  │                                             │
+  │  · Context files / system prompts           │
+  │  · Skills                                   │
+  │  · Hooks (lifecycle scripts)                │
+  │  · Sensors (tests, lint, typecheck)         │
+  │  · Approval gates                           │
+  │  · Task orchestration / DAGs                │
+  │  · Observability / logging                  │
+  │  · Tool descriptions                        │
+  └─────────────────────────────────────────────┘
+  ┌─────────────────────────────────────────────┐
+  │  INNER HARNESS — built into the agent       │
+  │  (Claude Code, Codex, Cursor, Cline…)       │
+  │                                             │
+  │  · Sub-agent context firewall               │
+  │  · Context window compaction                │
+  │  · Tool call execution loop                 │
+  │  · Sandbox / filesystem / bash              │
+  │  · Memory files                             │
+  │  · Model routing per step                   │
+  │  · Streaming, cancellation, retries         │
+  └─────────────────────────────────────────────┘
+```
+
+**Dandori is an outer harness. It does not replace the inner harness.**
+
+Inner harness belongs to the coding agent runtimes — Claude Code, Codex, Cursor, Cline. They have spent years perfecting sub-agent isolation, sandbox execution, context compaction, and tool loops. Dandori does not try to rebuild any of that. It talks to them through adapters and lets them do what they do best.
+
+What Dandori *does* replace is the scattered, laptop-local, version-less, audit-less outer harness that every org accidentally has today.
+
+---
+
+## Dandori = Organizational outer harness
+
+**Dandori takes outer harness engineering from a solo discipline and makes it a team sport.**
 
 ```
   The Dandori pattern:
@@ -182,7 +222,26 @@ Every component of Dandori maps to a standard harness component — but **elevat
 | Tool adapters | MCP servers per user | **Adapter architecture** (Claude, Codex, custom) |
 | Observability | Dev reads local logs | **Run records + cost attribution + audit log** |
 
-**11 out of 12 core Dandori modules map directly to the harness components listed by Fowler, HumanLayer, LangChain, and Phil Schmid.** The remaining module — compliance export — is a control plane built on top of the harness's observability layer.
+Every module listed above is an *outer harness primitive* that, in the solo pattern, lives on an individual laptop. Dandori lifts them to the organization.
+
+### What Dandori explicitly delegates to the inner harness
+
+To be precise about the boundary, Dandori does **not** attempt to own:
+
+| Inner-harness responsibility | Owned by |
+|---|---|
+| Sub-agent context firewall | Claude Code / Codex runtime |
+| Context window compaction | Runtime |
+| Tool execution loop + retries | Runtime |
+| Sandbox / filesystem / bash | Runtime |
+| Per-step model routing | Runtime |
+| MCP tool invocation | Runtime (Dandori governs descriptions org-wide, roadmap) |
+
+The adapter architecture is how Dandori respects this boundary. Dandori assembles the outer harness (context, skills, sensors, approval, audit) and hands the final prompt to the runtime. The runtime handles the inner harness.
+
+**The slogan:**
+
+> **Dandori is the outer harness at organizational scale. It does not replace the inner harness — Claude Code, Codex, and Cursor still do what they do best.**
 
 ---
 

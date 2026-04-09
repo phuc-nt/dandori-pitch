@@ -64,13 +64,20 @@ Dandori stores agent instructions, skills, and templates centrally. New engineer
 
 ## What Dandori is
 
-**Dandori is an organizational harness engineering platform.**
+**Dandori is an organizational outer harness.**
 
 In 2026 vocabulary: `Agent = Model + Harness`. Everything that isn't the model — system prompts, context, skills, hooks, orchestration, feedback loops — is called the **harness**. Harness engineering is the discipline of designing it.
 
-Today, harness engineering is a solo practice: every engineer builds their own CLAUDE.md, their own MCP tools, their own hooks — on their own laptop. When they leave, it walks out the door.
+The harness has two tiers:
 
-**Dandori is what happens when harness becomes a shared, versioned, auditable organizational asset.** The same primitives (context, skills, hooks, sensors, orchestration) — but lifted from the laptop to the organization.
+- **Inner harness** — built into the coding agent runtime (Claude Code, Codex, Cursor). Sub-agent context firewall, sandbox, tool execution loop, context compaction. These runtimes do it well.
+- **Outer harness** — everything users configure around the runtime. Context files, skills, sensors, approval gates, orchestration, observability. Today this lives on individual laptops.
+
+Today, outer harness engineering is a solo practice: every engineer builds their own CLAUDE.md, their own MCP tools, their own hooks — on their own laptop. When they leave, it walks out the door.
+
+**Dandori is the outer harness at organizational scale.** Shared, versioned, auditable. Same primitives (context, skills, hooks, sensors, orchestration) — but lifted from the laptop to the organization.
+
+**Dandori does not replace the inner harness.** Claude Code, Codex, and Cursor still own the runtime. Dandori talks to them through adapters and lets them do what they do best.
 
 See the full framing in **[Harness Engineering]({% link harness-engineering.md %})**.
 
