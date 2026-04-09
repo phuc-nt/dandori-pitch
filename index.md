@@ -138,6 +138,7 @@ Dandori is a **dual-audience platform**. Each module is designed primarily for o
 - **[Core Features]({% link core-features.md %})** — 13 capabilities tagged by audience (engineer / leadership / both)
 - **[Use Cases]({% link use-cases.md %})** — 9 leadership scenarios + 3 engineer scenarios
 - **[Architecture]({% link architecture.md %})** — Technical integration surface for your stack
+- **[Proposed Roadmap]({% link proposed-roadmap.md %})** — Milestone-by-milestone path from team pilot to full vision
 
 ---
 
