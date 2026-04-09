@@ -64,7 +64,17 @@ Dandori stores agent instructions, skills, and templates centrally. New engineer
 
 ## What Dandori is
 
-**Dandori is the management layer between engineering leadership and the AI agents your teams already use.**
+**Dandori is an organizational harness engineering platform.**
+
+In 2026 vocabulary: `Agent = Model + Harness`. Everything that isn't the model — system prompts, context, skills, hooks, orchestration, feedback loops — is called the **harness**. Harness engineering is the discipline of designing it.
+
+Today, harness engineering is a solo practice: every engineer builds their own CLAUDE.md, their own MCP tools, their own hooks — on their own laptop. When they leave, it walks out the door.
+
+**Dandori is what happens when harness becomes a shared, versioned, auditable organizational asset.** The same primitives (context, skills, hooks, sensors, orchestration) — but lifted from the laptop to the organization.
+
+See the full framing in **[Harness Engineering]({% link harness-engineering.md %})**.
+
+In more practical terms: **Dandori is the management layer between engineering leadership and the AI agents your teams already use.**
 
 ```
    LEADERSHIP                    DANDORI                       AGENTS
@@ -190,6 +200,7 @@ The patterns we saw with:
 
 ## Next steps
 
+- [Harness Engineering →]({% link harness-engineering.md %}) The industry concept Dandori implements at org scale
 - [Core Features →]({% link core-features.md %}) The 9 management capabilities, with diagrams
 - [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
 - [Architecture →]({% link architecture.md %}) Technical integration surface

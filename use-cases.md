@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Use Cases
-nav_order: 4
+nav_order: 5
 description: "9 management scenarios for CTO, CISO, Platform, and Compliance teams."
 ---
 

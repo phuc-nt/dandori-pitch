@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AIPF Integration
-nav_order: 6
+nav_order: 7
 description: "How Dandori fits into an organization already running an AI Platform (AIPF)."
 ---
 

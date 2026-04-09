@@ -23,6 +23,10 @@ The management layer for AI coding agents in the enterprise.
 
 That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week.
 
+> In industry vocabulary, Dandori is an **organizational harness engineering platform**.
+> `Agent = Model + Harness`. Dandori is the harness — lifted out of individual laptops and made into a shared, versioned, auditable organizational asset.
+> See **[Harness Engineering]({% link harness-engineering.md %})** for the full framing.
+
 ---
 
 ### Where Dandori sits
@@ -130,6 +134,7 @@ Dandori is a **dual-audience platform**. Each module is designed primarily for o
 ### Explore
 
 - **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, dual-audience value split, ROI, differentiators
+- **[Harness Engineering]({% link harness-engineering.md %})** — The industry concept behind Dandori, and how Dandori fits into it
 - **[Core Features]({% link core-features.md %})** — 9 capabilities tagged by audience (engineer / leadership / both)
 - **[Use Cases]({% link use-cases.md %})** — 9 leadership scenarios + 3 engineer scenarios
 - **[Architecture]({% link architecture.md %})** — Technical integration surface for your stack

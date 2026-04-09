@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Core Features
-nav_order: 3
+nav_order: 4
 description: "9 management capabilities that Dandori adds on top of your AI agents."
 ---
 
