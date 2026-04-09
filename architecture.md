@@ -263,7 +263,7 @@ Project ──┬── Team ────┬── Agent ────┬── R
 
 ### Topology 3: Enterprise (AIPF integration)
 
-This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integration](/dandori-pitch/aipf-integration.html) for the full description (link-only — not in the public nav).
+This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integration]({% link aipf-integration.md %}) for the full description (link-only — not in the public nav).
 
 ---
 

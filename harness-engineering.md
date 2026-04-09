@@ -302,7 +302,7 @@ The harness engineering concept, as used here, is synthesized from:
 
 ## Next steps
 
-- [Core Features →]({% link core-features.md %}) The 9 capabilities, each tagged by its harness component
+- [Core Features →]({% link core-features.md %}) The 13 capabilities, each tagged by its harness component
 - [Use Cases →]({% link use-cases.md %}) Scenarios for engineers and leadership using the harness
 - [Architecture →]({% link architecture.md %}) How the harness is assembled technically
 - [AIPF Integration →]({% link aipf-integration.md %}) Fitting an organizational harness into enterprise AI platforms

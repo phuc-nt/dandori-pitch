@@ -212,7 +212,7 @@ The patterns we saw with:
 ## Next steps
 
 - [Harness Engineering →]({% link harness-engineering.md %}) The industry concept Dandori implements at org scale
-- [Core Features →]({% link core-features.md %}) The 9 management capabilities, with diagrams
+- [Core Features →]({% link core-features.md %}) The 13 outer-harness capabilities, with diagrams
 - [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
 - [Architecture →]({% link architecture.md %}) Technical integration surface
 - [AIPF Integration →]({% link aipf-integration.md %}) How Dandori fits into enterprise AI platforms

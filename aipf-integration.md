@@ -260,6 +260,6 @@ No additional AI provider accounts needed — Dandori uses AIPF's existing provi
 
 ---
 
-- [Core Features →]({% link core-features.md %}) The 9 management capabilities in detail
+- [Core Features →]({% link core-features.md %}) The 13 outer-harness capabilities in detail
 - [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
 - [Architecture →]({% link architecture.md %}) Technical integration surface

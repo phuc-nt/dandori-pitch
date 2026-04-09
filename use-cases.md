@@ -2,7 +2,7 @@
 layout: default
 title: Use Cases
 nav_order: 5
-description: "9 management scenarios for CTO, CISO, Platform, and Compliance teams."
+description: "12 scenarios — 9 leadership, 3 engineer — covering CTO, CISO, Platform, Compliance, tech leads, and senior engineers."
 ---
 
 # Use Cases

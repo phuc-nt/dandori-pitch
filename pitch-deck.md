@@ -1,12 +1,19 @@
 ---
 layout: default
-title: Pitch Deck
+title: Pitch Deck (Archive)
 nav_exclude: true
 search_exclude: true
-description: "Script thuyết trình Dandori (tiếng Việt)."
+description: "Legacy Vietnamese pitch script. Predates the organizational outer harness framing."
 ---
 
 # Script thuyết trình
+
+> ⚠ **Archive notice.** This is an old Vietnamese pitch deck written before the current organizational outer harness framing and 13-module vision. Kept for historical reference only. For current positioning, see:
+>
+> - [Why Dandori]({% link why-dandori.md %})
+> - [Harness Engineering]({% link harness-engineering.md %})
+> - [Core Features]({% link core-features.md %})
+> - [Proposed Roadmap]({% link proposed-roadmap.md %})
 
 *Mỗi phần là một nhịp vẽ. Bắt đầu với bảng trắng. Vẽ thêm từng thứ đúng lúc script nói — không vẽ trước.*
 

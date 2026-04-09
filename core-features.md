@@ -19,37 +19,9 @@ Each feature is tagged with its **primary audience**:
 
 ---
 
-## Where Dandori sits
-
-```
-         ┌─────────────────────────────────────────┐
-         │         ENGINEERING LEADERSHIP          │
-         │  CTO · Platform · Security · Compliance │
-         └─────────────────────────────────────────┘
-                            │
-                            │  needs: visibility,
-                            │  control, audit
-                            ▼
-         ┌─────────────────────────────────────────┐
-         │               DANDORI                   │   ◀── management layer
-         │         (governance + analytics)        │
-         └─────────────────────────────────────────┘
-                            │
-                            │  delegates to:
-                            ▼
-         ┌─────────────────────────────────────────┐
-         │              AI AGENTS                  │   ◀── execution layer
-         │   Claude Code · Codex · Cursor · ...    │       (your engineers'
-         └─────────────────────────────────────────┘        existing tools)
-                            │
-                            ▼
-         ┌─────────────────────────────────────────┐
-         │             AI PROVIDERS                │
-         │     Anthropic · OpenAI · local models   │
-         └─────────────────────────────────────────┘
-```
-
 **Dandori does not write code.** Engineers use it to coordinate and share context. Leadership uses it to measure, govern, and audit.
+
+For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) or [Architecture]({% link architecture.md %}#system-overview--the-ecosystem).
 
 ---
 
