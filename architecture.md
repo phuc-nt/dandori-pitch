@@ -150,7 +150,7 @@ behind a reverse proxy (Caddy/nginx)
 | **Google Drive (GWS)** | OAuth2 + REST (in) | Docs imported as context source (already shipped in current Dandori) |
 | **Slack** | Webhook + Bot (in/out) | Approval requests, run notifications, in-Slack approvals via interactive buttons |
 
-**Detail per integration:** see [Ecosystem Integrations]({% link architecture-integrations.md %}).
+**Detail per integration:** see each [Module]({% link architecture-modules.md %}) page — every module's "Ecosystem integration" section explains which of the 8 ecosystem tools touch it and how.
 
 ---
 
@@ -296,9 +296,8 @@ This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integ
 
 ## Read next
 
-- [Modules →]({% link architecture-modules.md %}) — All 13 modules with per-module diagrams, data model, processing flow, tech specifics
-- [Ecosystem Integrations →]({% link architecture-integrations.md %}) — How Dandori talks to Claude Code, Codex, Copilot, Jira, Confluence, GitHub Enterprise, Google Drive, Slack
-- [Use Case Flows →]({% link architecture-use-cases.md %}) — End-to-end processing flows for the 6 most common scenarios
+- [Modules →]({% link architecture-modules.md %}) — All 13 modules, each on its own page with diagrams, data model, processing flow, ecosystem touch points, and tech specifics
+- [Use Case Flows →]({% link architecture-use-cases.md %}) — End-to-end processing flows for the 6 most common scenarios (Mermaid sequence diagrams)
 
 ---
 

@@ -401,6 +401,5 @@ sequenceDiagram
 ## See also
 
 - [Architecture Overview]({% link architecture.md %}) — System architecture, tech stack, deployment topologies
-- [Modules]({% link architecture-modules.md %}) — Per-module diagrams and data model
-- [Ecosystem Integrations]({% link architecture-integrations.md %}) — How Dandori talks to each external tool
+- [Modules]({% link architecture-modules.md %}) — Per-module pages with diagrams, data model, and ecosystem integration
 - [Use Cases]({% link use-cases.md %}) — Higher-level business scenarios that drive these flows
