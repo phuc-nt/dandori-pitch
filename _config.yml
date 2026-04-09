@@ -36,6 +36,10 @@ toc:
   heading_level: 2
   toc_level: 2
 
+# Mermaid diagram support
+mermaid:
+  version: "10.9.0"
+
 exclude:
   - docs/
   - overrides/

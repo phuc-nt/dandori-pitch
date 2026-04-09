@@ -10,7 +10,7 @@ description: "End-to-end processing flows for the 6 most common Dandori scenario
 
 End-to-end processing flows for the most common scenarios when a team pilots Dandori with their existing tools (Claude Code, Codex, Copilot, Jira, Confluence, GitHub Enterprise, Google Drive, Slack).
 
-Each flow shows: trigger → modules touched → ecosystem integrations involved → outputs.
+Each flow is rendered as a Mermaid sequence diagram or flowchart showing the modules and integrations involved.
 
 ---
 
@@ -18,143 +18,59 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** PM creates a Jira issue. Dandori picks it up automatically, an agent implements it, opens a PR, posts a self-explanation comment, and waits for human approval.
 
-```
-┌──────┐                                                       ┌─────────────────┐
-│ JIRA │                                                       │ GITHUB ENTERPRISE│
-└──┬───┘                                                       └────────┬────────┘
-   │                                                                    │
-   │ PM creates issue                                                   │
-   │ "Add Stripe webhook handler"                                       │
-   │ labels: backend, payments, skill:webhook                           │
-   │                                                                    │
-   │ webhook                                                            │
-   ▼                                                                    │
-┌──────────────────┐                                                    │
-│ Dandori webhook  │                                                    │
-│ ingress          │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Task service     │                                                    │
-│ - create task    │                                                    │
-│ - phase=design   │                                                    │
-│   (from issue    │                                                    │
-│    type)         │                                                    │
-│ - skill_tags     │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Skill matcher    │                                                    │
-│ - finds best     │                                                    │
-│   agent by skill │                                                    │
-│   overlap        │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Wakeup scheduler │                                                    │
-│ assigns          │                                                    │
-│ PaymentImpl agent│                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Context Hub      │                                                    │
-│ assemble:        │                                                    │
-│  company v12     │                                                    │
-│  project v3      │                                                    │
-│  team v7         │                                                    │
-│  agent v4        │                                                    │
-│  task spec       │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ before_run hook  │                                                    │
-│ check: SQL       │                                                    │
-│ patterns,        │                                                    │
-│ secret detection │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Claude Code      │  spawn subprocess in clean workdir                 │
-│ adapter          │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         ▼                                                              │
-   ╔═══════════════════════════════════════╗                            │
-   ║       CLAUDE CODE (runtime)           ║                            │
-   ║                                       ║                            │
-   ║  · reads assembled prompt             ║                            │
-   ║  · mid-run calls Dandori MCP:         ║                            │
-   ║      fetch_skill("webhook-impl")      ║                            │
-   ║      run_typecheck(...)               ║                            │
-   ║      run_tests(...)                   ║                            │
-   ║  · writes code, tests                 ║                            │
-   ║  · git commit, push branch            ║                            │
-   ╚═══════════════════════════════════════╝                            │
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ after_run hook   │                                                    │
-│ - capture output │                                                    │
-│ - quality gates  │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         │ git push                                                     │
-         ├─────────────────────────────────────────────────────────────▶│
-         │                                                              │
-         │ open PR via GitHub App                                       │
-         ├─────────────────────────────────────────────────────────────▶│
-         │                                                              │
-         │ POST PR comment with self-explanation                        │
-         │ + cost + quality + sub-agent trace                           │
-         ├─────────────────────────────────────────────────────────────▶│
-         │                                                              │
-         │ POST status check: pending (awaiting approval)               │
-         ├─────────────────────────────────────────────────────────────▶│
-         │                                                              │
-         ▼                                                              │
-┌──────────────────┐                                                    │
-│ Approval         │                                                    │
-│ workflow         │                                                    │
-│ task → REVIEW    │                                                    │
-└────────┬─────────┘                                                    │
-         │                                                              │
-         │ Slack notification ───────┐                                  │
-         ▼                           ▼                                  │
-┌──────────────────┐       ┌──────────────┐                             │
-│ Audit log        │       │   SLACK      │                             │
-│ - context vers   │       │  #payments   │                             │
-│ - hook results   │       │  channel     │                             │
-│ - quality score  │       │              │                             │
-│ - cost ($0.42)   │       │  [Approve]   │                             │
-│ - sub-agents     │       │  [Reject]    │                             │
-└──────────────────┘       └──────┬───────┘                             │
-                                  │                                     │
-                                  │ user clicks Approve                 │
-                                  ▼                                     │
-                          ┌──────────────┐                              │
-                          │ Approval     │                              │
-                          │ service      │                              │
-                          │ task → DONE  │                              │
-                          └──────┬───────┘                              │
-                                 │                                      │
-                                 │ status check → success               │
-                                 ├─────────────────────────────────────▶│
-                                 │                                      │
-                                 │ Jira issue → Done                    │
-                                 ├──────────────────▶ JIRA              │
-                                 │                                      │
-                                 ▼                                      │
-                          ┌──────────────┐                              │
-                          │ Audit log    │                              │
-                          │ approval     │                              │
-                          │ recorded     │                              │
-                          └──────────────┘                              │
+```mermaid
+sequenceDiagram
+    autonumber
+    actor PM
+    participant Jira
+    participant DW as Dandori<br/>(webhook)
+    participant Task as Task service
+    participant Skill as Skill matcher
+    participant Ctx as Context Hub
+    participant Hook as Hooks engine
+    participant Adp as Claude Code adapter
+    participant CC as Claude Code (runtime)
+    participant Mcp as Dandori MCP server
+    participant QG as Quality Gates
+    participant GH as GitHub Enterprise
+    participant Slack
+    actor Reviewer
+    participant Audit as Audit log
+
+    PM->>Jira: Create issue<br/>"Add Stripe webhook"<br/>labels: backend, payments, skill:webhook
+    Jira-->>DW: webhook event
+    DW->>Task: create task<br/>phase=design
+    Task->>Skill: find best agent by skill overlap
+    Skill-->>Task: PaymentImpl agent
+    Task->>Ctx: assemble 5-layer context
+    Ctx-->>Task: company v12 + project v3 + team v7 + agent v4 + task spec
+    Task->>Hook: fire before_run
+    Hook-->>Task: allow (no SQL/secret violations)
+    Task->>Adp: dispatch run
+    Adp->>CC: spawn subprocess<br/>+ context + skill manifests
+    CC->>Mcp: fetch_skill("webhook-impl")
+    Mcp-->>CC: full skill content
+    CC->>Mcp: run_typecheck(...)
+    Mcp-->>CC: silent (pass)
+    CC->>Mcp: run_tests(...)
+    Mcp-->>CC: silent (pass)
+    CC-->>Adp: code + git push branch
+    Adp->>Hook: fire after_run
+    Adp->>QG: run gates
+    QG-->>Adp: score 87
+    Adp->>GH: open PR via GitHub App
+    Adp->>GH: POST PR comment<br/>(self-explanation + cost + trace)
+    Adp->>GH: POST status check: pending
+    Adp->>Task: status = REVIEW
+    Task->>Slack: notify with [Approve][Reject]
+    Task->>Audit: record full run
+    Slack->>Reviewer: see message in #payments
+    Reviewer->>Slack: click Approve
+    Slack-->>DW: interaction payload
+    DW->>Task: status = DONE
+    Task->>GH: status check = success
+    Task->>Jira: issue → Done
+    Task->>Audit: record approval
 ```
 
 **Modules touched:** Task Board, Skill Library (matching), Context Hub, Hooks, Claude Code adapter, Inline Sensors, Quality Gates, Approval Workflow, Audit Log, Cost Attribution
@@ -169,85 +85,102 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** Tech lead breaks a feature into a 5-task DAG covering research → design → implement → test → deploy. Each phase auto-wakes when its dependency completes.
 
+### DAG topology
+
+```mermaid
+flowchart TD
+    T1["T-1 research-stripe-spec<br/>phase: research<br/>runtime: Claude Code"]
+    T2["T-2 design-db-schema<br/>phase: design<br/>runtime: Claude Code"]
+    T3["T-3 implement-handler<br/>phase: implement<br/>runtime: Claude Code<br/>needs_approval ✓"]
+    T4["T-4 write-integration-tests<br/>phase: test<br/>runtime: Codex CLI"]
+    T5["T-5 deploy-to-staging<br/>phase: deploy<br/>needs_approval ✓"]
+
+    T1 --> T2
+    T2 --> T3
+    T3 --> T4
+    T4 --> T5
+
+    style T3 fill:#fff3cd,stroke:#cc3333
+    style T5 fill:#fff3cd,stroke:#cc3333
 ```
-  Tech lead in Dandori UI builds DAG:
 
-  T-1 research-stripe-spec    [research]
-        │
-        ▼
-  T-2 design-db-schema        [design]
-        │
-        ▼
-  T-3 implement-handler       [implement]    needs_approval=true
-        │
-        ▼
-  T-4 write-integration-tests [test]
-        │
-        ▼
-  T-5 deploy-to-staging       [deploy]       needs_approval=true
+### Sequence with auto-wakeup and approvals
 
-  ┌──────────────────────────────────────────────────────────┐
-  │ Time T0: T-1 starts                                       │
-  │   Context: company + project + team + research-agent     │
-  │   Confluence: pulls "Stripe API standards" page          │
-  │   Runtime: Claude Code, sub-agents allowed               │
-  │   Output: research summary doc                           │
-  │   Cost: $0.31, Quality: 92                               │
-  └──────────────────────────────────────────────────────────┘
-         │
-         │ T-1 complete → wakeup scheduler
-         ▼
-  ┌──────────────────────────────────────────────────────────┐
-  │ Time T1: T-2 auto-starts                                 │
-  │   Context inherits T-1 output (via task dependency)      │
-  │   Runtime: Claude Code                                   │
-  │   Output: schema migration file                          │
-  │   Cost: $0.18, Quality: 88                               │
-  └──────────────────────────────────────────────────────────┘
-         │
-         ▼
-  ┌──────────────────────────────────────────────────────────┐
-  │ Time T2: T-3 auto-starts                                 │
-  │   Context inherits T-1 + T-2 outputs                     │
-  │   Inline sensors: typecheck, lint, security scan         │
-  │   Sub-agents traced: SchemaImpl, TestWriter, ApiBinder   │
-  │   Output: code + tests on branch                         │
-  │   Cost: $0.84, Quality: 87                               │
-  │   Status → REVIEW (needs_approval)                       │
-  └─────────┬────────────────────────────────────────────────┘
-            │
-            │ Slack: notify #payments
-            │ Reviewer approves
-            │
-            ▼
-  ┌──────────────────────────────────────────────────────────┐
-  │ Time T3: T-4 auto-starts                                 │
-  │   Context: + T-1, T-2, T-3 outputs                       │
-  │   Runtime: Codex CLI                                     │
-  │   Output: integration test suite                         │
-  │   Cost: $0.41, Quality: 91                               │
-  └──────────────────────────────────────────────────────────┘
-         │
-         ▼
-  ┌──────────────────────────────────────────────────────────┐
-  │ Time T4: T-5 auto-starts                                 │
-  │   Context: full DAG outputs                              │
-  │   Sensor chain: pre-deploy security check                │
-  │   Status → REVIEW (deploy gate)                          │
-  │   Slack DM to ops engineer                               │
-  │   On approval: GitHub Action triggered via webhook       │
-  └──────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Lead as Tech Lead
+    participant TB as Task Board
+    participant WS as Wakeup scheduler
+    participant Ctx as Context Hub
+    participant Adp as Adapter layer
+    participant CC as Claude Code
+    participant CX as Codex CLI
+    participant Sen as Inline Sensors
+    participant App as Approval Workflow
+    participant Slack
+    actor Rev as Reviewer
+    participant GH as GitHub Enterprise
+    participant Cost as Cost Attribution
 
-  Total cost rolled up: $1.74
-  Total time: ~4 hours wall clock
-  Audit log: 5 runs, 11 sub-agents, 2 approvals, 0 rejections
+    Lead->>TB: build 5-task DAG with dependencies + phase tags
+
+    Note over TB,WS: T-1 research starts immediately
+    WS->>Ctx: assemble context for T-1
+    Ctx->>Adp: prompt
+    Adp->>CC: spawn (research agent)
+    CC-->>Adp: research summary doc
+    Adp->>Cost: $0.31, quality 92
+    Adp->>WS: T-1 complete
+
+    WS->>WS: scan dependencies — T-2 ready
+    WS->>Ctx: assemble for T-2 (inherits T-1 output)
+    Ctx->>Adp: prompt + T-1 context
+    Adp->>CC: spawn (design agent)
+    CC-->>Adp: schema migration file
+    Adp->>WS: T-2 complete ($0.18, quality 88)
+
+    WS->>WS: T-3 ready
+    WS->>Ctx: assemble for T-3 (inherits T-1 + T-2)
+    Ctx->>Adp: prompt
+    Adp->>CC: spawn (implement agent)
+    CC->>Sen: typecheck, lint, security scan
+    Sen-->>CC: pass
+    CC-->>Adp: code on branch ($0.84, quality 87)
+    Adp->>App: status = REVIEW (needs_approval)
+    App->>Slack: notify #payments
+    Slack->>Rev: see request
+    Rev->>Slack: Approve
+    Slack-->>App: approved
+    App->>WS: T-3 done
+
+    WS->>WS: T-4 ready
+    WS->>Ctx: assemble for T-4
+    Ctx->>Adp: prompt
+    Adp->>CX: spawn (test agent)
+    CX-->>Adp: integration test suite ($0.41, quality 91)
+    Adp->>WS: T-4 complete
+
+    WS->>WS: T-5 ready
+    WS->>Ctx: assemble for T-5
+    Ctx->>Adp: prompt
+    Adp->>Sen: pre-deploy security check
+    Sen-->>Adp: pass
+    Adp->>App: status = REVIEW (deploy gate)
+    App->>Slack: DM ops engineer
+    Slack->>Rev: deploy gate
+    Rev->>Slack: Approve
+    Slack-->>App: approved
+    App->>GH: trigger Action via webhook
+
+    Cost->>Cost: roll up: total $1.74<br/>5 runs, 11 sub-agents,<br/>2 approvals, 0 rejections
 ```
 
 **Modules touched:** Task Board (DAG), Context Hub (inheritance + task chain), Skill Library, Inline Sensors (sensor chain), Approval Workflow, Sub-agent Trace, Cost Attribution (roll-up), Audit Log
 
 **Integrations:** Confluence (in), Claude Code, Codex CLI, Slack (notify + approve), GitHub Enterprise (deploy webhook)
 
-**Outcome:** Feature shipped end-to-end with no manual handoffs between phases. Audit log explains every decision.
+**Outcome:** Feature shipped end-to-end with no manual handoffs between phases.
 
 ---
 
@@ -255,90 +188,45 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** Senior engineer turns a proven prompt pattern into a versioned skill that all team agents inherit.
 
-```
-  Senior engineer in Dandori UI:
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Alice as Senior Eng (Alice)
+    participant UI as Dandori Web UI
+    participant SL as Skill Library
+    participant DB as skills table
+    participant AS as agent_skills table
+    participant Audit as Audit log
+    participant Slack
+    actor Team as Team channel
 
-  ┌─────────────────────────────────────┐
-  │ Skill Editor                        │
-  │ ─────────────────────────────────── │
-  │ Name: go-microservice-review        │
-  │ Owner team: payments                │
-  │ Triggers: ["go", "microservice",    │
-  │            "code-review"]           │
-  │ Description: "How we review Go      │
-  │   microservices for payments team"  │
-  │ Content (markdown):                 │
-  │   # Review checklist                │
-  │   1. Context cancellation on I/O   │
-  │   2. Error wrapping                 │
-  │   3. Metrics + trace spans         │
-  │   ...                               │
-  │ ─────────────────────────────────── │
-  │ [Save as v1] [Attach to agents]    │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-            Save flow:
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ skills table                        │
-  │ INSERT row: id, name, manifest,     │
-  │ full_content, version=1, owner_team │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Audit log                           │
-  │ entity=skill, action=create         │
-  │ actor=alice, before=null, after=v1  │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-            Attach flow:
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Skill picker UI                     │
-  │ Select agents:                      │
-  │  ✓ ReviewerBot-payments             │
-  │  ✓ ReviewerBot-auth                 │
-  │  ✓ ReviewerBot-data                 │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ agent_skills table                  │
-  │ 3 rows inserted                     │
-  │ pinned_version=null (always latest) │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-            Slack notification:
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ #payments-eng                       │
-  │ ─────────────────────────────────── │
-  │ Alice published "go-microservice-   │
-  │  review" v1 → attached to 3 agents  │
-  │  [View skill] [See affected runs]   │
-  └─────────────────────────────────────┘
+    Alice->>UI: Create skill<br/>name: go-microservice-review<br/>triggers: [go, microservice, review]
+    Alice->>UI: Paste content (markdown checklist)
+    Alice->>UI: Save as v1
+    UI->>SL: insert skill
+    SL->>DB: INSERT row<br/>id, name, manifest, full_content, v=1
+    SL->>Audit: entity=skill, action=create<br/>actor=alice, after=v1
 
-  Next time any of those 3 agents runs:
-  ┌─────────────────────────────────────┐
-  │ System prompt now includes:         │
-  │ skill manifest:                     │
-  │  - go-microservice-review (v1)     │
-  │     "How we review Go microservices"│
-  │                                     │
-  │ Agent calls fetch_skill(name=       │
-  │   "go-microservice-review")         │
-  │ when it sees a Go file in diff      │
-  │                                     │
-  │ Full content lazily loaded          │
-  │ skill_usage row inserted            │
-  └─────────────────────────────────────┘
+    Alice->>UI: Attach to agents:<br/>ReviewerBot-payments,<br/>ReviewerBot-auth,<br/>ReviewerBot-data
+    UI->>SL: attach 3 agents
+    SL->>AS: 3 rows<br/>pinned_version=null
+    SL->>Audit: 3 attach events
+    SL->>Slack: notify #payments-eng
+    Slack->>Team: "Alice published go-microservice-review v1<br/>→ attached to 3 agents"
+
+    Note over SL,DB: Next run from any attached agent
+
+    participant Run as Run service
+    participant CC as Claude Code
+    participant Mcp as Dandori MCP
+
+    Run->>CC: spawn with skill manifests in system prompt
+    CC->>CC: sees Go file in diff,<br/>matches trigger
+    CC->>Mcp: fetch_skill("go-microservice-review")
+    Mcp->>DB: fetch full_content for v1
+    DB-->>Mcp: content
+    Mcp-->>CC: full skill returned
+    Mcp->>DB: insert skill_usage row
 ```
 
 **Modules touched:** Skill Library, Audit Log
@@ -353,65 +241,30 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** Engineer in VS Code asks Copilot a question. Copilot calls Dandori MCP server to ground its answer in team standards.
 
-```
-  Engineer in VS Code (file: payments/webhook.ts)
-                │
-                │ Copilot Chat: "How should I handle PII
-                │   in this webhook handler?"
-                ▼
-  ┌─────────────────────────────────────┐
-  │ Copilot reasons:                    │
-  │ "I need org context. I have a       │
-  │  Dandori MCP tool: get_context"     │
-  └─────────────────┬───────────────────┘
-                    │
-                    │ MCP tool call:
-                    │ get_context(file="webhook.ts",
-                    │             project="payments")
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Dandori MCP server                  │
-  │ - resolve project from file path    │
-  │ - assemble layers:                  │
-  │     company (security policy v12)   │
-  │     project (payments stack v3)     │
-  │     team (payments team v7)         │
-  │ - filter for PII relevance          │
-  │ - return structured context         │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Returned to Copilot:                │
-  │ {                                   │
-  │   "company.security": "...",        │
-  │   "project.pii_handling": "...",    │
-  │   "team.review_protocol": "..."     │
-  │ }                                   │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Copilot answers in chat:            │
-  │ "Per company security policy v12,   │
-  │  PII in webhooks must be:           │
-  │  1. Masked in logs                  │
-  │  2. Tagged with PII headers         │
-  │  3. Routed only to auth-data svc    │
-  │                                     │
-  │  Project payments uses PiiVault v2  │
-  │  for all webhook payloads. Use      │
-  │  PiiVault.scrub() before logging."  │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Dandori logs:                       │
-  │ skill_usage / context_query         │
-  │ actor=copilot,                      │
-  │ user=engineer-bob,                  │
-  │ context_versions={...}              │
-  └─────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Bob as Engineer (Bob)
+    participant VS as VS Code
+    participant Cop as GitHub Copilot
+    participant Mcp as Dandori MCP server
+    participant Ctx as Context Hub
+    participant DB as context_layers table
+    participant Audit as Audit log
+
+    Bob->>VS: Open payments/webhook.ts
+    Bob->>Cop: "How should I handle PII<br/>in this webhook handler?"
+    Cop->>Cop: needs org context
+    Cop->>Mcp: get_context(file=webhook.ts, project=payments)
+    Mcp->>Ctx: resolve project from file path
+    Ctx->>DB: SELECT latest version per layer
+    DB-->>Ctx: company.security v12,<br/>project.pii v3,<br/>team.review v7
+    Ctx->>Ctx: filter for PII relevance
+    Ctx-->>Mcp: structured context blocks
+    Mcp->>Audit: log context_query<br/>actor=copilot, user=bob,<br/>versions={...}
+    Mcp-->>Cop: { company.security, project.pii, team.review }
+    Cop->>Cop: thread context into reasoning
+    Cop-->>Bob: "Per company security v12,<br/>PII must be masked, tagged,<br/>routed to auth-data svc.<br/>Use PiiVault.scrub() in payments project."
 ```
 
 **Modules touched:** Context Hub, MCP Server, Audit Log
@@ -426,65 +279,52 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** CFO opens Dandori dashboard at month-end. Sees full breakdown, drills into anomalies, exports report.
 
-```
-  CFO opens Dandori → Dashboard → Cost
-                │
-                ▼
-  ┌─────────────────────────────────────┐
-  │ Cost dashboard query                │
-  │ SELECT FROM v_agent_runs            │
-  │ WHERE month=2026-04                 │
-  │ GROUP BY project, team, agent       │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Roll-up engine                      │
-  │ - sum by project                    │
-  │ - sum by team                       │
-  │ - sum by agent                      │
-  │ - sub-agent costs roll up to parent │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Dashboard renders:                  │
-  │   Total: $4,210                     │
-  │   Top: payments-service ($1,820)    │
-  │     RefactorBot $640 (low quality⚠) │
-  └─────────────────┬───────────────────┘
-                    │
-                    │ CFO clicks "RefactorBot"
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Drill-down                          │
-  │ - run history                       │
-  │ - quality trend (declining)         │
-  │ - cost per run                      │
-  │ - top failed runs                   │
-  └─────────────────┬───────────────────┘
-                    │
-                    │ CFO clicks "Export"
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Export service                      │
-  │ - cost CSV                          │
-  │ - audit log filtered to RefactorBot │
-  │ - quality breakdown JSON            │
-  │ - bundled into ZIP                  │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-            Downloaded report
-            sent to finance team
-            via Slack DM
+```mermaid
+sequenceDiagram
+    autonumber
+    actor CFO
+    participant UI as Dandori Web UI
+    participant CA as Cost Attribution
+    participant View as v_agent_runs view
+    participant Roll as Roll-up engine
+    participant Anal as Cross-agent Analytics
+    participant Exp as Export service
+    participant Slack
+    actor Fin as Finance team
+
+    CFO->>UI: Open Dashboard → Cost
+    UI->>CA: query month=2026-04
+    CA->>View: SELECT FROM v_agent_runs<br/>GROUP BY project, team, agent
+    View-->>CA: enriched run records
+    CA->>Roll: aggregate
+    Roll->>Roll: sum by project / team / agent<br/>sub-agents roll up to parent
+    Roll-->>UI: dashboard data
+
+    UI-->>CFO: Total $4,210<br/>Top: payments-service $1,820<br/>RefactorBot $640 (low quality ⚠)
+
+    CFO->>UI: Click RefactorBot
+    UI->>Anal: drill-down query
+    Anal->>View: agent runs + quality history
+    View-->>Anal: run history + quality trend
+    Anal-->>UI: trend graph + top failed runs
+    UI-->>CFO: Quality declining,<br/>cost per run rising
+
+    CFO->>UI: Click Export
+    UI->>Exp: build report (RefactorBot focus)
+    Exp->>View: SELECT runs filter
+    Exp->>Audit: SELECT audit events
+    Exp->>Anal: SELECT quality breakdown
+    Exp->>Exp: bundle: cost.csv +<br/>audit.json + quality.json
+    Exp-->>UI: ZIP path
+    UI->>Slack: DM CFO with download link
+    Slack->>Fin: forwarded report
 ```
 
 **Modules touched:** Cost Attribution, Cross-agent Analytics, Audit Log
 
 **Integrations:** Slack (deliver report)
 
-**Outcome:** Leadership has actionable cost data without engineering involvement. Drill-down works because every run has full metadata.
+**Outcome:** Leadership has actionable cost data without engineering involvement.
 
 ---
 
@@ -492,71 +332,56 @@ Each flow shows: trigger → modules touched → ecosystem integrations involved
 
 **Scenario:** CISO needs to produce evidence for a SOC 2 audit. Filters audit log + context versions + Sentinel events + approval records.
 
-```
-  CISO opens Dandori → Compliance → Build Pack
-                │
-                ▼
-  ┌─────────────────────────────────────┐
-  │ Compliance query builder            │
-  │ ─────────────────────────────────── │
-  │ Date: 2026-01-01 → 2026-03-31       │
-  │ Filter: context tag includes 'pii'  │
-  │ Include:                            │
-  │   ✓ run records                     │
-  │   ✓ context versions used           │
-  │   ✓ approval records                │
-  │   ✓ sub-agent traces                │
-  │   ✓ hook executions                 │
-  │   ✓ Sentinel events (if connected)  │
-  │ Format: SOC 2 evidence pack         │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Query engine                        │
-  │ - SELECT runs WHERE context_tags    │
-  │   contains 'pii'                    │
-  │   AND ts BETWEEN ...                │
-  │ - JOIN context_layers ON version    │
-  │ - JOIN approvals                    │
-  │ - JOIN audit_events                 │
-  │ - LEFT JOIN sentinel_events         │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Evidence pack assembler             │
-  │ ─────────────────────────────────── │
-  │ pack/                               │
-  │   ├── runs.csv                      │
-  │   ├── context-snapshots/            │
-  │   │   └── *.md (per version used)   │
-  │   ├── approvals.json                │
-  │   ├── hooks-fired.json              │
-  │   ├── audit-trail.json              │
-  │   ├── sentinel-events.json          │
-  │   └── soc2-evidence.pdf            │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Hash chain verification             │
-  │ - replay audit hash chain           │
-  │ - report tamper status              │
-  └─────────────────┬───────────────────┘
-                    │
-                    ▼
-  ┌─────────────────────────────────────┐
-  │ Output: signed pack ready for       │
-  │ auditor delivery                    │
-  └─────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    autonumber
+    actor CISO
+    participant UI as Dandori Web UI
+    participant QB as Compliance query builder
+    participant QE as Query engine
+    participant Audit as Audit log
+    participant Ctx as Context Hub<br/>(version archive)
+    participant App as Approval records
+    participant Hook as Hook execution log
+    participant Sub as Sub-agent traces
+    participant Sen as Sentinel events
+    participant Asm as Evidence pack assembler
+    participant Hash as Hash chain verifier
+
+    CISO->>UI: Open Compliance → Build Pack
+    CISO->>QB: Date 2026-01-01 → 2026-03-31<br/>Filter: context tag includes 'pii'<br/>Format: SOC 2
+
+    QB->>QE: build SQL
+    QE->>Audit: SELECT runs WHERE context_tags ⊃ pii<br/>AND ts BETWEEN ...
+    Audit-->>QE: matching run IDs
+    QE->>Ctx: JOIN context_layers ON version
+    Ctx-->>QE: context snapshots
+    QE->>App: JOIN approvals
+    App-->>QE: approval records
+    QE->>Hook: JOIN hook executions
+    Hook-->>QE: hook fire log
+    QE->>Sub: JOIN sub_agent_traces
+    Sub-->>QE: sub-agent activity
+    QE->>Sen: LEFT JOIN sentinel_events (if connected)
+    Sen-->>QE: security events
+
+    QE-->>Asm: full result set
+    Asm->>Asm: write files:<br/>runs.csv,<br/>context-snapshots/*.md,<br/>approvals.json,<br/>hooks-fired.json,<br/>audit-trail.json,<br/>sentinel-events.json,<br/>soc2-evidence.pdf
+
+    Asm->>Hash: verify chain
+    Hash->>Audit: replay sha256 chain
+    Audit-->>Hash: chain valid
+    Hash-->>Asm: tamper status: OK
+
+    Asm-->>UI: signed evidence pack
+    UI-->>CISO: download link
 ```
 
 **Modules touched:** Audit Log, Context Hub (version archive), Approval Workflow, Sub-agent Trace, Hooks (execution log), Compliance Export
 
 **Integrations:** None — entirely internal
 
-**Outcome:** Auditor receives signed, tamper-evident evidence pack in minutes instead of weeks. Engineering is not involved.
+**Outcome:** Auditor receives signed, tamper-evident evidence pack in minutes instead of weeks.
 
 ---
 
