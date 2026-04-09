@@ -73,6 +73,40 @@ Each module page is structured the same way:
 
 ---
 
+## Build sequence & parallelization
+
+For engineers planning implementation, here is the dependency graph and earliest-buildable milestone per module. See [Proposed Roadmap]({% link proposed-roadmap.md %}) for the full milestone plan.
+
+| Module | Hard dependencies | Earliest milestone | Can parallelize with |
+|---|---|---|---|
+| **Integration Surface** (service + REST + UI + auth) | — | F1 | — (foundation) |
+| **Audit Log** | Integration Surface | F2 | — (foundation) |
+| **Task Board** (basic CRUD) | Integration Surface, Audit Log | F3 | — (foundation) |
+| **Adapter layer** (Claude Code spawn) | Task Board | F4 | — (foundation) |
+| **Context Hub** (5-layer) | Adapter | M2 | Skill Library |
+| **Skill Library** (basic) | Adapter | M2 | Context Hub |
+| **Cost Attribution** | Adapter, run record | M3 | Quality Gates, Approval |
+| **Quality Gates** (post-run) | Adapter, run record | M3 | Cost, Approval |
+| **Approval Workflow** | Task Board, Audit Log | M3 | Cost, Quality |
+| **Cross-agent Analytics** | Cost Attribution, Quality Gates | M3 | — (consumes M3) |
+| **Task Board DAG + phases** | Task Board basic | M4 | Sub-agent Trace |
+| **Sub-agent Trace** | Adapter (protocol extension) | M4 | DAG |
+| **Lifecycle Hooks** | Adapter, Audit Log | M5 | Inline Sensors, MCP Gov, Skill PD |
+| **MCP server** (built-in) | Adapter | M5 (pre-req) | — |
+| **Inline Sensors** | MCP server | M5 | Hooks, MCP Gov, Skill PD |
+| **MCP Tool Governance** | MCP server | M5 | Hooks, Sensors, Skill PD |
+| **Skill Library** (progressive disclosure) | MCP server, basic Skill Library | M5 | Hooks, Sensors, MCP Gov |
+
+**Key insights for build planning:**
+
+- **F1-F4 must be sequential** — each depends on the previous. 1 dev × ~4 sprints.
+- **M2 and M3 each have 2-3 parallel tracks** — ideal for 2-3 devs working in parallel.
+- **M5 is gated by the built-in MCP server** — once that's live, 4 modules unblock simultaneously.
+- **Stop at any milestone** — M3 (end of dual-audience MVP) is a natural full-stop for a team pilot.
+- **Scope-creep guard:** see [Non-goals]({% link proposed-roadmap.md %}#what-we-will-not-build) before expanding any module.
+
+---
+
 ## See also
 
 - [Architecture Overview]({% link architecture.md %}) — System architecture, tech stack, deployment topologies

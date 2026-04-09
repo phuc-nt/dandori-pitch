@@ -23,6 +23,26 @@ Each milestone produces a **demo-able state** that can be shown to leadership an
 
 ---
 
+## Scope boundaries — what Dandori will NOT build
+
+**Read this before every milestone.** These are explicit non-goals to prevent scope creep during implementation.
+
+Dandori is the **outer harness**. It does not replace the inner harness (the coding agent runtime). Specifically, Dandori will NOT build:
+
+| Non-goal | Owned by |
+|---|---|
+| Sandbox / filesystem / bash runtime | Coding agent runtime (Claude Code, Codex) |
+| Sub-agent spawning engine | Coding agent runtime |
+| Context window compaction | Coding agent runtime |
+| Chat UI or IDE for writing code | Claude Code / Codex / Copilot / Cursor |
+| Model provider gateway | AIPF Gateway, OpenRouter, or provider direct |
+| Vector store for semantic code search | Runtime or dedicated service |
+| MCP server *host* | MCP Hub — Dandori *governs*, doesn't host |
+
+**Rule of thumb:** if a feature duplicates something Claude Code, Codex, or Cursor already do well, Dandori does not build it. See [Harness Engineering]({% link harness-engineering.md %}#outer-harness-vs-inner-harness) for the full inner-vs-outer framing.
+
+---
+
 ## Foundation — must come first
 
 | # | Module | Effort | Why first |
@@ -200,23 +220,6 @@ To make a pilot succeed, we ask each partner team for:
 3. **A sponsor** in engineering leadership who reviews monthly cost / quality reports
 4. **A weekly 30-min sync** during the active milestone for fast feedback
 5. **Honest feedback** on gaps — "this doesn't help me" is more valuable than "this is great"
-
----
-
-## What we will not build (non-goals)
-
-To keep scope honest, Dandori will NOT build:
-
-- A sandbox / filesystem / bash runtime (the coding agent runtime owns it)
-- A sub-agent spawning engine (runtime owns it)
-- A chat UI or IDE for writing code
-- A model provider gateway
-- A vector store for semantic code search
-- An MCP server *host* (we govern, runtimes execute)
-
-These belong to other layers. Dandori is the **outer harness** — context, skills, sensors, approval, orchestration, observability — and explicitly stays in that lane.
-
-See [Harness Engineering]({% link harness-engineering.md %}) for the full inner-vs-outer framing.
 
 ---
 

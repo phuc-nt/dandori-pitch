@@ -2,20 +2,22 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Dandori — The management layer for AI coding agents in the enterprise."
+description: "Dandori — The organizational outer harness for AI coding agents."
 permalink: /
 ---
 
 # Dandori
 {: .fs-9 }
 
-The management layer for AI coding agents in the enterprise.
+The organizational outer harness for AI coding agents.
 {: .fs-6 .fw-300 }
 
 [Why Dandori]({% link why-dandori.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Core Features]({% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
+
+> **Agent sprawl is the new shadow IT.** A 10,000-engineer org runs tens of thousands of coding-agent sessions per day — with no cost breakdown, no audit log, no shared context, no approval trail. Every CLAUDE.md, skill, and MCP tool lives on a different laptop.
 
 **Your engineers already have great agents.** Claude Code, Codex, Cursor, Cline — they write code just fine.
 

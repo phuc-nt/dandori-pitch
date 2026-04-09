@@ -121,6 +121,24 @@ flowchart LR
     No -->|message + view link| Slack
 ```
 
+## MVP vs full scope
+
+Skill Library ships in two phases so that a team pilot can get value early without waiting for the MCP server.
+
+**MVP (Milestone M2):** Basic shared skills
+- Skills stored as versioned markdown with owner team
+- Full content injected into system prompt on every run (no lazy loading)
+- Shared authoring, version history, diff, rollback
+- Already delivers the core "knowledge stays with org, not laptop" value
+
+**Full scope (Milestone M5):** Progressive disclosure
+- Only manifest (name, description, triggers) in system prompt
+- Full content lazy-loaded via `fetch_skill` MCP tool when agent explicitly needs it
+- Dramatic token savings at fleet scale
+- Requires built-in MCP server (M5 prerequisite)
+
+Teams can stop at MVP and still claim "shared skill library" in their org. Progressive disclosure is a *token efficiency* upgrade, not a functional one.
+
 ## Tech specifics
 
 - Manifest is ~200 tokens; full content can be 2-10k tokens

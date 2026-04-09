@@ -81,7 +81,7 @@ Today, outer harness engineering is a solo practice: every engineer builds their
 
 See the full framing in **[Harness Engineering]({% link harness-engineering.md %})**.
 
-In more practical terms: **Dandori is the management layer between engineering leadership and the AI agents your teams already use.**
+In practical terms: **Dandori is the coordination and governance layer between engineering leadership, engineers, and the AI agents your teams already use.** In harness engineering vocabulary, that is the **organizational outer harness**.
 
 ```
    LEADERSHIP                    DANDORI                       AGENTS
@@ -111,7 +111,7 @@ In more practical terms: **Dandori is the management layer between engineering l
 
 **Dandori IS:**
 
-- The missing coordination + management layer between engineers, leadership, and agent execution
+- The organizational outer harness between engineers, leadership, and agent execution — versioned, audited, shared
 - Vendor-agnostic (any agent: Claude, Codex, local models, custom)
 - Designed for orgs that need cost control, audit, and governance at scale
 
@@ -166,7 +166,7 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 - **Your teams keep:** their favorite agent CLI/IDE — Dandori orchestrates, doesn't replace
 
 ### vs. observability tools (LangSmith, LangFuse)
-- **Dandori is not just observability** — it's a task/agent management layer
+- **Dandori is not just observability** — it's the outer harness: context, skills, approval, orchestration *and* observability
 - Task board, approval workflows, context hierarchy, skill library: none of that exists in pure observability tools
 
 ### vs. internal platform teams building their own

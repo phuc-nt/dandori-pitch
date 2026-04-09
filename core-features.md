@@ -27,23 +27,25 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 
 ## Feature-to-audience map
 
-| # | Feature | Primary audience |
-|---|---|---|
-| 1 | Cost attribution & budget control | 🧭 Leadership |
-| 2 | Five-layer context governance | 🤝 Both |
-| 3 | Approval workflows | 🤝 Both |
-| 4 | Automated quality gates | 🤝 Both |
-| 5 | Cross-agent analytics | 🧭 Leadership |
-| 6 | Shared skill library (progressive disclosure) | 👷 Engineers |
-| 7 | Task dependencies & phase workflow | 👷 Engineers |
-| 8 | Immutable audit log | 🧭 Leadership |
-| 9 | Unified integration surface | 👷 Engineers |
-| 10 | Generic lifecycle hooks | 👷 Engineers |
-| 11 | MCP tool governance | 🤝 Both |
-| 12 | Inline sensors (computational + inferential) | 👷 Engineers |
-| 13 | Sub-agent trace observability | 🤝 Both |
+Each feature below has a corresponding **technical design page** under [Architecture → Modules]({% link architecture-modules.md %}) with data model, processing flow (Mermaid), and ecosystem integration details.
 
-*Scan below for the full walkthrough of each feature with its audience tag.*
+| # | Feature | Primary audience | Technical design |
+|---|---|---|---|
+| 1 | Cost attribution & budget control | 🧭 Leadership | [→]({% link architecture-modules-cost-attribution.md %}) |
+| 2 | Five-layer context governance | 🤝 Both | [→]({% link architecture-modules-context-hub.md %}) |
+| 3 | Approval workflows | 🤝 Both | [→]({% link architecture-modules-approval-workflow.md %}) |
+| 4 | Automated quality gates | 🤝 Both | [→]({% link architecture-modules-quality-gates.md %}) |
+| 5 | Cross-agent analytics | 🧭 Leadership | [→]({% link architecture-modules-cross-agent-analytics.md %}) |
+| 6 | Shared skill library (progressive disclosure) | 👷 Engineers | [→]({% link architecture-modules-skill-library.md %}) |
+| 7 | Task dependencies & phase workflow | 👷 Engineers | [→]({% link architecture-modules-task-board.md %}) |
+| 8 | Immutable audit log | 🧭 Leadership | [→]({% link architecture-modules-audit-log.md %}) |
+| 9 | Unified integration surface | 👷 Engineers | [→]({% link architecture-modules-integration-surface.md %}) |
+| 10 | Generic lifecycle hooks | 👷 Engineers | [→]({% link architecture-modules-lifecycle-hooks.md %}) |
+| 11 | MCP tool governance | 🤝 Both | [→]({% link architecture-modules-mcp-tool-governance.md %}) |
+| 12 | Inline sensors (computational + inferential) | 👷 Engineers | [→]({% link architecture-modules-inline-sensors.md %}) |
+| 13 | Sub-agent trace observability | 🤝 Both | [→]({% link architecture-modules-sub-agent-trace.md %}) |
+
+*Each feature section below also has a "Technical design" link at the end for deep dives.*
 
 ---
 
@@ -81,6 +83,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Breakdown by project, team, agent, model, phase, day
 - Budget ceilings per agent (hard stop when exceeded)
 - Spike detection (alert when agent X burns 3x its average)
+
+**Technical design →** [Cost attribution & budget control]({% link architecture-modules-cost-attribution.md %})
 
 ---
 
@@ -133,6 +137,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - *Engineers:* stop copy-pasting policies; inherit team + project context automatically on every run.
 - *Leadership:* one place to set org-wide standards that every agent provably sees.
 
+**Technical design →** [Five-layer context governance]({% link architecture-modules-context-hub.md %})
+
 ---
 
 ## 3. Approval workflows
@@ -162,6 +168,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Approval records: who, when, rationale
 - Rejection keeps audit trail of why + re-queues for fix
 - Exportable for compliance review
+
+**Technical design →** [Approval workflows]({% link architecture-modules-approval-workflow.md %})
 
 ---
 
@@ -200,6 +208,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Quality score per run + per agent trend
 - Cross-agent comparison: which agents improve, which degrade
 
+**Technical design →** [Automated quality gates]({% link architecture-modules-quality-gates.md %})
+
 ---
 
 ## 5. Cross-agent analytics
@@ -229,6 +239,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Trend detection: improving vs degrading agents
 - Phase breakdown: which phase (research, implement, test) burns most
 - Top-cost tasks: where is spend going
+
+**Technical design →** [Cross-agent analytics]({% link architecture-modules-cross-agent-analytics.md %})
 
 ---
 
@@ -265,6 +277,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Skill tags on tasks → auto-suggest best-matching agent
 - **Progressive disclosure**: only skill manifest (name, description, trigger) in system prompt; full content lazy-loaded via `fetch_skill` tool when agent actually needs it — dramatic token savings across fleet
 
+**Technical design →** [Shared skill library]({% link architecture-modules-skill-library.md %})
+
 ---
 
 ## 7. Task dependencies & phase workflow
@@ -300,6 +314,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Phase tags: research → concept → requirement → design → implement → test → deploy → maintain
 - Portfolio views by phase across all projects
 
+**Technical design →** [Task dependencies & phase workflow]({% link architecture-modules-task-board.md %})
+
 ---
 
 ## 8. Immutable audit log
@@ -331,6 +347,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Retention configurable per project
 - Compliance-ready for SOC 2, ISO 27001, NIST AI RMF
 
+**Technical design →** [Immutable audit log]({% link architecture-modules-audit-log.md %})
+
 ---
 
 ## 9. Unified integration surface
@@ -359,6 +377,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Terminal workflows via CLI
 - Claude Code integrates via MCP (your engineers talk to Dandori from their IDE)
 - OpenAPI 3.0 spec: autogenerated clients for any language
+
+**Technical design →** [Unified integration surface]({% link architecture-modules-integration-surface.md %})
 
 ---
 
@@ -402,6 +422,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Full audit trail: which hook fired when, return value, error
 - Same governance pattern as context and skills: diff, rollback, ownership
 
+**Technical design →** [Generic lifecycle hooks]({% link architecture-modules-lifecycle-hooks.md %})
+
 ---
 
 ## 11. MCP tool governance
@@ -437,6 +459,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Per-agent and per-team allow-lists
 - Usage analytics: which tools burn the most context fleet-wide
 - Security team veto: restricted tools require explicit approval per agent
+
+**Technical design →** [MCP tool governance]({% link architecture-modules-mcp-tool-governance.md %})
 
 ---
 
@@ -479,6 +503,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - LLM-optimized output format per HumanLayer pattern (silent on success, verbose on error)
 - Org-wide sensor definitions: Platform team publishes "database migration sensor" → every agent in org uses it
 
+**Technical design →** [Inline sensors (back-pressure integration)]({% link architecture-modules-inline-sensors.md %})
+
 ---
 
 ## 13. Sub-agent trace observability
@@ -509,6 +535,8 @@ For the full system diagram, see [Home]({% link index.md %}#where-dandori-sits) 
 - Audit: "show me every run where a sub-agent touched file X"
 - Policies: "sub-agents cannot exceed depth N", "sub-agent Y cannot call tool Z"
 - UI: expandable run view showing sub-agent tree
+
+**Technical design →** [Sub-agent trace observability]({% link architecture-modules-sub-agent-trace.md %})
 
 ---
 

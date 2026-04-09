@@ -172,7 +172,7 @@ Three features specifically designed for organizations running AIPF:
 
 AIPF MultiAgent Builder creates agents. **Dandori manages them after creation.**
 
-- Register agents from MultiAgent Builder into Dandori's management layer
+- Register agents from MultiAgent Builder into Dandori's organizational outer harness
 - Set per-agent budgets, skill assignments, lifecycle states (active/paused/retired)
 - Track performance over time across the full agent fleet
 
@@ -261,5 +261,5 @@ No additional AI provider accounts needed — Dandori uses AIPF's existing provi
 ---
 
 - [Core Features →]({% link core-features.md %}) The 13 outer-harness capabilities in detail
-- [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
+- [Use Cases →]({% link use-cases.md %}) Scenarios for CTO, CISO, Platform, Compliance, tech leads
 - [Architecture →]({% link architecture.md %}) Technical integration surface

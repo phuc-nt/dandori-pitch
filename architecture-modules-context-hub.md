@@ -132,6 +132,29 @@ flowchart LR
 
 Auto-import per repo, configurable. Triggered by webhook on README change.
 
+## Version diff — auditing what changed
+
+Every layer edit creates a new version row. Engineers and leadership can inspect the delta.
+
+```
+$ dandori context diff company v11 v12
+
+--- company v11 (2026-03-01, by: security-lead)
++++ company v12 (2026-03-15, by: security-lead)
+
+  # Company-wide coding standards
+  - Use TypeScript 5.2+
+  + Use TypeScript 5.3+
+
+  # PII handling
+  + All PII fields must be tagged with @pii annotation
+  + Logs must call PiiVault.scrub() before emission
+```
+
+Web UI: Context Hub → layer history → click version to see diff and rollback button. Every diff view is recorded in the audit log (who looked at what, when).
+
+---
+
 ## Tech specifics
 
 - TypeScript service + SQLite tables
