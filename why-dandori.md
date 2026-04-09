@@ -117,7 +117,65 @@ In practical terms: **Dandori is the coordination and governance layer between e
 
 ---
 
-## Who gets what value
+## Before vs. with Dandori
+
+Three concrete shifts every team feels in the first week:
+
+```
+  BEFORE:                              WITH DANDORI:
+
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ $240K bill  │                      │ $240K bill           │
+  │     │       │                      │  ├ payments   $52K   │
+  │     ▼       │                      │  ├ auth       $38K   │
+  │    ???      │                      │  ├ data       $29K   │
+  │             │                      │  └ ... (drill down)  │
+  └─────────────┘                      └──────────────────────┘
+
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ Copy-paste  │                      │ Company context → v12│
+  │ prompts in  │                      │ Project context → v3 │
+  │ 100 places  │                      │ Team context    → v7 │
+  └─────────────┘                      │ (auto-inherited)     │
+                                       └──────────────────────┘
+
+  ┌─────────────┐                      ┌──────────────────────┐
+  │ "Slack said │                      │ Approval logged:     │
+  │  approve"   │                      │ user=alice at 14:22  │
+  │             │                      │ rationale="reviewed  │
+  └─────────────┘                      │ diff, tests pass"    │
+                                       └──────────────────────┘
+```
+
+---
+
+## Who uses Dandori — by role
+
+Before diving into modules, here is who sits in front of the product on any given day.
+
+**For engineers — daily workspace**
+
+| Role | What they do in Dandori | Modules they live in |
+|---|---|---|
+| **Senior / staff engineer** | Publish skills, tune context, review outputs | Skill Library, Context Hub, Approval Review |
+| **Team engineer** | Pick up tasks, run agents, track progress | Task Board (DAGs, phases), Context Hub, Quality Gates |
+| **Tech lead** | Break features into task DAGs, assign agents by skill | Task Board, Skill matching, Dependencies |
+
+**For leadership — control plane**
+
+| Role | What they govern | Modules they consume |
+|---|---|---|
+| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions | Cost Attribution, Cross-agent Analytics |
+| **Platform team** | Standards across teams, shared skill library | Company context, Skill Library ownership, Budget ceilings |
+| **CISO** | PII handling, audit exports, incident replay | Audit Log, Context versioning, PII tags |
+| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies | Audit export, Approval records |
+| **Engineering managers** | Team throughput, fair attribution, bottlenecks | Per-team analytics, Approval tracking |
+
+---
+
+## Who gets what value — by module
+
+The role view above is *who*. The module view below is *what each module delivers to each side*.
 
 Dandori is not a leadership-only dashboard. **It's a daily workspace for engineers *and* a control plane for leadership.** The same database powers both — so engineers coordinate in the tool that management measures through.
 
