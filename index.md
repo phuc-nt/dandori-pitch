@@ -135,10 +135,9 @@ Dandori is a **dual-audience platform**. Each module is designed primarily for o
 
 - **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, dual-audience value split, ROI, differentiators
 - **[Harness Engineering]({% link harness-engineering.md %})** — The industry concept behind Dandori, and how Dandori fits into it
-- **[Core Features]({% link core-features.md %})** — 9 capabilities tagged by audience (engineer / leadership / both)
+- **[Core Features]({% link core-features.md %})** — 13 capabilities tagged by audience (engineer / leadership / both)
 - **[Use Cases]({% link use-cases.md %})** — 9 leadership scenarios + 3 engineer scenarios
 - **[Architecture]({% link architecture.md %})** — Technical integration surface for your stack
-- **[AIPF Integration]({% link aipf-integration.md %})** — How Dandori fits into enterprise AI platforms
 
 ---
 

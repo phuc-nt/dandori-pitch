@@ -1,8 +1,9 @@
 ---
 layout: default
 title: AIPF Integration
-nav_order: 7
-description: "How Dandori fits into an organization already running an AI Platform (AIPF)."
+nav_exclude: true
+search_exclude: true
+description: "How Dandori fits into an organization already running an AI Platform (AIPF). Hidden from nav — share this link directly with AIPF stakeholders."
 ---
 
 # AIPF Integration

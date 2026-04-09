@@ -127,20 +127,24 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 |---|---|
 | **Context Hub** (5-layer) | Stop copy-pasting policies into prompts. Inherit company + project + team + agent context automatically. Update once, every teammate's agent sees it next run. |
 | **Task Board** (DAGs, phases) | Break a feature into phased tasks (research → design → implement → test), chain dependencies, auto-wake the next agent when the previous finishes. |
-| **Skill Library** | Reuse proven prompts from staff engineers. No more rebuilding "how we do code review" in every repo. Attach any skill to any agent. |
+| **Skill Library** (progressive disclosure) | Reuse proven prompts from staff engineers. Lazy-loaded via `fetch_skill` tool — skill manifest in system prompt, content fetched only when agent needs it. Dramatic token savings. |
 | **Quality Gates** | Get TypeScript / lint / test feedback on agent output *before* it hits human review. Fast loop, fewer "wait, this doesn't compile" moments. |
+| **Inline Sensors** | Agents call typecheck / lint / tests / security review mid-run as MCP tools. Self-correct before finishing. Computational + inferential. |
+| **Lifecycle Hooks** | Register custom scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, `on_budget_exceeded`. Sandboxed, versioned, org-wide shareable. |
 | **Approval Review** | Clear "In Review" queue with diff, prompt, context version. Review with full context instead of Slack screenshots. |
+| **Sub-agent trace view** | See the sub-agent tree inside a run. Debug what each sub-agent did, which tools it called, how long it took. |
 | **Self-explanation** | Every agent run ends with "What I did / Why / Risks". Easier handoff between engineers, easier review. |
 
 ### For leadership (they see through it every week)
 
 | Module | Leadership value |
 |---|---|
-| **Cost Attribution** | Break the vendor bill down by project, team, agent, model, phase. Spot runaway prompts before they're on the invoice. |
+| **Cost Attribution** | Break the vendor bill down by project, team, agent, model, phase, sub-agent. Spot runaway prompts before they're on the invoice. |
 | **Cross-agent Analytics** | Compare agents on cost, quality, success rate. See which ones improve, which degrade. |
 | **Quality Gates (trend view)** | Track quality score per team over time. Catch drift before it ships. |
-| **Audit Log** | Every mutation + every context version + every approval recorded. SOC 2 / ISO 27001 evidence on demand. |
+| **Audit Log** | Every mutation + every context version + every approval + every hook execution + every sub-agent trace recorded. SOC 2 / ISO 27001 evidence on demand. |
 | **Approval Workflow** | Who approved what, when, with what rationale. No more "Slack said approve." |
+| **MCP Tool Governance** | Per-agent allow-lists, description linting, tool usage analytics. Security team vetoes. |
 | **Compliance Export** | One-click JSON / CSV / PDF pack for auditors. Retention policies per project. |
 | **Budget Ceilings** | Hard stops per agent / team. Spike alerts when something burns 3× its average. |
 
