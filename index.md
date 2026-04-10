@@ -87,6 +87,7 @@ Every CTO asks them. Today the answers are *"we'd have to ask around."*
 - **[Use Cases]({% link use-cases.md %})** — 9 leadership + 3 engineer scenarios
 - **[Architecture]({% link architecture.md %})** — Tech stack, modules, ecosystem integrations, use case flows
 - **[Proposed Roadmap]({% link proposed-roadmap.md %})** — Milestone-by-milestone path from team pilot to full vision
+- **[Data Inventory]({% link data-inventory.md %})** — Complete catalog of data Dandori collects, stores, and processes (for security and compliance review)
 
 ---
 
