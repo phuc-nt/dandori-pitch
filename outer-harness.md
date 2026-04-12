@@ -94,7 +94,11 @@ The paradox: most organizations spend hundreds of thousands on Inner (token fees
 
 **Problem:** Agent violates security policy — engineer forgot to paste the compliance doc. Senior dev leaves — 6 months of prompt knowledge gone.
 
-**Solution:** 5-layer context hierarchy with ownership at each level. Top-down governance + bottom-up skill sharing.
+**Solution:** A 5-layer hierarchy with ownership at each level, carrying **three types of knowledge assets** — all distributable top-down and contributable bottom-up:
+
+- **Context** — policies, standards, architecture docs, task specs
+- **Skills** — reusable prompt patterns (code review, migration, incident triage)
+- **Agent templates** — pre-configured agent definitions (role, skills, sensor chain, tool allow-list)
 
 ```
   ┌─────────────────────────────────────────────┐
@@ -106,9 +110,19 @@ The paradox: most organizations spend hundreds of thousands on Inner (token fees
   │  ═══════════════════════════════════════    │
   │  ▼ Auto-assembled into every prompt ▼       │
   └─────────────────────────────────────────────┘
+
+            TOP-DOWN DISTRIBUTION
+            ────────────────────▶
+  Layer 1 ─── Layer 2 ─── Layer 3 ─── Layer 4 ─── Layer 5
+            ◀────────────────────
+            BOTTOM-UP CONTRIBUTION
 ```
 
-CTO updates security policy once → every agent inherits. Engineer crafts a great prompt → packages as Skill, promotes to team. Senior leaves → skills stay.
+**Top-down:** CTO updates security policy at Layer 1 → every agent inherits automatically. Platform publishes a `code-reviewer` agent template → any team instantiates it with their own context. Nobody needs to "remember" to copy-paste. Nobody can bypass.
+
+**Bottom-up:** Engineer crafts a great migration prompt at Layer 5 → packages as a Skill, promotes to Layer 3, the whole team uses it immediately. Team forks and improves a company template → shares the variant back. Individual knowledge becomes shared asset.
+
+Senior leaves? Skills, templates, and context stay right here. New engineer inherits them on day one.
 
 ### 3. Task Tracking
 
@@ -179,3 +193,10 @@ Synthesized from:
 - [Phil Schmid](https://www.philschmid.de/agent-harness-2026) — agent harness as OS
 
 The inner/outer distinction and 5-pillar framework are the author's original framing.
+
+---
+
+## Read next
+
+[Solution Overview →]({{ site.baseurl }}{% link solution-overview.md %}) How Dandori turns this concept into a product
+{: .fs-5 }

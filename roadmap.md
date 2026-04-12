@@ -108,3 +108,10 @@ This roadmap is a **proposal**, not a contract:
 - Combine milestones with multiple devs
 
 First conversation: "what does your team need first?" — roadmap re-orders around the answer.
+
+---
+
+## Read next
+
+[Data Inventory →]({{ site.baseurl }}{% link data-inventory.md %}) What data Dandori touches — for security review
+{: .fs-5 }

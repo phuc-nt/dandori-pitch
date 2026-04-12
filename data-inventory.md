@@ -78,3 +78,13 @@ Dandori is **self-hosted**. All data stays within the customer's infrastructure.
 ---
 
 For full per-category detail (storage, retention, access, controls), see the module detail pages or request the extended data inventory document.
+
+---
+
+## Read next
+
+[Outer Harness →]({{ site.baseurl }}{% link outer-harness.md %}) Back to the concept behind Dandori
+{: .fs-5 }
+
+[hello@dandori.io](mailto:hello@dandori.io) — Start a pilot conversation
+{: .fs-5 }

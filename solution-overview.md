@@ -51,12 +51,26 @@ Dandori is not a leadership dashboard. It's not an engineer-only tool. It's **bo
 | | Engineers (workspace) | Leadership (control plane) |
 |---|---|---|
 | **Cost Attribution** | See per-run cost | Per-team/project breakdown, budget ceilings |
-| **Knowledge Flow** | Author & consume context, publish skills | Version, audit, enforce org-wide policies |
+| **Knowledge Flow** | Author & consume context, publish skills, fork agent templates | Version, audit, enforce org-wide policies, publish templates |
 | **Task Tracking** | Build DAGs, run agents, review outputs | Approval audit trail, incident traceability |
 | **Quality Gates** | Per-run feedback before human review | Per-team quality trends over time |
 | **Audit & Analytics** | Debug runs, trace sub-agents | Compliance export, cross-agent comparison |
 
 **The principle:** engineers get productivity from the same data that gives leadership governance. No two tools, no reconciliation, no shadow spreadsheets.
+
+---
+
+## Knowledge as infrastructure — three assets, one flow
+
+Dandori treats knowledge as first-class infrastructure, not scattered docs. Three asset types share the same 5-layer hierarchy, the same versioning, the same distribution and contribution patterns:
+
+| Asset | Example | Distributes top-down | Contributes bottom-up |
+|---|---|---|---|
+| **Context** | Security policy, coding standards, project architecture | CTO sets Layer 1 → all agents inherit | Engineer learnings from tasks promote up |
+| **Skills** | Code review checklist, migration recipe, incident runbook | Platform publishes to Layer 3 → teams use | Engineer crafts prompt → promotes to team |
+| **Agent templates** | "code-reviewer", "migration-runner", "incident-responder" | Platform publishes → teams fork | Team improves variant → shares back |
+
+All three are **versioned, audited, inheritable, and shareable across layers.** Senior engineer leaves? Everything stays. New engineer joins? Inherits everything on day one.
 
 ---
 
@@ -122,17 +136,19 @@ Those build agents. Dandori manages the agents your teams already use. Above fra
 
 ---
 
-## ROI at 1,000 engineers
+## Where the value shows up
 
-| Lever | Monthly savings |
+Dandori's ROI is **structural**, not a spreadsheet trick. Five levers compound over time:
+
+| Lever | What changes |
 |---|---|
-| Cost visibility (10% waste reduction on $180K spend) | $18K |
-| Context reuse (30 min/week/engineer saved) | $12.5K |
-| Quality gates (20% fewer agent-caused incidents) | (your incident cost) |
-| Skill library (2 hrs saved per new hire onboarding) | $1.7K amortized |
-| Audit + compliance (no custom SOC2 tooling) | (your auditor cost) |
+| **Cost visibility** | Runaway prompts get flagged before they're on the invoice. Teams pick the right model for the right task instead of always reaching for the most expensive one. |
+| **Context reuse** | Engineers stop re-typing the same policies and architecture docs into every prompt. Onboarding new engineers takes days, not weeks, because shared context travels automatically. |
+| **Quality gates** | Agent-caused incidents get caught at gate-time instead of in production. Trend data lets you tell which agents and teams are actually improving. |
+| **Knowledge library** | The best prompts, skills, and agent templates become org assets. When senior engineers move on, their judgment is still in the system. |
+| **Audit + compliance** | SOC 2 / ISO 27001 evidence is a one-click export instead of a quarterly tooling project. |
 
-**Estimated: $30K+/month, scaling linearly.**
+These are **qualitative shifts every partner can verify against their own numbers** — pilot with a real team, measure what changes in your context, then decide on a full rollout.
 
 ---
 
@@ -146,12 +162,11 @@ Those build agents. Dandori manages the agents your teams already use. Above fra
 | 2020s | Markdown runbooks | Incident platforms (PagerDuty) |
 | 2026+ | CLAUDE.md on laptops | **Organizational outer harness** |
 
-Every org with 100+ engineers will need an AI agent control plane by end of 2026. Dandori is that platform.
+Every org with 100+ engineers will need an AI agent control plane soon. Dandori is that platform.
 
 ---
 
-[Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules under the 5 pillars
-{: .fs-5 }
+## Read next
 
-[Architecture →]({{ site.baseurl }}{% link architecture.md %}) How it works technically
+[Features & Workflows →]({{ site.baseurl }}{% link core-features.md %}) 13 modules under the 5 pillars, plus real scenarios
 {: .fs-5 }

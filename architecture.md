@@ -178,8 +178,7 @@ Dandori never holds AI provider credentials — runtimes do.
 
 ---
 
-[Roadmap →]({{ site.baseurl }}{% link roadmap.md %}) Implementation milestones
-{: .fs-5 }
+## Read next
 
-[Data Inventory →]({{ site.baseurl }}{% link data-inventory.md %}) What data Dandori touches
+[Roadmap →]({{ site.baseurl }}{% link roadmap.md %}) Implementation milestones from team pilot to full vision
 {: .fs-5 }
