@@ -166,6 +166,6 @@ Hooks can call any HTTP API your team uses (PagerDuty, Datadog, internal complia
 
 ## See also
 
-- [Approval Workflow]({% link architecture-modules-approval-workflow.md %}) — uses `on_approval_request` hook for custom routing
-- [Audit Log]({% link architecture-modules-audit-log.md %}) — every hook execution logged
-- [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) — `on_budget_exceeded` fires from this module
+- [Approval Workflow]({{ site.baseurl }}{% link architecture-modules-approval-workflow.md %}) — uses `on_approval_request` hook for custom routing
+- [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}) — every hook execution logged
+- [Cost Attribution]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %}) — `on_budget_exceeded` fires from this module

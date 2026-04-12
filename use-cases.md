@@ -510,6 +510,6 @@ Every handoff is a manual copy-paste. Context decays at each step.
 
 ## See it in context
 
-- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles
-- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
-- [Architecture →]({% link architecture.md %}) How Dandori delivers them technically
+- [Outer Harness →]({{ site.baseurl }}{% link harness-engineering.md %}) The 5 pillars and two principles
+- [Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Architecture →]({{ site.baseurl }}{% link architecture.md %}) How Dandori delivers them technically

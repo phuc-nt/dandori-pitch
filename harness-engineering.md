@@ -291,13 +291,13 @@ The question is: will you leave it as tribal knowledge living on individual lapt
 
 **Dandori is an organizational outer harness** — the platform that lifts these 5 pillars from solo practice to team-wide, versioned, audited, governed infrastructure. It does not replace the inner harness. Claude Code, Codex, and Cursor still do what they do best.
 
-[Why Dandori →]({% link why-dandori.md %}) The full business case
+[Why Dandori →]({{ site.baseurl }}{% link why-dandori.md %}) The full business case
 {: .fs-5 }
 
-[Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
+[Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules organized under the 5 pillars
 {: .fs-5 }
 
-[Architecture →]({% link architecture.md %}) Technical implementation
+[Architecture →]({{ site.baseurl }}{% link architecture.md %}) Technical implementation
 {: .fs-5 }
 
 ---

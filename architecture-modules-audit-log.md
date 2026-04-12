@@ -140,6 +140,6 @@ Optional: emit events to Splunk / Elastic / Datadog via webhook for org-wide sec
 
 ## See also
 
-- [Approval Workflow]({% link architecture-modules-approval-workflow.md %}) — every decision audited here
-- [Lifecycle Hooks]({% link architecture-modules-lifecycle-hooks.md %}) — every hook execution audited
+- [Approval Workflow]({{ site.baseurl }}{% link architecture-modules-approval-workflow.md %}) — every decision audited here
+- [Lifecycle Hooks]({{ site.baseurl }}{% link architecture-modules-lifecycle-hooks.md %}) — every hook execution audited
 - [Use Case Flow 6 — Compliance audit pack]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-6-compliance-audit-show-me-pii-touching-runs-in-q1)

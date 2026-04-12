@@ -400,6 +400,6 @@ sequenceDiagram
 
 ## See also
 
-- [Architecture Overview]({% link architecture.md %}) — System architecture, tech stack, deployment topologies
-- [Modules]({% link architecture-modules.md %}) — Per-module pages with diagrams, data model, and ecosystem integration
-- [Use Cases]({% link use-cases.md %}) — Higher-level business scenarios that drive these flows
+- [Architecture Overview]({{ site.baseurl }}{% link architecture.md %}) — System architecture, tech stack, deployment topologies
+- [Modules]({{ site.baseurl }}{% link architecture-modules.md %}) — Per-module pages with diagrams, data model, and ecosystem integration
+- [Use Cases]({{ site.baseurl }}{% link use-cases.md %}) — Higher-level business scenarios that drive these flows

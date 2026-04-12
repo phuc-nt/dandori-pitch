@@ -157,6 +157,6 @@ Dandori governs which AIPF MCP Hub tools each agent can see; MCP Hub still execu
 
 ## See also
 
-- [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) — sensors are Dandori-published MCP tools governed by this module
-- [Skill Library]({% link architecture-modules-skill-library.md %}) — `fetch_skill` is also a Dandori-published MCP tool
-- [Audit Log]({% link architecture-modules-audit-log.md %}) — every MCP tool invocation logged
+- [Inline Sensors]({{ site.baseurl }}{% link architecture-modules-inline-sensors.md %}) — sensors are Dandori-published MCP tools governed by this module
+- [Skill Library]({{ site.baseurl }}{% link architecture-modules-skill-library.md %}) — `fetch_skill` is also a Dandori-published MCP tool
+- [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}) — every MCP tool invocation logged

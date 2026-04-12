@@ -556,7 +556,7 @@ To move the pilot forward quickly, these are the questions we expect your team w
 
 ## Related
 
-- [Architecture]({% link architecture.md %}) — Tech stack, system overview, deployment topologies
-- [Modules]({% link architecture-modules.md %}) — Per-module data models (SQL schemas)
-- [Use Case Flows]({% link architecture-use-cases.md %}) — End-to-end flows showing where data enters and leaves
-- [Proposed Roadmap]({% link proposed-roadmap.md %}) — Implementation path including security milestones
+- [Architecture]({{ site.baseurl }}{% link architecture.md %}) — Tech stack, system overview, deployment topologies
+- [Modules]({{ site.baseurl }}{% link architecture-modules.md %}) — Per-module data models (SQL schemas)
+- [Use Case Flows]({{ site.baseurl }}{% link architecture-use-cases.md %}) — End-to-end flows showing where data enters and leaves
+- [Proposed Roadmap]({{ site.baseurl }}{% link proposed-roadmap.md %}) — Implementation path including security milestones

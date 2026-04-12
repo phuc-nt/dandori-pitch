@@ -150,7 +150,7 @@ behind a reverse proxy (Caddy/nginx)
 | **Google Drive (GWS)** | OAuth2 + REST (in) | Docs imported as context source (already shipped in current Dandori) |
 | **Slack** | Webhook + Bot (in/out) | Approval requests, run notifications, in-Slack approvals via interactive buttons |
 
-**Detail per integration:** see each [Module]({% link architecture-modules.md %}) page — every module's "Ecosystem integration" section explains which of the 8 ecosystem tools touch it and how.
+**Detail per integration:** see each [Module]({{ site.baseurl }}{% link architecture-modules.md %}) page — every module's "Ecosystem integration" section explains which of the 8 ecosystem tools touch it and how.
 
 ---
 
@@ -167,7 +167,7 @@ The 13 modules grouped by the **[5 pillars of Outer Harness]({{ site.baseurl }}{
 | **5. Audit & Analytics** | Audit Log, Cross-agent Analytics, Sub-agent Trace, MCP Tool Governance | 🧭 Leadership |
 | **Foundation** | Integration Surface (Web UI, CLI, REST API, MCP) | 👷 Engineers |
 
-**Detail per module:** see [Modules]({% link architecture-modules.md %}).
+**Detail per module:** see [Modules]({{ site.baseurl }}{% link architecture-modules.md %}).
 
 ---
 
@@ -263,7 +263,7 @@ Project ──┬── Team ────┬── Agent ────┬── R
 
 ### Topology 3: Enterprise (AIPF integration)
 
-This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integration]({% link aipf-integration.md %}) for the full description (link-only — not in the public nav).
+This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integration]({{ site.baseurl }}{% link aipf-integration.md %}) for the full description (link-only — not in the public nav).
 
 ---
 
@@ -296,13 +296,13 @@ This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integ
 
 ## Read next
 
-- [Modules →]({% link architecture-modules.md %}) — All 13 modules, each on its own page with diagrams, data model, processing flow, ecosystem touch points, and tech specifics
-- [Use Case Flows →]({% link architecture-use-cases.md %}) — End-to-end processing flows for the 6 most common scenarios (Mermaid sequence diagrams)
+- [Modules →]({{ site.baseurl }}{% link architecture-modules.md %}) — All 13 modules, each on its own page with diagrams, data model, processing flow, ecosystem touch points, and tech specifics
+- [Use Case Flows →]({{ site.baseurl }}{% link architecture-use-cases.md %}) — End-to-end processing flows for the 6 most common scenarios (Mermaid sequence diagrams)
 
 ---
 
 ## Related
 
-- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
-- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
-- [Use Cases →]({% link use-cases.md %}) Scenarios that drive these architectural choices
+- [Outer Harness →]({{ site.baseurl }}{% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
+- [Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Use Cases →]({{ site.baseurl }}{% link use-cases.md %}) Scenarios that drive these architectural choices

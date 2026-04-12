@@ -139,7 +139,7 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 
 **The principle:** engineers get productivity from the same data that gives leadership governance. No two tools, no reconciliation, no shadow spreadsheets.
 
-For full module-level detail, see **[Core Features]({% link core-features.md %})**.
+For full module-level detail, see **[Core Features]({{ site.baseurl }}{% link core-features.md %})**.
 
 ---
 
@@ -197,8 +197,8 @@ The patterns we saw with:
 
 ## Next steps
 
-- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
-- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
-- [Use Cases →]({% link use-cases.md %}) 9 leadership + 3 engineer scenarios
-- [Architecture →]({% link architecture.md %}) Technical integration surface
-- [Proposed Roadmap →]({% link proposed-roadmap.md %}) Milestone-by-milestone implementation path
+- [Outer Harness →]({{ site.baseurl }}{% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
+- [Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Use Cases →]({{ site.baseurl }}{% link use-cases.md %}) 9 leadership + 3 engineer scenarios
+- [Architecture →]({{ site.baseurl }}{% link architecture.md %}) Technical integration surface
+- [Proposed Roadmap →]({{ site.baseurl }}{% link proposed-roadmap.md %}) Milestone-by-milestone implementation path

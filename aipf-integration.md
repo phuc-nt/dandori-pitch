@@ -12,7 +12,7 @@ How Dandori fits into an organization that already runs an AI Platform (AIPF). T
 
 **Short answer:** AIPF handles *execution*. Dandori adds the **two layers AIPF doesn't have**: a daily workspace for engineers (context, tasks, skills) and a control plane for leadership (cost, audit, compliance).
 
-**In harness engineering terms:** AIPF's MultiAgent Runtime is an *inner harness* (it runs agents). **Dandori is the *outer harness at organizational scale*** — context, skills, sensors, approval, orchestration — which AIPF does not ship. Dandori does not replace the runtime; it wraps it with the organizational layer it's missing. See [Outer Harness]({% link harness-engineering.md %}) for the full framing.
+**In harness engineering terms:** AIPF's MultiAgent Runtime is an *inner harness* (it runs agents). **Dandori is the *outer harness at organizational scale*** — context, skills, sensors, approval, orchestration — which AIPF does not ship. Dandori does not replace the runtime; it wraps it with the organizational layer it's missing. See [Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}) for the full framing.
 
 ---
 
@@ -263,6 +263,6 @@ No additional AI provider accounts needed — Dandori uses AIPF's existing provi
 
 ---
 
-- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
-- [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
-- [Architecture →]({% link architecture.md %}) Technical integration surface
+- [Core Features →]({{ site.baseurl }}{% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Use Cases →]({{ site.baseurl }}{% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
+- [Architecture →]({{ site.baseurl }}{% link architecture.md %}) Technical integration surface

@@ -140,10 +140,10 @@ Monthly cost summary email to finance team — generated from `v_agent_runs` agg
 - `model_prices` is configurable; easy to update when providers change pricing
 - `v_agent_runs` is a view (not materialized) — fine for team scale; promote to materialized view for enterprise scale
 - Roll-up engine queries are scoped via SQL `GROUP BY` chains — no separate aggregation pipeline
-- Sub-agent costs roll up via [Sub-agent Trace]({% link architecture-modules-sub-agent-trace.md %}) parent_run_id
+- Sub-agent costs roll up via [Sub-agent Trace]({{ site.baseurl }}{% link architecture-modules-sub-agent-trace.md %}) parent_run_id
 
 ## See also
 
-- [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) — uses cost data for cost-per-quality ratios
-- [Lifecycle Hooks]({% link architecture-modules-lifecycle-hooks.md %}) — fires `on_budget_exceeded`
+- [Cross-agent Analytics]({{ site.baseurl }}{% link architecture-modules-cross-agent-analytics.md %}) — uses cost data for cost-per-quality ratios
+- [Lifecycle Hooks]({{ site.baseurl }}{% link architecture-modules-lifecycle-hooks.md %}) — fires `on_budget_exceeded`
 - [Use Case Flow 5 — Cost review]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-5-leadership-monthly-cost-review)

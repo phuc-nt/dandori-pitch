@@ -165,6 +165,6 @@ flowchart LR
 
 ## See also
 
-- [Approval Workflow]({% link architecture-modules-approval-workflow.md %}) — gates tasks at status REVIEW
-- [Skill Library]({% link architecture-modules-skill-library.md %}) — supplies skill metadata for matcher
+- [Approval Workflow]({{ site.baseurl }}{% link architecture-modules-approval-workflow.md %}) — gates tasks at status REVIEW
+- [Skill Library]({{ site.baseurl }}{% link architecture-modules-skill-library.md %}) — supplies skill metadata for matcher
 - [Use Case Flow 2 — Multi-phase DAG]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-2-multi-phase-feature-dag)

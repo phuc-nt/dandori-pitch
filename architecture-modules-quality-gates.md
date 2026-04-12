@@ -120,10 +120,10 @@ flowchart LR
 - Outputs parsed into structured findings stored in `quality_breakdown` JSON
 - Pluggable: project-level config selects which sensors run + their thresholds
 - Sensors run in parallel for speed; total wall-clock typically &lt;30s
-- Distinct from [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) which run *during* the agent's run
+- Distinct from [Inline Sensors]({{ site.baseurl }}{% link architecture-modules-inline-sensors.md %}) which run *during* the agent's run
 
 ## See also
 
-- [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) — same sensors but called by the agent mid-run for self-correction
-- [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) — consumes quality scores for trend lines
+- [Inline Sensors]({{ site.baseurl }}{% link architecture-modules-inline-sensors.md %}) — same sensors but called by the agent mid-run for self-correction
+- [Cross-agent Analytics]({{ site.baseurl }}{% link architecture-modules-cross-agent-analytics.md %}) — consumes quality scores for trend lines
 - [Use Case Flow 1 — Jira → PR → approval]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)

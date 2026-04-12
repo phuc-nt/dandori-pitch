@@ -133,12 +133,12 @@ flowchart LR
 
 - Computational sensors run in subprocess isolation; output formatter follows HumanLayer pattern: `silent on success, verbose on error with file:line markers`
 - Inferential sensors call a smaller/faster model (e.g., Haiku) to keep latency &lt; 5s
-- Secondary LLM call cost is attributed to the parent run via [Cost Attribution]({% link architecture-modules-cost-attribution.md %})
+- Secondary LLM call cost is attributed to the parent run via [Cost Attribution]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %})
 - Sensor failures don't fail the run by default; the agent decides what to do with the feedback
 - Sensor chains can require specific sensors to pass before run completion (gate mode)
 
 ## See also
 
-- [Quality Gates]({% link architecture-modules-quality-gates.md %}) — same sensors, but run *after* the agent finishes
-- [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) — sensors are Dandori-published MCP tools
+- [Quality Gates]({{ site.baseurl }}{% link architecture-modules-quality-gates.md %}) — same sensors, but run *after* the agent finishes
+- [MCP Tool Governance]({{ site.baseurl }}{% link architecture-modules-mcp-tool-governance.md %}) — sensors are Dandori-published MCP tools
 - [Use Case Flow 2 — Multi-phase DAG]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-2-multi-phase-feature-dag)

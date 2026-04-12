@@ -144,10 +144,10 @@ flowchart LR
 - Approvals are immutable; a rejected task can be re-submitted but creates a new approval row
 - Multi-approver flow (e.g., requires 2 of 3 reviewers) is config per project
 - Time-out: tasks in REVIEW > N days emit a stale-approval alert
-- Approval history exportable in compliance pack (see [Audit Log]({% link architecture-modules-audit-log.md %}))
+- Approval history exportable in compliance pack (see [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}))
 
 ## See also
 
-- [Task Board]({% link architecture-modules-task-board.md %}) — owns the status field this module flips
-- [Audit Log]({% link architecture-modules-audit-log.md %}) — every decision recorded
+- [Task Board]({{ site.baseurl }}{% link architecture-modules-task-board.md %}) — owns the status field this module flips
+- [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}) — every decision recorded
 - [Use Case Flow 1 — Jira → PR → approval]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)

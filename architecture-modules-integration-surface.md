@@ -165,16 +165,16 @@ This module is the **glue** — every other module's external touch points live 
 | Google Drive | REST API (out via OAuth2) |
 | Slack | Webhook ingress + REST API (out via Bot) |
 
-Detail per ecosystem tool is on the corresponding module's page (e.g., Jira details on [Task Board]({% link architecture-modules-task-board.md %})).
+Detail per ecosystem tool is on the corresponding module's page (e.g., Jira details on [Task Board]({{ site.baseurl }}{% link architecture-modules-task-board.md %})).
 
 ## Tech specifics
 
 - Service layer is the single source of business logic; surfaces are thin
 - REST endpoints are generated from service definitions where possible
-- MCP tool descriptions are governed by [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %})
+- MCP tool descriptions are governed by [MCP Tool Governance]({{ site.baseurl }}{% link architecture-modules-mcp-tool-governance.md %})
 - Webhook signing secrets are per-provider, stored in sealed secrets directory
 
 ## See also
 
-- [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) — governs the tools this surface exposes to coding agents
+- [MCP Tool Governance]({{ site.baseurl }}{% link architecture-modules-mcp-tool-governance.md %}) — governs the tools this surface exposes to coding agents
 - All other modules — each module's operations are surfaced via this module

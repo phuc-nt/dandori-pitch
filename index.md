@@ -12,8 +12,8 @@ permalink: /
 The organizational outer harness for AI coding agents.
 {: .fs-6 .fw-300 }
 
-[Why Dandori]({% link why-dandori.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Core Features]({% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Why Dandori]({{ site.baseurl }}{% link why-dandori.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Core Features]({{ site.baseurl }}{% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -23,7 +23,7 @@ Your engineers already have great agents — Claude Code, Codex, Cursor, Cline. 
 
 That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week. Built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
 
-> See **[Outer Harness]({% link harness-engineering.md %})** for the full conceptual framing — what inner vs. outer harness means, why it matters, and the 5 pillars every organization needs.
+> See **[Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %})** for the full conceptual framing — what inner vs. outer harness means, why it matters, and the 5 pillars every organization needs.
 
 ---
 
@@ -89,13 +89,13 @@ Every CTO asks them. Today the answers are *"we'd have to ask around."*
 
 ### Explore
 
-- **[Why Dandori]({% link why-dandori.md %})** — The full case: problem, dual-audience value, ROI, differentiators
-- **[Outer Harness]({% link harness-engineering.md %})** — Inner vs. outer harness, the 5 pillars, two principles
-- **[Core Features]({% link core-features.md %})** — 13 modules organized under the 5 pillars
-- **[Use Cases]({% link use-cases.md %})** — 9 leadership + 3 engineer scenarios
-- **[Architecture]({% link architecture.md %})** — Tech stack, modules, ecosystem integrations
-- **[Proposed Roadmap]({% link proposed-roadmap.md %})** — Milestone-by-milestone path from team pilot to full vision
-- **[Data Inventory]({% link data-inventory.md %})** — Complete catalog of data for security and compliance review
+- **[Why Dandori]({{ site.baseurl }}{% link why-dandori.md %})** — The full case: problem, dual-audience value, ROI, differentiators
+- **[Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %})** — Inner vs. outer harness, the 5 pillars, two principles
+- **[Core Features]({{ site.baseurl }}{% link core-features.md %})** — 13 modules organized under the 5 pillars
+- **[Use Cases]({{ site.baseurl }}{% link use-cases.md %})** — 9 leadership + 3 engineer scenarios
+- **[Architecture]({{ site.baseurl }}{% link architecture.md %})** — Tech stack, modules, ecosystem integrations
+- **[Proposed Roadmap]({{ site.baseurl }}{% link proposed-roadmap.md %})** — Milestone-by-milestone path from team pilot to full vision
+- **[Data Inventory]({{ site.baseurl }}{% link data-inventory.md %})** — Complete catalog of data for security and compliance review
 
 ---
 

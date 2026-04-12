@@ -30,7 +30,7 @@ Each feature is tagged with its **primary audience**:
 | **5. Audit & Analytics** | Audit Log, Cross-agent Analytics, Sub-agent Trace, MCP Tool Governance | 🧭 Leadership (with engineer debugging) |
 | **Foundation** | Integration Surface (Web UI, CLI, REST API, MCP server) | 👷 Engineers |
 
-Each section below links to a **technical design page** under [Architecture → Modules]({% link architecture-modules.md %}) with data model, processing flow, and ecosystem integration.
+Each section below links to a **technical design page** under [Architecture → Modules]({{ site.baseurl }}{% link architecture-modules.md %}) with data model, processing flow, and ecosystem integration.
 
 ---
 
@@ -69,7 +69,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Budget ceilings per agent (hard stop when exceeded)
 - Spike detection (alert when agent X burns 3x its average)
 
-**Technical design →** [Cost attribution & budget control]({% link architecture-modules-cost-attribution.md %})
+**Technical design →** [Cost attribution & budget control]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %})
 
 ---
 
@@ -118,7 +118,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - PII/data classification tags per layer
 - Audit: every run records which context version it used
 
-**Technical design →** [Five-layer context governance]({% link architecture-modules-context-hub.md %})
+**Technical design →** [Five-layer context governance]({{ site.baseurl }}{% link architecture-modules-context-hub.md %})
 
 ---
 
@@ -152,7 +152,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Skill tags on tasks → auto-suggest best-matching agent
 - **Progressive disclosure**: only skill manifest in system prompt; full content lazy-loaded via `fetch_skill` tool when agent needs it — dramatic token savings
 
-**Technical design →** [Shared skill library]({% link architecture-modules-skill-library.md %})
+**Technical design →** [Shared skill library]({{ site.baseurl }}{% link architecture-modules-skill-library.md %})
 
 ---
 
@@ -189,7 +189,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Phase tags: research → concept → requirement → design → implement → test → deploy → maintain
 - Portfolio views by phase across all projects
 
-**Technical design →** [Task dependencies & phase workflow]({% link architecture-modules-task-board.md %})
+**Technical design →** [Task dependencies & phase workflow]({{ site.baseurl }}{% link architecture-modules-task-board.md %})
 
 ---
 
@@ -219,7 +219,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Rejection keeps audit trail of why + re-queues for fix
 - Exportable for compliance review
 
-**Technical design →** [Approval workflows]({% link architecture-modules-approval-workflow.md %})
+**Technical design →** [Approval workflows]({{ site.baseurl }}{% link architecture-modules-approval-workflow.md %})
 
 ---
 
@@ -260,7 +260,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Platform team can mandate org-wide hooks
 - Full audit trail: which hook fired when, return value, error
 
-**Technical design →** [Generic lifecycle hooks]({% link architecture-modules-lifecycle-hooks.md %})
+**Technical design →** [Generic lifecycle hooks]({{ site.baseurl }}{% link architecture-modules-lifecycle-hooks.md %})
 
 ---
 
@@ -299,7 +299,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Quality score per run + per agent trend
 - Cross-agent comparison: which agents improve, which degrade
 
-**Technical design →** [Automated quality gates]({% link architecture-modules-quality-gates.md %})
+**Technical design →** [Automated quality gates]({{ site.baseurl }}{% link architecture-modules-quality-gates.md %})
 
 ---
 
@@ -339,7 +339,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - LLM-optimized output format (silent on success, verbose on error)
 - Org-wide sensor definitions
 
-**Technical design →** [Inline sensors]({% link architecture-modules-inline-sensors.md %})
+**Technical design →** [Inline sensors]({{ site.baseurl }}{% link architecture-modules-inline-sensors.md %})
 
 ---
 
@@ -371,7 +371,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Optional hash chain for tamper-evidence
 - Exportable as JSON/CSV; compliance-ready for SOC 2, ISO 27001, NIST AI RMF
 
-**Technical design →** [Immutable audit log]({% link architecture-modules-audit-log.md %})
+**Technical design →** [Immutable audit log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %})
 
 ---
 
@@ -401,7 +401,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Phase breakdown: which phase burns most
 - Top-cost tasks: where is spend going
 
-**Technical design →** [Cross-agent analytics]({% link architecture-modules-cross-agent-analytics.md %})
+**Technical design →** [Cross-agent analytics]({{ site.baseurl }}{% link architecture-modules-cross-agent-analytics.md %})
 
 ---
 
@@ -431,7 +431,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Policies: "sub-agents cannot exceed depth N"
 - UI: expandable run view showing sub-agent tree
 
-**Technical design →** [Sub-agent trace observability]({% link architecture-modules-sub-agent-trace.md %})
+**Technical design →** [Sub-agent trace observability]({{ site.baseurl }}{% link architecture-modules-sub-agent-trace.md %})
 
 ---
 
@@ -463,7 +463,7 @@ Each section below links to a **technical design page** under [Architecture → 
 - Usage analytics: which tools burn the most context fleet-wide
 - Security team veto: restricted tools require explicit approval
 
-**Technical design →** [MCP tool governance]({% link architecture-modules-mcp-tool-governance.md %})
+**Technical design →** [MCP tool governance]({{ site.baseurl }}{% link architecture-modules-mcp-tool-governance.md %})
 
 ---
 
@@ -493,12 +493,12 @@ Each section below links to a **technical design page** under [Architecture → 
 - Claude Code integrates via MCP (talk to Dandori from the IDE)
 - OpenAPI 3.0 spec: autogenerated clients for any language
 
-**Technical design →** [Unified integration surface]({% link architecture-modules-integration-surface.md %})
+**Technical design →** [Unified integration surface]({{ site.baseurl }}{% link architecture-modules-integration-surface.md %})
 
 ---
 
 ## See it in context
 
-- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles
-- [Use Cases →]({% link use-cases.md %}) Scenarios built on these features
-- [Architecture →]({% link architecture.md %}) How the pieces connect technically
+- [Outer Harness →]({{ site.baseurl }}{% link harness-engineering.md %}) The 5 pillars and two principles
+- [Use Cases →]({{ site.baseurl }}{% link use-cases.md %}) Scenarios built on these features
+- [Architecture →]({{ site.baseurl }}{% link architecture.md %}) How the pieces connect technically

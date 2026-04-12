@@ -127,12 +127,12 @@ N/A — Copilot runs in IDE, doesn't emit structured sub-agent events.
 
 - Adapter protocol extension defines JSON event schema
 - Trace tree is reconstructed via `parent_trace_id` for arbitrary nesting depth
-- Sub-agent costs roll up to parent run via [Cost Attribution]({% link architecture-modules-cost-attribution.md %})
+- Sub-agent costs roll up to parent run via [Cost Attribution]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %})
 - Policies enforceable: "sub-agents cannot exceed depth N", "sub-agent X cannot call tool Y" — enforced at adapter level
 - Future: align JSON schema with OpenTelemetry GenAI spec when stable
 
 ## See also
 
-- [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) — sub-agent costs roll up here
-- [Audit Log]({% link architecture-modules-audit-log.md %}) — sub-agent traces are queryable for compliance
+- [Cost Attribution]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %}) — sub-agent costs roll up here
+- [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}) — sub-agent traces are queryable for compliance
 - [Use Case Flow 6 — Compliance audit pack]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-6-compliance-audit-show-me-pii-touching-runs-in-q1)

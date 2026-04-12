@@ -19,44 +19,44 @@ Modules are grouped by the **[5 pillars of Outer Harness]({{ site.baseurl }}{% l
 
 | Module | What it does |
 |---|---|
-| [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) | Per-project / team / agent / task / model / phase / sub-agent cost breakdown + budget ceilings |
+| [Cost Attribution]({{ site.baseurl }}{% link architecture-modules-cost-attribution.md %}) | Per-project / team / agent / task / model / phase / sub-agent cost breakdown + budget ceilings |
 
 ## Pillar 2 — Multi-layer Knowledge Flow
 
 | Module | What it does |
 |---|---|
-| [Context Hub]({% link architecture-modules-context-hub.md %}) | 5-layer context inheritance (Company → Project → Team → Agent → Task), versioned, diff + rollback |
-| [Skill Library]({% link architecture-modules-skill-library.md %}) | Reusable prompt knowledge with progressive disclosure (lazy load via `fetch_skill` MCP tool) |
+| [Context Hub]({{ site.baseurl }}{% link architecture-modules-context-hub.md %}) | 5-layer context inheritance (Company → Project → Team → Agent → Task), versioned, diff + rollback |
+| [Skill Library]({{ site.baseurl }}{% link architecture-modules-skill-library.md %}) | Reusable prompt knowledge with progressive disclosure (lazy load via `fetch_skill` MCP tool) |
 
 ## Pillar 3 — Task Tracking
 
 | Module | What it does |
 |---|---|
-| [Task Board]({% link architecture-modules-task-board.md %}) | Tasks with phases, dependencies (DAG), auto-wakeup, skill matching |
-| [Approval Workflow]({% link architecture-modules-approval-workflow.md %}) | Human review gates with audit trail and Slack interactive approvals |
-| [Lifecycle Hooks]({% link architecture-modules-lifecycle-hooks.md %}) | Pluggable scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, etc. |
+| [Task Board]({{ site.baseurl }}{% link architecture-modules-task-board.md %}) | Tasks with phases, dependencies (DAG), auto-wakeup, skill matching |
+| [Approval Workflow]({{ site.baseurl }}{% link architecture-modules-approval-workflow.md %}) | Human review gates with audit trail and Slack interactive approvals |
+| [Lifecycle Hooks]({{ site.baseurl }}{% link architecture-modules-lifecycle-hooks.md %}) | Pluggable scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, etc. |
 
 ## Pillar 4 — Quality Gates
 
 | Module | What it does |
 |---|---|
-| [Quality Gates]({% link architecture-modules-quality-gates.md %}) | Post-run computational sensors: typecheck, lint, tests → quality score + per-team trend |
-| [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) | Mid-run sensors agents call as MCP tools to self-correct before finishing |
+| [Quality Gates]({{ site.baseurl }}{% link architecture-modules-quality-gates.md %}) | Post-run computational sensors: typecheck, lint, tests → quality score + per-team trend |
+| [Inline Sensors]({{ site.baseurl }}{% link architecture-modules-inline-sensors.md %}) | Mid-run sensors agents call as MCP tools to self-correct before finishing |
 
 ## Pillar 5 — Audit & Analytics
 
 | Module | What it does |
 |---|---|
-| [Audit Log]({% link architecture-modules-audit-log.md %}) | Immutable record of every mutation, with optional hash chain for tamper-evidence |
-| [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) | Compare agents across teams, detect drift, support evaluations |
-| [Sub-agent Trace]({% link architecture-modules-sub-agent-trace.md %}) | Observe (not spawn) sub-agents inside runtime runs for audit + cost roll-up |
-| [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) | Org-wide allow-list, description versioning, fleet usage analytics for MCP tools |
+| [Audit Log]({{ site.baseurl }}{% link architecture-modules-audit-log.md %}) | Immutable record of every mutation, with optional hash chain for tamper-evidence |
+| [Cross-agent Analytics]({{ site.baseurl }}{% link architecture-modules-cross-agent-analytics.md %}) | Compare agents across teams, detect drift, support evaluations |
+| [Sub-agent Trace]({{ site.baseurl }}{% link architecture-modules-sub-agent-trace.md %}) | Observe (not spawn) sub-agents inside runtime runs for audit + cost roll-up |
+| [MCP Tool Governance]({{ site.baseurl }}{% link architecture-modules-mcp-tool-governance.md %}) | Org-wide allow-list, description versioning, fleet usage analytics for MCP tools |
 
 ## Foundation — Integration Surface
 
 | Module | What it does |
 |---|---|
-| [Integration Surface]({% link architecture-modules-integration-surface.md %}) | Web UI, CLI, REST API, MCP server, webhook ingress — same operations, multiple interfaces |
+| [Integration Surface]({{ site.baseurl }}{% link architecture-modules-integration-surface.md %}) | Web UI, CLI, REST API, MCP server, webhook ingress — same operations, multiple interfaces |
 
 ---
 
@@ -75,7 +75,7 @@ Each module page is structured the same way:
 
 ## Build sequence & parallelization
 
-For engineers planning implementation, here is the dependency graph and earliest-buildable milestone per module. See [Proposed Roadmap]({% link proposed-roadmap.md %}) for the full milestone plan.
+For engineers planning implementation, here is the dependency graph and earliest-buildable milestone per module. See [Proposed Roadmap]({{ site.baseurl }}{% link proposed-roadmap.md %}) for the full milestone plan.
 
 | Module | Hard dependencies | Earliest milestone | Can parallelize with |
 |---|---|---|---|
@@ -109,5 +109,5 @@ For engineers planning implementation, here is the dependency graph and earliest
 
 ## See also
 
-- [Architecture Overview]({% link architecture.md %}) — System architecture, tech stack, deployment topologies
-- [Use Case Flows]({% link architecture-use-cases.md %}) — End-to-end processing flows that span multiple modules
+- [Architecture Overview]({{ site.baseurl }}{% link architecture.md %}) — System architecture, tech stack, deployment topologies
+- [Use Case Flows]({{ site.baseurl }}{% link architecture-use-cases.md %}) — End-to-end processing flows that span multiple modules

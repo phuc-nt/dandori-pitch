@@ -185,7 +185,7 @@ Goal: full vision plus AIPF integration layer (subscriber for GenAI Gateway bill
 
 Path 2 + AIPF integration sprints.
 
-See [AIPF Integration]({% link aipf-integration.md %}) for the AIPF-specific work (link-only — not in nav).
+See [AIPF Integration]({{ site.baseurl }}{% link aipf-integration.md %}) for the AIPF-specific work (link-only — not in nav).
 
 ---
 
@@ -255,7 +255,7 @@ What can slow each milestone, and how we handle it:
 ## Next steps for prospective partners
 
 1. **Intro call** (30 min) — share your current AI agent stack and pain points
-2. **Architecture review** (1 hour) — walk through [Architecture]({% link architecture.md %}) and identify integration points
+2. **Architecture review** (1 hour) — walk through [Architecture]({{ site.baseurl }}{% link architecture.md %}) and identify integration points
 3. **Pilot scoping** (1 hour) — pick the path (1, 2, or 3) and the first 2 milestones
 4. **Pilot kickoff** — first sprint begins; weekly sync set up
 5. **Demo at end of each milestone** — review with engineering leadership
@@ -266,8 +266,8 @@ Get in touch: [hello@dandori.io](mailto:hello@dandori.io)
 
 ## Related
 
-- [Why Dandori]({% link why-dandori.md %}) — The case
-- [Outer Harness]({% link harness-engineering.md %}) — The 5 pillars and two principles
-- [Core Features]({% link core-features.md %}) — 13 modules organized under the 5 pillars
-- [Architecture]({% link architecture.md %}) — Technical target this roadmap builds toward
-- [Use Cases]({% link use-cases.md %}) — Scenarios that drive milestone priority
+- [Why Dandori]({{ site.baseurl }}{% link why-dandori.md %}) — The case
+- [Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}) — The 5 pillars and two principles
+- [Core Features]({{ site.baseurl }}{% link core-features.md %}) — 13 modules organized under the 5 pillars
+- [Architecture]({{ site.baseurl }}{% link architecture.md %}) — Technical target this roadmap builds toward
+- [Use Cases]({{ site.baseurl }}{% link use-cases.md %}) — Scenarios that drive milestone priority

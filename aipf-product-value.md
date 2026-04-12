@@ -255,7 +255,7 @@ The pitch is the opposite — *we already did the work*. Review Dandori's Contex
 
 ### "What if my product already has [feature X]?"
 
-Then we don't duplicate. Dandori explicitly maps overlap cases in [aipf-integration.md]({% link aipf-integration.md %}). Examples: Dandori does NOT do billing (Gateway does), does NOT host MCP servers (MCP Hub does), does NOT run agents (Runtime does). We delegate and consume.
+Then we don't duplicate. Dandori explicitly maps overlap cases in [aipf-integration.md]({{ site.baseurl }}{% link aipf-integration.md %}). Examples: Dandori does NOT do billing (Gateway does), does NOT host MCP servers (MCP Hub does), does NOT run agents (Runtime does). We delegate and consume.
 
 ### "What does integration cost my team?"
 
@@ -292,6 +292,6 @@ Each AIPF product team gets:
 
 ## Next steps
 
-- [AIPF Integration →]({% link aipf-integration.md %}) — Full integration architecture (also hidden from nav)
-- [Outer Harness →]({% link harness-engineering.md %}) — The 5 pillars and why Dandori is the outer harness for AIPF
-- [Core Features →]({% link core-features.md %}) — 13 modules organized under the 5 pillars
+- [AIPF Integration →]({{ site.baseurl }}{% link aipf-integration.md %}) — Full integration architecture (also hidden from nav)
+- [Outer Harness →]({{ site.baseurl }}{% link harness-engineering.md %}) — The 5 pillars and why Dandori is the outer harness for AIPF
+- [Core Features →]({{ site.baseurl }}{% link core-features.md %}) — 13 modules organized under the 5 pillars
