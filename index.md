@@ -12,90 +12,44 @@ permalink: /
 The organizational outer harness for AI coding agents.
 {: .fs-6 .fw-300 }
 
-[Why Dandori]({{ site.baseurl }}{% link why-dandori.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Solution Overview]({{ site.baseurl }}{% link solution-overview.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Core Features]({{ site.baseurl }}{% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
-> **Agent sprawl is the new shadow IT.** A 10,000-engineer org runs tens of thousands of coding-agent sessions per day — with no cost breakdown, no audit log, no shared context, no approval trail. Every CLAUDE.md, skill, and MCP tool lives on a different laptop.
+Your engineers already have great agents — Claude Code, Codex, Cursor, Cline. **What's missing is the organizational layer around them**: shared context, cost control, approval gates, quality measurement, and audit trail.
 
-Your engineers already have great agents — Claude Code, Codex, Cursor, Cline. **What's missing is the outer harness** that lets engineers share context and coordinate work, and lets leadership govern, measure, and scale agent usage across thousands of engineers.
+That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week.
 
-That's Dandori. **One platform, two audiences** — engineers use it every day, leadership sees through it every week. Built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
-
-> See **[Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %})** for the full conceptual framing — what inner vs. outer harness means, why it matters, and the 5 pillars every organization needs.
+> **[What is an Outer Harness?]({{ site.baseurl }}{% link outer-harness.md %})** — The concept behind Dandori: why process and data matter more than the agent you're using.
 
 ---
 
 ### The 5 pillars
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                        DANDORI                           │
-│              (organizational outer harness)               │
-│                                                          │
-│   1. Cost Attribution                                    │
-│      Per-project, per-team, per-agent cost breakdown     │
-│      Budget ceilings · Spike detection · Hard stops      │
-│                                                          │
-│   2. Multi-layer Knowledge Flow                          │
-│      5-layer context hierarchy · Skill library           │
-│      Top-down governance · Bottom-up contribution        │
-│                                                          │
-│   3. Task Tracking                                       │
-│      DAGs · Phase workflow · Approval gates              │
-│      Full incident traceability                          │
-│                                                          │
-│   4. Quality Gates                                       │
-│      Independent of agent · Separation of duties         │
-│      TypeCheck · Lint · Security · Coverage              │
-│                                                          │
-│   5. Audit & Analytics                                   │
-│      Append-only log · Hash chain · Compliance export    │
-│      Cross-agent comparison · Trend detection            │
-│                                                          │
-│   ──────────────────────────────────────────────────     │
-│   Foundation: Integration Surface                        │
-│   Web UI · CLI · REST API · MCP server                   │
-└───────────────────────────┬──────────────────────────────┘
-                            │  drives
-                            ▼
-┌──────────────────────────────────────────────────────────┐
-│                      AI AGENTS                           │
-│        Claude Code · Codex · Cursor · custom             │
-│          (your engineers' existing tools)                │
-└──────────────────────────────────────────────────────────┘
-```
+| # | Pillar | What it solves |
+|---|---|---|
+| 1 | [Cost Attribution]({{ site.baseurl }}{% link outer-harness.md %}#1-cost-attribution) | "$180K bill — where did it go?" |
+| 2 | [Knowledge Flow]({{ site.baseurl }}{% link outer-harness.md %}#2-multi-layer-knowledge-flow) | "Agent violated policy — engineer forgot to paste compliance doc" |
+| 3 | [Task Tracking]({{ site.baseurl }}{% link outer-harness.md %}#3-task-tracking) | "Who approved the migration that broke prod?" |
+| 4 | [Quality Gates]({{ site.baseurl }}{% link outer-harness.md %}#4-quality-gates) | "Is agent output getting better or worse?" |
+| 5 | [Audit & Analytics]({{ site.baseurl }}{% link outer-harness.md %}#5-audit--analytics) | "Show me every AI-generated change in Q3" |
 
-**Dandori does not write code.** Engineers coordinate and share context through it. Leadership measures, governs, and audits the agents that do the writing.
-
----
-
-### The five questions Dandori answers
-
-Every CTO asks them. Today the answers are *"we'd have to ask around."*
-
-| # | Question | Pillar | Dandori's answer |
-|---|---|---|---|
-| 1 | Where is the AI spend going? | Cost Attribution | Per-agent, per-team, per-project breakdown in real time |
-| 2 | What context did the agent see? | Knowledge Flow | 5-layer hierarchy, versioned, logged per run |
-| 3 | Who approved this change? | Task Tracking | Approval workflow with full audit trail |
-| 4 | How good is the output? | Quality Gates | Automated gates + per-agent trend lines |
-| 5 | What if the engineer leaves? | Knowledge Flow | Skills stay in org library, not individual laptops |
-
-**[See how Dandori answers each →]({{ site.baseurl }}{% link why-dandori.md %}#the-five-unanswered-questions)**
+Two principles: **process-centric** (human and agent follow the same pipeline) · **data-driven** (every operation produces structured data).
 
 ---
 
 ### Explore
 
-- **[Why Dandori]({{ site.baseurl }}{% link why-dandori.md %})** — The full case: problem, dual-audience value, ROI, differentiators
-- **[Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %})** — Inner vs. outer harness, the 5 pillars, two principles
-- **[Core Features]({{ site.baseurl }}{% link core-features.md %})** — 13 modules organized under the 5 pillars
-- **[Use Cases]({{ site.baseurl }}{% link use-cases.md %})** — 9 leadership + 3 engineer scenarios
-- **[Architecture]({{ site.baseurl }}{% link architecture.md %})** — Tech stack, modules, ecosystem integrations
-- **[Proposed Roadmap]({{ site.baseurl }}{% link proposed-roadmap.md %})** — Milestone-by-milestone path from team pilot to full vision
-- **[Data Inventory]({{ site.baseurl }}{% link data-inventory.md %})** — Complete catalog of data for security and compliance review
+| Page | What you'll find |
+|---|---|
+| [Outer Harness]({{ site.baseurl }}{% link outer-harness.md %}) | The concept: inner vs outer, 5 pillars, two principles |
+| [Solution Overview]({{ site.baseurl }}{% link solution-overview.md %}) | What Dandori is, who it's for, before/after, differentiators |
+| [Core Features]({{ site.baseurl }}{% link core-features.md %}) | 13 modules organized under the 5 pillars |
+| [Use Cases]({{ site.baseurl }}{% link use-cases.md %}) | Leadership and engineer scenarios |
+| [Architecture]({{ site.baseurl }}{% link architecture.md %}) | Tech stack, system diagram, deployment |
+| [Roadmap]({{ site.baseurl }}{% link roadmap.md %}) | Milestones from team pilot to full vision |
+| [Data Inventory]({{ site.baseurl }}{% link data-inventory.md %}) | What data Dandori touches — for security review |
 
 ---
 

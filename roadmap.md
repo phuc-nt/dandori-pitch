@@ -1,0 +1,110 @@
+---
+layout: default
+title: Roadmap
+nav_order: 7
+description: "Milestone-by-milestone path from team pilot to full organizational outer harness."
+---
+
+# Roadmap
+
+A proposal for enterprise partners — adaptable per team's needs.
+
+---
+
+## Non-goals
+
+Dandori is the outer harness. It does **not** build:
+
+| Non-goal | Owned by |
+|---|---|
+| Sandbox / filesystem / bash | Coding agent runtime |
+| Sub-agent spawning | Coding agent runtime |
+| Context window compaction | Coding agent runtime |
+| Chat UI / IDE | Claude Code / Codex / Copilot |
+| Model provider gateway | AI Gateway or provider direct |
+| MCP server hosting | MCP Hub — Dandori governs, doesn't host |
+
+---
+
+## Foundation (F1-F4) — must come first
+
+| # | Module | ~Effort | Why first |
+|---|---|---|---|
+| F1 | Service layer + REST API + Web UI + auth | 1 sprint | Everything surfaces through it |
+| F2 | Audit Log + middleware | ½ sprint | Retrofitting compliance later is painful |
+| F3 | Task Board CRUD (no DAG yet) | 1 sprint | Root entity for runs, cost, approval |
+| F4 | Adapter layer (Claude Code + run record) | 1 sprint | Without runs, nothing has data |
+
+**End state:** create task → spawn Claude Code → see output + cost in Web UI. Audit log records every mutation.
+
+---
+
+## Milestones
+
+**M0 — Skeleton** (1 sprint): F1 + F2. Web UI, audit log, API keys.
+
+**M1 — Single-task MVP** (2 sprints): F3 + F4. Create task → agent runs → run record stored. Foundation complete.
+
+**M2 — Context + Skills** (2 sprints, parallelizable):
+- Track A: Context Hub (5-layer assembly + versioning)
+- Track B: Skill Library (basic, no progressive disclosure)
+
+**M3 — Dual-audience value** (2 sprints, parallelizable):
+- Track A: Quality Gates + Cross-agent Analytics
+- Track B: Approval Workflow + Slack approvals
+- Track C: Cost Attribution dashboard
+
+*End of MVP. Both engineers and leadership get real value.*
+
+**M4 — Advanced orchestration** (2 sprints): Task DAG + auto-wakeup + phases. Sub-agent Trace. Codex adapter.
+
+**M5 — MCP + advanced modules** (3-4 sprints, parallelizable): Built-in MCP server (pre-req), then: Inline Sensors, MCP Tool Governance, Skill progressive disclosure, Lifecycle Hooks.
+
+*Full outer harness. 13 modules.*
+
+**M6 — Ecosystem integrations** (2-3 sprints): Jira, Confluence, GitHub Enterprise, Copilot MCP registration. (Google Drive + Slack already in M3.)
+
+---
+
+## Three paths
+
+| Path | Scope | Timeline (1 dev / 2-3 devs) |
+|---|---|---|
+| Minimal pilot | M0 → M1 → M2-A → M3-B → M6 (Jira+Slack) | ~3 mo / ~2 mo |
+| Full vision | M0 → M1 → M2 → M3 → M4 → M5 → M6 | ~11 mo / ~6 mo |
+| Enterprise | Full vision + AI platform integration | ~14 mo / ~8 mo |
+
+Stop at any milestone — each delivers standalone value.
+
+---
+
+## Per milestone we deliver
+
+1. Working code merged to main
+2. Demo session (engineers + leadership invited)
+3. Audit log evidence of usage during milestone
+4. Retrospective report
+
+---
+
+## What we ask from partners
+
+1. Pilot team of 5-15 engineers (already using Claude Code or Codex)
+2. Read-only access to existing tools (Jira, Confluence, GitHub, Drive, Slack)
+3. A sponsor in engineering leadership
+4. Weekly 30-min sync for fast feedback
+5. Honest feedback — "this doesn't help me" is most valuable
+
+---
+
+## Customization
+
+This roadmap is a **proposal**, not a contract:
+
+- Skip modules the partner doesn't need
+- Promote urgent modules (e.g., Cost Attribution before Skill Library)
+- Add integrations not in M6 (e.g., Linear instead of Jira)
+- Pause between milestones for adoption
+- Combine milestones with multiple devs
+
+First conversation: "what does your team need first?" — roadmap re-orders around the answer.

@@ -41,6 +41,7 @@ mermaid:
   version: "10.9.0"
 
 exclude:
+  - _archive/
   - docs/
   - overrides/
   - hooks/
