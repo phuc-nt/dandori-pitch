@@ -178,6 +178,15 @@ Dandori never holds AI provider credentials — runtimes do.
 
 ---
 
+## Module specs
+
+Per-module basic design pages (hidden from main nav — deep reads for implementers):
+
+[Module Specs →]({{ site.baseurl }}{% link modules/index.md %}) 14 modules, one page each — where it sits, dependencies, workflow, interfaces
+{: .fs-5 }
+
+---
+
 ## Read next
 
 [Roadmap →]({{ site.baseurl }}{% link roadmap.md %}) Implementation milestones from team pilot to full vision
