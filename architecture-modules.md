@@ -11,7 +11,7 @@ description: "Index of all 13 Dandori modules. Each module has its own page with
 
 Each of the 13 Dandori modules has its own detail page. This page is the index — pick a module to read.
 
-Modules are grouped by the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
+Modules are grouped by the **[5 pillars of Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
 
 ---
 
@@ -103,7 +103,7 @@ For engineers planning implementation, here is the dependency graph and earliest
 - **M2 and M3 each have 2-3 parallel tracks** — ideal for 2-3 devs working in parallel.
 - **M5 is gated by the built-in MCP server** — once that's live, 4 modules unblock simultaneously.
 - **Stop at any milestone** — M3 (end of dual-audience MVP) is a natural full-stop for a team pilot.
-- **Scope-creep guard:** see [Non-goals]({% link proposed-roadmap.md %}#scope-boundaries--what-dandori-will-not-build) before expanding any module.
+- **Scope-creep guard:** see [Non-goals]({{ site.baseurl }}{% link proposed-roadmap.md %}#scope-boundaries--what-dandori-will-not-build) before expanding any module.
 
 ---
 

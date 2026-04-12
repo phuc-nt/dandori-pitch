@@ -13,7 +13,7 @@ description: "How Dandori makes each AIPF product more valuable — talking poin
 
 **The short answer:**
 
-> Dandori is not a competitor. It is **the organizational outer harness** that gives your AIPF product the [5 pillars]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness) it's missing: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics. Wrapping your product with Dandori turns it from "a great technical tool" into "a great technical tool that is org-ready, audited, cost-attributed, and dual-audience." Your adoption goes up. Your perceived value goes up. Your compliance story writes itself.
+> Dandori is not a competitor. It is **the organizational outer harness** that gives your AIPF product the [5 pillars]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness) it's missing: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics. Wrapping your product with Dandori turns it from "a great technical tool" into "a great technical tool that is org-ready, audited, cost-attributed, and dual-audience." Your adoption goes up. Your perceived value goes up. Your compliance story writes itself.
 
 ---
 

@@ -142,4 +142,4 @@ Optional: export aggregations as Prometheus metrics for unified org dashboarding
 
 - [Quality Gates]({% link architecture-modules-quality-gates.md %}) — produces quality scores consumed here
 - [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) — produces cost data consumed here
-- [Use Case Flow 5 — Cost review]({% link architecture-use-cases.md %}#flow-5-leadership-monthly-cost-review)
+- [Use Case Flow 5 — Cost review]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-5-leadership-monthly-cost-review)

@@ -7,7 +7,7 @@ description: "12 scenarios — 9 leadership, 3 engineer — covering CTO, CISO, 
 
 # Use Cases
 
-Dandori is a **dual-audience platform** built on the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics.
+Dandori is a **dual-audience platform** built on the **[5 pillars of Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics.
 
 - **🧭 Leadership scenarios (1–9)** — how CTOs, CISOs, Platform teams, and Compliance use Dandori as a control plane.
 - **👷 Engineer scenarios (10–12)** — how staff engineers and tech leads use Dandori as a daily workspace.

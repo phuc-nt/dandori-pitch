@@ -150,4 +150,4 @@ flowchart LR
 
 - [Task Board]({% link architecture-modules-task-board.md %}) — owns the status field this module flips
 - [Audit Log]({% link architecture-modules-audit-log.md %}) — every decision recorded
-- [Use Case Flow 1 — Jira → PR → approval]({% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)
+- [Use Case Flow 1 — Jira → PR → approval]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)

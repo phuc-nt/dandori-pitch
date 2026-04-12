@@ -146,4 +146,4 @@ Monthly cost summary email to finance team — generated from `v_agent_runs` agg
 
 - [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) — uses cost data for cost-per-quality ratios
 - [Lifecycle Hooks]({% link architecture-modules-lifecycle-hooks.md %}) — fires `on_budget_exceeded`
-- [Use Case Flow 5 — Cost review]({% link architecture-use-cases.md %}#flow-5-leadership-monthly-cost-review)
+- [Use Case Flow 5 — Cost review]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-5-leadership-monthly-cost-review)

@@ -151,4 +151,4 @@ Teams can stop at MVP and still claim "shared skill library" in their org. Progr
 
 - [Context Hub]({% link architecture-modules-context-hub.md %}) — the other "guides" module
 - [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) — fetch_skill is a Dandori-published MCP tool
-- [Use Case Flow 3 — Publish team skill]({% link architecture-use-cases.md %}#flow-3-engineer-publishes-a-team-skill)
+- [Use Case Flow 3 — Publish team skill]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-3-engineer-publishes-a-team-skill)

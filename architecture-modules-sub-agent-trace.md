@@ -135,4 +135,4 @@ N/A — Copilot runs in IDE, doesn't emit structured sub-agent events.
 
 - [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) — sub-agent costs roll up here
 - [Audit Log]({% link architecture-modules-audit-log.md %}) — sub-agent traces are queryable for compliance
-- [Use Case Flow 6 — Compliance audit pack]({% link architecture-use-cases.md %}#flow-6-compliance-audit-show-me-pii-touching-runs-in-q1)
+- [Use Case Flow 6 — Compliance audit pack]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-6-compliance-audit-show-me-pii-touching-runs-in-q1)

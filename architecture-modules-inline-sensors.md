@@ -141,4 +141,4 @@ flowchart LR
 
 - [Quality Gates]({% link architecture-modules-quality-gates.md %}) — same sensors, but run *after* the agent finishes
 - [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) — sensors are Dandori-published MCP tools
-- [Use Case Flow 2 — Multi-phase DAG]({% link architecture-use-cases.md %}#flow-2-multi-phase-feature-dag)
+- [Use Case Flow 2 — Multi-phase DAG]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-2-multi-phase-feature-dag)

@@ -156,7 +156,7 @@ behind a reverse proxy (Caddy/nginx)
 
 ## Module map → harness component → audience
 
-The 13 modules grouped by the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
+The 13 modules grouped by the **[5 pillars of Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
 
 | Pillar | Dandori modules | Primary audience |
 |---|---|---|

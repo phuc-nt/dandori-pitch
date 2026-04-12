@@ -126,4 +126,4 @@ flowchart LR
 
 - [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) — same sensors but called by the agent mid-run for self-correction
 - [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) — consumes quality scores for trend lines
-- [Use Case Flow 1 — Jira → PR → approval]({% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)
+- [Use Case Flow 1 — Jira → PR → approval]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-1-jira-issue--agent-run--pr-with-audit)

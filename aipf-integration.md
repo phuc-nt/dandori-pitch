@@ -60,7 +60,7 @@ Dandori fills **both** `???` layers.
 
 ## Dandori = Organizational Outer Harness for AIPF
 
-Dandori does not replace any AIPF product. It sits **around** them and adds the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)** that AIPF doesn't ship — built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
+Dandori does not replace any AIPF product. It sits **around** them and adds the **[5 pillars of Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness)** that AIPF doesn't ship — built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
 
 ```
   ┌──────────────────────┐        ┌──────────────────────┐

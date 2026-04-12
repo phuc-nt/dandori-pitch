@@ -9,7 +9,7 @@ description: "13 organizational outer harness modules organized under the 5 pill
 
 Your engineers already have great agents. **Dandori is the organizational outer harness around them** — 13 modules built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
 
-The modules are organized under **[the 5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**, plus a foundation layer.
+The modules are organized under **[the 5 pillars of Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**, plus a foundation layer.
 
 Each feature is tagged with its **primary audience**:
 

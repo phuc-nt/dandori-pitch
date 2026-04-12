@@ -83,7 +83,7 @@ Every CTO asks them. Today the answers are *"we'd have to ask around."*
 | 4 | How good is the output? | Quality Gates | Automated gates + per-agent trend lines |
 | 5 | What if the engineer leaves? | Knowledge Flow | Skills stay in org library, not individual laptops |
 
-**[See how Dandori answers each →]({% link why-dandori.md %}#the-five-unanswered-questions)**
+**[See how Dandori answers each →]({{ site.baseurl }}{% link why-dandori.md %}#the-five-unanswered-questions)**
 
 ---
 

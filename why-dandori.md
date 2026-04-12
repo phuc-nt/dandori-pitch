@@ -36,7 +36,7 @@ The vendor bill comes in at $180K for the month. That's it. Break it down by tea
 
 Dandori logs every run — agent, task, project, model, input tokens, output tokens, cost — and gives you cross-cutting analytics from day one.
 
-**Pillar:** [Cost Attribution]({% link harness-engineering.md %}#1-cost-attribution)
+**Pillar:** [Cost Attribution]({{ site.baseurl }}{% link harness-engineering.md %}#1-cost-attribution)
 
 ### 2. What context did the agent actually see?
 
@@ -44,7 +44,7 @@ An agent wrote code that violates your security policy. The engineer says *"I fo
 
 Dandori's 5-layer context hierarchy (Company → Project → Team → Agent → Task) means every agent automatically inherits the right context. Update the company policy once — every agent sees it next run. Version controlled, rollback-able, audited.
 
-**Pillar:** [Multi-layer Knowledge Flow]({% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
+**Pillar:** [Multi-layer Knowledge Flow]({{ site.baseurl }}{% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
 
 ### 3. Who approved this?
 
@@ -52,7 +52,7 @@ The agent shipped a migration that broke prod. Who reviewed it? When? Based on w
 
 Dandori has a built-in approval workflow: tasks flagged `needs_approval` stop at **In Review** until a human approves. Every approval (and rejection) is logged with who, when, and why.
 
-**Pillar:** [Task Tracking]({% link harness-engineering.md %}#3-task-tracking)
+**Pillar:** [Task Tracking]({{ site.baseurl }}{% link harness-engineering.md %}#3-task-tracking)
 
 ### 4. How good is the output?
 
@@ -60,7 +60,7 @@ Your agents are producing code. Is it good? Is it improving or degrading over ti
 
 Dandori runs quality gates on every run (TypeScript, ESLint, test scanners), computes a quality score, and tracks it over time. Cross-agent comparison shows which agents are improving.
 
-**Pillar:** [Quality Gates]({% link harness-engineering.md %}#4-quality-gates)
+**Pillar:** [Quality Gates]({{ site.baseurl }}{% link harness-engineering.md %}#4-quality-gates)
 
 ### 5. What happens when the engineer leaves?
 
@@ -68,7 +68,7 @@ Engineer X built the best prompts on the team. They leave. **Six months of triba
 
 Dandori stores agent instructions, skills, and templates centrally. New engineers inherit the team's proven prompts instantly. Skills are shareable across projects.
 
-**Pillar:** [Multi-layer Knowledge Flow]({% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
+**Pillar:** [Multi-layer Knowledge Flow]({{ site.baseurl }}{% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
 
 ---
 

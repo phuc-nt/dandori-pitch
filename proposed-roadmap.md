@@ -39,7 +39,7 @@ Dandori is the **outer harness**. It does not replace the inner harness (the cod
 | Vector store for semantic code search | Runtime or dedicated service |
 | MCP server *host* | MCP Hub — Dandori *governs*, doesn't host |
 
-**Rule of thumb:** if a feature duplicates something Claude Code, Codex, or Cursor already do well, Dandori does not build it. See [Outer Harness]({% link harness-engineering.md %}#inner-vs-outer-harness) for the full inner-vs-outer framing.
+**Rule of thumb:** if a feature duplicates something Claude Code, Codex, or Cursor already do well, Dandori does not build it. See [Outer Harness]({{ site.baseurl }}{% link harness-engineering.md %}#inner-vs-outer-harness) for the full inner-vs-outer framing.
 
 ---
 

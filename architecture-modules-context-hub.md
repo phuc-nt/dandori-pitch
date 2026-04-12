@@ -166,4 +166,4 @@ Web UI: Context Hub → layer history → click version to see diff and rollback
 
 - [Skill Library]({% link architecture-modules-skill-library.md %}) — the other "guides" module
 - [Audit Log]({% link architecture-modules-audit-log.md %}) — every context version edit is recorded
-- [Use Case Flow 4 — Copilot context query]({% link architecture-use-cases.md %}#flow-4-engineer-asks-copilot-a-context-aware-question)
+- [Use Case Flow 4 — Copilot context query]({{ site.baseurl }}{% link architecture-use-cases.md %}#flow-4-engineer-asks-copilot-a-context-aware-question)
