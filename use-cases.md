@@ -7,12 +7,12 @@ description: "12 scenarios — 9 leadership, 3 engineer — covering CTO, CISO, 
 
 # Use Cases
 
-Dandori is a **dual-audience platform**. This page walks through scenarios for both sides:
+Dandori is a **dual-audience platform** built on the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics.
 
 - **🧭 Leadership scenarios (1–9)** — how CTOs, CISOs, Platform teams, and Compliance use Dandori as a control plane.
 - **👷 Engineer scenarios (10–12)** — how staff engineers and tech leads use Dandori as a daily workspace.
 
-Agents execute code. **Dandori is where engineers coordinate that work and where leadership governs it** — same database, two lenses.
+Agents execute code. **Dandori is where engineers coordinate that work and where leadership governs it** — same database, two lenses. Two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
 
 ---
 
@@ -510,6 +510,6 @@ Every handoff is a manual copy-paste. Context decays at each step.
 
 ## See it in context
 
-- [Core Features →]({% link core-features.md %}) The capabilities behind these scenarios
+- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles
+- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
 - [Architecture →]({% link architecture.md %}) How Dandori delivers them technically
-- [AIPF Integration →]({% link aipf-integration.md %}) Fitting into enterprise AI platforms

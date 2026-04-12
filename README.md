@@ -1,22 +1,20 @@
 # Dandori
 
-The unified control plane for AI coding agents in the enterprise.
+The organizational outer harness for AI coding agents.
 
 **Live site:** https://phuc-nt.github.io/dandori-pitch/
 
 ---
 
-This repository contains the public-facing pitch site for Dandori.
+This repository contains the public-facing pitch site for Dandori, built with Jekyll + [just-the-docs](https://just-the-docs.com/).
 
 ## Local development
 
-```
-pip install mkdocs-material
-mkdocs serve
+```bash
+bundle install
+bundle exec jekyll serve
 ```
 
 ## Deploy
 
-```
-mkdocs gh-deploy --force
-```
+Deployed automatically via GitHub Pages on push to `main`.

@@ -12,7 +12,7 @@ How Dandori fits into an organization that already runs an AI Platform (AIPF). T
 
 **Short answer:** AIPF handles *execution*. Dandori adds the **two layers AIPF doesn't have**: a daily workspace for engineers (context, tasks, skills) and a control plane for leadership (cost, audit, compliance).
 
-**In harness engineering terms:** AIPF's MultiAgent Runtime is an *inner harness* (it runs agents). **Dandori is the *outer harness at organizational scale*** — context, skills, sensors, approval, orchestration — which AIPF does not ship. Dandori does not replace the runtime; it wraps it with the organizational layer it's missing. See [Harness Engineering]({% link harness-engineering.md %}) for the full framing.
+**In harness engineering terms:** AIPF's MultiAgent Runtime is an *inner harness* (it runs agents). **Dandori is the *outer harness at organizational scale*** — context, skills, sensors, approval, orchestration — which AIPF does not ship. Dandori does not replace the runtime; it wraps it with the organizational layer it's missing. See [Outer Harness]({% link harness-engineering.md %}) for the full framing.
 
 ---
 
@@ -58,9 +58,9 @@ Dandori fills **both** `???` layers.
 
 ---
 
-## Dandori = Workspace + Management Layer
+## Dandori = Organizational Outer Harness for AIPF
 
-Dandori does not replace any AIPF product. It sits **around** them and adds two missing layers: a daily workspace for engineers, and a control plane for leadership.
+Dandori does not replace any AIPF product. It sits **around** them and adds the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)** that AIPF doesn't ship — built on two principles: **process-centric** (human and agent follow the same pipeline) and **data-driven** (every operation produces structured data).
 
 ```
   ┌──────────────────────┐        ┌──────────────────────┐
@@ -70,21 +70,24 @@ Dandori does not replace any AIPF product. It sits **around** them and adds two 
              │                               │
              ▼                               ▼
   ┌─────────────────────────────────────────────────────┐
-  │                      DANDORI                        │
+  │              DANDORI (outer harness)                 │
   │                                                     │
-  │  👷 Engineer workspace                              │
-  │    · Context Hub (5-layer)                          │
-  │    · Task Board (DAGs, phases, dependencies)        │
-  │    · Skill Library                                  │
-  │    · Approval review queue                          │
-  │    · Self-explanation on every run                  │
+  │  Pillar 1: Cost Attribution                         │
+  │    Budget ceilings · Spike detection · Per-agent    │
   │                                                     │
-  │  🧭 Leadership control plane                        │
-  │    · Cost Attribution (per-agent/task/project)      │
-  │    · Cross-agent Analytics                          │
-  │    · Quality Gates (trend view)                     │
-  │    · Audit Log + Compliance Export                  │
-  │    · Budget ceilings + spike alerts                 │
+  │  Pillar 2: Multi-layer Knowledge Flow               │
+  │    5-layer Context Hub · Skill Library               │
+  │                                                     │
+  │  Pillar 3: Task Tracking                            │
+  │    DAGs · Phase workflow · Approval gates            │
+  │                                                     │
+  │  Pillar 4: Quality Gates                            │
+  │    Post-run gates · Inline sensors · Separation     │
+  │    of duties (independent of agent TDD)             │
+  │                                                     │
+  │  Pillar 5: Audit & Analytics                        │
+  │    Append-only log · Cross-agent analytics ·        │
+  │    Compliance export · Sub-agent trace              │
   └───────────────────────┬─────────────────────────────┘
                           │
   ┌───────────────────────▼─────────────────────────────┐
@@ -172,7 +175,7 @@ Three features specifically designed for organizations running AIPF:
 
 AIPF MultiAgent Builder creates agents. **Dandori manages them after creation.**
 
-- Register agents from MultiAgent Builder into Dandori's organizational outer harness
+- Register agents from MultiAgent Builder into Dandori's outer harness
 - Set per-agent budgets, skill assignments, lifecycle states (active/paused/retired)
 - Track performance over time across the full agent fleet
 
@@ -260,6 +263,6 @@ No additional AI provider accounts needed — Dandori uses AIPF's existing provi
 
 ---
 
-- [Core Features →]({% link core-features.md %}) The 13 outer-harness capabilities in detail
-- [Use Cases →]({% link use-cases.md %}) Scenarios for CTO, CISO, Platform, Compliance, tech leads
+- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
 - [Architecture →]({% link architecture.md %}) Technical integration surface

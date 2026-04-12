@@ -13,7 +13,7 @@ description: "How Dandori makes each AIPF product more valuable — talking poin
 
 **The short answer:**
 
-> Dandori is not a competitor. It is **the first product that gives your AIPF product an organizational surface**. Wrapping your product with Dandori turns it from "a great technical tool" into "a great technical tool that is org-ready, audited, cost-attributed, and dual-audience." Your adoption goes up. Your perceived value goes up. Your compliance story writes itself.
+> Dandori is not a competitor. It is **the organizational outer harness** that gives your AIPF product the [5 pillars]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness) it's missing: Cost Attribution, Knowledge Flow, Task Tracking, Quality Gates, and Audit & Analytics. Wrapping your product with Dandori turns it from "a great technical tool" into "a great technical tool that is org-ready, audited, cost-attributed, and dual-audience." Your adoption goes up. Your perceived value goes up. Your compliance story writes itself.
 
 ---
 
@@ -26,7 +26,7 @@ Every AIPF product has two kinds of users today:
 
 Each AIPF product team either has to:
 
-- Build its own governance layer (versioning, audit, cost attribution, compliance export, dual-audience dashboards) — *expensive, duplicated across 8 products*
+- Build its own outer harness (context governance, cost attribution, audit, quality gates, compliance export) — *expensive, duplicated across 8 products*
 - Punt the question to "the platform team" — *the platform team doesn't exist in most orgs*
 - Lose the enterprise deal — *because the enterprise can't answer leadership's questions*
 
@@ -36,21 +36,21 @@ Each AIPF product team either has to:
   Without Dandori                       With Dandori
 
   Each AIPF product must                Each AIPF product focuses on
-  build its own governance:             its core execution capability.
-                                        Dandori provides governance
-  ┌──────┐ + 6 governance               for all of them.
-  │ Prod │   features (dup)
+  build its own outer harness:          its core execution capability.
+                                        Dandori provides the 5 pillars
+  ┌──────┐ + 5 pillars (dup)            for all of them.
+  │ Prod │
   └──────┘                              ┌──────────────────────┐
-  ┌──────┐ + 6 governance               │       DANDORI        │
-  │ Prod │   features (dup)             │  governance layer    │
+  ┌──────┐ + 5 pillars (dup)            │       DANDORI        │
+  │ Prod │                              │  outer harness       │
   └──────┘                              │  (one implementation)│
-  ┌──────┐ + 6 governance               └──────────┬───────────┘
-  │ Prod │   features (dup)                        │
+  ┌──────┐ + 5 pillars (dup)            └──────────┬───────────┘
+  │ Prod │                                         │
   └──────┘                              ┌──────────┴───────────┐
   × 8                                   │  all 8 AIPF products │
-  = 48 features to build                │                      │
+  = 40 features to build                │                      │
                                         └──────────────────────┘
-                                        = 6 features to build once
+                                        = 5 pillars, built once
 ```
 
 ---
@@ -68,8 +68,8 @@ Each AIPF product team either has to:
 - No audit log that ties runs to policy violations
 - No way for leadership to see fleet-wide performance
 
-**What Dandori adds on top of Runtime:**
-- **Outer harness at org scale** — 5-layer context, skills, sensors, approval, orchestration
+**What Dandori adds on top of Runtime (the 5 pillars):**
+- **Organizational outer harness** — 5-layer context, skills, sensors, approval, orchestration
 - **Cost attribution down to task level** via adapter telemetry
 - **Quality gates + inline sensors** so agents self-correct before human review
 - **Audit log + compliance export** covering every run
@@ -267,7 +267,7 @@ No. Dandori adds **cross-product dashboards** (cost across Gateway + Runtime, co
 
 ### "What if we want to build this ourselves?"
 
-You can. Each AIPF product would need ~6 governance features (context, skills, hooks, sensors, audit, cost attribution). Multiplied by 8 products, that's 48 features. Dandori is one implementation of those 6, usable by all 8 products, versioned, audited, compliance-ready, with dual-audience dashboards. The build-vs-buy math is heavily in favor of buy.
+You can. Each AIPF product would need to implement the 5 outer harness pillars (cost attribution, knowledge flow, task tracking, quality gates, audit & analytics). Multiplied by 8 products, that's massive duplication. Dandori implements those 5 pillars once, usable by all 8 — versioned, audited, compliance-ready, with dual-audience dashboards. The build-vs-buy math is heavily in favor of buy.
 
 ---
 
@@ -293,5 +293,5 @@ Each AIPF product team gets:
 ## Next steps
 
 - [AIPF Integration →]({% link aipf-integration.md %}) — Full integration architecture (also hidden from nav)
-- [Harness Engineering →]({% link harness-engineering.md %}) — Why Dandori is the outer harness for the entire AIPF stack
-- [Core Features →]({% link core-features.md %}) — The 13 capabilities Dandori adds on top
+- [Outer Harness →]({% link harness-engineering.md %}) — The 5 pillars and why Dandori is the outer harness for AIPF
+- [Core Features →]({% link core-features.md %}) — 13 modules organized under the 5 pillars

@@ -2,7 +2,7 @@
 layout: default
 title: Why Dandori
 nav_order: 2
-description: "The AI agent sprawl problem and how Dandori solves it."
+description: "The AI agent sprawl problem and how Dandori solves it — for engineers and leadership."
 ---
 
 # Why Dandori
@@ -32,15 +32,19 @@ Walk into any CTO's office today and ask:
 
 ### 1. Where is the AI spend going?
 
-The vendor bill comes in at $180K for the month. That's it. Break it down by team? By feature? By project? By which prompt is burning the most? **You can't.**
+The vendor bill comes in at $180K for the month. That's it. Break it down by team? By feature? By project? **You can't.**
 
 Dandori logs every run — agent, task, project, model, input tokens, output tokens, cost — and gives you cross-cutting analytics from day one.
 
+**Pillar:** [Cost Attribution]({% link harness-engineering.md %}#1-cost-attribution)
+
 ### 2. What context did the agent actually see?
 
-An agent just wrote code that violates your security policy. When you ask why, the engineer says *"I forgot to paste the compliance doc into the prompt"*. **Context discipline cannot live in copy-paste culture.**
+An agent wrote code that violates your security policy. The engineer says *"I forgot to paste the compliance doc into the prompt."* **Context discipline cannot live in copy-paste culture.**
 
 Dandori's 5-layer context hierarchy (Company → Project → Team → Agent → Task) means every agent automatically inherits the right context. Update the company policy once — every agent sees it next run. Version controlled, rollback-able, audited.
+
+**Pillar:** [Multi-layer Knowledge Flow]({% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
 
 ### 3. Who approved this?
 
@@ -48,11 +52,15 @@ The agent shipped a migration that broke prod. Who reviewed it? When? Based on w
 
 Dandori has a built-in approval workflow: tasks flagged `needs_approval` stop at **In Review** until a human approves. Every approval (and rejection) is logged with who, when, and why.
 
+**Pillar:** [Task Tracking]({% link harness-engineering.md %}#3-task-tracking)
+
 ### 4. How good is the output?
 
 Your agents are producing code. Is it good? Is it improving or degrading over time? Does Team A's agent produce better code than Team B's? **No one knows.**
 
-Dandori runs quality gates on every run (TypeScript, ESLint, test scanners), computes a quality score, and tracks it over time. Cross-agent comparison table shows you which agents are improving.
+Dandori runs quality gates on every run (TypeScript, ESLint, test scanners), computes a quality score, and tracks it over time. Cross-agent comparison shows which agents are improving.
+
+**Pillar:** [Quality Gates]({% link harness-engineering.md %}#4-quality-gates)
 
 ### 5. What happens when the engineer leaves?
 
@@ -60,60 +68,7 @@ Engineer X built the best prompts on the team. They leave. **Six months of triba
 
 Dandori stores agent instructions, skills, and templates centrally. New engineers inherit the team's proven prompts instantly. Skills are shareable across projects.
 
----
-
-## What Dandori is
-
-**Dandori is an organizational outer harness.**
-
-In 2026 vocabulary: `Agent = Model + Harness`. Everything that isn't the model — system prompts, context, skills, hooks, orchestration, feedback loops — is called the **harness**. Harness engineering is the discipline of designing it.
-
-The harness has two tiers:
-
-- **Inner harness** — built into the coding agent runtime (Claude Code, Codex, Cursor). Sub-agent context firewall, sandbox, tool execution loop, context compaction. These runtimes do it well.
-- **Outer harness** — everything users configure around the runtime. Context files, skills, sensors, approval gates, orchestration, observability. Today this lives on individual laptops.
-
-Today, outer harness engineering is a solo practice: every engineer builds their own CLAUDE.md, their own MCP tools, their own hooks — on their own laptop. When they leave, it walks out the door.
-
-**Dandori is the outer harness at organizational scale.** Shared, versioned, auditable. Same primitives (context, skills, hooks, sensors, orchestration) — but lifted from the laptop to the organization.
-
-**Dandori does not replace the inner harness.** Claude Code, Codex, and Cursor still own the runtime. Dandori talks to them through adapters and lets them do what they do best.
-
-See the full framing in **[Harness Engineering]({% link harness-engineering.md %})**.
-
-In practical terms: **Dandori is the coordination and governance layer between engineering leadership, engineers, and the AI agents your teams already use.** In harness engineering vocabulary, that is the **organizational outer harness**.
-
-```
-   LEADERSHIP                    DANDORI                       AGENTS
-   (governs)                  (manages)                     (execute)
-
-   CTO ─────────┐                                            ┌──── Claude Code
-                ├──▶  set policy  ──▶  inject context  ──▶  ─┤
-   Security ────┤     approve      ◀── quality gates    ◀── ─├──── Codex
-                │     audit        ◀── cost logs        ◀── │
-   Compliance ──┤                                            ├──── Cursor
-                │                                            │
-   Platform ────┘                                            └──── custom
-                                      │
-                                      ▼
-                                 AI Providers
-                          (Anthropic, OpenAI, local)
-```
-
-**The model:** Leadership sets policy through Dandori. Dandori enforces it on every agent run. Agents execute. Dandori records. Leadership learns from data and adjusts policy. Loop.
-
-**Dandori is NOT:**
-
-- A coding agent (it manages Claude/Codex/Cursor — doesn't replace them)
-- A CI/CD replacement (it integrates with yours)
-- Observability-only (it's task + policy + approval + analytics)
-- A vendor lock-in (standard APIs, self-hosted, export anytime)
-
-**Dandori IS:**
-
-- The organizational outer harness between engineers, leadership, and agent execution — versioned, audited, shared
-- Vendor-agnostic (any agent: Claude, Codex, local models, custom)
-- Designed for orgs that need cost control, audit, and governance at scale
+**Pillar:** [Multi-layer Knowledge Flow]({% link harness-engineering.md %}#2-multi-layer-knowledge-flow)
 
 ---
 
@@ -149,71 +104,42 @@ Three concrete shifts every team feels in the first week:
 
 ---
 
-## Who uses Dandori — by role
+## Two audiences, one platform
 
-Before diving into modules, here is who sits in front of the product on any given day.
+Dandori is not a leadership-only dashboard. **It's a daily workspace for engineers *and* a control plane for leadership.** Same database, two lenses.
 
-**For engineers — daily workspace**
+```
+   ENGINEERS                     DANDORI                       LEADERSHIP
+   (workspace)                (shared data)                  (control plane)
 
-| Role | What they do in Dandori | Modules they live in |
-|---|---|---|
-| **Senior / staff engineer** | Publish skills, tune context, review outputs | Skill Library, Context Hub, Approval Review |
-| **Team engineer** | Pick up tasks, run agents, track progress | Task Board (DAGs, phases), Context Hub, Quality Gates |
-| **Tech lead** | Break features into task DAGs, assign agents by skill | Task Board, Skill matching, Dependencies |
+   Author context  ───▶                          ◀─── View cost trends
+   Publish skills  ───▶    ┌──────────────────┐  ◀─── Audit approvals
+   Run agents      ───▶    │  Same database   │  ◀─── Quality analytics
+   Review outputs  ───▶    │  Same audit log  │  ◀─── Compliance export
+   Build task DAGs ───▶    │  Same truth      │  ◀─── Budget ceilings
+                           └──────────────────┘
+```
 
-**For leadership — control plane**
+**For engineers — daily workspace:**
 
-| Role | What they govern | Modules they consume |
-|---|---|---|
-| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions | Cost Attribution, Cross-agent Analytics |
-| **Platform team** | Standards across teams, shared skill library | Company context, Skill Library ownership, Budget ceilings |
-| **CISO** | PII handling, audit exports, incident replay | Audit Log, Context versioning, PII tags |
-| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies | Audit export, Approval records |
-| **Engineering managers** | Team throughput, fair attribution, bottlenecks | Per-team analytics, Approval tracking |
-
----
-
-## Who gets what value — by module
-
-The role view above is *who*. The module view below is *what each module delivers to each side*.
-
-Dandori is not a leadership-only dashboard. **It's a daily workspace for engineers *and* a control plane for leadership.** The same database powers both — so engineers coordinate in the tool that management measures through.
-
-### For engineers (they use it every day)
-
-| Module | Engineer value |
+| Role | What they do in Dandori |
 |---|---|
-| **Context Hub** (5-layer) | Stop copy-pasting policies into prompts. Inherit company + project + team + agent context automatically. Update once, every teammate's agent sees it next run. |
-| **Task Board** (DAGs, phases) | Break a feature into phased tasks (research → design → implement → test), chain dependencies, auto-wake the next agent when the previous finishes. |
-| **Skill Library** (progressive disclosure) | Reuse proven prompts from staff engineers. Lazy-loaded via `fetch_skill` tool — skill manifest in system prompt, content fetched only when agent needs it. Dramatic token savings. |
-| **Quality Gates** | Get TypeScript / lint / test feedback on agent output *before* it hits human review. Fast loop, fewer "wait, this doesn't compile" moments. |
-| **Inline Sensors** | Agents call typecheck / lint / tests / security review mid-run as MCP tools. Self-correct before finishing. Computational + inferential. |
-| **Lifecycle Hooks** | Register custom scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, `on_budget_exceeded`. Sandboxed, versioned, org-wide shareable. |
-| **Approval Review** | Clear "In Review" queue with diff, prompt, context version. Review with full context instead of Slack screenshots. |
-| **Sub-agent trace view** | See the sub-agent tree inside a run. Debug what each sub-agent did, which tools it called, how long it took. |
-| **Self-explanation** | Every agent run ends with "What I did / Why / Risks". Easier handoff between engineers, easier review. |
+| **Senior / staff engineer** | Publish skills, tune context, review outputs |
+| **Team engineer** | Pick up tasks, run agents, track progress |
+| **Tech lead** | Break features into task DAGs, assign agents by skill |
 
-### For leadership (they see through it every week)
+**For leadership — control plane:**
 
-| Module | Leadership value |
+| Role | What they govern |
 |---|---|
-| **Cost Attribution** | Break the vendor bill down by project, team, agent, model, phase, sub-agent. Spot runaway prompts before they're on the invoice. |
-| **Cross-agent Analytics** | Compare agents on cost, quality, success rate. See which ones improve, which degrade. |
-| **Quality Gates (trend view)** | Track quality score per team over time. Catch drift before it ships. |
-| **Audit Log** | Every mutation + every context version + every approval + every hook execution + every sub-agent trace recorded. SOC 2 / ISO 27001 evidence on demand. |
-| **Approval Workflow** | Who approved what, when, with what rationale. No more "Slack said approve." |
-| **MCP Tool Governance** | Per-agent allow-lists, description linting, tool usage analytics. Security team vetoes. |
-| **Compliance Export** | One-click JSON / CSV / PDF pack for auditors. Retention policies per project. |
-| **Budget Ceilings** | Hard stops per agent / team. Spike alerts when something burns 3× its average. |
-
-### Shared modules (both audiences, different lens)
-
-- **Context Hub** — engineers *author and consume*, leadership *versions and audits*.
-- **Skill Library** — engineers *write and reuse*, leadership *owns org knowledge asset*.
-- **Approval Workflow** — engineers *act as reviewers*, leadership *gets the audit trail*.
-- **Quality Gates** — engineers *get per-run feedback*, leadership *gets per-team trends*.
+| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions |
+| **Platform team** | Standards across teams, shared skill library, budget ceilings |
+| **CISO** | PII handling, audit exports, incident replay |
+| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies |
 
 **The principle:** engineers get productivity from the same data that gives leadership governance. No two tools, no reconciliation, no shadow spreadsheets.
+
+For full module-level detail, see **[Core Features]({% link core-features.md %})**.
 
 ---
 
@@ -224,7 +150,7 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 - **Your teams keep:** their favorite agent CLI/IDE — Dandori orchestrates, doesn't replace
 
 ### vs. observability tools (LangSmith, LangFuse)
-- **Dandori is not just observability** — it's the outer harness: context, skills, approval, orchestration *and* observability
+- **Dandori is not just observability** — it's the full outer harness: context, skills, approval, orchestration *and* observability
 - Task board, approval workflows, context hierarchy, skill library: none of that exists in pure observability tools
 
 ### vs. internal platform teams building their own
@@ -244,10 +170,10 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 | Lever | Assumption | Monthly savings |
 |---|---|---|
 | **Cost visibility** | 10% reduction in wasted tokens by identifying bad prompts | $18K (on $180K spend) |
-| **Context reuse** | 30 min/week saved per engineer on prompt management | 125 eng-hours/month × $100 = $12.5K |
-| **Quality gates** | 20% fewer production incidents from agent-generated code | — (your incident cost) |
+| **Context reuse** | 30 min/week saved per engineer on prompt management | 125 eng-hours/month x $100 = $12.5K |
+| **Quality gates** | 20% fewer production incidents from agent-generated code | -- (your incident cost) |
 | **Template library** | 2 hours/onboarded engineer saved (100 new hires/year) | $1.7K/month amortized |
-| **Audit + compliance** | Passes SOC2 AI-usage controls without custom tooling | — (your auditor cost) |
+| **Audit + compliance** | Passes SOC2 AI-usage controls without custom tooling | -- (your auditor cost) |
 
 **Estimated monthly value: $30K+ at 1,000 engineers, scaling linearly.**
 
@@ -259,18 +185,20 @@ Dandori is not a leadership-only dashboard. **It's a daily workspace for enginee
 
 The patterns we saw with:
 
-- **DevOps tools** (2010s): every team built their own, then consolidated to Terraform/K8s
-- **Observability** (2015s): logs scattered everywhere, then consolidated to Datadog/Grafana
-- **Feature flags** (2020s): ad-hoc env vars, then consolidated to LaunchDarkly/Unleash
-
-...will repeat with AI agents. **Dandori is that consolidation layer.**
+| Era | Solo practice | Org platform |
+|---|---|---|
+| 2000s | Ad-hoc shell scripts | **CI/CD platforms** (Jenkins, CircleCI) |
+| 2010s | Logs scattered on servers | **Observability** (Datadog, Grafana) |
+| 2015s | `if env.DEBUG` flags | **Feature flag platforms** (LaunchDarkly) |
+| 2020s | Markdown runbooks | **Incident platforms** (PagerDuty, incident.io) |
+| 2026+ | CLAUDE.md on laptops | **Dandori** — organizational outer harness |
 
 ---
 
 ## Next steps
 
-- [Harness Engineering →]({% link harness-engineering.md %}) The industry concept Dandori implements at org scale
-- [Core Features →]({% link core-features.md %}) The 13 outer-harness capabilities, with diagrams
-- [Use Cases →]({% link use-cases.md %}) Management scenarios for CTO, CISO, Platform, Compliance
+- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
+- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
+- [Use Cases →]({% link use-cases.md %}) 9 leadership + 3 engineer scenarios
 - [Architecture →]({% link architecture.md %}) Technical integration surface
-- [AIPF Integration →]({% link aipf-integration.md %}) How Dandori fits into enterprise AI platforms
+- [Proposed Roadmap →]({% link proposed-roadmap.md %}) Milestone-by-milestone implementation path

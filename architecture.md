@@ -156,16 +156,16 @@ behind a reverse proxy (Caddy/nginx)
 
 ## Module map → harness component → audience
 
-The 13 modules grouped by which outer harness component they implement.
+The 13 modules grouped by the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
 
-| Harness component | Dandori modules | Primary audience |
+| Pillar | Dandori modules | Primary audience |
 |---|---|---|
-| **Guides** (feedforward — context, instructions) | Context Hub, Skill Library | 🤝 Both |
-| **Sensors** (feedback — back-pressure) | Quality Gates, Inline Sensors | 👷 Engineers (with leadership trends) |
-| **Orchestration** (DAGs, handoffs, lifecycle) | Task Board, Approval Workflow, Hooks, Sub-agent Trace | 👷 Engineers (with leadership audit) |
-| **Tool governance** | MCP Tool Governance | 🤝 Both |
-| **Observability** | Cost Attribution, Audit Log, Cross-agent Analytics | 🧭 Leadership |
-| **Integration surface** | Web UI · CLI · REST API · MCP | 👷 Engineers (interface choice) |
+| **1. Cost Attribution** | Cost Attribution & Budget Control | 🧭 Leadership |
+| **2. Knowledge Flow** | Context Hub, Skill Library | 🤝 Both |
+| **3. Task Tracking** | Task Board, Approval Workflow, Lifecycle Hooks | 👷 Engineers (with leadership audit) |
+| **4. Quality Gates** | Quality Gates, Inline Sensors | 🤝 Both |
+| **5. Audit & Analytics** | Audit Log, Cross-agent Analytics, Sub-agent Trace, MCP Tool Governance | 🧭 Leadership |
+| **Foundation** | Integration Surface (Web UI, CLI, REST API, MCP) | 👷 Engineers |
 
 **Detail per module:** see [Modules]({% link architecture-modules.md %}).
 
@@ -303,6 +303,6 @@ This is where Dandori sits **on top** of an existing AIPF stack. See [AIPF Integ
 
 ## Related
 
-- [Core Features →]({% link core-features.md %}) The 13 capabilities expressed as product features
-- [Harness Engineering →]({% link harness-engineering.md %}) Why Dandori is structured this way
+- [Outer Harness →]({% link harness-engineering.md %}) The 5 pillars and two principles behind Dandori
+- [Core Features →]({% link core-features.md %}) 13 modules organized under the 5 pillars
 - [Use Cases →]({% link use-cases.md %}) Scenarios that drive these architectural choices

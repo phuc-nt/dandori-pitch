@@ -39,7 +39,7 @@ Dandori is the **outer harness**. It does not replace the inner harness (the cod
 | Vector store for semantic code search | Runtime or dedicated service |
 | MCP server *host* | MCP Hub — Dandori *governs*, doesn't host |
 
-**Rule of thumb:** if a feature duplicates something Claude Code, Codex, or Cursor already do well, Dandori does not build it. See [Harness Engineering]({% link harness-engineering.md %}#outer-harness-vs-inner-harness) for the full inner-vs-outer framing.
+**Rule of thumb:** if a feature duplicates something Claude Code, Codex, or Cursor already do well, Dandori does not build it. See [Outer Harness]({% link harness-engineering.md %}#inner-vs-outer-harness) for the full inner-vs-outer framing.
 
 ---
 
@@ -267,7 +267,7 @@ Get in touch: [hello@dandori.io](mailto:hello@dandori.io)
 ## Related
 
 - [Why Dandori]({% link why-dandori.md %}) — The case
-- [Harness Engineering]({% link harness-engineering.md %}) — The conceptual framing
-- [Core Features]({% link core-features.md %}) — The 13 modules this roadmap delivers
+- [Outer Harness]({% link harness-engineering.md %}) — The 5 pillars and two principles
+- [Core Features]({% link core-features.md %}) — 13 modules organized under the 5 pillars
 - [Architecture]({% link architecture.md %}) — Technical target this roadmap builds toward
 - [Use Cases]({% link use-cases.md %}) — Scenarios that drive milestone priority

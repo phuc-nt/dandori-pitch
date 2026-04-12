@@ -11,48 +11,48 @@ description: "Index of all 13 Dandori modules. Each module has its own page with
 
 Each of the 13 Dandori modules has its own detail page. This page is the index — pick a module to read.
 
-Modules are grouped by **harness component** (per Fowler / HumanLayer / LangChain framing).
+Modules are grouped by the **[5 pillars of Outer Harness]({% link harness-engineering.md %}#the-5-pillars-of-outer-harness)**.
 
 ---
 
-## 1. Guides — context, prompts, instructions
+## Pillar 1 — Cost Attribution
+
+| Module | What it does |
+|---|---|
+| [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) | Per-project / team / agent / task / model / phase / sub-agent cost breakdown + budget ceilings |
+
+## Pillar 2 — Multi-layer Knowledge Flow
 
 | Module | What it does |
 |---|---|
 | [Context Hub]({% link architecture-modules-context-hub.md %}) | 5-layer context inheritance (Company → Project → Team → Agent → Task), versioned, diff + rollback |
 | [Skill Library]({% link architecture-modules-skill-library.md %}) | Reusable prompt knowledge with progressive disclosure (lazy load via `fetch_skill` MCP tool) |
 
-## 2. Sensors — back-pressure feedback
-
-| Module | What it does |
-|---|---|
-| [Quality Gates]({% link architecture-modules-quality-gates.md %}) | Post-run computational sensors: typecheck, lint, tests → quality score + per-team trend |
-| [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) | Mid-run sensors agents call as MCP tools to self-correct before finishing |
-
-## 3. Orchestration — DAGs, lifecycles, handoffs
+## Pillar 3 — Task Tracking
 
 | Module | What it does |
 |---|---|
 | [Task Board]({% link architecture-modules-task-board.md %}) | Tasks with phases, dependencies (DAG), auto-wakeup, skill matching |
 | [Approval Workflow]({% link architecture-modules-approval-workflow.md %}) | Human review gates with audit trail and Slack interactive approvals |
 | [Lifecycle Hooks]({% link architecture-modules-lifecycle-hooks.md %}) | Pluggable scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, etc. |
-| [Sub-agent Trace]({% link architecture-modules-sub-agent-trace.md %}) | Observe (not spawn) sub-agents inside runtime runs for audit + cost roll-up |
 
-## 4. Tool governance
-
-| Module | What it does |
-|---|---|
-| [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) | Org-wide allow-list, description versioning, fleet usage analytics for MCP tools |
-
-## 5. Observability — measurement and audit
+## Pillar 4 — Quality Gates
 
 | Module | What it does |
 |---|---|
-| [Cost Attribution]({% link architecture-modules-cost-attribution.md %}) | Per-project / team / agent / task / model / phase / sub-agent cost breakdown |
+| [Quality Gates]({% link architecture-modules-quality-gates.md %}) | Post-run computational sensors: typecheck, lint, tests → quality score + per-team trend |
+| [Inline Sensors]({% link architecture-modules-inline-sensors.md %}) | Mid-run sensors agents call as MCP tools to self-correct before finishing |
+
+## Pillar 5 — Audit & Analytics
+
+| Module | What it does |
+|---|---|
 | [Audit Log]({% link architecture-modules-audit-log.md %}) | Immutable record of every mutation, with optional hash chain for tamper-evidence |
 | [Cross-agent Analytics]({% link architecture-modules-cross-agent-analytics.md %}) | Compare agents across teams, detect drift, support evaluations |
+| [Sub-agent Trace]({% link architecture-modules-sub-agent-trace.md %}) | Observe (not spawn) sub-agents inside runtime runs for audit + cost roll-up |
+| [MCP Tool Governance]({% link architecture-modules-mcp-tool-governance.md %}) | Org-wide allow-list, description versioning, fleet usage analytics for MCP tools |
 
-## 6. Integration surface
+## Foundation — Integration Surface
 
 | Module | What it does |
 |---|---|
@@ -103,7 +103,7 @@ For engineers planning implementation, here is the dependency graph and earliest
 - **M2 and M3 each have 2-3 parallel tracks** — ideal for 2-3 devs working in parallel.
 - **M5 is gated by the built-in MCP server** — once that's live, 4 modules unblock simultaneously.
 - **Stop at any milestone** — M3 (end of dual-audience MVP) is a natural full-stop for a team pilot.
-- **Scope-creep guard:** see [Non-goals]({% link proposed-roadmap.md %}#what-we-will-not-build) before expanding any module.
+- **Scope-creep guard:** see [Non-goals]({% link proposed-roadmap.md %}#scope-boundaries--what-dandori-will-not-build) before expanding any module.
 
 ---
 
