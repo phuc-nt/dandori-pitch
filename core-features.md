@@ -124,13 +124,24 @@ How people actually use Dandori — the scenarios, not the feature lists.
 Opens Cost Attribution dashboard. Drills from total spend → top project → top agent by cost-to-quality ratio. Spots an outlier burning far above baseline at low quality. Action: investigate the outlier, shift low-complexity work to a cheaper model. **Minutes, not meetings.** Before Dandori: "we'll ask the teams" → spreadsheet next week.
 
 ```mermaid
-flowchart LR
-    Total["$240K total"] --> ByProj[Breakdown by project]
-    ByProj --> ByAgent[Breakdown by agent]
-    ByAgent --> Ratio[Cost / quality ratio]
-    Ratio --> Outlier[Flag outlier]
-    Outlier --> Action1[Shift to cheaper model]
-    Outlier --> Action2[Set budget ceiling]
+sequenceDiagram
+    actor CFO
+    participant UI as Web UI
+    participant CA as Cost Attribution
+    participant XA as Cross-agent Analytics
+    participant BC as Budget Control
+
+    CFO->>UI: open dashboard
+    UI->>CA: aggregate by project / team / agent
+    CA-->>UI: cost breakdown
+    UI->>XA: compute cost / quality ratio
+    XA-->>UI: ranked agents (outlier flagged)
+    CFO->>UI: drill into outlier
+    UI->>CA: per-run detail
+    CA-->>UI: run records
+    CFO->>UI: set budget ceiling
+    UI->>BC: update ceiling
+    BC-->>UI: active (hard stop next run)
 ```
 
 ### Platform lead: 8 teams, one standard
@@ -138,17 +149,22 @@ flowchart LR
 Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates: `security-review`, `perf-analysis`, `api-design`. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
 
 ```mermaid
-flowchart TB
-    L1["Layer 1: Company<br/>(security, libs, style)"] --> T1[Team 1]
-    L1 --> T2[Team 2]
-    L1 --> T8[Team 8]
-    SL[Shared Skill Library<br/>+ Agent Templates] --> T1
-    SL --> T2
-    SL --> T8
-    T1 --> A[Cross-team analytics]
-    T2 --> A
-    T8 --> A
-    A --> Insight[Best practices +<br/>outlier alerts]
+sequenceDiagram
+    actor PL as Platform Lead
+    participant CH as Context Hub
+    participant SL as Skill Library
+    participant AT as Agent Templates
+    participant Agents as Team agents (×8)
+    participant XA as Cross-agent Analytics
+
+    PL->>CH: write Layer 1 (security / libs / style)
+    CH-->>Agents: auto-inherit on next run
+    PL->>SL: publish shared skills
+    PL->>AT: publish code-reviewer template
+    SL-->>Agents: available via fetch_skill
+    AT-->>Agents: available for cloning
+    Agents->>XA: emit run + quality + cost events
+    XA-->>PL: best practices + outlier alerts
 ```
 
 ### CISO: "Show me PII-touching runs in Q1"
@@ -157,20 +173,20 @@ Queries audit log: runs where context contained PII-tagged layers, date range Q1
 
 ```mermaid
 sequenceDiagram
-    participant CISO
+    actor CISO
     participant UI as Web UI
     participant AL as Audit Log
     participant CH as Context Hub
-    participant Exp as Export
+    participant Exp as Compliance Export
 
     CISO->>UI: filter: PII tag + Q1 date
-    UI->>AL: query runs
-    AL->>CH: resolve context versions
-    CH-->>AL: layer snapshots per run
-    AL-->>UI: result set
+    UI->>AL: query runs matching filter
+    AL-->>UI: run IDs + context version snapshots
+    UI->>CH: resolve each version used
+    CH-->>UI: layer bodies per run
     CISO->>UI: one-click export
-    UI->>Exp: generate SOC 2 pack
-    Exp-->>CISO: JSON / CSV / PDF
+    UI->>Exp: build evidence pack
+    Exp-->>CISO: JSON / CSV / SOC 2 PDF
 ```
 
 ### Engineering Director: quality trending
@@ -178,12 +194,23 @@ sequenceDiagram
 Dashboard shows company quality trend + per-team breakdown. One team is drifting downward. Drill down: specific agent's score dropped — root cause: outdated skill version. Action: Platform team updates the skill, change propagates to every attached agent.
 
 ```mermaid
-flowchart LR
-    Dash[Quality dashboard<br/>82 → 87 company avg] --> Team[Team drifting down<br/>81 → 76]
-    Team --> Agent[Agent score<br/>64 → 48]
-    Agent --> Root[Root cause:<br/>outdated skill v3]
-    Root --> Fix[Platform updates<br/>skill to v4]
-    Fix --> Prop[All attached agents<br/>auto pick up v4]
+sequenceDiagram
+    actor Dir as Director
+    participant UI as Web UI
+    participant XA as Cross-agent Analytics
+    participant QG as Quality Gates
+    participant SL as Skill Library
+    participant Agents as Attached agents
+
+    Dir->>UI: view quality trends
+    UI->>XA: company + per-team scores
+    XA-->>Dir: team drifting down
+    Dir->>UI: drill to agent
+    UI->>QG: per-run scores
+    QG-->>Dir: root cause: skill v3 outdated
+    Dir->>SL: request update
+    SL->>SL: publish v4
+    SL-->>Agents: auto-propagate v4 on next fetch
 ```
 
 ### Compliance: SOC 2 audit prep
@@ -191,18 +218,22 @@ flowchart LR
 One-click evidence pack: access control, change management, audit trail, data classification, policy enforcement, incident traceability. All the controls an auditor asks about, already logged. Before Dandori: a custom tooling project.
 
 ```mermaid
-flowchart LR
-    Req[Auditor requests<br/>evidence] --> UI[Compliance UI]
-    UI --> Col[Collector]
-    Col --> AC[Access control logs]
-    Col --> CM[Change management<br/>approvals + versions]
-    Col --> Aud[Audit events]
-    Col --> Class[PII classifications]
-    AC --> Pack[Evidence pack]
-    CM --> Pack
-    Aud --> Pack
-    Class --> Pack
-    Pack --> Out[PDF / JSON / CSV]
+sequenceDiagram
+    actor Comp as Compliance
+    participant UI as Web UI
+    participant AL as Audit Log
+    participant AW as Approval Workflow
+    participant CH as Context Hub
+    participant Exp as Compliance Export
+
+    Comp->>UI: generate SOC 2 pack
+    UI->>AL: access control + audit events
+    AL-->>Exp: log stream
+    UI->>AW: approval records
+    AW-->>Exp: approval trail
+    UI->>CH: policy versions + PII tags
+    CH-->>Exp: classification snapshots
+    Exp-->>Comp: PDF / JSON / CSV evidence pack
 ```
 
 ---
@@ -211,16 +242,29 @@ flowchart LR
 
 ### Tech lead: multi-phase feature with 4 agents
 
-Builds a DAG in Task Board. Each task auto-wakes when its parent completes. Each agent inherits company + project + team context + upstream outputs. Quality gates block downstream tasks if a gate fails. **No Slack dispatching, no copy-paste handoffs.**
+Builds a DAG (research → design → implement → test → deploy). Each task auto-wakes when its parent completes. Each agent inherits company + project + team context + upstream outputs. Quality gates block downstream tasks if a gate fails. **No Slack dispatching, no copy-paste handoffs.**
 
 ```mermaid
-flowchart LR
-    T1[T1 research<br/>stripe spec] --> T2[T2 design<br/>db schema]
-    T2 --> T3[T3 implement<br/>handler]
-    T3 --> T4[T4 write<br/>tests]
-    T4 --> T5[T5 deploy<br/>staging]
-    T3 -.gate fail.-> T3
-    T4 -.gate fail.-> T4
+sequenceDiagram
+    actor TL as Tech Lead
+    participant TB as Task Board
+    participant CH as Context Hub
+    participant AD as Adapter
+    participant RT as Runtime (Claude Code)
+    participant QG as Quality Gates
+
+    TL->>TB: create DAG (T1 → T2 → T3 → T4 → T5)
+    TB->>CH: assemble context for T1
+    CH-->>TB: 5-layer prompt
+    TB->>AD: run T1
+    AD->>RT: spawn agent
+    RT-->>AD: output
+    AD->>QG: post-run gates
+    QG-->>TB: score passes
+    TB->>TB: auto-wake T2
+    TB->>CH: assemble for T2 (+ T1 output)
+    CH-->>TB: prompt with upstream
+    Note over TB,QG: repeat T2 → T5;<br/>gate fail blocks downstream
 ```
 
 ### Senior engineer: publishing a team skill
@@ -228,17 +272,22 @@ flowchart LR
 Creates skill `go-microservice-review` v1 with review checklist. Attaches to agents across 2 teams. When skill updates to v2 → all attached agents pick it up automatically. New teammate's agent inherits day 1. **Knowledge stays with the org, not the individual.**
 
 ```mermaid
-flowchart LR
-    Eng[Senior engineer] --> Pub[Publish skill v1]
-    Pub --> Lib[Skill Library]
-    Lib --> A1[Agent A<br/>team payments]
-    Lib --> A2[Agent B<br/>team auth]
-    Lib --> A3[Agent C<br/>team data]
-    Eng --> V2[Update to v2]
-    V2 --> Lib
-    Lib -.auto-propagate.-> A1
-    Lib -.auto-propagate.-> A2
-    Lib -.auto-propagate.-> A3
+sequenceDiagram
+    actor SE as Senior Eng
+    participant SL as Skill Library
+    participant A1 as Agent (team A)
+    participant A2 as Agent (team B)
+    participant MCP as MCP fetch_skill
+
+    SE->>SL: publish go-microservice-review v1
+    SE->>SL: attach to A1 + A2
+    A1->>MCP: fetch_skill(go-microservice-review)
+    MCP->>SL: resolve latest version
+    SL-->>A1: v1 body
+    SE->>SL: update to v2
+    A2->>MCP: fetch_skill(go-microservice-review)
+    MCP->>SL: resolve latest
+    SL-->>A2: v2 body (auto)
 ```
 
 ### Team engineer: forking an agent template
@@ -246,13 +295,22 @@ flowchart LR
 Clones the Platform team's `code-reviewer` template. Customizes it with team-specific context (style guide, service boundaries). Uses it for daily reviews. Two months later, shares the customized variant back for other teams to adopt.
 
 ```mermaid
-flowchart LR
-    TPL["Platform template:<br/>code-reviewer v1"] --> Clone[Team clones]
-    Clone --> Cust[Add team context<br/>+ overrides]
-    Cust --> Use[Daily use]
-    Use --> Var["Team improves<br/>→ variant v1.1"]
-    Var --> Back[Promote back<br/>as alternative template]
-    Back --> Cat[Template catalog]
+sequenceDiagram
+    actor TE as Team Engineer
+    participant AT as Agent Templates
+    participant SL as Skill Library
+    participant CH as Context Hub
+    participant Inst as Agent instance
+
+    TE->>AT: clone code-reviewer template
+    AT->>SL: resolve referenced skills
+    SL-->>AT: skill set
+    AT->>CH: bind team context layer
+    CH-->>AT: team + project layers
+    AT-->>Inst: instantiate agent
+    Note over TE,Inst: daily use (weeks)
+    TE->>AT: promote variant as alt template
+    AT->>AT: publish new template version
 ```
 
 ### Mid-level engineer: picking up an in-review task
@@ -260,40 +318,51 @@ flowchart LR
 Opens Task Board → task in "In Review". Sees: full prompt sent to agent, assembled context versions (company v12, project v3, team v7), agent output with self-explanation ("What I did / Why / Risks"), quality gate results. **Full reproducible state — reviews without pinging anyone.**
 
 ```mermaid
-flowchart TB
-    Task["Task T-4812<br/>(In Review)"] --> Prompt[Full prompt sent]
-    Task --> Ctx["Context versions:<br/>company v12, project v3, team v7"]
-    Task --> Out[Agent output +<br/>self-explanation]
-    Task --> Gate["Quality gates:<br/>typecheck ✓ · lint ⚠ · tests ✓"]
-    Prompt --> Rev[Engineer reviews]
-    Ctx --> Rev
-    Out --> Rev
-    Gate --> Rev
-    Rev --> Dec[Approve or reject]
+sequenceDiagram
+    actor Eng as Engineer
+    participant TB as Task Board
+    participant CH as Context Hub
+    participant QG as Quality Gates
+    participant AW as Approval Workflow
+
+    Eng->>TB: open task T-4812 (IN_REVIEW)
+    TB->>CH: resolve context versions used
+    CH-->>TB: 5-layer snapshot
+    TB->>QG: fetch gate results
+    QG-->>TB: typecheck ✓ · lint ⚠ · tests ✓
+    TB->>AW: approval status
+    AW-->>TB: waiting
+    TB-->>Eng: full reproducible view
+    Eng->>AW: approve + rationale
+    AW->>TB: move to DONE
 ```
 
 ### Agent during a run: self-correcting via sensors
 
-Mid-run, agent calls `run_typecheck`. Gets errors back. Fixes them. Calls `run_lint` — 1 warning, fixes. Finishes run. Quality gate confirms. **Self-correction before human review, not after.**
+Mid-run, agent calls `run_typecheck` via MCP. Gets errors back. Fixes them. Calls `run_lint` — 1 warning, fixes. Finishes run. Quality gate confirms. **Self-correction before human review, not after.**
 
 ```mermaid
 sequenceDiagram
-    participant Agent
-    participant MCP as Sensor MCP
-    participant QG as Quality Gate
+    participant Agent as Agent runtime
+    participant MCP as Integration Surface MCP
+    participant IS as Inline Sensors
+    participant QG as Quality Gates
 
-    Agent->>MCP: run_typecheck
-    MCP-->>Agent: 3 errors
+    Agent->>MCP: tool call: run_typecheck
+    MCP->>IS: execute sensor
+    IS-->>Agent: 3 errors
     Agent->>Agent: fix errors
     Agent->>MCP: run_typecheck
-    MCP-->>Agent: ✓ clean
+    MCP->>IS: execute
+    IS-->>Agent: ✓ clean
     Agent->>MCP: run_lint
-    MCP-->>Agent: 1 warning
+    MCP->>IS: execute
+    IS-->>Agent: 1 warning
     Agent->>Agent: fix warning
     Agent->>MCP: run_lint
-    MCP-->>Agent: ✓ clean
+    IS-->>Agent: ✓ clean
     Agent->>QG: finalize run
-    QG-->>Agent: score 91 ✓
+    QG-->>Agent: score 91, forward to review
 ```
 
 ---
