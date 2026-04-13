@@ -123,21 +123,87 @@ How people actually use Dandori — the scenarios, not the feature lists.
 
 Opens Cost Attribution dashboard. Drills from total spend → top project → top agent by cost-to-quality ratio. Spots an outlier burning far above baseline at low quality. Action: investigate the outlier, shift low-complexity work to a cheaper model. **Minutes, not meetings.** Before Dandori: "we'll ask the teams" → spreadsheet next week.
 
+```mermaid
+flowchart LR
+    Total["$240K total"] --> ByProj[Breakdown by project]
+    ByProj --> ByAgent[Breakdown by agent]
+    ByAgent --> Ratio[Cost / quality ratio]
+    Ratio --> Outlier[Flag outlier]
+    Outlier --> Action1[Shift to cheaper model]
+    Outlier --> Action2[Set budget ceiling]
+```
+
 ### Platform lead: 8 teams, one standard
 
 Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates: `security-review`, `perf-analysis`, `api-design`. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
+
+```mermaid
+flowchart TB
+    L1["Layer 1: Company<br/>(security, libs, style)"] --> T1[Team 1]
+    L1 --> T2[Team 2]
+    L1 --> T8[Team 8]
+    SL[Shared Skill Library<br/>+ Agent Templates] --> T1
+    SL --> T2
+    SL --> T8
+    T1 --> A[Cross-team analytics]
+    T2 --> A
+    T8 --> A
+    A --> Insight[Best practices +<br/>outlier alerts]
+```
 
 ### CISO: "Show me PII-touching runs in Q1"
 
 Queries audit log: runs where context contained PII-tagged layers, date range Q1. Result set with full context versions per run. One-click compliance export (JSON / CSV / SOC 2 format).
 
+```mermaid
+sequenceDiagram
+    participant CISO
+    participant UI as Web UI
+    participant AL as Audit Log
+    participant CH as Context Hub
+    participant Exp as Export
+
+    CISO->>UI: filter: PII tag + Q1 date
+    UI->>AL: query runs
+    AL->>CH: resolve context versions
+    CH-->>AL: layer snapshots per run
+    AL-->>UI: result set
+    CISO->>UI: one-click export
+    UI->>Exp: generate SOC 2 pack
+    Exp-->>CISO: JSON / CSV / PDF
+```
+
 ### Engineering Director: quality trending
 
 Dashboard shows company quality trend + per-team breakdown. One team is drifting downward. Drill down: specific agent's score dropped — root cause: outdated skill version. Action: Platform team updates the skill, change propagates to every attached agent.
 
+```mermaid
+flowchart LR
+    Dash[Quality dashboard<br/>82 → 87 company avg] --> Team[Team drifting down<br/>81 → 76]
+    Team --> Agent[Agent score<br/>64 → 48]
+    Agent --> Root[Root cause:<br/>outdated skill v3]
+    Root --> Fix[Platform updates<br/>skill to v4]
+    Fix --> Prop[All attached agents<br/>auto pick up v4]
+```
+
 ### Compliance: SOC 2 audit prep
 
 One-click evidence pack: access control, change management, audit trail, data classification, policy enforcement, incident traceability. All the controls an auditor asks about, already logged. Before Dandori: a custom tooling project.
+
+```mermaid
+flowchart LR
+    Req[Auditor requests<br/>evidence] --> UI[Compliance UI]
+    UI --> Col[Collector]
+    Col --> AC[Access control logs]
+    Col --> CM[Change management<br/>approvals + versions]
+    Col --> Aud[Audit events]
+    Col --> Class[PII classifications]
+    AC --> Pack[Evidence pack]
+    CM --> Pack
+    Aud --> Pack
+    Class --> Pack
+    Pack --> Out[PDF / JSON / CSV]
+```
 
 ---
 
@@ -145,37 +211,90 @@ One-click evidence pack: access control, change management, audit trail, data cl
 
 ### Tech lead: multi-phase feature with 4 agents
 
-Builds a DAG in Task Board:
+Builds a DAG in Task Board. Each task auto-wakes when its parent completes. Each agent inherits company + project + team context + upstream outputs. Quality gates block downstream tasks if a gate fails. **No Slack dispatching, no copy-paste handoffs.**
 
+```mermaid
+flowchart LR
+    T1[T1 research<br/>stripe spec] --> T2[T2 design<br/>db schema]
+    T2 --> T3[T3 implement<br/>handler]
+    T3 --> T4[T4 write<br/>tests]
+    T4 --> T5[T5 deploy<br/>staging]
+    T3 -.gate fail.-> T3
+    T4 -.gate fail.-> T4
 ```
-T-1 research-stripe-spec [research]
-      ▼
-T-2 design-db-schema [design]
-      ▼
-T-3 implement-handler [implement]
-      ▼
-T-4 write-tests [test]
-      ▼
-T-5 deploy-staging [deploy]
-```
-
-Each task auto-wakes when parent completes. Each agent inherits company + project + team context + upstream outputs. Quality gates block downstream tasks if a gate fails. **No Slack dispatching, no copy-paste handoffs.**
 
 ### Senior engineer: publishing a team skill
 
 Creates skill `go-microservice-review` v1 with review checklist. Attaches to agents across 2 teams. When skill updates to v2 → all attached agents pick it up automatically. New teammate's agent inherits day 1. **Knowledge stays with the org, not the individual.**
 
+```mermaid
+flowchart LR
+    Eng[Senior engineer] --> Pub[Publish skill v1]
+    Pub --> Lib[Skill Library]
+    Lib --> A1[Agent A<br/>team payments]
+    Lib --> A2[Agent B<br/>team auth]
+    Lib --> A3[Agent C<br/>team data]
+    Eng --> V2[Update to v2]
+    V2 --> Lib
+    Lib -.auto-propagate.-> A1
+    Lib -.auto-propagate.-> A2
+    Lib -.auto-propagate.-> A3
+```
+
 ### Team engineer: forking an agent template
 
-Clones the Platform team's `code-reviewer` template. Customizes it with team-specific context (our style guide, our service boundaries). Uses it for daily reviews. Two months later, shares the customized version back as a template variant for other teams to adopt.
+Clones the Platform team's `code-reviewer` template. Customizes it with team-specific context (style guide, service boundaries). Uses it for daily reviews. Two months later, shares the customized variant back for other teams to adopt.
+
+```mermaid
+flowchart LR
+    TPL["Platform template:<br/>code-reviewer v1"] --> Clone[Team clones]
+    Clone --> Cust[Add team context<br/>+ overrides]
+    Cust --> Use[Daily use]
+    Use --> Var["Team improves<br/>→ variant v1.1"]
+    Var --> Back[Promote back<br/>as alternative template]
+    Back --> Cat[Template catalog]
+```
 
 ### Mid-level engineer: picking up an in-review task
 
-Opens Task Board → task in "In Review". Sees: full prompt sent to agent, assembled context versions (company v12, project v3, team v7), agent output with self-explanation ("What I did / Why / Risks"), quality gate results (typecheck pass, lint warning, tests pass). **Full reproducible state — reviews without pinging anyone.**
+Opens Task Board → task in "In Review". Sees: full prompt sent to agent, assembled context versions (company v12, project v3, team v7), agent output with self-explanation ("What I did / Why / Risks"), quality gate results. **Full reproducible state — reviews without pinging anyone.**
+
+```mermaid
+flowchart TB
+    Task["Task T-4812<br/>(In Review)"] --> Prompt[Full prompt sent]
+    Task --> Ctx["Context versions:<br/>company v12, project v3, team v7"]
+    Task --> Out[Agent output +<br/>self-explanation]
+    Task --> Gate["Quality gates:<br/>typecheck ✓ · lint ⚠ · tests ✓"]
+    Prompt --> Rev[Engineer reviews]
+    Ctx --> Rev
+    Out --> Rev
+    Gate --> Rev
+    Rev --> Dec[Approve or reject]
+```
 
 ### Agent during a run: self-correcting via sensors
 
 Mid-run, agent calls `run_typecheck`. Gets errors back. Fixes them. Calls `run_lint` — 1 warning, fixes. Finishes run. Quality gate confirms. **Self-correction before human review, not after.**
+
+```mermaid
+sequenceDiagram
+    participant Agent
+    participant MCP as Sensor MCP
+    participant QG as Quality Gate
+
+    Agent->>MCP: run_typecheck
+    MCP-->>Agent: 3 errors
+    Agent->>Agent: fix errors
+    Agent->>MCP: run_typecheck
+    MCP-->>Agent: ✓ clean
+    Agent->>MCP: run_lint
+    MCP-->>Agent: 1 warning
+    Agent->>Agent: fix warning
+    Agent->>MCP: run_lint
+    MCP-->>Agent: ✓ clean
+    Agent->>QG: finalize run
+    QG-->>Agent: score 91 ✓
+```
 
 ---
 
