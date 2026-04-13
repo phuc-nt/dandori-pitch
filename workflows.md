@@ -2,20 +2,20 @@
 layout: default
 title: Workflows
 nav_order: 4
-description: "How the 13 Dandori features get used — leadership and engineer scenarios with component interaction diagrams."
+description: "8 iconic scenarios showing how Dandori features interact in real leadership and engineer workflows."
 ---
 
 # Workflows
 
-How the features from [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) actually get used. Each scenario is a sequence diagram showing which Dandori components interact in a real workflow.
+How the features from [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) actually get used. **8 iconic scenarios** — each a sequence diagram showing which Dandori components interact in a real workflow. Together they cover all 5 pillars and both directions of knowledge flow.
 
 ---
 
 ## Leadership scenarios
 
-### CFO: "Where did the AI bill go?"
+### 1. CFO: "Where did the AI bill go?"
 
-Opens Cost Attribution dashboard. Drills from total spend → top project → top agent by cost-to-quality ratio. Spots an outlier burning far above baseline at low quality. Action: investigate the outlier, shift low-complexity work to a cheaper model. **Minutes, not meetings.** Before Dandori: "we'll ask the teams" → spreadsheet next week.
+Opens Cost Attribution dashboard. Drills from total spend → top project → top agent by cost-to-quality ratio. Spots an outlier burning far above baseline at low quality. Action: investigate, shift low-complexity work to a cheaper model, set a budget ceiling. **Minutes, not meetings.**
 
 ```mermaid
 sequenceDiagram
@@ -38,9 +38,9 @@ sequenceDiagram
     BC-->>UI: active (hard stop next run)
 ```
 
-### Platform VP: morning fleet check
+### 2. Platform VP: morning fleet check
 
-Opens Fleet Operations Dashboard at stand-up. Sees live view: 23 agents active across 6 teams, total burn rate $4.2/min, owner mapping per agent. One agent flagged red — duration 40 min vs usual 12. Drills in: stuck on a dependency loop. Action: ping the owning team in Slack.
+Opens Fleet Operations Dashboard at stand-up. Live view: 23 agents active across 6 teams, total burn rate $4.2/min, owner mapping per agent. One agent flagged red — duration 40 min vs usual 12. Drills in: stuck on a dependency loop. Action: ping the owning team in Slack.
 
 ```mermaid
 sequenceDiagram
@@ -62,9 +62,9 @@ sequenceDiagram
     TB-->>VP: 40min duration, stuck on dep loop
 ```
 
-### Platform lead: 8 teams, one standard
+### 3. Platform lead: rolling out one standard to 8 teams
 
-Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
+Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates: `security-review`, `perf-analysis`, `api-design`. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
 
 ```mermaid
 sequenceDiagram
@@ -85,80 +85,36 @@ sequenceDiagram
     XA-->>PL: best practices + outlier alerts
 ```
 
-### CISO: "Show me PII-touching runs in Q1"
+### 4. Compliance: audit query and evidence export
 
-Queries audit log: runs where context contained PII-tagged layers, date range Q1. Result set with full context versions per run. One-click compliance export (JSON / CSV / SOC 2 format).
-
-```mermaid
-sequenceDiagram
-    actor CISO
-    participant UI as Web UI
-    participant AL as Audit Log
-    participant CH as Context Hub
-    participant Exp as Compliance Export
-
-    CISO->>UI: filter: PII tag + Q1 date
-    UI->>AL: query runs matching filter
-    AL-->>UI: run IDs + context version snapshots
-    UI->>CH: resolve each version used
-    CH-->>UI: layer bodies per run
-    CISO->>UI: one-click export
-    UI->>Exp: build evidence pack
-    Exp-->>CISO: JSON / CSV / SOC 2 PDF
-```
-
-### Engineering Director: quality trending
-
-Dashboard shows company quality trend + per-team breakdown. One team is drifting downward. Drill down: specific agent's score dropped — root cause: outdated skill version. Action: Platform team updates the skill, change propagates to every attached agent.
+Compliance/CISO queries the audit log — either ad-hoc ("show me all PII-touching runs in Q1") or scheduled (quarterly SOC 2 pack). Audit Log joins with Approval Workflow, Context Hub (to resolve versions), and any PII classifications. One click exports a JSON / CSV / SOC 2 pack. **Every controls question an auditor asks — already logged, nothing to backfill.**
 
 ```mermaid
 sequenceDiagram
-    actor Dir as Director
-    participant UI as Web UI
-    participant XA as Cross-agent Analytics
-    participant QG as Quality Gates
-    participant SL as Skill Library
-    participant Agents as Attached agents
-
-    Dir->>UI: view quality trends
-    UI->>XA: company + per-team scores
-    XA-->>Dir: team drifting down
-    Dir->>UI: drill to agent
-    UI->>QG: per-run scores
-    QG-->>Dir: root cause: skill v3 outdated
-    Dir->>SL: request update
-    SL->>SL: publish v4
-    SL-->>Agents: auto-propagate v4 on next fetch
-```
-
-### Compliance: SOC 2 audit prep
-
-One-click evidence pack: access control, change management, audit trail, data classification, policy enforcement, incident traceability. All the controls an auditor asks about, already logged. Before Dandori: a custom tooling project.
-
-```mermaid
-sequenceDiagram
-    actor Comp as Compliance
+    actor Comp as Compliance / CISO
     participant UI as Web UI
     participant AL as Audit Log
     participant AW as Approval Workflow
     participant CH as Context Hub
     participant Exp as Compliance Export
 
-    Comp->>UI: generate SOC 2 pack
-    UI->>AL: access control + audit events
-    AL-->>Exp: log stream
-    UI->>AW: approval records
-    AW-->>Exp: approval trail
-    UI->>CH: policy versions + PII tags
-    CH-->>Exp: classification snapshots
-    Exp-->>Comp: PDF / JSON / CSV evidence pack
+    Comp->>UI: filter (ad-hoc or scheduled)
+    UI->>AL: query runs + mutations matching filter
+    AL-->>UI: run IDs + context versions + mutations
+    UI->>AW: approval records on matching runs
+    AW-->>UI: approval trail
+    UI->>CH: resolve versions + PII tags
+    CH-->>UI: layer snapshots + classifications
+    Comp->>UI: one-click export
+    UI->>Exp: build evidence pack
+    Exp-->>Comp: JSON / CSV / SOC 2 PDF
 ```
 
 ---
 
 ## Engineer scenarios
 
-### Tech lead: multi-phase feature with 4 agents
+### 5. Tech lead: multi-phase feature with 5 agents
 
 Builds a DAG (research → design → implement → test → deploy). Each task auto-wakes when its parent completes. Each agent inherits company + project + team context + upstream outputs. Quality gates block downstream tasks if a gate fails. **No Slack dispatching, no copy-paste handoffs.**
 
@@ -185,9 +141,9 @@ sequenceDiagram
     Note over TB,QG: repeat T2 through T5, gate fail blocks downstream
 ```
 
-### Senior engineer: publishing a team skill
+### 6. Senior engineer: publishing a team skill (bottom-up knowledge flow)
 
-Creates skill `go-microservice-review` v1 with review checklist. Attaches to agents across 2 teams. When skill updates to v2 → all attached agents pick it up automatically. New teammate's agent inherits day 1. **Knowledge stays with the org, not the individual.**
+Creates skill `go-microservice-review` v1 with review checklist. Attaches to agents across 2 teams. When skill updates to v2 → all attached agents pick it up automatically via `fetch_skill` (progressive disclosure — full body fetched only when needed). **Knowledge stays with the org, not the individual.**
 
 ```mermaid
 sequenceDiagram
@@ -208,30 +164,7 @@ sequenceDiagram
     SL-->>A2: v2 body (auto)
 ```
 
-### Team engineer: forking an agent template
-
-Clones the Platform team's `code-reviewer` template. Customizes it with team-specific context (style guide, service boundaries). Uses it for daily reviews. Two months later, shares the customized variant back for other teams to adopt.
-
-```mermaid
-sequenceDiagram
-    actor TE as Team Engineer
-    participant AT as Agent Templates
-    participant SL as Skill Library
-    participant CH as Context Hub
-    participant Inst as Agent instance
-
-    TE->>AT: clone code-reviewer template
-    AT->>SL: resolve referenced skills
-    SL-->>AT: skill set
-    AT->>CH: bind team context layer
-    CH-->>AT: team + project layers
-    AT-->>Inst: instantiate agent
-    Note over TE,Inst: daily use (weeks)
-    TE->>AT: promote variant as alt template
-    AT->>AT: publish new template version
-```
-
-### Release manager: agent regression check before rollout
+### 7. Release manager: regression check before rollout
 
 Before rolling out a new Company context version, release manager triggers the Evaluation Suite against the golden task set. Runs 50 golden tasks × 3 agents with the new context pinned. Compares scores vs baseline. If any agent regresses more than 5 points, block the rollout and investigate.
 
@@ -256,31 +189,7 @@ sequenceDiagram
     RM->>UI: hold release, investigate
 ```
 
-### Mid-level engineer: picking up an in-review task
-
-Opens Task Board → task in "In Review". Sees: full prompt sent to agent, assembled context versions (company v12, project v3, team v7), agent output with self-explanation ("What I did / Why / Risks"), quality gate results. **Full reproducible state — reviews without pinging anyone.**
-
-```mermaid
-sequenceDiagram
-    actor Eng as Engineer
-    participant TB as Task Board
-    participant CH as Context Hub
-    participant QG as Quality Gates
-    participant AW as Approval Workflow
-
-    Eng->>TB: open task T-4812 (IN_REVIEW)
-    TB->>CH: resolve context versions used
-    CH-->>TB: 5-layer snapshot
-    TB->>QG: fetch gate results
-    QG-->>TB: typecheck ✓ · lint ⚠ · tests ✓
-    TB->>AW: approval status
-    AW-->>TB: waiting
-    TB-->>Eng: full reproducible view
-    Eng->>AW: approve + rationale
-    AW->>TB: move to DONE
-```
-
-### Agent during a run: self-correcting via sensors
+### 8. Agent during a run: self-correcting via sensors
 
 Mid-run, agent calls `run_typecheck` via MCP. Gets errors back. Fixes them. Calls `run_lint` — 1 warning, fixes. Finishes run. Quality gate confirms. **Self-correction before human review, not after.**
 
@@ -312,7 +221,7 @@ sequenceDiagram
 
 ## The common pattern
 
-Across all 10 scenarios, the shape is the same: **engineers work inside Dandori, leaders see through Dandori** — pulling from the same database, trusting the same audit trail, acting on the same data.
+Across all 8 scenarios, the shape is the same: **engineers work inside Dandori, leaders see through Dandori** — pulling from the same database, trusting the same audit trail, acting on the same data.
 
 - Policies propagate automatically (no copy-paste)
 - Every decision backed by data (no gut feel)
@@ -323,5 +232,5 @@ Across all 10 scenarios, the shape is the same: **engineers work inside Dandori,
 
 ## Read next
 
-[Architecture →]({{ site.baseurl }}{% link architecture.md %}) How these components are wired together technically — tech stack, adapter layer, ecosystem integrations, deployment
+[Architecture →]({{ site.baseurl }}{% link architecture.md %}) How these components are wired together technically — tech stack, adapter layer, infrastructure primitives, deployment
 {: .fs-5 }
