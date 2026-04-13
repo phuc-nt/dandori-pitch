@@ -74,30 +74,30 @@ Tasks with phase tags (research → design → implement → test → deploy). D
 **6. Approval workflows** 🤝
 Tasks flagged `needs_approval` stop at In Review until a human approves. Every approval/rejection: who, when, rationale. Slack interactive approvals for in-channel review. Exportable for compliance.
 
-**7. Lifecycle hooks** 👷
-Pluggable sandboxed scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, `on_budget_exceeded`. Versioned, auditable, org-wide or per-project. Platform can mandate hooks (e.g., "all payment runs must log PII check").
-
 ### Pillar 4 — Quality Gates
 
-**8. Automated quality gates** 🤝
+**7. Automated quality gates** 🤝
 Post-run pipeline independent of the agent: typecheck, lint, security scan, coverage. Quality score per run. Trend analytics per agent, team, phase, and time window.
 
-**9. Inline sensors** 👷
+**8. Inline sensors** 👷
 Mid-run sensors exposed as MCP tools. Agent calls `run_typecheck` or `run_lint` during execution and self-corrects before finishing. Computational sensors (typecheck, lint — milliseconds) and inferential sensors (LLM-powered security review — slower, deeper).
+
+**9. Evaluation suite** 🤝
+Golden task sets per agent role ("10 code reviews that should always pass"). Run automated eval on schedule, on PR, or manually before releases. Compare scores vs baseline; block rollouts that regress. Detects drift when a context, skill, or model update degrades agent performance — complements per-run Quality Gates with cross-run benchmarking.
 
 ### Pillar 5 — Audit & Analytics
 
-**10. Immutable audit log** 🧭
+**10. Fleet operations dashboard** 🤝
+Real-time view of the agent fleet: which agents are running right now, on what task, for which team, at what cost rate. Active counts rolled up by team, project, and org. Owner mapping — who maintains each agent. Per-human activity — who kicked off what this week. Per-team throughput and backlog. Hierarchical drilldown: org → team → project → agent → run. The single pane of glass for "what's my fleet doing right now?"
+
+**11. Immutable audit log** 🧭
 Every mutation logged: actor, timestamp, entity, before/after. Append-only at DB level. Optional hash chain for tamper-evidence. Exportable JSON/CSV. Compliance-ready: SOC 2, ISO 27001, NIST AI RMF.
 
-**11. Cross-agent analytics** 🧭
-Per-agent KPIs: success rate, quality score, cost per run, duration. Trend detection (improving vs degrading). Phase breakdown. Model comparison on matched tasks.
+**12. Cross-agent analytics** 🧭
+Per-agent KPIs: success rate, quality score, cost per run, duration. Trend detection (improving vs degrading). Phase breakdown. Model comparison on matched tasks. Sub-agent cost rollup — observe (not spawn) sub-agents inside runtime runs and attribute their cost to the parent task.
 
-**12. Sub-agent trace** 🤝
-Observe (not spawn) sub-agents inside runtime runs. Cost rolls up: sub-agent → parent run → task → project. Expandable tree view. Policies: max depth, tool restrictions per sub-agent.
-
-**13. MCP tool governance** 🤝
-Org-wide MCP server registry. Per-agent and per-team allow-lists. Description versioning + linting. Usage analytics: which tools burn the most context fleet-wide. Security team veto for restricted tools.
+**13. Tool governance** 🤝
+Org-wide registry of MCP servers and other tool providers. Per-agent and per-team allow-lists. Description versioning + linting. Usage analytics: which tools burn the most context fleet-wide. Security team veto for restricted tools.
 
 ### Foundation — Integration Surface
 

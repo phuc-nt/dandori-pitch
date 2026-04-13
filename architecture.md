@@ -25,17 +25,21 @@ This page is the technical counterpart to [Dandori Overview]({{ site.baseurl }}{
 │                          DANDORI                                │
 │                                                                 │
 │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────────┐│
-│  │Context Hub │ │ Task Board │ │Skill Lib   │ │ Quality Gates││
-│  │ (5 layers) │ │(DAGs+phase)│ │(progressive)│ │ + Sensors    ││
+│  │Context Hub │ │Skill Library│ │  Agent     │ │  Task Board  ││
+│  │ (5 layers) │ │(progressive)│ │ Templates  │ │ (DAGs+phase) ││
 │  └────────────┘ └────────────┘ └────────────┘ └──────────────┘│
 │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────────┐│
-│  │ Approval   │ │  Hooks     │ │ MCP Tool   │ │  Sub-agent   ││
-│  │ Workflow   │ │(lifecycle) │ │ Governance │ │    Trace     ││
+│  │ Approval   │ │  Quality   │ │  Inline    │ │  Evaluation  ││
+│  │ Workflow   │ │   Gates    │ │  Sensors   │ │    Suite     ││
 │  └────────────┘ └────────────┘ └────────────┘ └──────────────┘│
-│  ┌────────────┐ ┌────────────┐ ┌──────────────────────────────┐│
-│  │    Cost    │ │   Audit    │ │  Cross-agent Analytics      ││
-│  │Attribution │ │    Log     │ │                              ││
-│  └────────────┘ └────────────┘ └──────────────────────────────┘│
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────────┐│
+│  │  Fleet Ops │ │    Cost    │ │   Audit    │ │ Cross-agent  ││
+│  │  Dashboard │ │Attribution │ │    Log     │ │  Analytics   ││
+│  └────────────┘ └────────────┘ └────────────┘ └──────────────┘│
+│  ┌────────────┐                                                │
+│  │   Tool     │                                                │
+│  │ Governance │                                                │
+│  └────────────┘                                                │
 │                                                                 │
 │            ┌─────────────────────────────────┐                  │
 │            │  Adapter layer (outer ↔ inner)  │                  │
@@ -95,6 +99,19 @@ The boundary between outer and inner harness. Dandori assembles the outer harnes
 ```
 
 Each adapter (Claude Code, Codex, Copilot, custom) implements one interface: accept assembled prompt, return run record with tokens/cost/output/exit code.
+
+---
+
+## Infrastructure primitives
+
+Beyond the 13 user-facing features, Dandori ships infrastructure primitives that everything above runs on. Engineers extending Dandori's behavior plug in here; they are not features end users configure directly.
+
+| Primitive | Purpose |
+|---|---|
+| **Lifecycle hooks** | Sandboxed scripts that fire at `before_context_assembly`, `before_run`, `after_run`, `on_error`, `on_budget_exceeded`, `on_approval_request`. Used internally by Quality Gates, PII scanners, budget enforcement, and custom org policies. Versioned, auditable, org-wide or per-project. |
+| **Audit middleware** | Every write passes through before committing. Powers the Audit Log feature. Append-only at DB level, optional hash chain. |
+| **Adapter layer** | Boundary between Dandori (outer harness) and coding agent runtimes (inner harness). One adapter per runtime. |
+| **MCP server (built-in)** | Exposes Dandori operations (context, skills, sensors, task ops) as MCP tools so agents can talk to Dandori from inside the runtime. |
 
 ---
 

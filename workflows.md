@@ -38,6 +38,30 @@ sequenceDiagram
     BC-->>UI: active (hard stop next run)
 ```
 
+### Platform VP: morning fleet check
+
+Opens Fleet Operations Dashboard at stand-up. Sees live view: 23 agents active across 6 teams, total burn rate $4.2/min, owner mapping per agent. One agent flagged red — duration 40 min vs usual 12. Drills in: stuck on a dependency loop. Action: ping the owning team in Slack.
+
+```mermaid
+sequenceDiagram
+    actor VP as Platform VP
+    participant UI as Web UI
+    participant FO as Fleet Ops Dashboard
+    participant TB as Task Board
+    participant CA as Cost Attribution
+
+    VP->>UI: open fleet dashboard
+    UI->>FO: query active agents NOW
+    FO->>TB: in-flight tasks + owners
+    FO->>CA: current cost rate
+    TB-->>FO: 23 active across 6 teams
+    CA-->>FO: $4.2/min total
+    FO-->>VP: live snapshot + anomaly flag
+    VP->>UI: drill into flagged agent
+    UI->>TB: run history + dependency graph
+    TB-->>VP: 40min duration, stuck on dep loop
+```
+
 ### Platform lead: 8 teams, one standard
 
 Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
@@ -205,6 +229,31 @@ sequenceDiagram
     Note over TE,Inst: daily use (weeks)
     TE->>AT: promote variant as alt template
     AT->>AT: publish new template version
+```
+
+### Release manager: agent regression check before rollout
+
+Before rolling out a new Company context version, release manager triggers the Evaluation Suite against the golden task set. Runs 50 golden tasks × 3 agents with the new context pinned. Compares scores vs baseline. If any agent regresses more than 5 points, block the rollout and investigate.
+
+```mermaid
+sequenceDiagram
+    actor RM as Release Manager
+    participant UI as Web UI
+    participant ES as Evaluation Suite
+    participant CH as Context Hub
+    participant Agents as Target agents
+    participant XA as Cross-agent Analytics
+
+    RM->>UI: trigger eval with context v12
+    UI->>ES: run golden task set
+    ES->>CH: pin context v12
+    ES->>Agents: execute 50 tasks × 3 agents
+    Agents-->>ES: outputs + gate scores
+    ES->>XA: compare vs baseline
+    XA-->>ES: Agent A: 91 (+2 ✓)
+    XA-->>ES: Agent B: 88 (-7 ⚠ block)
+    ES-->>RM: rollout blocked by Agent B regression
+    RM->>UI: hold release, investigate
 ```
 
 ### Mid-level engineer: picking up an in-review task
