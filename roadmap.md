@@ -33,7 +33,7 @@ Dandori is the outer harness. It does **not** build:
 | F1 | Service layer + REST API + Web UI + auth | 1 sprint | Everything surfaces through it |
 | F2 | Audit Log + middleware | ½ sprint | Retrofitting compliance later is painful |
 | F3 | Task Board CRUD (no DAG yet) | 1 sprint | Root entity for runs, cost, approval |
-| F4 | Adapter layer (Claude Code + run record) | 1 sprint | Without runs, nothing has data |
+| F4 | Adapter layer + lifecycle event emission (Claude Code + run record) | 1 sprint | Without runs, nothing has data; lifecycle hooks later plug into these events |
 
 **End state:** create task → spawn Claude Code → see output + cost in Web UI. Audit log records every mutation.
 
@@ -45,22 +45,24 @@ Dandori is the outer harness. It does **not** build:
 
 **M1 — Single-task MVP** (2 sprints): F3 + F4. Create task → agent runs → run record stored. Foundation complete.
 
-**M2 — Context + Skills** (2 sprints, parallelizable):
+**M2 — Knowledge Flow** (2 sprints, parallelizable):
 - Track A: Context Hub (5-layer assembly + versioning)
 - Track B: Skill Library (basic, no progressive disclosure)
+- Track C: Agent Templates (clone / customize / promote)
 
-**M3 — Dual-audience value** (2 sprints, parallelizable):
-- Track A: Quality Gates + Cross-agent Analytics
+**M3 — Dual-audience value** (2-3 sprints, parallelizable):
+- Track A: Quality Gates + Cross-agent Analytics (+ sub-agent rollup)
 - Track B: Approval Workflow + Slack approvals
 - Track C: Cost Attribution dashboard
+- Track D: Fleet Operations Dashboard
 
 *End of MVP. Both engineers and leadership get real value.*
 
-**M4 — Advanced orchestration** (2 sprints): Task DAG + auto-wakeup + phases. Sub-agent Trace. Codex adapter.
+**M4 — Advanced orchestration + evaluation** (2-3 sprints): Task DAG + auto-wakeup + phases. Codex adapter. Evaluation Suite (golden task sets + regression detection).
 
-**M5 — MCP + advanced modules** (3-4 sprints, parallelizable): Built-in MCP server (pre-req), then: Inline Sensors, MCP Tool Governance, Skill progressive disclosure, Lifecycle Hooks.
+**M5 — MCP + platform primitives** (3-4 sprints, parallelizable): Built-in MCP server (pre-req), then: Inline Sensors, Tool Governance, Skill progressive disclosure, user-configurable Lifecycle Hooks (promote F4's infrastructure emission into org-wide, versioned hooks).
 
-*Full outer harness. 13 modules.*
+*Full outer harness. 13 user-facing features.*
 
 **M6 — Ecosystem integrations** (2-3 sprints): Jira, Confluence, GitHub Enterprise, Copilot MCP registration. (Google Drive + Slack already in M3.)
 

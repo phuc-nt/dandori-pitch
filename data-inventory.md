@@ -24,10 +24,10 @@ For enterprise security, compliance, and data-governance teams evaluating Dandor
 | 7 | Approval records | DB (append-only) | Low | Restricted |
 | 8 | Audit log events | DB (append-only) | Low | Restricted |
 | 9 | Cost / billing records | DB | None | Low |
-| 10 | Hook execution records | DB (append-only) | Variable | Medium |
-| 11 | MCP tool metadata + usage | DB | None | Low |
-| 12 | Quality gate results | DB | Low | Low |
-| 13 | Sub-agent traces | DB | Low | Match parent |
+| 10 | Lifecycle hook execution records | DB (append-only) | Variable | Medium |
+| 11 | Tool metadata + usage (MCP + others) | DB | None | Low |
+| 12 | Quality gate + evaluation results | DB | Low | Low |
+| 13 | Sub-agent run traces (rollup of run records) | DB | Low | Match parent |
 | 14 | Imported context (Confluence, Drive, GitHub) | DB | **Inherits source** | **Inherits source** |
 | 15 | Integration credentials | Sealed secrets | None | **Secret** |
 | 16 | Session tokens | DB (hashed) | Low | Restricted |
@@ -44,7 +44,7 @@ For enterprise security, compliance, and data-governance teams evaluating Dandor
 | Model weights | Provider-side only |
 | Source code repositories | GitHub / local filesystem |
 | Customer production data | Production DBs — Dandori only sees what engineers paste into context |
-| MCP tool call arguments/results | Runtime invokes directly — Dandori logs metadata only |
+| Tool call arguments/results | Runtime invokes tools directly — Dandori logs metadata only |
 
 ---
 
@@ -52,7 +52,7 @@ For enterprise security, compliance, and data-governance teams evaluating Dandor
 
 - **Append-only tables** for audit log, approvals, hook executions (UPDATE/DELETE blocked at DB level)
 - **Optional hash chain** on audit log for tamper-evidence
-- **Version control** on all configurable entities (context, skills, hooks, MCP descriptions) with diff + rollback
+- **Version control** on all configurable entities (context, skills, agent templates, hooks, tool descriptions) with diff + rollback
 - **PII tags** per context layer; agents need explicit permission for PII-tagged layers
 - **Secret scanner** warns before committing context matching known secret patterns
 - **Run records immutable** after creation; export requires admin + produces audit event
