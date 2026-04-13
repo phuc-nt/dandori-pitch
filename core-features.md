@@ -250,21 +250,21 @@ sequenceDiagram
     participant TB as Task Board
     participant CH as Context Hub
     participant AD as Adapter
-    participant RT as Runtime (Claude Code)
+    participant RT as Runtime
     participant QG as Quality Gates
 
-    TL->>TB: create DAG (T1 → T2 → T3 → T4 → T5)
+    TL->>TB: create DAG T1 to T5
     TB->>CH: assemble context for T1
     CH-->>TB: 5-layer prompt
     TB->>AD: run T1
-    AD->>RT: spawn agent
+    AD->>RT: spawn Claude Code agent
     RT-->>AD: output
     AD->>QG: post-run gates
     QG-->>TB: score passes
     TB->>TB: auto-wake T2
-    TB->>CH: assemble for T2 (+ T1 output)
+    TB->>CH: assemble for T2 with T1 output
     CH-->>TB: prompt with upstream
-    Note over TB,QG: repeat T2 → T5;<br/>gate fail blocks downstream
+    Note over TB,QG: repeat T2 through T5, gate fail blocks downstream
 ```
 
 ### Senior engineer: publishing a team skill
