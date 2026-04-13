@@ -1,14 +1,13 @@
 ---
 layout: default
 title: Architecture
-nav_order: 6
-has_children: true
+nav_order: 5
 description: "Technical architecture: system overview, tech stack, adapter layer, ecosystem integrations, deployment topologies."
 ---
 
 # Architecture
 
-How Dandori works technically — designed so **any team can pilot it** using tools they already have.
+This page is the technical counterpart to [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) and [Workflows]({{ site.baseurl }}{% link workflows.md %}). It shows **how the 13 features are wired together** — tech stack, system diagram, adapter layer, ecosystem integrations, and deployment topologies. Designed so any team can pilot it using tools they already have.
 
 ---
 
@@ -176,15 +175,6 @@ Every mutation → immutable audit log. Every run → full prompt + context vers
 | Hooks | Sandboxed subprocess + timeout | + container isolation |
 
 Dandori never holds AI provider credentials — runtimes do.
-
----
-
-## Module specs
-
-Per-module basic design pages (hidden from main nav — deep reads for implementers):
-
-[Module Specs →]({{ site.baseurl }}{% link modules/index.md %}) 14 modules, one page each — where it sits, dependencies, workflow, interfaces
-{: .fs-5 }
 
 ---
 

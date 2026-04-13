@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Sub-agent Trace
-parent: Architecture
-nav_order: 13
+nav_exclude: true
+search_exclude: true
 description: "Observe (not spawn) sub-agents inside runtime runs for audit + cost rollup."
 ---
 

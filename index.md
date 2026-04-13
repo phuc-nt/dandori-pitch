@@ -12,8 +12,8 @@ permalink: /
 The organizational outer harness for AI coding agents.
 {: .fs-6 .fw-300 }
 
-[Solution Overview]({{ site.baseurl }}{% link solution-overview.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Features & Workflows]({{ site.baseurl }}{% link core-features.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Workflows]({{ site.baseurl }}{% link workflows.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -44,9 +44,9 @@ Two principles: **process-centric** (human and agent follow the same pipeline) Â
 | Page | What you'll find |
 |---|---|
 | [Outer Harness]({{ site.baseurl }}{% link outer-harness.md %}) | The concept: inner vs outer, 5 pillars, two principles |
-| [Solution Overview]({{ site.baseurl }}{% link solution-overview.md %}) | What Dandori is, who it's for, before/after, differentiators |
-| [Features & Workflows]({{ site.baseurl }}{% link core-features.md %}) | 13 modules under the 5 pillars, plus real scenarios |
-| [Architecture]({{ site.baseurl }}{% link architecture.md %}) | Tech stack, system diagram, deployment |
+| [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) | What Dandori is + the 13 features under the 5 pillars + differentiators |
+| [Workflows]({{ site.baseurl }}{% link workflows.md %}) | 10 leadership + engineer scenarios with component interaction diagrams |
+| [Architecture]({{ site.baseurl }}{% link architecture.md %}) | Tech stack, system diagram, adapter layer, deployment |
 | [Roadmap]({{ site.baseurl }}{% link roadmap.md %}) | Milestones from team pilot to full vision |
 | [Data Inventory]({{ site.baseurl }}{% link data-inventory.md %}) | What data Dandori touches â€” for security review |
 

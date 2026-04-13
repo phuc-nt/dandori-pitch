@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Approval Workflow
-parent: Architecture
-nav_order: 7
+nav_exclude: true
+search_exclude: true
 description: "Human approval gates with audit trail and Slack interactive approvals."
 ---
 

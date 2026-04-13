@@ -198,5 +198,5 @@ The inner/outer distinction and 5-pillar framework are the author's original fra
 
 ## Read next
 
-[Solution Overview →]({{ site.baseurl }}{% link solution-overview.md %}) How Dandori turns this concept into a product
+[Dandori Overview →]({{ site.baseurl }}{% link dandori-overview.md %}) How Dandori turns this concept into a product — 13 features across the 5 pillars
 {: .fs-5 }

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Module Specs
-parent: Architecture
-nav_order: 1
+nav_exclude: true
+search_exclude: true
 description: "Index of all 14 Dandori module specs."
 ---
 

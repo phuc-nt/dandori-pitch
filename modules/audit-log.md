@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Audit Log
-parent: Architecture
-nav_order: 11
+nav_exclude: true
+search_exclude: true
 description: "Append-only immutable log of every mutation with optional hash chain."
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Agent Templates
-parent: Architecture
-nav_order: 5
+nav_exclude: true
+search_exclude: true
 description: "Versioned agent definitions — role, skills, sensors, tools — cloneable across teams."
 ---
 

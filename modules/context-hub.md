@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Context Hub
-parent: Architecture
-nav_order: 3
+nav_exclude: true
+search_exclude: true
 description: "5-layer versioned context hierarchy assembled into every prompt."
 ---
 

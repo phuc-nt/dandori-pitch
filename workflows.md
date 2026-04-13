@@ -1,121 +1,15 @@
 ---
 layout: default
-title: Features & Workflows
+title: Workflows
 nav_order: 4
-description: "13 modules under the 5 pillars, plus the workflows they enable for engineers and leadership."
----
-
-# Features & Workflows
-
-13 modules implementing the [5 pillars]({{ site.baseurl }}{% link outer-harness.md %}#the-5-pillars), followed by how people actually use them.
-
-Each module tagged by audience: 👷 Engineers · 🧭 Leadership · 🤝 Both.
-
----
-
-## Pillar 1 — Cost Attribution
-
-### 1. Cost attribution & budget control 🧭
-
-Log every run: agent, task, project, model, input/output tokens, cost. Breakdown by any dimension. Budget ceilings per agent with hard stop. Spike detection alerts when an agent burns far above its baseline.
-
----
-
-## Pillar 2 — Multi-layer Knowledge Flow
-
-Knowledge is more than prompts. Three asset types flow through the same 5-layer hierarchy — all distributable top-down and contributable bottom-up.
-
-### 2. Five-layer context governance 🤝
-
-Context hierarchy: Company → Project → Team → Agent → Task. Each layer has an owner. Update once at the top → every agent inherits. Version-controlled with diff, rollback, and PII tags. Every run records which context versions it used.
-
-### 3. Shared skill library 👷
-
-Reusable prompt knowledge as versioned markdown. Attach any skill to any agent (many-to-many). **Progressive disclosure**: only skill name + description in system prompt; full content lazy-loaded via `fetch_skill` MCP tool when the agent needs it. Dramatic token savings across the fleet.
-
-### 4. Agent templates 🤝
-
-Pre-configured agent definitions — role, skill references, default instructions, sensor chain, MCP tool allow-list. Clone and customize. The Platform team publishes "code reviewer", "migration runner", "incident responder" templates. Any team instantiates them with their own project context. Versioned; template updates propagate to instances that opt in.
-
-**How the 3 assets flow:**
-
-```
-                  TOP-DOWN DISTRIBUTION
-                  ────────────────────▶
-    Company ─── Project ─── Team ─── Agent ─── Task
-    ◀────────────────────
-                  BOTTOM-UP CONTRIBUTION
-
-  Context  :  CTO sets policies  ·  Engineer contributes task learnings
-  Skills   :  Platform publishes  ·  Engineer crafts prompt → promote
-  Templates:  Platform publishes  ·  Team forks + shares successful variant
-```
-
-Same pattern, same governance, same versioning — applied to all three knowledge asset types.
-
----
-
-## Pillar 3 — Task Tracking
-
-### 5. Task dependencies & phase workflow 👷
-
-Tasks with phase tags (research → design → implement → test → deploy). DAG dependencies with cycle prevention. Auto-wakeup: dependent tasks start when parents complete. Portfolio views by phase across projects.
-
-### 6. Approval workflows 🤝
-
-Tasks flagged `needs_approval` stop at In Review until a human approves. Every approval/rejection: who, when, rationale. Exportable for compliance. Slack interactive approvals for in-channel review.
-
-### 7. Lifecycle hooks 👷
-
-Pluggable scripts at `before_context_assembly`, `before_run`, `after_run`, `on_error`, `on_budget_exceeded`. Sandboxed with timeout. Versioned, auditable, org-wide or per-project. Platform team can mandate hooks (e.g., "all payment runs must log PII check").
-
----
-
-## Pillar 4 — Quality Gates
-
-### 8. Automated quality gates 🤝
-
-Post-run pipeline independent of agent: typecheck, lint, security scan, coverage check. Quality score per run. Trend analytics per agent, per team, over time. Cross-agent comparison: which agents improve, which degrade.
-
-**Why Outer needs this even though Inner has TDD:** Separation of Duties. The writer of code should not be the only judge. The agent can comment-out a test to pass faster — Outer gates catch that.
-
-### 9. Inline sensors 👷
-
-Mid-run sensors exposed as MCP tools. Agent calls `run_typecheck` or `run_lint` during execution and self-corrects before finishing. Computational sensors (typecheck, lint — ms) and inferential sensors (AI-powered security review — slower but deeper). Org-wide sensor definitions.
-
----
-
-## Pillar 5 — Audit & Analytics
-
-### 10. Immutable audit log 🧭
-
-Every mutation logged: actor, timestamp, entity, before/after. Append-only at DB level. Optional hash chain for tamper-evidence. Exportable as JSON/CSV. Compliance-ready: SOC 2, ISO 27001, NIST AI RMF.
-
-### 11. Cross-agent analytics 🧭
-
-Per-agent KPIs: success rate, quality score, cost per run, duration. Trend detection (improving vs degrading). Phase breakdown (which phase burns most). Model comparison on matched tasks.
-
-### 12. Sub-agent trace 🤝
-
-Observe (not spawn) sub-agents inside runtime runs. Cost rolls up: sub-agent → parent run → task → project. Expandable tree view in UI. Policies: max depth, tool restrictions per sub-agent.
-
-### 13. MCP tool governance 🤝
-
-Org-wide MCP server registry. Per-agent and per-team allow-lists. Description versioning + linting (flag bloated descriptions). Usage analytics: which tools burn the most context fleet-wide. Security team veto for restricted tools.
-
----
-
-## Foundation
-
-### Unified integration surface 👷
-
-Web UI, REST API (OpenAPI 3.0), CLI, built-in MCP server. Same operations on every interface. CI/CD via webhooks. Claude Code talks to Dandori via MCP from inside the IDE.
-
+description: "How the 13 Dandori features get used — leadership and engineer scenarios with component interaction diagrams."
 ---
 
 # Workflows
 
-How people actually use Dandori — the scenarios, not the feature lists.
+How the features from [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) actually get used. Each scenario is a sequence diagram showing which Dandori components interact in a real workflow.
+
+---
 
 ## Leadership scenarios
 
@@ -146,7 +40,7 @@ sequenceDiagram
 
 ### Platform lead: 8 teams, one standard
 
-Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates: `security-review`, `perf-analysis`, `api-design`. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
+Sets Company context (Layer 1): security rules, approved libraries, style guide. Publishes shared skills and agent templates. All 8 teams inherit automatically; each still owns its project + team context. Cross-team analytics spot best practices and flag outliers.
 
 ```mermaid
 sequenceDiagram
@@ -367,25 +261,18 @@ sequenceDiagram
 
 ---
 
-## The pattern
+## The common pattern
 
-```
-  Engineers work INSIDE Dandori     Leaders see THROUGH Dandori
-         │                                   │
-         ▼                                   ▼
-  ┌──────────────────────────────────────────────────┐
-  │            Same database, same truth             │
-  │                                                    │
-  │  Policies propagate automatically                  │
-  │  Every decision backed by data                     │
-  │  Incidents become learnings                        │
-  │  Knowledge stays with the org                      │
-  └──────────────────────────────────────────────────┘
-```
+Across all 10 scenarios, the shape is the same: **engineers work inside Dandori, leaders see through Dandori** — pulling from the same database, trusting the same audit trail, acting on the same data.
+
+- Policies propagate automatically (no copy-paste)
+- Every decision backed by data (no gut feel)
+- Incidents become learnings (full reproducibility)
+- Knowledge stays with the org (not the individual)
 
 ---
 
 ## Read next
 
-[Architecture →]({{ site.baseurl }}{% link architecture.md %}) How the modules connect technically
+[Architecture →]({{ site.baseurl }}{% link architecture.md %}) How these components are wired together technically — tech stack, adapter layer, ecosystem integrations, deployment
 {: .fs-5 }

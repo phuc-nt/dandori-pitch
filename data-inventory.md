@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data Inventory
-nav_order: 8
+nav_order: 7
 description: "What data Dandori collects, stores, and processes — for security and compliance review."
 ---
 

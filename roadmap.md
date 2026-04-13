@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Roadmap
-nav_order: 7
+nav_order: 6
 description: "Milestone-by-milestone path from team pilot to full organizational outer harness."
 ---
 

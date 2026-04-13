@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Integration Surface
-parent: Architecture
-nav_order: 15
+nav_exclude: true
+search_exclude: true
 description: "Web UI, REST API, CLI, MCP server, webhook ingress — same operations, multiple interfaces."
 ---
 

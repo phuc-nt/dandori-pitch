@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Cost Attribution
-parent: Architecture
-nav_order: 2
+nav_exclude: true
+search_exclude: true
 description: "Per-run cost logging + breakdown + budget ceilings."
 ---
 

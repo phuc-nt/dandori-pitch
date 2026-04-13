@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Skill Library
-parent: Architecture
-nav_order: 4
+nav_exclude: true
+search_exclude: true
 description: "Versioned reusable prompt knowledge with progressive disclosure."
 ---
 
