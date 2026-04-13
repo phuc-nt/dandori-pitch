@@ -1,8 +1,8 @@
 ---
 layout: default
 title: MCP Tool Governance
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 14
 description: "Org-wide MCP registry, allow-lists, description versioning, fleet usage analytics."
 ---
 

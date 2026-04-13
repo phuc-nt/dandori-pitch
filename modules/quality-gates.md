@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Quality Gates
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 9
 description: "Post-run independent quality pipeline with trend analytics."
 ---
 

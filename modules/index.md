@@ -1,16 +1,14 @@
 ---
 layout: default
 title: Module Specs
-nav_exclude: true
-search_exclude: true
-description: "Hidden index of per-module basic design pages."
+parent: Architecture
+nav_order: 1
+description: "Index of all 14 Dandori module specs."
 ---
 
 # Module Specs
 
-Basic design for each of Dandori's 14 modules. Hidden from main nav — linked from [Architecture]({{ site.baseurl }}{% link architecture.md %}) for deep reads.
-
-Each module page follows the same shape: **where it sits · depends on · workflow · interfaces**. No code, no schemas — just enough to understand the boundary and wire it up.
+Basic design for each of Dandori's 14 modules. Each page follows the same shape: **where it sits · depends on · workflow · interfaces**. No code, no schemas — just enough to understand the boundary and wire it up.
 
 ---
 

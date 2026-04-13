@@ -2,6 +2,7 @@
 layout: default
 title: Architecture
 nav_order: 6
+has_children: true
 description: "Technical architecture: system overview, tech stack, adapter layer, ecosystem integrations, deployment topologies."
 ---
 

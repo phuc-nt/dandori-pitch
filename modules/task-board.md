@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Task Board
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 6
 description: "Tasks with phases, DAG dependencies, auto-wakeup, skill matching."
 ---
 

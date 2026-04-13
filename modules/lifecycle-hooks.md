@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Lifecycle Hooks
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 8
 description: "Pluggable scripts at lifecycle points around every run."
 ---
 

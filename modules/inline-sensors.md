@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Inline Sensors
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 10
 description: "Mid-run sensors exposed as MCP tools for agent self-correction."
 ---
 

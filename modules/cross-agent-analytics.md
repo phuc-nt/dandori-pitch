@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Cross-agent Analytics
-nav_exclude: true
-search_exclude: true
+parent: Architecture
+nav_order: 12
 description: "Agent and team KPI comparison, trend detection, model evaluation."
 ---
 
