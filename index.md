@@ -45,7 +45,7 @@ Two principles: **process-centric** (human and agent follow the same pipeline) Â
 |---|---|
 | [Outer Harness]({{ site.baseurl }}{% link outer-harness.md %}) | The concept: inner vs outer, 5 pillars, two principles |
 | [Dandori Overview]({{ site.baseurl }}{% link dandori-overview.md %}) | What Dandori is + the 13 features under the 5 pillars + differentiators |
-| [Workflows]({{ site.baseurl }}{% link workflows.md %}) | 10 leadership + engineer scenarios with component interaction diagrams |
+| [Workflows]({{ site.baseurl }}{% link workflows.md %}) | 8 iconic scenarios (4 leadership + 4 engineer) with sequence diagrams showing component interactions |
 | [Architecture]({{ site.baseurl }}{% link architecture.md %}) | Tech stack, system diagram, adapter layer, deployment |
 | [Roadmap]({{ site.baseurl }}{% link roadmap.md %}) | Milestones from team pilot to full vision |
 | [Data Inventory]({{ site.baseurl }}{% link data-inventory.md %}) | What data Dandori touches â€” for security review |
