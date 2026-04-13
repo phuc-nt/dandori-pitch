@@ -7,7 +7,7 @@ description: "What Dandori is, who it serves, and the 13 features that implement
 
 # Dandori Overview
 
-Dandori turns the [Outer Harness]({{ site.baseurl }}{% link outer-harness.md %}) concept into a product: **one platform where engineers coordinate agent work and leadership governs it.**
+Dandori turns the [Outer Harness]({{ site.baseurl }}{% link outer-harness.md %}) concept into a product: **one platform where engineers coordinate agent work and leadership governs it — same database, two lenses.**
 
 ---
 
@@ -41,22 +41,6 @@ Dandori is the **organizational outer harness** for AI coding agents. It impleme
 │        Claude Code · Codex · Cursor · custom             │
 └──────────────────────────────────────────────────────────┘
 ```
-
----
-
-## Two audiences, one platform
-
-Dandori is not a leadership dashboard. It's not an engineer-only tool. It's **both** — same database, two lenses.
-
-| | Engineers (workspace) | Leadership (control plane) |
-|---|---|---|
-| **Cost Attribution** | See per-run cost | Per-team / project breakdown, budget ceilings |
-| **Knowledge Flow** | Author & consume context, publish skills, fork agent templates | Version, audit, enforce org-wide policies, publish templates |
-| **Task Tracking** | Build DAGs, run agents, review outputs | Approval audit trail, incident traceability |
-| **Quality Gates** | Per-run feedback before human review | Per-team quality trends over time |
-| **Audit & Analytics** | Debug runs, trace sub-agents | Compliance export, cross-agent comparison |
-
-**The principle:** engineers get productivity from the same data that gives leadership governance. No two tools, no reconciliation, no shadow spreadsheets.
 
 ---
 
@@ -98,8 +82,6 @@ Pluggable sandboxed scripts at `before_context_assembly`, `before_run`, `after_r
 **8. Automated quality gates** 🤝
 Post-run pipeline independent of the agent: typecheck, lint, security scan, coverage. Quality score per run. Trend analytics per agent, team, phase, and time window.
 
-*Why Outer needs this even though Inner has TDD:* **Separation of Duties.** The writer of code should not be the only judge. The agent can comment-out a test to pass faster — Outer gates catch that.
-
 **9. Inline sensors** 👷
 Mid-run sensors exposed as MCP tools. Agent calls `run_typecheck` or `run_lint` during execution and self-corrects before finishing. Computational sensors (typecheck, lint — milliseconds) and inferential sensors (LLM-powered security review — slower, deeper).
 
@@ -126,68 +108,34 @@ Web UI, REST API (OpenAPI 3.0), CLI, built-in MCP server. Same operations on eve
 
 ## Who uses Dandori
 
-**Engineers — daily workspace**
+Engineers and leadership look at the same database through different lenses. Each role below shows **what they do** in Dandori and **the value they get** from it.
 
-| Role | What they do |
-|---|---|
-| Senior / staff engineer | Publish skills, tune context, review outputs |
-| Team engineer | Pick up tasks, run agents, track progress |
-| Tech lead | Break features into DAGs, assign agents by skill |
+### Engineers — daily workspace
 
-**Leadership — control plane**
+| Role | What they do | What they get |
+|---|---|---|
+| **Senior / staff engineer** | Publish skills, tune context, review outputs | Their proven prompts scale across the team; their judgment lasts beyond their tenure |
+| **Team engineer** | Pick up tasks, run agents, track progress | Full context inherited automatically; no more "which doc version was I supposed to use?" |
+| **Tech lead** | Break features into DAGs, assign agents by skill | Multi-phase features run without Slack dispatching; quality gates catch regressions before merge |
 
-| Role | What they govern |
-|---|---|
-| CTO / VP Eng | Cost trends, quality trends, vendor decisions |
-| Platform team | Org-wide standards, shared skill library, budgets |
-| CISO | PII handling, audit exports, incident replay |
-| Compliance | SOC 2 / ISO 27001 evidence, retention policies |
+### Leadership — control plane
+
+| Role | What they govern | What they get |
+|---|---|---|
+| **CTO / VP Eng** | Cost trends, quality trends, vendor decisions | Every spend and quality question has an answer in minutes, not meetings |
+| **Platform team** | Org-wide standards, shared skill library, budgets | One place to roll out standards that every team's agents automatically inherit |
+| **CISO** | PII handling, audit exports, incident replay | Every agent-touched context is traceable; compliance queries return results, not shrugs |
+| **Compliance** | SOC 2 / ISO 27001 evidence, retention policies | One-click evidence pack instead of a quarterly tooling project |
 
 ---
 
 ## Differentiators
 
 **vs. raw Claude Code / Cursor usage**
-Dandori adds cost tracking, shared context, approval gates, audit log, analytics. Your teams keep their favorite agent.
+Dandori adds cost tracking, shared context, approval gates, audit log, analytics. Your teams keep their favorite agent — Dandori orchestrates, doesn't replace.
 
 **vs. observability tools (LangSmith, LangFuse)**
 Dandori is the full outer harness — context, skills, approval, orchestration *and* observability. Not just tracing.
-
-**vs. internal platform teams building their own**
-Dandori works day one. Internal builds take 2-3 quarters and one engineer maintaining.
-
-**vs. agent frameworks (AutoGen, CrewAI, LangGraph)**
-Those build agents. Dandori manages the agents your teams already use. Above framework choice.
-
----
-
-## Where the value shows up
-
-Dandori's ROI is **structural**, not a spreadsheet trick. Five levers compound over time:
-
-| Lever | What changes |
-|---|---|
-| **Cost visibility** | Runaway prompts flagged before they reach the invoice. Teams pick the right model for the right task. |
-| **Context reuse** | Engineers stop re-typing policies into every prompt. New engineers onboard in days, not weeks. |
-| **Quality gates** | Agent-caused incidents caught at gate-time, not in production. Trend data shows who is improving. |
-| **Knowledge library** | Best prompts, skills, and agent templates become org assets. When senior engineers leave, their judgment stays. |
-| **Audit + compliance** | SOC 2 / ISO 27001 evidence = one-click export, not a quarterly tooling project. |
-
-These are **qualitative shifts every partner can verify against their own numbers** — pilot with a real team, measure the change, then decide on a full rollout.
-
----
-
-## The historical bet
-
-| Era | Solo practice | Org platform |
-|---|---|---|
-| 2000s | Ad-hoc shell scripts | CI/CD (Jenkins, CircleCI) |
-| 2010s | Logs on servers | Observability (Datadog, Grafana) |
-| 2015s | `if env.DEBUG` flags | Feature flags (LaunchDarkly) |
-| 2020s | Markdown runbooks | Incident platforms (PagerDuty) |
-| 2026+ | CLAUDE.md on laptops | **Organizational outer harness** |
-
-Every org with 100+ engineers will need an AI agent control plane soon. Dandori is that platform.
 
 ---
 
