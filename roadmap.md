@@ -11,6 +11,24 @@ A proposal for enterprise partners — adaptable per team's needs.
 
 ---
 
+## Current implementation status
+
+As of 2026-04-16, Dandori is functional. M0 through M3 are complete; M4 and M5 are partially done.
+
+| Milestone | Status | Notes |
+|---|---|---|
+| **M0 — Skeleton** | ✅ Done | Web UI, REST API, OpenAPI docs, API key auth, rate limiting |
+| **M1 — Single-task MVP** | ✅ Done | Task board, Claude Code + Codex adapters, run record, cost logging, SSE streaming |
+| **M2 — Knowledge Flow** | ✅ Done | 5-layer Context Hub, versioning + rollback, Skill Library, 9 Agent Templates |
+| **M3 — Dual-audience value** | ✅ Done | Quality gates, cross-agent analytics, approval workflow, cost attribution + budget ceilings (daily/weekly/monthly) + spike detection, Fleet Ops Dashboard |
+| **M4 — Advanced orchestration** | 🔶 Partial | Task DAG ✅, Codex adapter ✅, phase tags ✅ · Evaluation Suite ⏳ |
+| **M5 — MCP + platform primitives** | 🔶 Partial | Built-in MCP server (15 tools) ✅, CLI tool ✅ · Inline Sensors ⏳, Tool Governance ⏳ |
+| **M6 — Ecosystem integrations** | 🔶 Partial | Google Drive ✅ · Jira ⏳, GitHub Enterprise ⏳, Confluence ⏳ |
+
+**903 tests, 0 TypeScript errors. Local deployment, single-user.** Phase 3 (auth + multi-user) is next.
+
+---
+
 ## Non-goals
 
 Dandori is the outer harness. It does **not** build:
