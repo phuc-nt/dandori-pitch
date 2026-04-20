@@ -98,6 +98,8 @@ CK không phải "AI assistant đơn" — là **bộ sub-agent chuyên môn hoá
 
 Kèm **rules files** (`development-rules.md`, `primary-workflow.md`, `orchestration-protocol.md`) — AI tuân thủ convention công ty nhất quán, không cần nhắc lại mỗi prompt.
 
+Và **skills** — prompt template tái dùng, auto-activate theo ngữ cảnh: `docs-seeker` (tra docs chuẩn), `sequential-thinking` / `debug` (phân tích lỗi nhiều bước), `mermaidjs-v11` (diagram), `ck:preview` (visual explain/diagram/slides). Viết một lần, mọi session dùng lại — không copy-paste prompt giữa các task.
+
 **Chúng tôi không prompt AI — chúng tôi vận hành một team agent bằng kỹ năng PO/QA thường ngày.**
 
 **3. PQM quality gates đo bằng số** — không tin AI tự chấm.
